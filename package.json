@@ -5,9 +5,11 @@
   "description": "Painel de disparidade de preços de combustíveis - Lumen Posto Club",
   "type": "module",
   "scripts": {
-    "build": "node update.mjs"
+    "build": "node update.mjs",
+    "scrape-anp": "node scrape-anp.mjs"
   },
   "dependencies": {
+    "csv-parse": "^5.5.6",
     "pg": "^8.13.1"
   },
   "engines": {
