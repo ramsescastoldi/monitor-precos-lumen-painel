@@ -16,11 +16,18 @@ if (!DATABASE_URL) {
   process.exit(1);
 }
 
-const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+// Sem &gid=0 -> exporta a primeira aba (que era nosso default mesmo).
+// Com gid=0 explicito, Google retorna HTTP 400 em algumas planilhas.
+const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
 
 function fetch(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
+    const opts = {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; LumenMonitorBot/1.0)'
+      }
+    };
+    https.get(url, opts, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         return fetch(res.headers.location).then(resolve, reject);
       }
