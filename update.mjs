@@ -179,11 +179,65 @@ function toNum(v) {
     `);
     const kpi = kpiRes.rows[0];
 
+    // 7) Distribuidoras (planilha manual) - media por estado/produto, ultima semana de dados
+    //    + calcula margem aparente: revenda ANP (media estado) - distribuicao
+    const distriRes = await client.query(`
+      with ref as (select coalesce(max(data_coleta), current_date) as max_d from precos_distribuicao_manual)
+      select estado,
+             avg(gasolina_comum)::numeric(5,3) as gasolina,
+             avg(etanol)::numeric(5,3) as etanol,
+             avg(diesel_s10)::numeric(5,3) as s10,
+             avg(diesel_s500)::numeric(5,3) as s500,
+             count(*) as n_cotacoes,
+             count(distinct distribuidora) as n_distri,
+             max(data_coleta) as data_ref
+      from precos_distribuicao_manual, ref
+      where data_coleta > ref.max_d - interval '14 days'
+      group by estado
+    `);
+    const distribuicao_estado = {};
+    let distri_ultima_data = null;
+    for (const r of distriRes.rows) {
+      distribuicao_estado[r.estado] = {
+        n_cotacoes: Number(r.n_cotacoes),
+        n_distribuidoras: Number(r.n_distri),
+        data_ref: r.data_ref,
+        gasolina: r.gasolina != null ? Number(r.gasolina) : null,
+        etanol: r.etanol != null ? Number(r.etanol) : null,
+        s10: r.s10 != null ? Number(r.s10) : null,
+        s500: r.s500 != null ? Number(r.s500) : null
+      };
+      if (!distri_ultima_data || r.data_ref > distri_ultima_data) distri_ultima_data = r.data_ref;
+
+      // Calcula margem aparente = revenda media ANP - distribuicao media planilha
+      const revAnp = agregados_estado[r.estado];
+      if (revAnp) {
+        const m = {};
+        for (const c of COMBUSTIVEIS) {
+          const rev = revAnp[c.key]?.media;
+          const dist = distribuicao_estado[r.estado][c.key];
+          if (rev != null && dist != null) {
+            const diff = rev - dist;
+            m[c.key] = {
+              revenda: Number(rev.toFixed(3)),
+              distribuicao: Number(dist.toFixed(3)),
+              margem_rs: Number(diff.toFixed(3)),
+              margem_pct: Number(((diff / dist) * 100).toFixed(2))
+            };
+          } else {
+            m[c.key] = null;
+          }
+        }
+        distribuicao_estado[r.estado].margem = m;
+      }
+    }
+
     const atualizado = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
     const data = {
       atualizado_em: atualizado,
       semana_referencia: semanaRef,
+      distribuicao_ultima_data: distri_ultima_data ? new Date(distri_ultima_data).toISOString().substring(0, 10) : null,
       kpis: {
         n_postos: Number(kpi.n_postos),
         n_cidades: Number(kpi.n_cidades),
@@ -191,6 +245,7 @@ function toNum(v) {
         n_coletas: Number(kpi.n_coletas)
       },
       agregados_estado,
+      distribuicao_estado,
       top_postos,
       bandeiras_estado,
       ranking_municipal: {

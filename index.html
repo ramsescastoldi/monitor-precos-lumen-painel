@@ -51,6 +51,14 @@
   .fuel-name { color: var(--text-muted); font-size: 13px; }
   .fuel-value { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
   .fuel-range { color: var(--text-muted); font-size: 10px; font-variant-numeric: tabular-nums; display: block; text-align: right; margin-top: 2px; }
+  .margem-block { margin-top: 12px; padding: 8px 10px; background: rgba(79,138,255,0.06); border: 1px solid rgba(79,138,255,0.18); border-radius: 6px; }
+  .margem-title { color: var(--text-muted); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .margem-row { display: grid; grid-template-columns: 60px 1fr 1fr auto; gap: 6px; font-size: 11px; padding: 2px 0; font-variant-numeric: tabular-nums; align-items: baseline; }
+  .margem-fuel { color: var(--text-muted); }
+  .margem-num { text-align: right; color: var(--text-muted); font-size: 10px; }
+  .margem-pos { color: var(--green); font-weight: 600; }
+  .margem-neg { color: var(--red); font-weight: 600; }
+  .margem-empty { color: var(--text-muted); font-style: italic; font-size: 10px; margin-top: 4px; }
   .tabs { display: flex; gap: 4px; margin-bottom: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
   .tab { padding: 8px 14px; cursor: pointer; color: var(--text-muted); border: none; background: transparent; font: inherit; font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
   .tab:hover { color: var(--text); }
@@ -79,7 +87,7 @@
 <div class="container">
 <header>
   <h1>Monitor de Preços — Lumen Posto Club</h1>
-  <p class="subtitle">Preços por revendedor (ANP, Levantamento Semanal) — gasolina, etanol, diesel S10 e S500</p>
+  <p class="subtitle">Preços por revendedor (ANP, semanal) + margem aparente revenda × distribuição (planilha)</p>
   <p class="updated" id="updated">Carregando…</p>
 </header>
 
@@ -134,7 +142,7 @@ function fmtFuel(stats) {
          '<span class="fuel-range">n=' + stats.n + ' · min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + '</span>';
 }
 
-document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '');
+document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '') + (DATA.distribuicao_ultima_data ? ' · distribuidoras: ' + DATA.distribuicao_ultima_data : '');
 
 const k = DATA.kpis || {};
 document.getElementById('kpis').innerHTML = `
@@ -144,8 +152,31 @@ document.getElementById('kpis').innerHTML = `
   <div class="kpi"><div class="kpi-label">Coletas (7d)</div><div class="kpi-value">${k.n_coletas || 0}</div></div>
 `;
 
+function fmtMargem(m) {
+  if (!m) return '';
+  const fuels = [
+    { key: 'gasolina', label: 'Gasolina' },
+    { key: 'etanol', label: 'Etanol' },
+    { key: 's10', label: 'S10' },
+    { key: 's500', label: 'S500' }
+  ];
+  const rows = fuels.map(f => {
+    const v = m[f.key];
+    if (!v) return `<div class="margem-row"><span class="margem-fuel">${f.label}</span><span class="margem-num">—</span><span class="margem-num">—</span><span class="margem-num">—</span></div>`;
+    const cls = v.margem_rs > 0.01 ? 'margem-pos' : (v.margem_rs < -0.01 ? 'margem-neg' : '');
+    const sign = v.margem_rs > 0 ? '+' : '';
+    return `<div class="margem-row"><span class="margem-fuel">${f.label}</span><span class="margem-num">rev ${v.revenda.toFixed(2).replace('.', ',')}</span><span class="margem-num">dist ${v.distribuicao.toFixed(2).replace('.', ',')}</span><span class="${cls}">${sign}${v.margem_rs.toFixed(2).replace('.', ',')} · ${sign}${v.margem_pct.toFixed(1)}%</span></div>`;
+  }).join('');
+  return `<div class="margem-block"><div class="margem-title">Margem aparente (revenda − distribuição)</div>${rows}</div>`;
+}
+
 const ufs = Object.entries(DATA.agregados_estado || {}).sort();
-document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => `
+document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => {
+  const dist = (DATA.distribuicao_estado || {})[uf];
+  const margemHtml = dist?.margem
+    ? fmtMargem(dist.margem)
+    : '<div class="margem-empty">Aguardando preços de distribuidoras (planilha)</div>';
+  return `
   <div class="uf-card">
     <div class="uf-header">
       <span class="uf-name">${uf}</span>
@@ -155,8 +186,9 @@ document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => `
     <div class="fuel-row"><span class="fuel-name">Etanol</span><span>${fmtFuel(ag.etanol)}</span></div>
     <div class="fuel-row"><span class="fuel-name">Diesel S10</span><span>${fmtFuel(ag.s10)}</span></div>
     <div class="fuel-row"><span class="fuel-name">Diesel S500</span><span>${fmtFuel(ag.s500)}</span></div>
-  </div>
-`).join('');
+    ${margemHtml}
+  </div>`;
+}).join('');
 
 function renderTabs(containerTabs, containerContent, dataMap, rowsFn, emptyMsg) {
   const ufs = Object.keys(dataMap || {}).sort();

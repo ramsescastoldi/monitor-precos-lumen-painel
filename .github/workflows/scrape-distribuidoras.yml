@@ -1,0 +1,40 @@
+name: Sync planilha distribuidoras (diário 04h BRT)
+
+on:
+  schedule:
+    # 07:00 UTC = 04:00 BRT, todos os dias
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Sync planilha -> Supabase
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          SHEET_ID: 1fwwkFeRKrDfhKto2SylEKzS9xaLYb5lRxzyk0cQ2qHw
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "ERRO: secret SUPABASE_DB_URL nao configurado no repo."
+            exit 1
+          fi
+          node scrape-distribuidoras.mjs
+
+      - name: Trigger painel rebuild
+        if: success()
+        run: |
+          if [ -n "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            curl -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}"
+            echo "Build hook do painel disparado."
+          fi
