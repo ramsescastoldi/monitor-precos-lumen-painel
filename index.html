@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monitor de Preços — Lumen Posto Club</title>
+<title>Monitor de Preços ANP — Lumen Posto Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,78 +35,89 @@
   .subtitle { color: var(--text-muted); font-size: 14px; margin: 0; }
   .updated { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
   h2 { font-size: 18px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+  h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
   .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
   .kpi { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
   .kpi-label { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
   .kpi-value { font-size: 26px; font-weight: 600; margin-top: 4px; }
-  .kpi-value .small { font-size: 13px; color: var(--text-muted); font-weight: 400; }
   .estados { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
   .uf-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; transition: background 0.15s; }
   .uf-card:hover { background: var(--bg-card-hover); }
   .uf-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
   .uf-name { font-size: 22px; font-weight: 700; }
-  .uf-count { color: var(--text-muted); font-size: 12px; }
-  .fuel-block { padding: 8px 0; border-top: 1px solid var(--border); }
-  .fuel-block:first-of-type { border-top: none; }
-  .fuel-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-  .fuel-name { color: var(--text-muted); font-size: 13px; font-weight: 500; }
-  .fuel-live { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
-  .fuel-anp-line { color: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; display: flex; justify-content: space-between; }
+  .uf-count { color: var(--text-muted); font-size: 11px; }
+  .fuel-row { display: grid; grid-template-columns: 1fr auto; padding: 6px 0; border-top: 1px solid var(--border); align-items: baseline; }
+  .fuel-row:first-of-type { border-top: none; }
+  .fuel-name { color: var(--text-muted); font-size: 13px; }
+  .fuel-value { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
+  .fuel-range { color: var(--text-muted); font-size: 10px; font-variant-numeric: tabular-nums; display: block; text-align: right; margin-top: 2px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .tab { padding: 8px 14px; cursor: pointer; color: var(--text-muted); border: none; background: transparent; font: inherit; font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 500; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
   .table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 760px; }
-  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
-  th { color: var(--text-muted); font-weight: 500; text-transform: uppercase; font-size: 10px; letter-spacing: 0.04em; background: rgba(0,0,0,0.15); position: sticky; top: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 640px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-weight: 500; text-transform: uppercase; font-size: 10px; letter-spacing: 0.04em; background: rgba(0,0,0,0.15); }
   td.num { text-align: right; font-variant-numeric: tabular-nums; }
-  td.disp-pos { color: var(--red); font-size: 10px; }
-  td.disp-neg { color: var(--green); font-size: 10px; }
-  td.disp-neutral { color: var(--text-muted); font-size: 10px; }
+  td.uf { font-weight: 600; color: var(--accent); }
   tr:last-child td { border-bottom: none; }
   .pending { color: var(--text-muted); font-style: italic; }
-  .anp-note { color: var(--text-muted); font-size: 11px; margin-top: 4px; }
-  footer { margin-top: 48px; color: var(--text-muted); font-size: 12px; text-align: center; }
-  @media (max-width: 600px) {
+  .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; background: var(--border); color: var(--text-muted); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 800px) {
+    .grid-2 { grid-template-columns: 1fr; }
     h1 { font-size: 22px; }
     .kpi-value { font-size: 22px; }
   }
+  footer { margin-top: 48px; color: var(--text-muted); font-size: 12px; text-align: center; }
 </style>
 </head>
 <body>
 <div class="container">
 <header>
   <h1>Monitor de Preços — Lumen Posto Club</h1>
-  <p class="subtitle">Disparidade regional: revendedores LIVE × média ANP por estado (gasolina, etanol, S10, S500)</p>
+  <p class="subtitle">Preços por revendedor (ANP, Levantamento Semanal) — gasolina, etanol, diesel S10 e S500</p>
   <p class="updated" id="updated">Carregando…</p>
 </header>
 
 <section class="kpis" id="kpis"></section>
 
-<h2>Por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(LIVE × ANP)</span></h2>
+<h2>Resumo por estado</h2>
 <section class="estados" id="estados"></section>
 
-<h2>Detalhe por revendedor (anonimizado) <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— disparidade vs média estadual ANP</span></h2>
-<div class="table-wrap">
-  <table>
-    <thead>
-      <tr>
-        <th>Revendedor</th>
-        <th class="num">Gasolina</th>
-        <th class="num">vs ANP</th>
-        <th class="num">Etanol</th>
-        <th class="num">vs ANP</th>
-        <th class="num">S10</th>
-        <th class="num">vs ANP</th>
-        <th class="num">S500</th>
-        <th class="num">vs ANP</th>
-      </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-  </table>
+<h2>Top postos mais baratos por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina)</span></h2>
+<div class="tabs" id="top-tabs"></div>
+<div id="top-content"></div>
+
+<h2>Comparativo por bandeira <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina, média ANP por estado)</span></h2>
+<div class="tabs" id="band-tabs"></div>
+<div id="band-content"></div>
+
+<h2>Ranking municipal <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina, mínimo 3 postos)</span></h2>
+<div class="grid-2">
+  <div>
+    <h3>🟢 Cidades mais baratas</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>UF</th><th>Município</th><th class="num">Média</th><th class="num">Postos</th></tr></thead>
+      <tbody id="tbody-baratas"></tbody>
+    </table></div>
+  </div>
+  <div>
+    <h3>🔴 Cidades mais caras</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>UF</th><th>Município</th><th class="num">Média</th><th class="num">Postos</th></tr></thead>
+      <tbody id="tbody-caras"></tbody>
+    </table></div>
+  </div>
 </div>
 
 <footer>
-  Pesquisa entre revendedores do grupo pago Lumen Posto Club, comparada com média da ANP (semana mais recente) por estado.<br>
-  Dados ANP de domínio público (Levantamento Semanal de Preços). Revendedores LIVE anonimizados.<br>
-  Atualizado por <code>monitor.lumenclubpainel.com.br</code>
+  Fonte: ANP — Levantamento Semanal de Preços de Combustíveis (dados públicos).<br>
+  Atualizado a cada hora · Scraper ANP roda segunda e quinta às 03h BRT.<br>
+  <code>monitor.lumenclubpainel.com.br</code>
 </footer>
 </div>
 
@@ -117,70 +128,108 @@ function fmtBRL(v) {
   if (v === null || v === undefined) return '<span class="pending">—</span>';
   return 'R$ ' + Number(v).toFixed(2).replace('.', ',');
 }
-function fmtAnpBlock(stats, label) {
-  if (!stats) return '<span class="fuel-anp-line"><span>' + label + '</span><span class="pending">sem dados ANP</span></span>';
-  return '<span class="fuel-anp-line"><span>' + label + ' média ' + (stats.media != null ? 'R$ ' + Number(stats.media).toFixed(2).replace('.', ',') : '—') + '</span><span>min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + ' (n=' + stats.n + ')</span></span>';
-}
-function fmtLiveBlock(stats) {
-  if (!stats) return '<span class="pending">aguardando</span>';
-  return fmtBRL(stats.media) + ' <span class="anp-note">(n=' + stats.n + ', min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + ')</span>';
-}
-function fmtDisp(rs, pct) {
-  if (rs == null || pct == null) return '<span class="disp-neutral">—</span>';
-  const cls = rs > 0.01 ? 'disp-pos' : (rs < -0.01 ? 'disp-neg' : 'disp-neutral');
-  const sign = rs > 0 ? '+' : '';
-  const sinalPct = pct > 0 ? '+' : '';
-  return '<span class="' + cls + '">' + sign + rs.toFixed(2).replace('.', ',') + ' ' + sinalPct + pct.toFixed(1) + '%</span>';
+function fmtFuel(stats) {
+  if (!stats) return '<span class="pending">—</span>';
+  return '<span class="fuel-value">' + fmtBRL(stats.media) + '</span>' +
+         '<span class="fuel-range">n=' + stats.n + ' · min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + '</span>';
 }
 
-document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.anp_semana_referencia ? ' · ANP ref: ' + DATA.anp_semana_referencia : '');
+document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '');
 
-const kpis = document.getElementById('kpis');
-kpis.innerHTML = `
-  <div class="kpi"><div class="kpi-label">Revendedores</div><div class="kpi-value">${DATA.total_revendedores || 0}</div></div>
-  <div class="kpi"><div class="kpi-label">Responderam (7d)</div><div class="kpi-value">${DATA.responderam_semana || 0} <span class="small">/ ${DATA.total_revendedores || 0}</span></div></div>
-  <div class="kpi"><div class="kpi-label">Estados monitorados</div><div class="kpi-value">${Object.keys(DATA.agregados_estado || {}).length}</div></div>
-  <div class="kpi"><div class="kpi-label">Ref. ANP</div><div class="kpi-value" style="font-size:16px;padding-top:8px">${DATA.anp_semana_referencia || '—'}</div></div>
+const k = DATA.kpis || {};
+document.getElementById('kpis').innerHTML = `
+  <div class="kpi"><div class="kpi-label">Postos pesquisados</div><div class="kpi-value">${k.n_postos || 0}</div></div>
+  <div class="kpi"><div class="kpi-label">Municípios</div><div class="kpi-value">${k.n_cidades || 0}</div></div>
+  <div class="kpi"><div class="kpi-label">Estados</div><div class="kpi-value">${k.n_estados || 0}</div></div>
+  <div class="kpi"><div class="kpi-label">Coletas (7d)</div><div class="kpi-value">${k.n_coletas || 0}</div></div>
 `;
 
-const estados = document.getElementById('estados');
 const ufs = Object.entries(DATA.agregados_estado || {}).sort();
-estados.innerHTML = ufs.map(([uf, ag]) => `
+document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => `
   <div class="uf-card">
     <div class="uf-header">
       <span class="uf-name">${uf}</span>
-      <span class="uf-count">${ag.responderam} / ${ag.total_revendedores} responderam</span>
+      <span class="uf-count">${ag.total_postos} postos · ANP</span>
     </div>
-    ${['gasolina','etanol','s10','s500'].map(c => {
-      const lab = { gasolina: 'Gasolina', etanol: 'Etanol', s10: 'Diesel S10', s500: 'Diesel S500' }[c];
-      return `
-      <div class="fuel-block">
-        <div class="fuel-header"><span class="fuel-name">${lab}</span><span class="fuel-live">${fmtLiveBlock(ag[c])}</span></div>
-        ${fmtAnpBlock(ag[c + '_anp'], 'ANP')}
-      </div>`;
-    }).join('')}
+    <div class="fuel-row"><span class="fuel-name">Gasolina</span><span>${fmtFuel(ag.gasolina)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">Etanol</span><span>${fmtFuel(ag.etanol)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">Diesel S10</span><span>${fmtFuel(ag.s10)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">Diesel S500</span><span>${fmtFuel(ag.s500)}</span></div>
   </div>
 `).join('');
 
-const tbody = document.getElementById('tbody');
-const revendedores = (DATA.revendedores || []).filter(r => r.respondeu).sort((a, b) => a.id_anonimo.localeCompare(b.id_anonimo));
-tbody.innerHTML = revendedores.map(r => `
-  <tr>
-    <td>${r.id_anonimo}</td>
-    <td class="num">${fmtBRL(r.gasolina)}</td>
-    <td class="num">${fmtDisp(r.gasolina_vs_anp_rs, r.gasolina_vs_anp_pct)}</td>
-    <td class="num">${fmtBRL(r.etanol)}</td>
-    <td class="num">${fmtDisp(r.etanol_vs_anp_rs, r.etanol_vs_anp_pct)}</td>
-    <td class="num">${fmtBRL(r.s10)}</td>
-    <td class="num">${fmtDisp(r.s10_vs_anp_rs, r.s10_vs_anp_pct)}</td>
-    <td class="num">${fmtBRL(r.s500)}</td>
-    <td class="num">${fmtDisp(r.s500_vs_anp_rs, r.s500_vs_anp_pct)}</td>
-  </tr>
-`).join('');
-
-if (revendedores.length === 0) {
-  tbody.innerHTML = '<tr><td colspan="9" class="pending" style="text-align:center;padding:24px">Aguardando respostas dos revendedores…</td></tr>';
+function renderTabs(containerTabs, containerContent, dataMap, rowsFn, emptyMsg) {
+  const ufs = Object.keys(dataMap || {}).sort();
+  if (ufs.length === 0) {
+    containerTabs.innerHTML = '';
+    containerContent.innerHTML = '<p class="pending">' + emptyMsg + '</p>';
+    return;
+  }
+  containerTabs.innerHTML = ufs.map((uf, i) => `<button class="tab ${i===0?'active':''}" data-uf="${uf}">${uf}</button>`).join('');
+  containerContent.innerHTML = ufs.map((uf, i) => `<div class="tab-content ${i===0?'active':''}" data-uf="${uf}">${rowsFn(uf, dataMap[uf])}</div>`).join('');
+  containerTabs.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      containerTabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      containerContent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      containerContent.querySelector(`.tab-content[data-uf="${btn.dataset.uf}"]`).classList.add('active');
+    });
+  });
 }
+
+renderTabs(
+  document.getElementById('top-tabs'),
+  document.getElementById('top-content'),
+  DATA.top_postos,
+  (uf, postos) => {
+    const rows = (postos || []).map((p, i) => `
+      <tr>
+        <td class="num">${i+1}</td>
+        <td>${p.revenda || '—'}</td>
+        <td>${p.municipio || '—'}</td>
+        <td><span class="badge">${p.bandeira || '—'}</span></td>
+        <td class="num"><strong>${fmtBRL(p.gasolina)}</strong></td>
+      </tr>`).join('');
+    return `<div class="table-wrap"><table>
+      <thead><tr><th class="num">#</th><th>Revenda</th><th>Município</th><th>Bandeira</th><th class="num">Gasolina</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
+    </table></div>`;
+  },
+  'Sem dados de postos.'
+);
+
+renderTabs(
+  document.getElementById('band-tabs'),
+  document.getElementById('band-content'),
+  DATA.bandeiras_estado,
+  (uf, bands) => {
+    const rows = (bands || []).map(b => `
+      <tr>
+        <td>${b.bandeira}</td>
+        <td class="num">${b.n}</td>
+        <td class="num"><strong>${fmtBRL(b.media)}</strong></td>
+        <td class="num">${fmtBRL(b.min)}</td>
+        <td class="num">${fmtBRL(b.max)}</td>
+      </tr>`).join('');
+    return `<div class="table-wrap"><table>
+      <thead><tr><th>Bandeira</th><th class="num">Postos</th><th class="num">Média</th><th class="num">Mín</th><th class="num">Máx</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
+    </table></div>`;
+  },
+  'Sem dados de bandeiras.'
+);
+
+function renderRank(tbodyId, items) {
+  document.getElementById(tbodyId).innerHTML = (items || []).map(r => `
+    <tr>
+      <td class="uf">${r.estado}</td>
+      <td>${r.municipio}</td>
+      <td class="num"><strong>${fmtBRL(r.media)}</strong></td>
+      <td class="num">${r.n}</td>
+    </tr>`).join('') || '<tr><td colspan="4" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>';
+}
+renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
+renderRank('tbody-caras', DATA.ranking_municipal?.caras);
 </script>
 </body>
 </html>

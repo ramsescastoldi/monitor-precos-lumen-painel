@@ -1,10 +1,6 @@
-// Build script — roda no Netlify build (e tambem localmente).
-// 1) Conecta no Supabase
-// 2) Consulta revendedores ativos + ultima coleta de precos (7 dias) + medias ANP por estado (14 dias)
-// 3) Calcula disparidade revendedor LIVE vs media ANP estadual (R$ e %)
-// 4) Agregados por estado (media/min/max LIVE e ANP)
-// 5) Anonimiza revendedores (MT-A, MT-B, ...)
-// 6) Injeta dados em index.html no marcador `const DATA = {};  // END_DATA`
+// Build script — roda no Netlify build.
+// Painel 100% ANP: agregados por estado, top postos mais baratos, comparativo por bandeira.
+// Fonte unica: tabela precos_externos_anp (alimentada pelo scraper GH Action).
 
 import pg from 'pg';
 import fs from 'node:fs';
@@ -12,7 +8,7 @@ import fs from 'node:fs';
 const { Client } = pg;
 const DATABASE_URL = process.env.SUPABASE_DB_URL;
 if (!DATABASE_URL) {
-  console.error('ERRO: SUPABASE_DB_URL nao definido. Setar env var no Netlify (Settings -> Environment).');
+  console.error('ERRO: SUPABASE_DB_URL nao definido.');
   process.exit(1);
 }
 
@@ -22,153 +18,191 @@ const client = new Client({
 });
 
 const COMBUSTIVEIS = [
-  { key: 'gasolina', col: 'gasolina_comum', anpProd: 'GASOLINA' },
-  { key: 'etanol', col: 'etanol', anpProd: 'ETANOL' },
-  { key: 's10', col: 'diesel_s10', anpProd: 'DIESEL S10' },
-  { key: 's500', col: 'diesel_s500', anpProd: 'DIESEL' }
+  { key: 'gasolina', label: 'Gasolina', anpProd: 'GASOLINA' },
+  { key: 'etanol', label: 'Etanol', anpProd: 'ETANOL' },
+  { key: 's10', label: 'Diesel S10', anpProd: 'DIESEL S10' },
+  { key: 's500', label: 'Diesel S500', anpProd: 'DIESEL' }
 ];
 
-function statsOf(values) {
-  const arr = values.filter(v => v !== null && v !== undefined && !isNaN(parseFloat(v))).map(parseFloat);
-  if (arr.length === 0) return null;
-  arr.sort((a, b) => a - b);
-  const media = arr.reduce((s, x) => s + x, 0) / arr.length;
-  return {
-    n: arr.length,
-    media: Number(media.toFixed(3)),
-    min: Number(arr[0].toFixed(3)),
-    max: Number(arr[arr.length - 1].toFixed(3))
-  };
-}
-
-function disparidade(precoLive, mediaAnp) {
-  if (precoLive == null || mediaAnp == null) return { rs: null, pct: null };
-  const diff = precoLive - mediaAnp;
-  const pct = (diff / mediaAnp) * 100;
-  return {
-    rs: Number(diff.toFixed(3)),
-    pct: Number(pct.toFixed(2))
-  };
+function toNum(v) {
+  if (v === null || v === undefined) return null;
+  const n = parseFloat(v);
+  return isNaN(n) ? null : Number(n.toFixed(3));
 }
 
 (async () => {
   try {
     await client.connect();
 
-    // 1) Revendedores LIVE com ultima coleta (7 dias)
-    const sqlLive = `
-      with ultima_coleta as (
-        select distinct on (revendedor_id)
-               revendedor_id, gasolina_comum, etanol, diesel_s10, diesel_s500, coletado_em
-        from precos_revendedor
-        where coletado_em > now() - interval '7 days'
-        order by revendedor_id, coletado_em desc
-      )
-      select r.id, r.estado, r.cidade, r.whatsapp_jid,
-             u.gasolina_comum, u.etanol, u.diesel_s10, u.diesel_s500, u.coletado_em
-      from revendedores r
-      left join ultima_coleta u on u.revendedor_id = r.id
-      where r.ativo = true
-      order by r.estado, r.id
-    `;
-    const { rows: revRows } = await client.query(sqlLive);
+    // 1) Janela de tempo: usa a SEMANA mais recente DOS DADOS DISPONIVEIS na tabela ANP
+    const refRes = await client.query("select max(data_coleta) as max_d from precos_externos_anp");
+    const maxD = refRes.rows[0].max_d;
+    if (!maxD) {
+      console.error('ERRO: tabela precos_externos_anp vazia. Rode o scraper.');
+      process.exit(1);
+    }
+    const semanaRef = new Date(maxD).toISOString().substring(0, 10);
 
-    // 2) Agregados ANP por estado x produto — usa a SEMANA mais recente DOS DADOS DISPONIVEIS
-    //    (nao 'current_date - 14 days', porque ANP tem delay de ~2 semanas no processamento)
-    const sqlAnp = `
+    // 2) Agregados por estado x produto (ultima semana)
+    const aggByEstadoRes = await client.query(`
       with ref as (select max(data_coleta) as max_d from precos_externos_anp)
       select estado, produto,
              avg(valor_venda)::numeric(5,3) as media,
              min(valor_venda)::numeric(5,3) as min,
              max(valor_venda)::numeric(5,3) as max,
-             count(*) as n,
-             max(data_coleta) as data_ref
+             count(*) as n
       from precos_externos_anp, ref
       where data_coleta > ref.max_d - interval '7 days'
       group by estado, produto
-    `;
-    const { rows: anpRows } = await client.query(sqlAnp);
-    // Re-estrutura: anpByEstado[estado][produto] = { media, min, max, n, data_ref }
-    const anpByEstado = {};
-    let anpUltimaData = null;
-    for (const r of anpRows) {
-      if (!anpByEstado[r.estado]) anpByEstado[r.estado] = {};
-      anpByEstado[r.estado][r.produto] = {
-        media: Number(r.media),
-        min: Number(r.min),
-        max: Number(r.max),
-        n: Number(r.n),
-        data_ref: r.data_ref
-      };
-      if (!anpUltimaData || r.data_ref > anpUltimaData) anpUltimaData = r.data_ref;
-    }
+      order by estado, produto
+    `);
 
-    // 3) Anonimiza revendedores + calcula disparidade vs ANP
-    const counters = {};
-    const revendedores = revRows.map(r => {
-      counters[r.estado] = (counters[r.estado] || 0) + 1;
-      const letra = String.fromCharCode(65 + counters[r.estado] - 1);
-      const anpEstado = anpByEstado[r.estado] || {};
-
-      const out = {
-        id_anonimo: `${r.estado}-${letra}`,
-        estado: r.estado,
-        respondeu: r.coletado_em != null,
-        coletado_em: r.coletado_em ? new Date(r.coletado_em).toISOString() : null
-      };
-
-      for (const c of COMBUSTIVEIS) {
-        const precoLive = r[c.col] != null ? Number(r[c.col]) : null;
-        const anp = anpEstado[c.anpProd] || null;
-        const mediaAnp = anp ? anp.media : null;
-        const disp = disparidade(precoLive, mediaAnp);
-        out[c.key] = precoLive;
-        out[`${c.key}_vs_anp_rs`] = disp.rs;
-        out[`${c.key}_vs_anp_pct`] = disp.pct;
-      }
-      return out;
-    });
-
-    // 4) Agregados por estado: LIVE + ANP
-    const porEstado = {};
-    for (const r of revendedores) {
-      if (!porEstado[r.estado]) porEstado[r.estado] = [];
-      porEstado[r.estado].push(r);
-    }
     const agregados_estado = {};
-    for (const [uf, lista] of Object.entries(porEstado)) {
-      const respondentes = lista.filter(x => x.respondeu);
-      const anpEstado = anpByEstado[uf] || {};
-      const ag = {
-        total_revendedores: lista.length,
-        responderam: respondentes.length
-      };
-      for (const c of COMBUSTIVEIS) {
-        ag[c.key] = statsOf(respondentes.map(x => x[c.key]));
-        const anpC = anpEstado[c.anpProd];
-        ag[`${c.key}_anp`] = anpC ? {
-          n: anpC.n,
-          media: anpC.media,
-          min: anpC.min,
-          max: anpC.max
-        } : null;
+    for (const r of aggByEstadoRes.rows) {
+      if (!agregados_estado[r.estado]) {
+        agregados_estado[r.estado] = { total_postos: 0 };
+        for (const c of COMBUSTIVEIS) agregados_estado[r.estado][c.key] = null;
       }
-      agregados_estado[uf] = ag;
+      const c = COMBUSTIVEIS.find(x => x.anpProd === r.produto);
+      if (c) {
+        agregados_estado[r.estado][c.key] = {
+          n: Number(r.n),
+          media: toNum(r.media),
+          min: toNum(r.min),
+          max: toNum(r.max)
+        };
+      }
+    }
+    // Total de postos distintos por estado (CNPJ)
+    const postosByEstadoRes = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select estado, count(distinct cnpj) as n_postos
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+      group by estado
+    `);
+    for (const r of postosByEstadoRes.rows) {
+      if (agregados_estado[r.estado]) agregados_estado[r.estado].total_postos = Number(r.n_postos);
     }
 
-    const totalRespondentes = revendedores.filter(r => r.respondeu).length;
+    // 3) Top 10 postos mais baratos por estado (gasolina, ultima semana)
+    const topPostosRes = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp),
+      recente as (
+        select estado, municipio, revenda, bandeira, cnpj, valor_venda, data_coleta,
+               row_number() over (partition by estado order by valor_venda asc) as rn
+        from precos_externos_anp, ref
+        where data_coleta > ref.max_d - interval '7 days'
+          and produto = 'GASOLINA'
+      )
+      select estado, municipio, revenda, bandeira, cnpj, valor_venda, data_coleta
+      from recente
+      where rn <= 10
+      order by estado, valor_venda asc
+    `);
+    const top_postos = {};
+    for (const r of topPostosRes.rows) {
+      if (!top_postos[r.estado]) top_postos[r.estado] = [];
+      top_postos[r.estado].push({
+        municipio: r.municipio,
+        revenda: r.revenda,
+        bandeira: r.bandeira,
+        cnpj_curto: r.cnpj ? r.cnpj.substring(0, 10) + '...' : null,
+        gasolina: toNum(r.valor_venda),
+        data_coleta: r.data_coleta ? new Date(r.data_coleta).toISOString().substring(0, 10) : null
+      });
+    }
+
+    // 4) Comparativo por bandeira x estado (gasolina, ultima semana) - so bandeiras com >= 3 postos
+    const bandeirasRes = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select estado, bandeira, count(*) as n,
+             avg(valor_venda)::numeric(5,3) as media,
+             min(valor_venda)::numeric(5,3) as min,
+             max(valor_venda)::numeric(5,3) as max
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+        and produto = 'GASOLINA'
+      group by estado, bandeira
+      having count(*) >= 3
+      order by estado, media asc
+    `);
+    const bandeiras_estado = {};
+    for (const r of bandeirasRes.rows) {
+      if (!bandeiras_estado[r.estado]) bandeiras_estado[r.estado] = [];
+      bandeiras_estado[r.estado].push({
+        bandeira: r.bandeira || '(sem bandeira)',
+        n: Number(r.n),
+        media: toNum(r.media),
+        min: toNum(r.min),
+        max: toNum(r.max)
+      });
+    }
+
+    // 5) Ranking municipal: top 15 cidades mais baratas (gasolina) e top 15 mais caras
+    const ranking_municipal_baratas = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select estado, municipio,
+             avg(valor_venda)::numeric(5,3) as media,
+             count(*) as n
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+        and produto = 'GASOLINA'
+      group by estado, municipio
+      having count(*) >= 3
+      order by media asc
+      limit 15
+    `);
+    const ranking_municipal_caras = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select estado, municipio,
+             avg(valor_venda)::numeric(5,3) as media,
+             count(*) as n
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+        and produto = 'GASOLINA'
+      group by estado, municipio
+      having count(*) >= 3
+      order by media desc
+      limit 15
+    `);
+
+    // 6) KPIs globais
+    const kpiRes = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select count(*) as n_coletas,
+             count(distinct cnpj) as n_postos,
+             count(distinct municipio) as n_cidades,
+             count(distinct estado) as n_estados
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+    `);
+    const kpi = kpiRes.rows[0];
+
     const atualizado = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
     const data = {
       atualizado_em: atualizado,
-      anp_semana_referencia: anpUltimaData ? new Date(anpUltimaData).toISOString().substring(0, 10) : null,
-      total_revendedores: revendedores.length,
-      responderam_semana: totalRespondentes,
-      revendedores,
-      agregados_estado
+      semana_referencia: semanaRef,
+      kpis: {
+        n_postos: Number(kpi.n_postos),
+        n_cidades: Number(kpi.n_cidades),
+        n_estados: Number(kpi.n_estados),
+        n_coletas: Number(kpi.n_coletas)
+      },
+      agregados_estado,
+      top_postos,
+      bandeiras_estado,
+      ranking_municipal: {
+        baratas: ranking_municipal_baratas.rows.map(r => ({
+          estado: r.estado, municipio: r.municipio, media: toNum(r.media), n: Number(r.n)
+        })),
+        caras: ranking_municipal_caras.rows.map(r => ({
+          estado: r.estado, municipio: r.municipio, media: toNum(r.media), n: Number(r.n)
+        }))
+      }
     };
 
-    // Lê o template index.html e injeta o data.json
     const template = fs.readFileSync('index.html', 'utf-8');
     const out = template.replace(
       /const DATA = \{[\s\S]*?\};\s*\/\/ END_DATA/,
@@ -177,8 +211,7 @@ function disparidade(precoLive, mediaAnp) {
     fs.writeFileSync('index.html', out);
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
-    console.log(`OK build: ${revendedores.length} revendedores, ${totalRespondentes} responderam`);
-    console.log(`ANP: ${anpRows.length} agregados (estado x produto), semana ref: ${data.anp_semana_referencia}`);
+    console.log(`OK build: ${kpi.n_postos} postos, ${kpi.n_cidades} cidades, ${kpi.n_estados} estados (semana ref ${semanaRef})`);
     console.log(`Estados: ${Object.keys(agregados_estado).join(', ')}`);
   } catch (e) {
     console.error('ERRO build:', e.message);
