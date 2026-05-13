@@ -1,0 +1,16 @@
+{
+  "name": "monitor-precos-lumen-painel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Painel de disparidade de preços de combustíveis - Lumen Posto Club",
+  "type": "module",
+  "scripts": {
+    "build": "node update.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,9 @@
+[build]
+  command = "npm install && node update.mjs"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SUPABASE_DB_URL deve ser configurado em
+# Netlify Dashboard -> Site Settings -> Environment variables

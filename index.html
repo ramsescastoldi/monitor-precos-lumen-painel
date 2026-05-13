@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor de Preços — Lumen Posto Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1220;
+    --bg-card: #131c2e;
+    --bg-card-hover: #182240;
+    --border: #1f2c4a;
+    --text: #e6edf7;
+    --text-muted: #8b97b3;
+    --accent: #4f8aff;
+    --green: #2dd4bf;
+    --red: #f87171;
+    --yellow: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 24px 16px 64px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  header { margin-bottom: 32px; }
+  h1 { font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin: 0; }
+  .updated { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
+  h2 { font-size: 18px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .kpi {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi-label { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi-value { font-size: 28px; font-weight: 600; margin-top: 4px; }
+  .kpi-value .small { font-size: 14px; color: var(--text-muted); font-weight: 400; }
+  .estados { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .uf-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    transition: background 0.15s;
+  }
+  .uf-card:hover { background: var(--bg-card-hover); }
+  .uf-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .uf-name { font-size: 22px; font-weight: 700; }
+  .uf-count { color: var(--text-muted); font-size: 12px; }
+  .fuel-row { display: grid; grid-template-columns: 1fr auto; padding: 6px 0; border-top: 1px solid var(--border); }
+  .fuel-row:first-of-type { border-top: none; }
+  .fuel-name { color: var(--text-muted); font-size: 13px; }
+  .fuel-value { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
+  .fuel-range { color: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-weight: 500; text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; background: rgba(0,0,0,0.15); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .pending { color: var(--text-muted); font-style: italic; }
+  footer { margin-top: 48px; color: var(--text-muted); font-size: 12px; text-align: center; }
+  @media (max-width: 600px) {
+    h1 { font-size: 22px; }
+    .kpi-value { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Monitor de Preços — Lumen Posto Club</h1>
+  <p class="subtitle">Disparidade regional de preços à vista (gasolina, etanol, S10, S500)</p>
+  <p class="updated" id="updated">Carregando…</p>
+</header>
+
+<section class="kpis" id="kpis"></section>
+
+<h2>Por estado</h2>
+<section class="estados" id="estados"></section>
+
+<h2>Detalhe por revendedor (anonimizado)</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Revendedor</th>
+        <th class="num">Gasolina</th>
+        <th class="num">Etanol</th>
+        <th class="num">S10</th>
+        <th class="num">S500</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<footer>
+  Pesquisa entre revendedores do grupo pago Lumen Posto Club. Dados anonimizados.<br>
+  Atualizado por <code>monitor.lumenclubpainel.com.br</code>
+</footer>
+</div>
+
+<script>
+const DATA = {};  // END_DATA
+
+function fmtBRL(v) {
+  if (v === null || v === undefined) return '<span class="pending">—</span>';
+  return 'R$ ' + Number(v).toFixed(2).replace('.', ',');
+}
+function fmtMedia(stats) {
+  if (!stats) return '<span class="pending">—</span>';
+  return '<span class="fuel-value">' + fmtBRL(stats.media) + '</span><br><span class="fuel-range">min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + '</span>';
+}
+
+document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—');
+
+const kpis = document.getElementById('kpis');
+kpis.innerHTML = `
+  <div class="kpi"><div class="kpi-label">Revendedores</div><div class="kpi-value">${DATA.total_revendedores || 0}</div></div>
+  <div class="kpi"><div class="kpi-label">Responderam (7 dias)</div><div class="kpi-value">${DATA.responderam_semana || 0} <span class="small">/ ${DATA.total_revendedores || 0}</span></div></div>
+  <div class="kpi"><div class="kpi-label">Estados</div><div class="kpi-value">${Object.keys(DATA.agregados_estado || {}).length}</div></div>
+`;
+
+const estados = document.getElementById('estados');
+const ufs = Object.entries(DATA.agregados_estado || {}).sort();
+estados.innerHTML = ufs.map(([uf, ag]) => `
+  <div class="uf-card">
+    <div class="uf-header">
+      <span class="uf-name">${uf}</span>
+      <span class="uf-count">${ag.responderam} / ${ag.total_revendedores} resp.</span>
+    </div>
+    <div class="fuel-row"><span class="fuel-name">Gasolina</span><span>${fmtMedia(ag.gasolina)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">Etanol</span><span>${fmtMedia(ag.etanol)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">S10</span><span>${fmtMedia(ag.s10)}</span></div>
+    <div class="fuel-row"><span class="fuel-name">S500</span><span>${fmtMedia(ag.s500)}</span></div>
+  </div>
+`).join('');
+
+const tbody = document.getElementById('tbody');
+const revendedores = (DATA.revendedores || []).filter(r => r.respondeu).sort((a, b) => a.id_anonimo.localeCompare(b.id_anonimo));
+tbody.innerHTML = revendedores.map(r => `
+  <tr>
+    <td>${r.id_anonimo}</td>
+    <td class="num">${fmtBRL(r.gasolina)}</td>
+    <td class="num">${fmtBRL(r.etanol)}</td>
+    <td class="num">${fmtBRL(r.s10)}</td>
+    <td class="num">${fmtBRL(r.s500)}</td>
+  </tr>
+`).join('');
+
+if (revendedores.length === 0) {
+  tbody.innerHTML = '<tr><td colspan="5" class="pending" style="text-align:center;padding:24px">Aguardando respostas dos revendedores…</td></tr>';
+}
+</script>
+</body>
+</html>
