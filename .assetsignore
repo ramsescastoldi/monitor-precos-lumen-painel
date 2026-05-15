@@ -1,0 +1,35 @@
+# Cloudflare Workers/Pages Assets — exclui arquivos que não fazem parte do site final
+# Sintaxe: igual ao .gitignore
+
+# Dependências (csv-parse, pg, etc — instaladas no build mas não devem virar asset)
+node_modules/
+.wrangler/
+
+# Repo / CI
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# Build scripts e scrapers (rodam no build/GH Actions, não são servidos)
+scrape-anp.mjs
+scrape-distribuidoras.mjs
+update.mjs
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+
+# Config legada (Netlify)
+netlify.toml
+
+# Config Cloudflare auto-gerada
+wrangler.jsonc
+wrangler.toml
+
+# Docs
+README.md
+*.md
+
+# Ignore o próprio ignore
+.assetsignore
