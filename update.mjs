@@ -232,6 +232,38 @@ function toNum(v) {
       }
     }
 
+    // 8) Lista detalhada de distribuidoras (ultima cotação por estado x distribuidora x cidade)
+    const distriDetalheRes = await client.query(`
+      with ranked as (
+        select estado, distribuidora, cidade,
+               gasolina_comum, etanol, diesel_s10, diesel_s500,
+               modalidade, observacoes, data_coleta,
+               row_number() over (
+                 partition by estado, distribuidora, coalesce(cidade, '')
+                 order by data_coleta desc, importado_em desc
+               ) as rn
+        from precos_distribuicao_manual
+      )
+      select estado, distribuidora, cidade,
+             gasolina_comum, etanol, diesel_s10, diesel_s500,
+             modalidade, observacoes, data_coleta
+      from ranked
+      where rn = 1
+      order by estado, distribuidora, cidade
+    `);
+    const distribuidoras_detalhe = distriDetalheRes.rows.map(r => ({
+      estado: r.estado,
+      distribuidora: r.distribuidora,
+      cidade: r.cidade,
+      gasolina: r.gasolina_comum != null ? Number(r.gasolina_comum) : null,
+      etanol: r.etanol != null ? Number(r.etanol) : null,
+      s10: r.diesel_s10 != null ? Number(r.diesel_s10) : null,
+      s500: r.diesel_s500 != null ? Number(r.diesel_s500) : null,
+      modalidade: r.modalidade,
+      observacoes: r.observacoes,
+      data_coleta: r.data_coleta ? new Date(r.data_coleta).toISOString().substring(0, 10) : null
+    }));
+
     const atualizado = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
     const data = {
@@ -246,6 +278,7 @@ function toNum(v) {
       },
       agregados_estado,
       distribuicao_estado,
+      distribuidoras_detalhe,
       top_postos,
       bandeiras_estado,
       ranking_municipal: {

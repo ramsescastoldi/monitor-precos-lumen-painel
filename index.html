@@ -196,6 +196,24 @@
   </div>
 </div>
 
+<h2>Distribuidoras <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— preço B2B coletado por cotação direta (planilha interna)</span></h2>
+<div class="table-wrap"><table>
+  <thead>
+    <tr>
+      <th>UF</th>
+      <th>Distribuidora</th>
+      <th>Cidade</th>
+      <th class="num">Gasolina</th>
+      <th class="num">Etanol</th>
+      <th class="num">S10</th>
+      <th class="num">S500</th>
+      <th>Modalidade</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody id="tbody-distri"></tbody>
+</table></div>
+
 <footer>
   Fonte: ANP — Levantamento Semanal de Preços de Combustíveis (dados públicos).<br>
   Atualizado a cada hora · Scraper ANP roda segunda e quinta às 03h BRT.<br>
@@ -451,6 +469,27 @@ function renderRank(tbodyId, items) {
 }
 renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
 renderRank('tbody-caras', DATA.ranking_municipal?.caras);
+
+// Distribuidoras detalhadas (último bloco)
+function renderDistri(items) {
+  const tbody = document.getElementById('tbody-distri');
+  if (!tbody) return;
+  const rows = (items || []).map(d => `
+    <tr>
+      <td class="uf">${d.estado}</td>
+      <td><strong>${d.distribuidora || '—'}</strong></td>
+      <td>${d.cidade || '—'}</td>
+      <td class="num">${fmtBRL(d.gasolina)}</td>
+      <td class="num">${fmtBRL(d.etanol)}</td>
+      <td class="num">${fmtBRL(d.s10)}</td>
+      <td class="num">${fmtBRL(d.s500)}</td>
+      <td>${d.modalidade ? '<span class="badge">' + d.modalidade + '</span>' : '—'}</td>
+      <td><span class="anp-note" style="font-size:11px">${d.data_coleta || '—'}</span></td>
+    </tr>
+  `).join('');
+  tbody.innerHTML = rows || '<tr><td colspan="9" class="pending" style="text-align:center;padding:24px">Aguardando preenchimento da planilha de distribuidoras…</td></tr>';
+}
+renderDistri(DATA.distribuidoras_detalhe);
 </script>
 </body>
 </html>
