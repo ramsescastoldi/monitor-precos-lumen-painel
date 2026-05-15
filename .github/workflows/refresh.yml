@@ -1,4 +1,4 @@
-name: Refresh painel monitor precos
+name: Refresh painel monitor precos (Cloudflare)
 
 on:
   schedule:
@@ -7,14 +7,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger-netlify-build:
+  trigger-rebuild:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Trigger Netlify build hook
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Empty commit to trigger Cloudflare auto-rebuild
         run: |
-          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
-            echo "ERRO: secret NETLIFY_BUILD_HOOK nao configurado."
-            exit 1
-          fi
-          curl -X POST -d {} "${{ secrets.NETLIFY_BUILD_HOOK }}"
-          echo "Build disparado no Netlify."
+          git config user.name "Refresh Bot"
+          git config user.email "bot@lumenposto.com"
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          git commit --allow-empty -m "refresh painel — $NOW"
+          git push origin main
+          echo "Empty commit pushed — Cloudflare vai rebuildar automaticamente."
