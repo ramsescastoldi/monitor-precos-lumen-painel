@@ -1,6 +1,12 @@
-// Build script — roda no Netlify build.
+// Gerador do data.json — roda nos GitHub Actions (scrape-anp / scrape-distribuidoras).
 // Painel 100% ANP: agregados por estado, top postos mais baratos, comparativo por bandeira.
-// Fonte unica: tabela precos_externos_anp (alimentada pelo scraper GH Action).
+// Fonte unica: tabela precos_externos_anp + precos_distribuicao_manual (alimentadas pelos scrapers).
+//
+// ARQUITETURA (desde 2026-05-18): este script gera SOMENTE data.json. O index.html
+// consome data.json via fetch() em runtime. Os GitHub Actions rodam este script,
+// commitam o data.json resultante (diff real) e o Cloudflare faz deploy do estatico.
+// Se SUPABASE_DB_URL nao estiver definido (ex: build do Cloudflare sem a env var),
+// saimos com exit 0 SEM regenerar — o data.json ja commitado continua servindo.
 
 import pg from 'pg';
 import fs from 'node:fs';
@@ -8,8 +14,8 @@ import fs from 'node:fs';
 const { Client } = pg;
 const DATABASE_URL = process.env.SUPABASE_DB_URL;
 if (!DATABASE_URL) {
-  console.error('ERRO: SUPABASE_DB_URL nao definido.');
-  process.exit(1);
+  console.warn('AVISO: SUPABASE_DB_URL nao definido. Pulando regeneracao — mantendo data.json commitado.');
+  process.exit(0);
 }
 
 const client = new Client({
@@ -291,12 +297,7 @@ function toNum(v) {
       }
     };
 
-    const template = fs.readFileSync('index.html', 'utf-8');
-    const out = template.replace(
-      /const DATA = \{[\s\S]*?\};\s*\/\/ END_DATA/,
-      `const DATA = ${JSON.stringify(data, null, 2)};  // END_DATA`
-    );
-    fs.writeFileSync('index.html', out);
+    // O index.html agora consome data.json em runtime (fetch). Não injetamos mais.
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
     console.log(`OK build: ${kpi.n_postos} postos, ${kpi.n_cidades} cidades, ${kpi.n_estados} estados (semana ref ${semanaRef})`);

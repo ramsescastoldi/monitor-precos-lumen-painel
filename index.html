@@ -337,7 +337,7 @@ $('auth-otp').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnVer
 // Boot
 checkExistingSession();
 
-const DATA = {};  // END_DATA
+let DATA = {};
 
 function fmtBRL(v) {
   if (v === null || v === undefined) return '<span class="pending">—</span>';
@@ -348,16 +348,6 @@ function fmtFuel(stats) {
   return '<span class="fuel-value">' + fmtBRL(stats.media) + '</span>' +
          '<span class="fuel-range">n=' + stats.n + ' · min ' + Number(stats.min).toFixed(2).replace('.', ',') + ' / max ' + Number(stats.max).toFixed(2).replace('.', ',') + '</span>';
 }
-
-document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '') + (DATA.distribuicao_ultima_data ? ' · distribuidoras: ' + DATA.distribuicao_ultima_data : '');
-
-const k = DATA.kpis || {};
-document.getElementById('kpis').innerHTML = `
-  <div class="kpi"><div class="kpi-label">Postos pesquisados</div><div class="kpi-value">${k.n_postos || 0}</div></div>
-  <div class="kpi"><div class="kpi-label">Municípios</div><div class="kpi-value">${k.n_cidades || 0}</div></div>
-  <div class="kpi"><div class="kpi-label">Estados</div><div class="kpi-value">${k.n_estados || 0}</div></div>
-  <div class="kpi"><div class="kpi-label">Coletas (7d)</div><div class="kpi-value">${k.n_coletas || 0}</div></div>
-`;
 
 function fmtMargem(m) {
   if (!m) return '';
@@ -376,26 +366,6 @@ function fmtMargem(m) {
   }).join('');
   return `<div class="margem-block"><div class="margem-title">Margem aparente (revenda − distribuição)</div>${rows}</div>`;
 }
-
-const ufs = Object.entries(DATA.agregados_estado || {}).sort();
-document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => {
-  const dist = (DATA.distribuicao_estado || {})[uf];
-  const margemHtml = dist?.margem
-    ? fmtMargem(dist.margem)
-    : '<div class="margem-empty">Aguardando preços de distribuidoras (planilha)</div>';
-  return `
-  <div class="uf-card">
-    <div class="uf-header">
-      <span class="uf-name">${uf}</span>
-      <span class="uf-count">${ag.total_postos} postos · ANP</span>
-    </div>
-    <div class="fuel-row"><span class="fuel-name">Gasolina</span><span>${fmtFuel(ag.gasolina)}</span></div>
-    <div class="fuel-row"><span class="fuel-name">Etanol</span><span>${fmtFuel(ag.etanol)}</span></div>
-    <div class="fuel-row"><span class="fuel-name">Diesel S10</span><span>${fmtFuel(ag.s10)}</span></div>
-    <div class="fuel-row"><span class="fuel-name">Diesel S500</span><span>${fmtFuel(ag.s500)}</span></div>
-    ${margemHtml}
-  </div>`;
-}).join('');
 
 function renderTabs(containerTabs, containerContent, dataMap, rowsFn, emptyMsg) {
   const ufs = Object.keys(dataMap || {}).sort();
@@ -416,48 +386,6 @@ function renderTabs(containerTabs, containerContent, dataMap, rowsFn, emptyMsg) 
   });
 }
 
-renderTabs(
-  document.getElementById('top-tabs'),
-  document.getElementById('top-content'),
-  DATA.top_postos,
-  (uf, postos) => {
-    const rows = (postos || []).map((p, i) => `
-      <tr>
-        <td class="num">${i+1}</td>
-        <td>${p.revenda || '—'}</td>
-        <td>${p.municipio || '—'}</td>
-        <td><span class="badge">${p.bandeira || '—'}</span></td>
-        <td class="num"><strong>${fmtBRL(p.gasolina)}</strong></td>
-      </tr>`).join('');
-    return `<div class="table-wrap"><table>
-      <thead><tr><th class="num">#</th><th>Revenda</th><th>Município</th><th>Bandeira</th><th class="num">Gasolina</th></tr></thead>
-      <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
-    </table></div>`;
-  },
-  'Sem dados de postos.'
-);
-
-renderTabs(
-  document.getElementById('band-tabs'),
-  document.getElementById('band-content'),
-  DATA.bandeiras_estado,
-  (uf, bands) => {
-    const rows = (bands || []).map(b => `
-      <tr>
-        <td>${b.bandeira}</td>
-        <td class="num">${b.n}</td>
-        <td class="num"><strong>${fmtBRL(b.media)}</strong></td>
-        <td class="num">${fmtBRL(b.min)}</td>
-        <td class="num">${fmtBRL(b.max)}</td>
-      </tr>`).join('');
-    return `<div class="table-wrap"><table>
-      <thead><tr><th>Bandeira</th><th class="num">Postos</th><th class="num">Média</th><th class="num">Mín</th><th class="num">Máx</th></tr></thead>
-      <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
-    </table></div>`;
-  },
-  'Sem dados de bandeiras.'
-);
-
 function renderRank(tbodyId, items) {
   document.getElementById(tbodyId).innerHTML = (items || []).map(r => `
     <tr>
@@ -467,8 +395,6 @@ function renderRank(tbodyId, items) {
       <td class="num">${r.n}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>';
 }
-renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
-renderRank('tbody-caras', DATA.ranking_municipal?.caras);
 
 // Distribuidoras detalhadas (último bloco)
 function renderDistri(items) {
@@ -489,7 +415,95 @@ function renderDistri(items) {
   `).join('');
   tbody.innerHTML = rows || '<tr><td colspan="9" class="pending" style="text-align:center;padding:24px">Aguardando preenchimento da planilha de distribuidoras…</td></tr>';
 }
-renderDistri(DATA.distribuidoras_detalhe);
+function renderPainel() {
+  document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '') + (DATA.distribuicao_ultima_data ? ' · distribuidoras: ' + DATA.distribuicao_ultima_data : '');
+
+  const k = DATA.kpis || {};
+  document.getElementById('kpis').innerHTML = `
+    <div class="kpi"><div class="kpi-label">Postos pesquisados</div><div class="kpi-value">${k.n_postos || 0}</div></div>
+    <div class="kpi"><div class="kpi-label">Municípios</div><div class="kpi-value">${k.n_cidades || 0}</div></div>
+    <div class="kpi"><div class="kpi-label">Estados</div><div class="kpi-value">${k.n_estados || 0}</div></div>
+    <div class="kpi"><div class="kpi-label">Coletas (7d)</div><div class="kpi-value">${k.n_coletas || 0}</div></div>
+  `;
+
+  const ufs = Object.entries(DATA.agregados_estado || {}).sort();
+  document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => {
+    const dist = (DATA.distribuicao_estado || {})[uf];
+    const margemHtml = dist?.margem
+      ? fmtMargem(dist.margem)
+      : '<div class="margem-empty">Aguardando preços de distribuidoras (planilha)</div>';
+    return `
+    <div class="uf-card">
+      <div class="uf-header">
+        <span class="uf-name">${uf}</span>
+        <span class="uf-count">${ag.total_postos} postos · ANP</span>
+      </div>
+      <div class="fuel-row"><span class="fuel-name">Gasolina</span><span>${fmtFuel(ag.gasolina)}</span></div>
+      <div class="fuel-row"><span class="fuel-name">Etanol</span><span>${fmtFuel(ag.etanol)}</span></div>
+      <div class="fuel-row"><span class="fuel-name">Diesel S10</span><span>${fmtFuel(ag.s10)}</span></div>
+      <div class="fuel-row"><span class="fuel-name">Diesel S500</span><span>${fmtFuel(ag.s500)}</span></div>
+      ${margemHtml}
+    </div>`;
+  }).join('');
+
+  renderTabs(
+    document.getElementById('top-tabs'),
+    document.getElementById('top-content'),
+    DATA.top_postos,
+    (uf, postos) => {
+      const rows = (postos || []).map((p, i) => `
+        <tr>
+          <td class="num">${i+1}</td>
+          <td>${p.revenda || '—'}</td>
+          <td>${p.municipio || '—'}</td>
+          <td><span class="badge">${p.bandeira || '—'}</span></td>
+          <td class="num"><strong>${fmtBRL(p.gasolina)}</strong></td>
+        </tr>`).join('');
+      return `<div class="table-wrap"><table>
+        <thead><tr><th class="num">#</th><th>Revenda</th><th>Município</th><th>Bandeira</th><th class="num">Gasolina</th></tr></thead>
+        <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
+      </table></div>`;
+    },
+    'Sem dados de postos.'
+  );
+
+  renderTabs(
+    document.getElementById('band-tabs'),
+    document.getElementById('band-content'),
+    DATA.bandeiras_estado,
+    (uf, bands) => {
+      const rows = (bands || []).map(b => `
+        <tr>
+          <td>${b.bandeira}</td>
+          <td class="num">${b.n}</td>
+          <td class="num"><strong>${fmtBRL(b.media)}</strong></td>
+          <td class="num">${fmtBRL(b.min)}</td>
+          <td class="num">${fmtBRL(b.max)}</td>
+        </tr>`).join('');
+      return `<div class="table-wrap"><table>
+        <thead><tr><th>Bandeira</th><th class="num">Postos</th><th class="num">Média</th><th class="num">Mín</th><th class="num">Máx</th></tr></thead>
+        <tbody>${rows || '<tr><td colspan="5" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>'}</tbody>
+      </table></div>`;
+    },
+    'Sem dados de bandeiras.'
+  );
+
+  renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
+  renderRank('tbody-caras', DATA.ranking_municipal?.caras);
+  renderDistri(DATA.distribuidoras_detalhe);
+}
+
+(async function loadAndRender() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DATA = await res.json();
+  } catch (e) {
+    document.getElementById('updated').textContent = 'Erro ao carregar dados: ' + e.message;
+    return;
+  }
+  renderPainel();
+})();
 </script>
 </body>
 </html>
