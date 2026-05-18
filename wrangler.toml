@@ -1,0 +1,11 @@
+# Cloudflare Workers Assets — deploy do painel estático (assets-only, sem código Worker).
+# Deploy é feito pelos GitHub Actions via `npx wrangler deploy`.
+# Requer secrets no GitHub: CLOUDFLARE_API_TOKEN (escopo Workers Scripts:Edit) e
+# CLOUDFLARE_ACCOUNT_ID. O .assetsignore controla o que NÃO sobe.
+
+name = "monitor-precos"
+compatibility_date = "2026-05-15"
+account_id = "79e04a87e429f8c73f3d2384fa96f2aa"
+
+[assets]
+directory = "."

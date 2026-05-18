@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm ci || npm install
@@ -35,17 +35,28 @@ jobs:
           node scrape-anp.mjs
           node update.mjs
 
-      - name: Commit data.json (diff real -> Cloudflare faz deploy)
+      - name: Commit data.json (histórico/backup)
         if: success()
         run: |
           git config user.name "Scraper Bot"
           git config user.email "bot@lumenposto.com"
           if git diff --quiet -- data.json; then
-            echo "data.json sem mudancas — nada a commitar."
-            exit 0
+            echo "data.json sem mudancas."
+          else
+            NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            git add data.json
+            git commit -m "data: scrape ANP — $NOW"
+            git push origin main
           fi
-          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          git add data.json
-          git commit -m "data: scrape ANP + refresh painel — $NOW"
-          git push origin main
-          echo "data.json atualizado e pushado — Cloudflare vai fazer deploy."
+
+      - name: Deploy para Cloudflare Workers
+        if: success()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "ERRO: secret CLOUDFLARE_API_TOKEN nao configurado no repo."
+            exit 1
+          fi
+          npx --yes wrangler@4 deploy
+          echo "Deploy Cloudflare concluido — painel atualizado."
