@@ -36,7 +36,7 @@ jobs:
           node scrape-distribuidoras.mjs
           node update.mjs
 
-      - name: Commit data.json (histórico/backup)
+      - name: Commit data.json (o deployer da VPS faz o deploy Cloudflare)
         if: success()
         run: |
           git config user.name "Scraper Bot"
@@ -48,16 +48,5 @@ jobs:
             git add data.json
             git commit -m "data: sync distribuidoras — $NOW"
             git push origin main
+            echo "data.json pushado. O container monitor-deployer na VPS (IP fixo) detecta e faz wrangler deploy."
           fi
-
-      - name: Deploy para Cloudflare Workers
-        if: success()
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "ERRO: secret CLOUDFLARE_API_TOKEN nao configurado no repo."
-            exit 1
-          fi
-          npx --yes wrangler@4 deploy
-          echo "Deploy Cloudflare concluido — painel atualizado."
