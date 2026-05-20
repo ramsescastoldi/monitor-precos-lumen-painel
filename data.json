@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "19/05/2026, 14:34:36",
+  "atualizado_em": "19/05/2026, 21:44:11",
   "semana_referencia": "2026-05-15",
   "distribuicao_ultima_data": "2026-05-19",
   "kpis": {
@@ -233,7 +233,7 @@
       "data_ref": "2026-05-18T00:00:00.000Z",
       "gasolina": 6.13,
       "etanol": 4.89,
-      "s10": 6.54,
+      "s10": 6.55,
       "s500": null
     },
     "DF": {
@@ -503,7 +503,7 @@
       "cidade": "Fortaleza",
       "gasolina": 6.13,
       "etanol": 4.89,
-      "s10": 6.54,
+      "s10": 6.55,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
