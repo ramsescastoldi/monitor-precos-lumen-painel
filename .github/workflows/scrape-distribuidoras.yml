@@ -2,8 +2,8 @@ name: Sync planilha distribuidoras (diário 11h BRT)
 
 on:
   schedule:
-    # 14:00 UTC = 11:00 BRT, todos os dias
-    - cron: '0 14 * * *'
+    # 14:17 UTC = 11:17 BRT — minuto fora do "top of hour" pra evitar drop/atraso
+    - cron: '17 14 * * *'
   workflow_dispatch:
 
 jobs:
