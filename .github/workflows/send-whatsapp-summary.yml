@@ -1,0 +1,83 @@
+name: Enviar Resumo WhatsApp
+
+on:
+  push:
+    branches: [send-whatsapp-now]
+  workflow_dispatch:
+
+jobs:
+  send-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse data.json e monta mensagem
+        id: build_msg
+        run: |
+          node -e '
+          const fs = require("fs");
+          const d = JSON.parse(fs.readFileSync("data.json", "utf8"));
+
+          // Encontrar maior margem_rs
+          let maior = { margem_rs: -Infinity };
+          for (const [uf, dist] of Object.entries(d.distribuicao_estado || {})) {
+            if (!dist.margem) continue;
+            for (const [comb, m] of Object.entries(dist.margem)) {
+              if (m && m.margem_rs > maior.margem_rs) maior = { uf, comb, ...m };
+            }
+          }
+
+          const traduz = { s10: "Diesel S10", s500: "Diesel S500", gasolina: "Gasolina", etanol: "Etanol" };
+          const br = (n) => n.toFixed(2).replace(".", ",");
+          const fmtData = (s) => { const [y,m,dd] = s.split("-"); return dd+"/"+m+"/"+y; };
+
+          const totalDistri = (d.distribuidoras_detalhe || []).length;
+          const temDistri = d.distribuicao_ultima_data && totalDistri > 0;
+
+          let msg;
+          if (temDistri && maior.margem_rs > -Infinity) {
+            msg = "🛢️ *Monitor de Preços — Lumen Posto Club*\n\n"
+              + "🔗 https://monitor.lumenclubpainel.com.br\n\n"
+              + "📊 *ANP:* " + d.kpis.n_postos + " postos · " + d.kpis.n_cidades + " cidades (ref " + fmtData(d.semana_referencia) + ")\n"
+              + "🏭 *Distribuidoras:* " + totalDistri + " cotações (última " + fmtData(d.distribuicao_ultima_data) + ")\n\n"
+              + "💰 *Maior margem aparente:* " + maior.uf + " " + traduz[maior.comb] + " +R$ " + br(maior.margem_rs) + " (" + br(maior.margem_pct) + "%)\n"
+              + "  rev R$ " + br(maior.revenda) + " − dist R$ " + br(maior.distribuicao) + "\n\n"
+              + "_Acesso restrito a membros do clube. Login único vale aqui e no painel-lumen-posto._";
+          } else {
+            msg = "🛢️ *Monitor de Preços — Lumen Posto Club*\n\n"
+              + "🔗 https://monitor.lumenclubpainel.com.br\n\n"
+              + "📊 *ANP:* " + d.kpis.n_postos + " postos · " + d.kpis.n_cidades + " cidades (ref " + fmtData(d.semana_referencia) + ")\n"
+              + "🏭 *Distribuidoras:* aguardando sync\n\n"
+              + "_Acesso restrito a membros do clube. Login único vale aqui e no painel-lumen-posto._";
+          }
+
+          fs.writeFileSync("/tmp/msg.txt", msg);
+          console.log("=== MENSAGEM ===");
+          console.log(msg);
+          '
+
+      - name: Envia via Evolution API
+        run: |
+          MSG=$(cat /tmp/msg.txt)
+          node -e '
+            const msg = require("fs").readFileSync("/tmp/msg.txt", "utf8");
+            const body = JSON.stringify({ number: "120363423205444034@g.us", text: msg });
+            require("fs").writeFileSync("/tmp/body.json", body);
+            console.log("Body size:", body.length, "bytes");
+          '
+          RESPONSE=$(curl -sSL -X POST \
+            'https://evolution.srv1662375.hstgr.cloud/message/sendText/bot-vendas' \
+            -H 'Content-Type: application/json' \
+            -H 'apikey: a8f3d92e7c4b1a6f5e0d8c2b9a7f4e3d6c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7e' \
+            --data-binary @/tmp/body.json \
+            -w "\n\nHTTP_STATUS:%{http_code}")
+          echo "=== RESPONSE ==="
+          echo "$RESPONSE"
+          HTTP_CODE=$(echo "$RESPONSE" | grep 'HTTP_STATUS:' | cut -d: -f2)
+          echo "HTTP Code: $HTTP_CODE"
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+            echo "✅ Mensagem enviada com sucesso!"
+          else
+            echo "❌ Falha no envio. HTTP $HTTP_CODE"
+            exit 1
+          fi
