@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "26/05/2026, 18:04:28",
+  "atualizado_em": "27/05/2026, 18:24:22",
   "semana_referencia": "2026-05-22",
-  "distribuicao_ultima_data": "2026-05-25",
+  "distribuicao_ultima_data": "2026-05-27",
   "kpis": {
     "n_postos": 2638,
     "n_cidades": 222,
@@ -334,35 +334,35 @@
     "MT": {
       "n_cotacoes": 15,
       "n_distribuidoras": 15,
-      "data_ref": "2026-05-25T00:00:00.000Z",
-      "gasolina": 5.908,
-      "etanol": 3.028,
-      "s10": 6.446,
-      "s500": 5.627,
+      "data_ref": "2026-05-27T00:00:00.000Z",
+      "gasolina": 5.904,
+      "etanol": 3.021,
+      "s10": 6.438,
+      "s500": 5.629,
       "margem": {
         "gasolina": {
           "revenda": 6.725,
-          "distribuicao": 5.908,
-          "margem_rs": 0.817,
-          "margem_pct": 13.83
+          "distribuicao": 5.904,
+          "margem_rs": 0.821,
+          "margem_pct": 13.91
         },
         "etanol": {
           "revenda": 4.135,
-          "distribuicao": 3.028,
-          "margem_rs": 1.107,
-          "margem_pct": 36.56
+          "distribuicao": 3.021,
+          "margem_rs": 1.114,
+          "margem_pct": 36.88
         },
         "s10": {
           "revenda": 7.13,
-          "distribuicao": 6.446,
-          "margem_rs": 0.684,
-          "margem_pct": 10.61
+          "distribuicao": 6.438,
+          "margem_rs": 0.692,
+          "margem_pct": 10.75
         },
         "s500": {
           "revenda": 6.956,
-          "distribuicao": 5.627,
-          "margem_rs": 1.329,
-          "margem_pct": 23.62
+          "distribuicao": 5.629,
+          "margem_rs": 1.327,
+          "margem_pct": 23.57
         }
       }
     },
@@ -602,7 +602,7 @@
       "s500": 5.49,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -620,13 +620,13 @@
       "estado": "MT",
       "distribuidora": "Centro Oeste",
       "cidade": "Varzea Grande",
-      "gasolina": 5.79,
+      "gasolina": 5.81,
       "etanol": 2.92,
-      "s10": 6.45,
+      "s10": 6.4,
       "s500": 5.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -634,11 +634,11 @@
       "cidade": "Cuiaba",
       "gasolina": 5.9,
       "etanol": 2.96,
-      "s10": 6.52,
+      "s10": 6.5,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -657,12 +657,12 @@
       "distribuidora": "Imperial Petroleo",
       "cidade": "Varzea Grande",
       "gasolina": 5.8,
-      "etanol": 2.93,
+      "etanol": 2.95,
       "s10": 6.4,
       "s500": 5.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -686,7 +686,7 @@
       "s500": 5.43,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -705,12 +705,12 @@
       "distribuidora": "Petroluz",
       "cidade": "Varzea Grande",
       "gasolina": 5.95,
-      "etanol": 2.98,
+      "etanol": 3,
       "s10": 6.5,
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -722,7 +722,7 @@
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
@@ -752,13 +752,13 @@
       "estado": "MT",
       "distribuidora": "Watt",
       "cidade": "Cuiaba",
-      "gasolina": 5.87,
-      "etanol": 3.19,
-      "s10": 6.36,
-      "s500": 5.61,
+      "gasolina": 5.81,
+      "etanol": 3.06,
+      "s10": 6.31,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-05-25"
+      "data_coleta": "2026-05-27"
     },
     {
       "estado": "MT",
