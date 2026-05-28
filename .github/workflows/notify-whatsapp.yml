@@ -1,0 +1,85 @@
+name: Enviar resumo WhatsApp (Grupo Pago)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (nao envia, so mostra a mensagem)'
+        required: false
+        default: 'false'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Parsear data.json e montar mensagem
+        run: |
+          node -e '
+          const fs = require("fs");
+          const d = JSON.parse(fs.readFileSync("data.json"));
+
+          const fmt = (n) => Number(n).toFixed(2).replace(".", ",");
+          const combNome = { s10: "Diesel S10", s500: "Diesel S500", gasolina: "Gasolina", etanol: "Etanol" };
+
+          let maior = { margem_rs: -Infinity };
+          for (const [uf, dist] of Object.entries(d.distribuicao_estado || {})) {
+            if (!dist.margem) continue;
+            for (const [comb, m] of Object.entries(dist.margem)) {
+              if (m && m.margem_rs > maior.margem_rs) maior = { uf, comb, ...m };
+            }
+          }
+
+          const totalDistri = (d.distribuidoras_detalhe || []).length;
+          const temDist = d.distribuicao_ultima_data && totalDistri > 0;
+
+          const linhaDistri = temDist
+            ? `🏭 *Distribuidoras:* ${totalDistri} cotacoes (ultima ${d.distribuicao_ultima_data})`
+            : `🏭 *Distribuidoras:* aguardando sync`;
+
+          const linhaMargem = (temDist && maior.uf)
+            ? `\n💰 *Maior margem aparente:* ${maior.uf} ${combNome[maior.comb] || maior.comb} +R$ ${fmt(maior.margem_rs)} (${fmt(maior.margem_pct)}%)\n  rev R$ ${fmt(maior.revenda)} − dist R$ ${fmt(maior.distribuicao)}`
+            : "";
+
+          const msg = `🛢️ *Monitor de Precos — Lumen Posto Club*\n\n🔗 https://monitor.lumenclubpainel.com.br\n\n📊 *ANP:* ${d.kpis.n_postos} postos · ${d.kpis.n_cidades} cidades (ref ${d.semana_referencia})\n${linhaDistri}${linhaMargem}\n\n_Acesso restrito a membros do clube. Login unico vale aqui e no painel-lumen-posto._`;
+
+          console.log("=== MENSAGEM ===");
+          console.log(msg);
+          fs.writeFileSync("/tmp/wpp_msg.txt", msg);
+          '
+
+      - name: Enviar via Evolution API (bot-vendas)
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          EVOLUTION_APIKEY: ${{ secrets.EVOLUTION_APIKEY }}
+        run: |
+          BODY=$(node -e "process.stdout.write(JSON.stringify({ number: '120363423205444034@g.us', text: require('fs').readFileSync('/tmp/wpp_msg.txt','utf8') }))")
+
+          echo "Enviando para 120363423205444034@g.us via bot-vendas..."
+          RESPONSE=$(curl -sSL -X POST \
+            'https://evolution.srv1662375.hstgr.cloud/message/sendText/bot-vendas' \
+            -H 'Content-Type: application/json' \
+            -H "apikey: ${EVOLUTION_APIKEY}" \
+            -d "${BODY}" \
+            -w "\n__HTTP_STATUS__:%{http_code}")
+
+          HTTP_STATUS=$(echo "$RESPONSE" | grep '__HTTP_STATUS__' | cut -d: -f2)
+          BODY_RESP=$(echo "$RESPONSE" | grep -v '__HTTP_STATUS__')
+
+          echo "HTTP Status: $HTTP_STATUS"
+          echo "Response: $BODY_RESP"
+
+          if [ "$HTTP_STATUS" = "201" ] || [ "$HTTP_STATUS" = "200" ]; then
+            echo "Mensagem enviada com sucesso!"
+          else
+            echo "Erro na API — verifique response acima."
+            exit 1
+          fi
