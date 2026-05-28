@@ -7,36 +7,39 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Build JSON body
-        run: |
-          cat > /tmp/build.js << 'JSEOF'
-          const msg = Buffer.from("8J+bou+4jyAqTW9uaXRvciBkZSBQcmXDp29zIOKAlCBMdW1lbiBQb3N0byBDbHViKgoK8J+UlyBodHRwczovL21vbml0b3IubHVtZW5jbHVicGFpbmVsLmNvbS5icgoK8J+TiiAqQU5QOiogMjYzOCBwb3N0b3MgwrcgMjIyIGNpZGFkZXMgKHJlZiAyMDI2LTA1LTIyKQrwn4+tICpEaXN0cmlidWlkb3JhczoqIDMzIGNvdGHDp8O1ZXMgKMO6bHRpbWEgMjAyNi0wNS0yNykKCvCfkrAgKk1haW9yIG1hcmdlbSBhcGFyZW50ZToqIERGIERpZXNlbCBTNTAwICtSJCAxLDc1ICgzMiw5MyUpCiAgcmV2IFIkIDcsMDcg4oiSIGRpc3QgUiQgNSwzMgoKX0FjZXNzbyByZXN0cml0byBhIG1lbWJyb3MgZG8gY2x1YmUuIExvZ2luIMO6bmljbyB2YWxlIGFxdWkgZSBubyBwYWluZWwtbHVtZW4tcG9zdG8uXw==", "base64").toString("utf8");
-          const body = JSON.stringify({ number: "120363423205444034@g.us", text: msg });
-          require("fs").writeFileSync("/tmp/body.json", body);
-          console.log("=== MESSAGE PREVIEW ===");
-          console.log(msg.substring(0, 120));
-          console.log("Body length:", body.length, "bytes");
-          JSEOF
-          node /tmp/build.js
-
       - name: Send via Evolution API (bot-vendas)
-        run: |
-          echo "=== Sending to Evolution API ==="
-          HTTP_STATUS=$(curl -sSL -X POST \
-            "https://evolution.srv1662375.hstgr.cloud/message/sendText/bot-vendas" \
-            -H "Content-Type: application/json" \
-            -H "apikey: a8f3d92e7c4b1a6f5e0d8c2b9a7f4e3d6c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7e" \
-            --data-binary @/tmp/body.json \
-            -o /tmp/response.json \
-            -w "%{http_code}")
-
-          echo "HTTP Status: $HTTP_STATUS"
-          echo "=== Response Body ==="
-          cat /tmp/response.json || echo "(empty)"
-
-          if [ "${HTTP_STATUS:0:1}" = "2" ]; then
-            echo "=== Mensagem enviada com sucesso! ==="
-          else
-            echo "=== ERRO: HTTP $HTTP_STATUS ==="
-            exit 1
-          fi
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const https = require("https");
+            const b64 = "8J+bou+4jyAqTW9uaXRvciBkZSBQcmXDp29zIOKAlCBMdW1lbiBQb3N0byBDbHViKgoK8J+UlyBodHRwczovL21vbml0b3IubHVtZW5jbHVicGFpbmVsLmNvbS5icgoK8J+TiiAqQU5QOiogMjYzOCBwb3N0b3MgwrcgMjIyIGNpZGFkZXMgKHJlZiAyMDI2LTA1LTIyKQrwn4+tICpEaXN0cmlidWlkb3JhczoqIDMzIGNvdGHDp8O1ZXMgKMO6bHRpbWEgMjAyNi0wNS0yNykKCvCfkrAgKk1haW9yIG1hcmdlbSBhcGFyZW50ZToqIERGIERpZXNlbCBTNTAwICtSJCAxLDc1ICgzMiw5MyUpCiAgcmV2IFIkIDcsMDcg4oiSIGRpc3QgUiQgNSwzMgoKX0FjZXNzbyByZXN0cml0byBhIG1lbWJyb3MgZG8gY2x1YmUuIExvZ2luIMO6bmljbyB2YWxlIGFxdWkgZSBubyBwYWluZWwtbHVtZW4tcG9zdG8uXw==";
+            const msg = Buffer.from(b64, "base64").toString("utf8");
+            const body = JSON.stringify({ number: "120363423205444034@g.us", text: msg });
+            console.log("Message preview:", msg.substring(0, 80));
+            console.log("Body size:", body.length, "bytes");
+            const result = await new Promise((resolve, reject) => {
+              const req = https.request({
+                hostname: "evolution.srv1662375.hstgr.cloud",
+                path: "/message/sendText/bot-vendas",
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "apikey": "a8f3d92e7c4b1a6f5e0d8c2b9a7f4e3d6c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7e",
+                  "Content-Length": Buffer.byteLength(body)
+                }
+              }, (res) => {
+                let data = "";
+                res.on("data", chunk => data += chunk);
+                res.on("end", () => resolve({ status: res.statusCode, body: data }));
+              });
+              req.on("error", reject);
+              req.write(body);
+              req.end();
+            });
+            console.log("HTTP Status:", result.status);
+            console.log("Response:", result.body);
+            if (result.status < 200 || result.status >= 300) {
+              core.setFailed("Evolution API HTTP " + result.status + ": " + result.body);
+            } else {
+              console.log("=== Mensagem enviada com sucesso! ===");
+            }
