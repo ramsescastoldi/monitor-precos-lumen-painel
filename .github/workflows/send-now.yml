@@ -2,6 +2,7 @@ name: Send WhatsApp NOW (one-shot)
 on:
   push:
     branches: [whatsapp-notify-now]
+  workflow_dispatch:
 jobs:
   send:
     runs-on: ubuntu-latest
