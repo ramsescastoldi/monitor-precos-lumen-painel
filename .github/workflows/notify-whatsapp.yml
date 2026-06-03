@@ -7,6 +7,9 @@ on:
         description: 'Dry run (nao envia, so mostra a mensagem)'
         required: false
         default: 'false'
+  push:
+    branches: [main]
+    paths: ['trigger-notify.txt']
 
 jobs:
   notify:
@@ -42,14 +45,14 @@ jobs:
           const temDist = d.distribuicao_ultima_data && totalDistri > 0;
 
           const linhaDistri = temDist
-            ? `🏭 *Distribuidoras:* ${totalDistri} cotacoes (ultima ${d.distribuicao_ultima_data})`
-            : `🏭 *Distribuidoras:* aguardando sync`;
+            ? `\u{1F3ED} *Distribuidoras:* ${totalDistri} cotacoes (ultima ${d.distribuicao_ultima_data})`
+            : `\u{1F3ED} *Distribuidoras:* aguardando sync`;
 
           const linhaMargem = (temDist && maior.uf)
-            ? `\n💰 *Maior margem aparente:* ${maior.uf} ${combNome[maior.comb] || maior.comb} +R$ ${fmt(maior.margem_rs)} (${fmt(maior.margem_pct)}%)\n  rev R$ ${fmt(maior.revenda)} − dist R$ ${fmt(maior.distribuicao)}`
+            ? `\n\u{1F4B0} *Maior margem aparente:* ${maior.uf} ${combNome[maior.comb] || maior.comb} +R$ ${fmt(maior.margem_rs)} (${fmt(maior.margem_pct)}%)\n  rev R$ ${fmt(maior.revenda)} − dist R$ ${fmt(maior.distribuicao)}`
             : "";
 
-          const msg = `🛢️ *Monitor de Precos — Lumen Posto Club*\n\n🔗 https://monitor.lumenclubpainel.com.br\n\n📊 *ANP:* ${d.kpis.n_postos} postos · ${d.kpis.n_cidades} cidades (ref ${d.semana_referencia})\n${linhaDistri}${linhaMargem}\n\n_Acesso restrito a membros do clube. Login unico vale aqui e no painel-lumen-posto._`;
+          const msg = `\u{1F6E2}️ *Monitor de Precos — Lumen Posto Club*\n\n\u{1F517} https://monitor.lumenclubpainel.com.br\n\n\u{1F4CA} *ANP:* ${d.kpis.n_postos} postos · ${d.kpis.n_cidades} cidades (ref ${d.semana_referencia})\n${linhaDistri}${linhaMargem}\n\n_Acesso restrito a membros do clube. Login unico vale aqui e no painel-lumen-posto._`;
 
           console.log("=== MENSAGEM ===");
           console.log(msg);
