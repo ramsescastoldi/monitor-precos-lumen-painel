@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "02/06/2026, 15:16:01",
+  "atualizado_em": "03/06/2026, 15:37:11",
   "semana_referencia": "2026-05-29",
-  "distribuicao_ultima_data": "2026-06-02",
+  "distribuicao_ultima_data": "2026-06-03",
   "kpis": {
     "n_postos": 2655,
     "n_cidades": 226,
@@ -333,19 +333,19 @@
       }
     },
     "MT": {
-      "n_cotacoes": 17,
-      "n_distribuidoras": 17,
-      "data_ref": "2026-06-02T00:00:00.000Z",
-      "gasolina": 5.914,
+      "n_cotacoes": 16,
+      "n_distribuidoras": 16,
+      "data_ref": "2026-06-03T00:00:00.000Z",
+      "gasolina": 5.922,
       "etanol": 2.994,
-      "s10": 6.517,
+      "s10": 6.516,
       "s500": 5.744,
       "margem": {
         "gasolina": {
           "revenda": 6.704,
-          "distribuicao": 5.914,
-          "margem_rs": 0.79,
-          "margem_pct": 13.36
+          "distribuicao": 5.922,
+          "margem_rs": 0.782,
+          "margem_pct": 13.2
         },
         "etanol": {
           "revenda": 3.984,
@@ -355,9 +355,9 @@
         },
         "s10": {
           "revenda": 7.137,
-          "distribuicao": 6.517,
-          "margem_rs": 0.62,
-          "margem_pct": 9.51
+          "distribuicao": 6.516,
+          "margem_rs": 0.621,
+          "margem_pct": 9.53
         },
         "s500": {
           "revenda": 6.894,
@@ -755,18 +755,6 @@
     },
     {
       "estado": "MT",
-      "distribuidora": "Larco",
-      "cidade": "Varzea Grande",
-      "gasolina": null,
-      "etanol": null,
-      "s10": 6.43,
-      "s500": null,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-06-02"
-    },
-    {
-      "estado": "MT",
       "distribuidora": "On Petro",
       "cidade": "Cuiaba",
       "gasolina": null,
@@ -793,13 +781,13 @@
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.85,
+      "gasolina": 5.95,
       "etanol": 2.96,
-      "s10": 6.5,
+      "s10": 6.4,
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-02"
+      "data_coleta": "2026-06-03"
     },
     {
       "estado": "MT",
@@ -847,7 +835,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-02"
+      "data_coleta": "2026-06-03"
     },
     {
       "estado": "MT",
