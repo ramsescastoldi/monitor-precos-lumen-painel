@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "07/06/2026, 12:46:55",
+  "atualizado_em": "08/06/2026, 07:13:13",
   "semana_referencia": "2026-05-29",
   "distribuicao_ultima_data": "2026-06-05",
   "kpis": {
@@ -990,22 +990,6 @@
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "TAGUACENTRO COMERCIO DE DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "12.093.145...",
-        "gasolina": 6.39,
-        "data_coleta": "2026-05-25"
-      },
-      {
-        "municipio": "BRASILIA",
-        "revenda": "POSTO DE COMBUSTIVEL AGUAS CLARAS LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "34.046.587...",
-        "gasolina": 6.39,
-        "data_coleta": "2026-05-25"
-      },
-      {
-        "municipio": "BRASILIA",
         "revenda": "AUTO POSTO JPC DERIVADOS DE PETROLEO LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "07.129.219...",
@@ -1022,9 +1006,17 @@
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO CASTANHEIRAS DERIVADOS DE PETROLEO LTDA",
+        "revenda": "TAGUACENTRO COMERCIO DE DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "12.093.145...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-05-25"
+      },
+      {
+        "municipio": "BRASILIA",
+        "revenda": "POSTO DE COMBUSTIVEL AGUAS CLARAS LTDA",
         "bandeira": "VIBRA",
-        "cnpj_curto": "32.013.951...",
+        "cnpj_curto": "34.046.587...",
         "gasolina": 6.39,
         "data_coleta": "2026-05-25"
       },
@@ -1033,6 +1025,14 @@
         "revenda": "SMAFF COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "05.662.975...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-05-25"
+      },
+      {
+        "municipio": "BRASILIA",
+        "revenda": "AUTO POSTO CASTANHEIRAS DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "32.013.951...",
         "gasolina": 6.39,
         "data_coleta": "2026-05-25"
       },
@@ -1112,6 +1112,14 @@
       },
       {
         "municipio": "FORMOSA",
+        "revenda": "PETRO  IDEAL REVENDA DE COMBUSTIVEIS LTDA",
+        "bandeira": "ALE",
+        "cnpj_curto": "44.612.408...",
+        "gasolina": 6.49,
+        "data_coleta": "2026-05-26"
+      },
+      {
+        "municipio": "FORMOSA",
         "revenda": "PARANA COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "11.216.796...",
@@ -1119,20 +1127,12 @@
         "data_coleta": "2026-05-25"
       },
       {
-        "municipio": "ITUMBIARA",
-        "revenda": "AUTO POSTO CABORNA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "25.101.213...",
+        "municipio": "AGUAS LINDAS DE GOIAS",
+        "revenda": "AUTO POSTO PEROLA AGUAS LINDAS LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "12.768.583...",
         "gasolina": 6.49,
-        "data_coleta": "2026-05-29"
-      },
-      {
-        "municipio": "FORMOSA",
-        "revenda": "PETRO  IDEAL REVENDA DE COMBUSTIVEIS LTDA",
-        "bandeira": "ALE",
-        "cnpj_curto": "44.612.408...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-05-26"
+        "data_coleta": "2026-05-25"
       }
     ],
     "MG": [
@@ -1178,9 +1178,9 @@
       },
       {
         "municipio": "BELO HORIZONTE",
-        "revenda": "POSTO SAO BERNARDO LTDA",
+        "revenda": "POSTO MARIO WERNECK LIMITADA",
         "bandeira": "IPIRANGA",
-        "cnpj_curto": "10.673.246...",
+        "cnpj_curto": "03.665.115...",
         "gasolina": 5.78,
         "data_coleta": "2026-05-25"
       },
@@ -1194,9 +1194,9 @@
       },
       {
         "municipio": "BELO HORIZONTE",
-        "revenda": "POSTO MARIO WERNECK LIMITADA",
+        "revenda": "POSTO SAO BERNARDO LTDA",
         "bandeira": "IPIRANGA",
-        "cnpj_curto": "03.665.115...",
+        "cnpj_curto": "10.673.246...",
         "gasolina": 5.78,
         "data_coleta": "2026-05-25"
       },
@@ -1252,17 +1252,17 @@
       },
       {
         "municipio": "VARZEA GRANDE",
-        "revenda": "GARRA COMBUSTIVEIS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "08.751.804...",
+        "revenda": "AUTO POSTO SANTOS DUMONT EIRELI",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.634.857...",
         "gasolina": 6.29,
         "data_coleta": "2026-05-27"
       },
       {
         "municipio": "VARZEA GRANDE",
-        "revenda": "AUTO POSTO SANTOS DUMONT EIRELI",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "07.634.857...",
+        "revenda": "GARRA COMBUSTIVEIS LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "08.751.804...",
         "gasolina": 6.29,
         "data_coleta": "2026-05-27"
       },
@@ -1349,18 +1349,10 @@
         "data_coleta": "2026-05-28"
       },
       {
-        "municipio": "CAMPO MOURAO",
-        "revenda": "AUTO POSTO GARRA LTDA",
-        "bandeira": "STANG",
-        "cnpj_curto": "09.476.803...",
-        "gasolina": 6.19,
-        "data_coleta": "2026-05-28"
-      },
-      {
-        "municipio": "FOZ DO IGUACU",
-        "revenda": "AUTO POSTO FRONTEIRA LTDA.",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "11.404.603...",
+        "municipio": "GUARAPUAVA",
+        "revenda": "BEGNINI COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "09.182.266...",
         "gasolina": 6.19,
         "data_coleta": "2026-05-25"
       },
@@ -1379,6 +1371,14 @@
         "cnpj_curto": "78.928.678...",
         "gasolina": 6.19,
         "data_coleta": "2026-05-27"
+      },
+      {
+        "municipio": "CAMPO MOURAO",
+        "revenda": "AUTO POSTO GARRA LTDA",
+        "bandeira": "STANG",
+        "cnpj_curto": "09.476.803...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-05-28"
       }
     ],
     "RO": [
@@ -1400,14 +1400,6 @@
       },
       {
         "municipio": "JI-PARANA",
-        "revenda": "VAREA COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "35.506.012...",
-        "gasolina": 7.14,
-        "data_coleta": "2026-05-28"
-      },
-      {
-        "municipio": "JI-PARANA",
         "revenda": "MUCURIPE RONDONIA COMERCIO DE COMBUSTIVEIS LTDA",
         "bandeira": "IPIRANGA",
         "cnpj_curto": "42.897.375...",
@@ -1416,11 +1408,11 @@
       },
       {
         "municipio": "JI-PARANA",
-        "revenda": "BRASIL PETROLEO COMERCIO DE COMBUSTIVEL LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "14.100.717...",
-        "gasolina": 7.18,
-        "data_coleta": "2026-05-27"
+        "revenda": "VAREA COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "35.506.012...",
+        "gasolina": 7.14,
+        "data_coleta": "2026-05-28"
       },
       {
         "municipio": "JI-PARANA",
@@ -1437,6 +1429,14 @@
         "cnpj_curto": "04.707.821...",
         "gasolina": 7.18,
         "data_coleta": "2026-05-26"
+      },
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "BRASIL PETROLEO COMERCIO DE COMBUSTIVEL LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "14.100.717...",
+        "gasolina": 7.18,
+        "data_coleta": "2026-05-27"
       },
       {
         "municipio": "CACOAL",
@@ -1474,17 +1474,17 @@
       },
       {
         "municipio": "PORTO ALEGRE",
-        "revenda": "COMERCIAL DE COMBUSTIVEIS INTERCAP LTDA",
+        "revenda": "COMERCIAL DE COMBUSTIVEIS PLANETARIO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "08.597.984...",
+        "cnpj_curto": "01.157.271...",
         "gasolina": 5.93,
         "data_coleta": "2026-05-27"
       },
       {
         "municipio": "PORTO ALEGRE",
-        "revenda": "COMERCIAL DE COMBUSTIVEIS PLANETARIO LTDA",
+        "revenda": "COMERCIAL DE COMBUSTIVEIS INTERCAP LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "01.157.271...",
+        "cnpj_curto": "08.597.984...",
         "gasolina": 5.93,
         "data_coleta": "2026-05-27"
       },
@@ -1521,6 +1521,14 @@
         "data_coleta": "2026-05-27"
       },
       {
+        "municipio": "CACHOEIRINHA",
+        "revenda": "VAZ COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "27.272.187...",
+        "gasolina": 5.99,
+        "data_coleta": "2026-05-28"
+      },
+      {
         "municipio": "PORTO ALEGRE",
         "revenda": "GARAGEM LAITANO LTDA",
         "bandeira": "RAIZEN",
@@ -1535,14 +1543,6 @@
         "cnpj_curto": "93.489.243...",
         "gasolina": 5.99,
         "data_coleta": "2026-05-27"
-      },
-      {
-        "municipio": "CACHOEIRINHA",
-        "revenda": "VAZ COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "27.272.187...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-05-28"
       }
     ],
     "SP": [
@@ -1596,19 +1596,19 @@
       },
       {
         "municipio": "SAO PAULO",
+        "revenda": "JARDIM NORTE POSTO DE SERVICOS & CONVENIENCIAS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.435.700...",
+        "gasolina": 5.79,
+        "data_coleta": "2026-05-25"
+      },
+      {
+        "municipio": "SAO PAULO",
         "revenda": "MARANELLO - COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "10.945.290...",
         "gasolina": 5.79,
         "data_coleta": "2026-05-25"
-      },
-      {
-        "municipio": "AVARE",
-        "revenda": "FELIX FAGUNDES POSTO AUTOMOTIVO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "14.929.417...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-05-28"
       },
       {
         "municipio": "SAO PAULO",
@@ -1619,12 +1619,12 @@
         "data_coleta": "2026-05-25"
       },
       {
-        "municipio": "SAO PAULO",
-        "revenda": "JARDIM NORTE POSTO DE SERVICOS & CONVENIENCIAS LTDA",
+        "municipio": "AVARE",
+        "revenda": "FELIX FAGUNDES POSTO AUTOMOTIVO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "07.435.700...",
+        "cnpj_curto": "14.929.417...",
         "gasolina": 5.79,
-        "data_coleta": "2026-05-25"
+        "data_coleta": "2026-05-28"
       }
     ]
   },
