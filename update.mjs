@@ -270,12 +270,73 @@ function toNum(v) {
       data_coleta: r.data_coleta ? new Date(r.data_coleta).toISOString().substring(0, 10) : null
     }));
 
+    // 9) VOLUMES (mercado de combustíveis líquidos ANP) — 3 visões
+    //    Tabela volumes_distribuidor (entregas por distribuidor x produto x regiao x mês, mil m³)
+    let volumes = null;
+    try {
+      const ultPeriodoRes = await client.query('select max(ano*100+mes) as p from volumes_distribuidor');
+      const p = ultPeriodoRes.rows[0]?.p;
+      if (p) {
+        const anoU = Math.floor(p / 100), mesU = p % 100;
+        const MESES_PT = ['', 'jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+
+        // 9a) Share por distribuidora no último mês (top 8 + "Outras")
+        const shareRes = await client.query(
+          `select distribuidor, sum(quantidade_mil_m3) as vol
+           from volumes_distribuidor where ano=$1 and mes=$2
+           group by distribuidor order by vol desc`, [anoU, mesU]);
+        const totalMes = shareRes.rows.reduce((s, r) => s + Number(r.vol), 0);
+        const top8 = shareRes.rows.slice(0, 8);
+        const outras = shareRes.rows.slice(8).reduce((s, r) => s + Number(r.vol), 0);
+        const share_distribuidora = top8.map(r => ({
+          distribuidora: r.distribuidor,
+          volume: Number(Number(r.vol).toFixed(1)),
+          pct: Number((Number(r.vol) / totalMes * 100).toFixed(1))
+        }));
+        if (outras > 0) share_distribuidora.push({ distribuidora: 'Outras', volume: Number(outras.toFixed(1)), pct: Number((outras / totalMes * 100).toFixed(1)) });
+
+        // 9b) Evolução mensal do volume total (12-13 meses)
+        const evolRes = await client.query(
+          `select ano, mes, sum(quantidade_mil_m3) as vol
+           from volumes_distribuidor group by ano, mes order by ano, mes`);
+        const evolucao_mensal = evolRes.rows.map(r => ({
+          label: `${MESES_PT[r.mes]}/${String(r.ano).slice(2)}`,
+          volume: Number(Number(r.vol).toFixed(0))
+        }));
+
+        // 9c) Volume por região no último mês
+        const regRes = await client.query(
+          `select regiao, sum(quantidade_mil_m3) as vol
+           from volumes_distribuidor where ano=$1 and mes=$2
+           group by regiao order by vol desc`, [anoU, mesU]);
+        const REG_NOME = { N: 'Norte', NE: 'Nordeste', CO: 'Centro-Oeste', SE: 'Sudeste', S: 'Sul' };
+        const totalReg = regRes.rows.reduce((s, r) => s + Number(r.vol), 0);
+        const por_regiao = regRes.rows.map(r => ({
+          regiao: r.regiao,
+          nome: REG_NOME[r.regiao] || r.regiao,
+          volume: Number(Number(r.vol).toFixed(1)),
+          pct: Number((Number(r.vol) / totalReg * 100).toFixed(1))
+        }));
+
+        volumes = {
+          mes_referencia: `${MESES_PT[mesU]}/${anoU}`,
+          total_mil_m3: Number(totalMes.toFixed(0)),
+          share_distribuidora,
+          evolucao_mensal,
+          por_regiao
+        };
+      }
+    } catch (e) {
+      console.warn('AVISO: volumes_distribuidor indisponível:', e.message);
+    }
+
     const atualizado = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
     const data = {
       atualizado_em: atualizado,
       semana_referencia: semanaRef,
       distribuicao_ultima_data: distri_ultima_data ? new Date(distri_ultima_data).toISOString().substring(0, 10) : null,
+      volumes,
       kpis: {
         n_postos: Number(kpi.n_postos),
         n_cidades: Number(kpi.n_cidades),

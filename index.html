@@ -122,6 +122,15 @@
   .auth-msg.success { background: rgba(45,212,191,0.1); color: var(--green); border: 1px solid rgba(45,212,191,0.3); }
   .auth-msg.info { background: rgba(79,138,255,0.1); color: var(--accent); border: 1px solid rgba(79,138,255,0.3); }
   .auth-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 11px; text-align: center; }
+
+  /* === Volumes / Mercado === */
+  .vol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .vol-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .vol-card.full { grid-column: 1 / -1; }
+  .vol-card h3 { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--text); text-transform: none; letter-spacing: 0; }
+  .vol-card .vol-sub { color: var(--text-muted); font-size: 11px; margin-bottom: 12px; }
+  .vol-canvas-wrap { position: relative; height: 280px; }
+  @media (max-width: 800px) { .vol-grid { grid-template-columns: 1fr; } .vol-canvas-wrap { height: 240px; } }
 </style>
 </head>
 <body>
@@ -214,13 +223,32 @@
   <tbody id="tbody-distri"></tbody>
 </table></div>
 
+<h2>Mercado de combustíveis líquidos <span id="vol-mes" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="vol-grid">
+  <div class="vol-card">
+    <h3>Participação por distribuidora</h3>
+    <div class="vol-sub" id="vol-share-sub">Volume entregue no último mês</div>
+    <div class="vol-canvas-wrap"><canvas id="chart-share"></canvas></div>
+  </div>
+  <div class="vol-card">
+    <h3>Volume por região</h3>
+    <div class="vol-sub" id="vol-regiao-sub">Entregas no último mês (mil m³)</div>
+    <div class="vol-canvas-wrap"><canvas id="chart-regiao"></canvas></div>
+  </div>
+  <div class="vol-card full">
+    <h3>Evolução do volume total entregue</h3>
+    <div class="vol-sub">Soma nacional mês a mês (mil m³) — entregas de distribuidores ao mercado</div>
+    <div class="vol-canvas-wrap"><canvas id="chart-evol"></canvas></div>
+  </div>
+</div>
+
 <footer>
-  Fonte: ANP — Levantamento Semanal de Preços de Combustíveis (dados públicos).<br>
-  Atualizado a cada hora · Scraper ANP roda segunda e quinta às 03h BRT.<br>
+  Preços: ANP — Levantamento Semanal de Preços de Combustíveis. Volumes: ANP — Painel do Mercado de Combustíveis Líquidos (entregas de distribuidores). Distribuição B2B: cotação direta (planilha interna). Dados públicos.<br>
   <code>monitor.lumenclubpainel.com.br</code>
 </footer>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 // === Auth OTP via n8n + WhatsApp (reutiliza endpoints do painel-lumen-posto) ===
 const AUTH_BASE = 'https://n8n.srv1662375.hstgr.cloud/webhook';
@@ -491,6 +519,91 @@ function renderPainel() {
   renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
   renderRank('tbody-caras', DATA.ranking_municipal?.caras);
   renderDistri(DATA.distribuidoras_detalhe);
+  renderVolumes(DATA.volumes);
+}
+
+let _charts = [];
+function renderVolumes(v) {
+  // limpa charts anteriores (re-render)
+  _charts.forEach(c => { try { c.destroy(); } catch (e) {} });
+  _charts = [];
+  const sec = document.querySelector('.vol-grid');
+  if (!v || typeof Chart === 'undefined') {
+    if (sec) sec.innerHTML = '<div class="vol-card full"><p class="pending">Dados de volume indisponíveis no momento.</p></div>';
+    return;
+  }
+  document.getElementById('vol-mes').textContent = '— ref ' + v.mes_referencia + ' · ' + v.total_mil_m3.toLocaleString('pt-BR') + ' mil m³ no mês';
+
+  const PALETTE = ['#4f8aff','#2dd4bf','#fbbf24','#f87171','#a78bfa','#34d399','#fb923c','#60a5fa','#94a3b8'];
+  const gridColor = 'rgba(255,255,255,0.06)';
+  const tickColor = '#8b97b3';
+  Chart.defaults.color = tickColor;
+  Chart.defaults.font.family = 'Inter, sans-serif';
+
+  // 1) Share por distribuidora — doughnut
+  _charts.push(new Chart(document.getElementById('chart-share'), {
+    type: 'doughnut',
+    data: {
+      labels: v.share_distribuidora.map(x => shortName(x.distribuidora)),
+      datasets: [{ data: v.share_distribuidora.map(x => x.volume), backgroundColor: PALETTE, borderColor: '#131c2e', borderWidth: 2 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'right', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ( c) => {
+          const item = v.share_distribuidora[c.dataIndex];
+          return ` ${item.pct}% · ${item.volume.toLocaleString('pt-BR')} mil m³`;
+        } } }
+      }
+    }
+  }));
+
+  // 2) Volume por região — barra horizontal
+  _charts.push(new Chart(document.getElementById('chart-regiao'), {
+    type: 'bar',
+    data: {
+      labels: v.por_regiao.map(x => x.nome),
+      datasets: [{ data: v.por_regiao.map(x => x.volume), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (c) => {
+          const item = v.por_regiao[c.dataIndex];
+          return ` ${item.volume.toLocaleString('pt-BR')} mil m³ (${item.pct}%)`;
+        } } }
+      },
+      scales: { x: { grid: { color: gridColor }, ticks: { callback: (val) => (val/1000).toFixed(1) + 'k' } }, y: { grid: { display: false } } }
+    }
+  }));
+
+  // 3) Evolução mensal — linha
+  _charts.push(new Chart(document.getElementById('chart-evol'), {
+    type: 'line',
+    data: {
+      labels: v.evolucao_mensal.map(x => x.label),
+      datasets: [{
+        data: v.evolucao_mensal.map(x => x.volume),
+        borderColor: '#4f8aff', backgroundColor: 'rgba(79,138,255,0.12)',
+        fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: '#4f8aff'
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => ' ' + c.parsed.y.toLocaleString('pt-BR') + ' mil m³' } } },
+      scales: { x: { grid: { color: gridColor } }, y: { grid: { color: gridColor }, ticks: { callback: (val) => (val/1000).toFixed(0) + 'k' } } }
+    }
+  }));
+}
+
+function shortName(nome) {
+  if (!nome) return '—';
+  return nome
+    .replace(/\b(S\/A|S\.A\.?|S A|LTDA\.?|DISTRIBUIDORA( DE)?|COMBUST[IÍ]VEIS|DE PETR[OÓ]LEO|PRODUTOS|DERIVADOS|COMERCIAL|COM[EÉ]RCIO)\b/gi, '')
+    .replace(/\s+/g, ' ').trim()
+    .split(' ').slice(0, 2).join(' ') || nome.slice(0, 16);
 }
 
 (async function loadAndRender() {

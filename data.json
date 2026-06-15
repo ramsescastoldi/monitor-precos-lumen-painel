@@ -1,7 +1,144 @@
 {
-  "atualizado_em": "15/06/2026, 15:51:01",
+  "atualizado_em": "15/06/2026, 17:12:38",
   "semana_referencia": "2026-06-12",
   "distribuicao_ultima_data": "2026-06-15",
+  "volumes": {
+    "mes_referencia": "abr/2026",
+    "total_mil_m3": 10008,
+    "share_distribuidora": [
+      {
+        "distribuidora": "RAIZEN S.A.",
+        "volume": 2043.7,
+        "pct": 20.4
+      },
+      {
+        "distribuidora": "VIBRA ENERGIA S.A",
+        "volume": 1983.8,
+        "pct": 19.8
+      },
+      {
+        "distribuidora": "IPIRANGA PRODUTOS DE PETRÓLEO S.A",
+        "volume": 1765,
+        "pct": 17.6
+      },
+      {
+        "distribuidora": "ALE COMBUSTIVEIS S.A.",
+        "volume": 237.3,
+        "pct": 2.4
+      },
+      {
+        "distribuidora": "ATEM' S DISTRIBUIDORA DE PETRÓLEO S.A.",
+        "volume": 197.8,
+        "pct": 2
+      },
+      {
+        "distribuidora": "ROYAL FIC DISTRIBUIDORA DE DERIVADOS DE PETRÓLEO S/A",
+        "volume": 193.1,
+        "pct": 1.9
+      },
+      {
+        "distribuidora": "LARCO COMERCIAL DE PRODUTOS DE PETRÓLEO LTDA.",
+        "volume": 178.1,
+        "pct": 1.8
+      },
+      {
+        "distribuidora": "ON PETRO - DISTRIBUIDORA DE COMBUSTÍVEIS LTDA",
+        "volume": 145.7,
+        "pct": 1.5
+      },
+      {
+        "distribuidora": "Outras",
+        "volume": 3263.4,
+        "pct": 32.6
+      }
+    ],
+    "evolucao_mensal": [
+      {
+        "label": "abr/25",
+        "volume": 9902
+      },
+      {
+        "label": "mai/25",
+        "volume": 10110
+      },
+      {
+        "label": "jun/25",
+        "volume": 9891
+      },
+      {
+        "label": "jul/25",
+        "volume": 10463
+      },
+      {
+        "label": "ago/25",
+        "volume": 10282
+      },
+      {
+        "label": "set/25",
+        "volume": 10423
+      },
+      {
+        "label": "out/25",
+        "volume": 10686
+      },
+      {
+        "label": "nov/25",
+        "volume": 10111
+      },
+      {
+        "label": "dez/25",
+        "volume": 10594
+      },
+      {
+        "label": "jan/26",
+        "volume": 9624
+      },
+      {
+        "label": "fev/26",
+        "volume": 8992
+      },
+      {
+        "label": "mar/26",
+        "volume": 10426
+      },
+      {
+        "label": "abr/26",
+        "volume": 10008
+      }
+    ],
+    "por_regiao": [
+      {
+        "regiao": "SE",
+        "nome": "Sudeste",
+        "volume": 4257.3,
+        "pct": 42.5
+      },
+      {
+        "regiao": "S",
+        "nome": "Sul",
+        "volume": 1904.2,
+        "pct": 19
+      },
+      {
+        "regiao": "NE",
+        "nome": "Nordeste",
+        "volume": 1792.8,
+        "pct": 17.9
+      },
+      {
+        "regiao": "CO",
+        "nome": "Centro-Oeste",
+        "volume": 1620.5,
+        "pct": 16.2
+      },
+      {
+        "regiao": "N",
+        "nome": "Norte",
+        "volume": 433.2,
+        "pct": 4.3
+      }
+    ]
+  },
   "kpis": {
     "n_postos": 3411,
     "n_cidades": 289,
@@ -365,7 +502,7 @@
     "DF": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.87,
       "etanol": 4.96,
       "s10": 6.38,
@@ -400,7 +537,7 @@
     "GO": {
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.808,
       "etanol": 3.387,
       "s10": 6.203,
@@ -435,7 +572,7 @@
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.875,
       "etanol": 3.74,
       "s10": 6.335,
@@ -470,7 +607,7 @@
     "MT": {
       "n_cotacoes": 17,
       "n_distribuidoras": 17,
-      "data_ref": "2026-06-15T00:00:00.000Z",
+      "data_ref": "2026-06-15T04:00:00.000Z",
       "gasolina": 5.916,
       "etanol": 3.034,
       "s10": 6.449,
@@ -505,7 +642,7 @@
     "PR": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.95,
       "etanol": 4.88,
       "s10": 6.055,
@@ -540,7 +677,7 @@
     "RO": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-08T00:00:00.000Z",
+      "data_ref": "2026-06-08T04:00:00.000Z",
       "gasolina": 6.12,
       "etanol": 4.29,
       "s10": 6.485,
@@ -575,7 +712,7 @@
     "RS": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.665,
       "etanol": 3.2,
       "s10": 5.79,
@@ -610,7 +747,7 @@
     "SP": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.825,
       "etanol": 3.7,
       "s10": 6.167,

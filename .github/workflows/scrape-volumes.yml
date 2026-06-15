@@ -1,0 +1,52 @@
+name: Scrape volumes ANP (dia 2 e 21, 12h BRT)
+
+on:
+  schedule:
+    # 15:00 UTC = 12h BRT. ANP atualiza dia 1 (fechado) e dia 20 (prévia);
+    # rodamos dia 2 e 21 pra pegar o arquivo já publicado.
+    - cron: '0 15 2,21 * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Scrape volumes + gerar data.json
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "ERRO: secret SUPABASE_DB_URL nao configurado no repo."
+            exit 1
+          fi
+          node scrape-volumes.mjs
+          node update.mjs
+
+      - name: Commit data.json (deployer da VPS publica no Cloudflare)
+        if: success()
+        run: |
+          git config user.name "Scraper Bot"
+          git config user.email "bot@lumenposto.com"
+          if git diff --quiet -- data.json; then
+            echo "data.json sem mudancas."
+          else
+            NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            git add data.json
+            git commit -m "data: scrape volumes ANP — $NOW"
+            git push origin main
+            echo "data.json pushado. monitor-deployer (VPS) detecta e faz wrangler deploy."
+          fi
