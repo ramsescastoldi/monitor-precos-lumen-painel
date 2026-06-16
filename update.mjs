@@ -239,8 +239,11 @@ function toNum(v) {
     }
 
     // 8) Lista detalhada de distribuidoras (ultima cotação por estado x distribuidora x cidade)
+    //    Mesma janela de 14 dias do agregado (#7) — assim a tabela e a margem ficam consistentes
+    //    (cotações fora da janela não aparecem nem contam na margem).
     const distriDetalheRes = await client.query(`
-      with ranked as (
+      with ref as (select coalesce(max(data_coleta), current_date) as max_d from precos_distribuicao_manual),
+      ranked as (
         select estado, distribuidora, cidade,
                gasolina_comum, etanol, diesel_s10, diesel_s500,
                modalidade, observacoes, data_coleta,
@@ -248,7 +251,8 @@ function toNum(v) {
                  partition by estado, distribuidora, coalesce(cidade, '')
                  order by data_coleta desc, importado_em desc
                ) as rn
-        from precos_distribuicao_manual
+        from precos_distribuicao_manual, ref
+        where data_coleta > ref.max_d - interval '14 days'
       )
       select estado, distribuidora, cidade,
              gasolina_comum, etanol, diesel_s10, diesel_s500,
