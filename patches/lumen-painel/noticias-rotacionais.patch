@@ -1,0 +1,268 @@
+diff --git a/data.json b/data.json
+index f6dc663..bf22614 100644
+--- a/data.json
++++ b/data.json
+@@ -32,22 +32,7 @@
+       }
+     ]
+   },
+-  "noticias_impacto": [
+-    {
+-      "titulo": "Medida Provisória 1.363/2026 garante subsídio de R$ 1,12/L para diesel até 31 de dezembro",
+-      "resumo": "Governo mantém subvenção para produtores e importadores de diesel até fim de 2026, protegendo oferta e preços domésticos do impacto internacional. Programa vigente desde 01/junho; revendedor segue protegido de reajuste abrupto.",
+-      "fonte": "Câmara dos Deputados / Governo Federal",
+-      "url": "https://www.camara.leg.br/noticias/1278061-medida-provisoria-cria-subsidio-para-segurar-preco-do-diesel",
+-      "data": "2026-05-30"
+-    },
+-    {
+-      "titulo": "Safra 2026/27 avança acelerada; moagem atinge 60,46 Mt em maio com crescimento de 74,6% vs ano anterior",
+-      "resumo": "Produção de etanol de milho no Centro-Oeste (+13,67% acumulado) amortece preços do biocombustível e reduz pressão sobre margens do revendedor na bomba. Safra forte favorece competitividade E30.",
+-      "fonte": "UNICA / Revista Cultivar",
+-      "url": "https://revistacultivar.com.br/noticias/centro-sul-amplia-moagem-de-cana-e-producao-de-etanol",
+-      "data": "2026-05-29"
+-    }
+-  ],
++  "noticias_impacto": [],
+   "petroleo": {
+     "brent": {
+       "val": "US$ 78,89",
+@@ -483,5 +468,15 @@
+         ]
+       }
+     ]
+-  }
+-}
+\ No newline at end of file
++  },
++  "_noticias_recentes": [
++    {
++      "url": "https://www.camara.leg.br/noticias/1278061-medida-provisoria-cria-subsidio-para-segurar-preco-do-diesel",
++      "titulo": "Medida Provisória 1.363/2026 garante subsídio de R$ 1,12/L para diesel até 31 de dezembro"
++    },
++    {
++      "url": "https://revistacultivar.com.br/noticias/centro-sul-amplia-moagem-de-cana-e-producao-de-etanol",
++      "titulo": "Safra 2026/27 avança acelerada; moagem atinge 60,46 Mt em maio com crescimento de 74,6% vs ano anterior"
++    }
++  ]
++}
+diff --git a/scripts/gerar-painel.mjs b/scripts/gerar-painel.mjs
+index 40f783e..abfe149 100644
+--- a/scripts/gerar-painel.mjs
++++ b/scripts/gerar-painel.mjs
+@@ -49,6 +49,32 @@ const manchetesRecentes = [
+   ...(previousManchete && !(currentData._manchetes_recentes || []).includes(previousManchete) ? [previousManchete] : [])
+ ].slice(-7);
+ 
++// Histórico ROLLING das notícias_impacto já publicadas (anti-repetição, 2026-06-17).
++// O quadro "Notícias que podem impactar no posto" precisa ser ROTACIONAL: nunca
++// repetir a notícia de ontem (nem de dias recentes). Antes, o carry-forward
++// recolocava as notícias de ontem quando o modelo trazia menos de 2 — por isso o
++// painel de 17/jun ainda exibia matérias de 29-30/mai. Agora guardamos url+título
++// das últimas ~16 notícias e proibimos repetir qualquer uma delas.
++const previousNoticias = Array.isArray(currentData.noticias_impacto)
++  ? currentData.noticias_impacto
++  : (currentData.noticia_impacto ? [currentData.noticia_impacto] : []);
++const noticiasRecentes = (() => {
++  const seen = new Set();
++  const out = [];
++  const push = (n) => {
++    const url = (n?.url || "").trim();
++    const titulo = (n?.titulo || "").trim();
++    if (!url && !titulo) return;
++    const key = (url || titulo).toLowerCase();
++    if (seen.has(key)) return;
++    seen.add(key);
++    out.push({ url, titulo });
++  };
++  (Array.isArray(currentData._noticias_recentes) ? currentData._noticias_recentes : []).forEach(push);
++  previousNoticias.forEach(push);
++  return out.slice(-16);
++})();
++
+ // Data de hoje em BRT
+ const now = new Date();
+ const brtNow = new Date(now.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
+@@ -188,6 +214,20 @@ ${manchetesRecentes.map((m, i) => `${i + 1}. "${m}"`).join("\n")}
+ Secundárias de ontem (também não repetir):
+ ${previousSecundarias.map(s => `> "${s}"`).join("\n")}
+ 
++## 📰 QUADRO "NOTÍCIAS QUE PODEM IMPACTAR NO POSTO" — REGRAS INVIOLÁVEIS (2026-06-17)
++O array \`noticias_impacto\` é ROTACIONAL. O dono de posto abre o painel todo dia — se vê a mesma notícia de ontem, perde a confiança.
++1. **ROTAÇÃO OBRIGATÓRIA:** as 2 notícias precisam ser **fatos NOVOS das últimas 24-48h**. É **PROIBIDO repetir** qualquer notícia já publicada nos dias anteriores (lista de URLs/títulos proibidos abaixo). Nunca recicle a notícia de ontem.
++2. **SEMPRE do setor de combustíveis E com impacto direto pro dono de posto.** Priorize, nesta ordem de relevância:
++   a. **Alterações de preços** — reajuste Petrobras/refinarias, mudança de preço ao distribuidor/bomba, defasagem que virou reajuste
++   b. **Aumento ou redução de impostos** — ICMS, PIS/Cofins, CIDE, mudança no Confaz, fim/início de isenção
++   c. **Bloqueios ou medidas provisórias** — MP, decreto, DOU, embargo, desabastecimento, bloqueio de rodovia/refinaria, greve
++   d. **Mudanças políticas** — decisão CNPE/ANP, nova lei/regulação, troca de comando, política de preços do governo
++3. **DESCARTE** notícia institucional genérica, release antigo, página de categoria/home, ou matéria com mais de 48h. Use a **data real da fonte** — se for de semanas atrás (ex.: maio), NÃO use.
++4. As 2 notícias devem ser **DIFERENTES entre si** (assuntos distintos) e DIFERENTES das proibidas abaixo.
++
++### 🚫 NOTÍCIAS JÁ PUBLICADAS — PROIBIDO REPETIR (título e/ou URL)
++${noticiasRecentes.length ? noticiasRecentes.map((n, i) => `${i + 1}. "${(n.titulo || "").slice(0, 120)}"${n.url ? ` — ${n.url}` : ""}`).join("\n") : "(nenhuma ainda — primeira execução)"}
++
+ ## 📰 REGRAS EDITORIAIS DA MANCHETE PRINCIPAL (novas 2026-06-10 — INVIOLÁVEIS)
+ 
+ A manchete é uma NOTÍCIA (fato novo das últimas 24h), não um RESUMO DE INDICADORES. O leitor é dono de posto que abre o painel todo dia — se a manchete parece a de ontem, o painel perde credibilidade.
+@@ -470,24 +510,105 @@ function parseJSON(text) {
+     _carry("mandatos", ["anidro_na_gasolina_pct","b100_no_diesel_pct"]);
+     _carry("safra_etanol", ["moagem","var_anual","mix_etanol_pct","oferta_total"]);
+ 
+-    // Carry-forward noticias_impacto (array de 2): exige título + url REAL (http) em
+-    // cada item. Se Haiku trouxe menos de 2 válidas, completa com as de ontem.
++    // ===== NOTÍCIAS_IMPACTO ROTACIONAIS (2026-06-17) =====
++    // Substitui o antigo carry-forward (que reciclava as notícias de ontem e por isso
++    // deixava matérias de maio aparecendo em junho). Agora:
++    //   1. valida (título + URL http) e exige frescor (descarta matéria de >4 dias);
++    //   2. descarta o que repete notícia recente (URL igual OU título muito parecido);
++    //   3. NUNCA preenche com a notícia de ontem — se faltar, busca fato NOVO via web_search;
++    //   4. o rolling _noticias_recentes (mais abaixo) proíbe repetição na próxima execução.
++    function _normTitulo(s) {
++      return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
++        .replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
++    }
++    function _jaccardTit(a, b) {
++      const A = new Set(_normTitulo(a).split(" ").filter(w => w.length >= 4));
++      const B = new Set(_normTitulo(b).split(" ").filter(w => w.length >= 4));
++      if (!A.size || !B.size) return 0;
++      let inter = 0; for (const w of A) if (B.has(w)) inter++;
++      return inter / (A.size + B.size - inter);
++    }
++    function _ehRepetida(n, lista) {
++      const url = (n?.url || "").trim().toLowerCase();
++      const tit = n?.titulo || "";
++      return lista.some(p => {
++        const pUrl = (p.url || "").trim().toLowerCase();
++        if (url && pUrl && url === pUrl) return true;
++        return _jaccardTit(tit, p.titulo) >= 0.6;
++      });
++    }
++    function _noticiaFresca(n) {
++      // Se a fonte tem data parseável e é de mais de 4 dias atrás, descarta — pega
++      // o carry-forward antigo que insistia com matéria de semanas atrás.
++      if (!n?.data) return true;
++      const t = Date.parse(n.data);
++      if (!isFinite(t)) return true;
++      const dias = (Date.parse(isoDate + "T00:00:00Z") - t) / 86400000;
++      return dias <= 4;
++    }
++    const _validaNoticia = n => n && n.titulo && /^https?:\/\//.test(n.url || "");
++
++    // Mini-call dedicada: busca notícia NOVA do setor (nunca recicla a de ontem).
++    async function _buscarNoticiasFrescas(faltam, evitar) {
++      const r = await fetch("https://api.anthropic.com/v1/messages", {
++        method: "POST",
++        headers: {
++          "x-api-key": API_KEY, "anthropic-version": "2023-06-01",
++          "anthropic-beta": "web-search-2025-03-05", "content-type": "application/json"
++        },
++        body: JSON.stringify({
++          model: MODEL, max_tokens: 1500,
++          system: `Você é editor do Lumen Posto Club. Use web_search e traga EXATAMENTE ${faltam} notícia(s) NOVA(S) das últimas 24-48h do SETOR DE COMBUSTÍVEIS que impactam o dono de posto. Priorize nesta ordem: (a) alterações de preços (Petrobras/refinarias/distribuidoras), (b) aumento ou redução de impostos (ICMS/PIS-Cofins/CIDE/Confaz), (c) bloqueios ou medidas provisórias (MP/decreto/DOU/greve/desabastecimento), (d) mudanças políticas (CNPE/ANP/lei/regulação). PROIBIDO repetir as notícias da lista de evitar. PROIBIDO inventar URL — use o link DIRETO e real da matéria (nunca página de categoria/home). Responda APENAS com um array JSON: [{"titulo":"...","resumo":"1-2 frases de impacto pro dono de posto","fonte":"veículo","url":"https://...","data":"${isoDate}"}]`,
++          messages: [{
++            role: "user",
++            content: `Hoje: ${isoDate}. NÃO repita estas notícias (título/URL):\n${evitar.map(n => `- "${(n.titulo||"").slice(0,120)}"${n.url?` (${n.url})`:""}`).join("\n") || "(nenhuma)"}\n\nTraga ${faltam} notícia(s) fresca(s) e impactante(s). Responda só o array JSON.`
++          }],
++          tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 4 }]
++        })
++      });
++      if (!r.ok) throw new Error(`busca notícias: HTTP ${r.status}`);
++      const body = await r.json();
++      const txt = (body.content || []).filter(b => b.type === "text").map(b => b.text).join("");
++      let arr;
++      try { arr = parseJSON(txt); } catch { return []; }
++      return Array.isArray(arr) ? arr : (arr ? [arr] : []);
++    }
++
+     {
+-      const valida = n => n && n.titulo && /^https?:\/\//.test(n.url || "");
+-      let novas = Array.isArray(newData.noticias_impacto) ? newData.noticias_impacto.filter(valida) : [];
+-      // compat: se Haiku ainda usou o campo antigo singular, aproveita
+-      if (novas.length < 2 && valida(newData.noticia_impacto)) novas.push(newData.noticia_impacto);
+-      const antigas = Array.isArray(currentData.noticias_impacto) ? currentData.noticias_impacto.filter(valida)
+-        : (valida(currentData.noticia_impacto) ? [currentData.noticia_impacto] : []);
+-      // completa até 2 com as de ontem, sem repetir URL
+-      for (const a of antigas) {
+-        if (novas.length >= 2) break;
+-        if (!novas.some(n => n.url === a.url)) novas.push(a);
++      // 1) candidatas de hoje: válidas, frescas e não repetidas (entre si nem recentes)
++      const candidatas = Array.isArray(newData.noticias_impacto) ? newData.noticias_impacto.slice() : [];
++      if (_validaNoticia(newData.noticia_impacto)) candidatas.push(newData.noticia_impacto);
++      const escolhidas = [];
++      for (const n of candidatas) {
++        if (escolhidas.length >= 2) break;
++        if (!_validaNoticia(n) || !_noticiaFresca(n)) continue;
++        if (_ehRepetida(n, noticiasRecentes)) { console.log(`  ↻ descartada (repete recente): "${(n.titulo||"").slice(0,70)}"`); continue; }
++        if (_ehRepetida(n, escolhidas)) continue;
++        escolhidas.push(n);
+       }
+-      newData.noticias_impacto = novas.slice(0, 2);
++      // 2) se faltar, busca fato NOVO via web_search — nunca recicla a de ontem
++      if (escolhidas.length < 2) {
++        const faltam = 2 - escolhidas.length;
++        console.log(`  🔎 noticias_impacto: só ${escolhidas.length} fresca(s); buscando +${faltam} via web_search...`);
++        try {
++          const extras = await _buscarNoticiasFrescas(faltam, [...noticiasRecentes, ...escolhidas]);
++          for (const n of extras) {
++            if (escolhidas.length >= 2) break;
++            if (!_validaNoticia(n)) continue;
++            if (_ehRepetida(n, noticiasRecentes) || _ehRepetida(n, escolhidas)) continue;
++            n.data = n.data || isoDate;
++            escolhidas.push(n);
++            console.log(`  ＋ nova notícia: "${(n.titulo||"").slice(0,70)}"`);
++          }
++        } catch (e) {
++          console.log(`  ⚠️ busca de notícias frescas falhou (${e.message}).`);
++        }
++      }
++      newData.noticias_impacto = escolhidas.slice(0, 2);
+       delete newData.noticia_impacto; // remove o campo antigo singular
+-      if (novas.length < 2) console.log(`  ⚠️ noticias_impacto só tem ${novas.length} item(ns) válido(s) hoje`);
+-      else console.log(`  ✓ noticias_impacto: 2 notícias`);
++      console.log(escolhidas.length >= 2
++        ? `  ✓ noticias_impacto: 2 notícias inéditas`
++        : `  ⚠️ noticias_impacto: ${escolhidas.length} notícia(s) inédita(s) (front-end ajusta o layout)`);
+     }
+ 
+     // Carry-forward mídias e safra de milho: se Haiku não preencheu, herda o de ontem
+@@ -776,6 +897,25 @@ function parseJSON(text) {
+     newData._manchetes_recentes = [...manchetesRecentes, newData.manchete?.principal?.titulo || ""]
+       .filter(Boolean).slice(-7);
+ 
++    // Mantém o rolling de notícias publicadas (últimas ~16, url+título) pro próximo run
++    // proibir repetição — é o que garante a rotação do quadro de notícias.
++    {
++      const seen = new Set();
++      const rolling = [];
++      const push = (n) => {
++        const url = (n?.url || "").trim();
++        const titulo = (n?.titulo || "").trim();
++        if (!url && !titulo) return;
++        const key = (url || titulo).toLowerCase();
++        if (seen.has(key)) return;
++        seen.add(key);
++        rolling.push({ url, titulo });
++      };
++      noticiasRecentes.forEach(push);
++      (newData.noticias_impacto || []).forEach(push);
++      newData._noticias_recentes = rolling.slice(-16);
++    }
++
+     // Comentário interno (deletado no build)
+     newData._comentario = `Gerado automaticamente em ${new Date().toISOString()} por gerar-painel.mjs (${MODEL})`;
+ 
+diff --git a/update.mjs b/update.mjs
+index 6793aa3..0f81c67 100644
+--- a/update.mjs
++++ b/update.mjs
+@@ -19,7 +19,10 @@ const OUT  = args.out  || "index.html";
+ const DATA = args.data || "data.json";
+ 
+ const data = JSON.parse(readFileSync(DATA, "utf8"));
+-delete data._comentario;
++// Remove campos internos de bookkeeping (prefixo "_") do HTML público — eles
++// persistem só no data.json pra controle de rotação (ex.: _noticias_recentes,
++// _manchetes_recentes) e nunca são lidos pelo front-end.
++for (const k of Object.keys(data)) if (k.startsWith("_")) delete data[k];
+ const html = readFileSync(SRC, "utf8");
+ 
+ const re = /const DATA = \{[\s\S]*?\n\};/m;
