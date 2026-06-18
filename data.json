@@ -1,9 +1,10 @@
 {
-  "atualizado_em": "18/06/2026, 14:33:58",
+  "atualizado_em": "18/06/2026, 18:27:02",
   "semana_referencia": "2026-06-12",
   "distribuicao_ultima_data": "2026-06-18",
   "volumes": {
     "mes_referencia": "abr/2026",
+    "periodo_iso": "2026-04",
     "total_mil_m3": 10008,
     "share_distribuidora": [
       {
@@ -502,7 +503,7 @@
     "DF": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-06-08T00:00:00.000Z",
+      "data_ref": "2026-06-08T04:00:00.000Z",
       "gasolina": 5.87,
       "etanol": 4.96,
       "s10": 6.76,
@@ -537,7 +538,7 @@
     "GO": {
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
-      "data_ref": "2026-06-16T00:00:00.000Z",
+      "data_ref": "2026-06-16T04:00:00.000Z",
       "gasolina": 5.742,
       "etanol": 3.432,
       "s10": 6.25,
@@ -572,7 +573,7 @@
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-06-16T00:00:00.000Z",
+      "data_ref": "2026-06-16T04:00:00.000Z",
       "gasolina": 5.887,
       "etanol": 3.737,
       "s10": 6.467,
@@ -607,7 +608,7 @@
     "MT": {
       "n_cotacoes": 15,
       "n_distribuidoras": 15,
-      "data_ref": "2026-06-18T00:00:00.000Z",
+      "data_ref": "2026-06-18T04:00:00.000Z",
       "gasolina": 5.894,
       "etanol": 2.913,
       "s10": 6.372,
@@ -642,7 +643,7 @@
     "PR": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-06-16T00:00:00.000Z",
+      "data_ref": "2026-06-16T04:00:00.000Z",
       "gasolina": 5.91,
       "etanol": 4.215,
       "s10": 6.247,
@@ -677,7 +678,7 @@
     "RO": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-08T00:00:00.000Z",
+      "data_ref": "2026-06-08T04:00:00.000Z",
       "gasolina": 6.12,
       "etanol": 4.29,
       "s10": 6.485,
@@ -712,7 +713,7 @@
     "RS": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-12T00:00:00.000Z",
+      "data_ref": "2026-06-12T04:00:00.000Z",
       "gasolina": 5.665,
       "etanol": 3.2,
       "s10": 5.79,
@@ -747,7 +748,7 @@
     "SC": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-06-16T00:00:00.000Z",
+      "data_ref": "2026-06-16T04:00:00.000Z",
       "gasolina": 5.75,
       "etanol": 3.47,
       "s10": 6.05,
@@ -782,7 +783,7 @@
     "SP": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-06-16T00:00:00.000Z",
+      "data_ref": "2026-06-16T04:00:00.000Z",
       "gasolina": 5.77,
       "etanol": 3.71,
       "s10": 6.133,

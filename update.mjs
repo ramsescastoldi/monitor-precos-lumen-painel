@@ -320,6 +320,7 @@ function toNum(v) {
 
         volumes = {
           mes_referencia: `${MESES_PT[mesU]}/${anoU}`,
+          periodo_iso: `${anoU}-${String(mesU).padStart(2, '0')}`, // machine-checkable p/ healthcheck de frescor
           total_mil_m3: Number(totalMes.toFixed(0)),
           share_distribuidora,
           evolucao_mensal,
