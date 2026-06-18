@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "18/06/2026, 07:02:25",
+  "atualizado_em": "18/06/2026, 14:33:58",
   "semana_referencia": "2026-06-12",
-  "distribuicao_ultima_data": "2026-06-16",
+  "distribuicao_ultima_data": "2026-06-18",
   "volumes": {
     "mes_referencia": "abr/2026",
     "total_mil_m3": 10008,
@@ -607,29 +607,29 @@
     "MT": {
       "n_cotacoes": 15,
       "n_distribuidoras": 15,
-      "data_ref": "2026-06-16T00:00:00.000Z",
-      "gasolina": 5.89,
-      "etanol": 2.912,
-      "s10": 6.41,
+      "data_ref": "2026-06-18T00:00:00.000Z",
+      "gasolina": 5.894,
+      "etanol": 2.913,
+      "s10": 6.372,
       "s500": 5.86,
       "margem": {
         "gasolina": {
           "revenda": 6.779,
-          "distribuicao": 5.89,
-          "margem_rs": 0.889,
-          "margem_pct": 15.09
+          "distribuicao": 5.894,
+          "margem_rs": 0.885,
+          "margem_pct": 15.02
         },
         "etanol": {
           "revenda": 3.879,
-          "distribuicao": 2.912,
-          "margem_rs": 0.967,
-          "margem_pct": 33.21
+          "distribuicao": 2.913,
+          "margem_rs": 0.966,
+          "margem_pct": 33.16
         },
         "s10": {
           "revenda": 7.219,
-          "distribuicao": 6.41,
-          "margem_rs": 0.809,
-          "margem_pct": 12.62
+          "distribuicao": 6.372,
+          "margem_rs": 0.847,
+          "margem_pct": 13.29
         },
         "s500": {
           "revenda": 6.931,
@@ -958,7 +958,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -970,7 +970,7 @@
       "s500": 5.95,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -988,25 +988,25 @@
       "estado": "MT",
       "distribuidora": "Centro Oeste",
       "cidade": "Varzea Grande",
-      "gasolina": 5.84,
-      "etanol": 2.86,
-      "s10": 6.39,
+      "gasolina": null,
+      "etanol": 2.83,
+      "s10": 6.3,
       "s500": 5.88,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
       "gasolina": 5.89,
-      "etanol": 2.9,
-      "s10": 6.5,
+      "etanol": 2.89,
+      "s10": 6.45,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1018,7 +1018,7 @@
       "s500": 5.71,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1030,7 +1030,7 @@
       "s500": 5.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1038,11 +1038,11 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.9,
       "etanol": 2.86,
-      "s10": 6.45,
+      "s10": 6.4,
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1060,13 +1060,13 @@
       "estado": "MT",
       "distribuidora": "Larco",
       "cidade": "Varzea Grande",
-      "gasolina": null,
+      "gasolina": 5.88,
       "etanol": null,
       "s10": 6.385,
       "s500": 5.935,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1078,19 +1078,19 @@
       "s500": 5.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
       "distribuidora": "Petroluz",
       "cidade": "Varzea Grande",
       "gasolina": 5.95,
-      "etanol": 2.85,
-      "s10": 6.5,
+      "etanol": 2.9,
+      "s10": 6.38,
       "s500": 5.95,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1098,11 +1098,11 @@
       "cidade": "Cuiaba",
       "gasolina": 5.95,
       "etanol": 2.91,
-      "s10": 6.37,
+      "s10": 6.29,
       "s500": 5.9,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1110,11 +1110,11 @@
       "cidade": "Cuiaba",
       "gasolina": 5.9,
       "etanol": 2.86,
-      "s10": 6.4,
+      "s10": 6.3,
       "s500": 5.9,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1150,7 +1150,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "MT",
@@ -1162,7 +1162,7 @@
       "s500": 5.88,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-16"
+      "data_coleta": "2026-06-18"
     },
     {
       "estado": "PR",
