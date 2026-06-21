@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "21/06/2026, 13:15:56",
+  "atualizado_em": "21/06/2026, 13:47:26",
   "semana_referencia": "2026-06-12",
   "distribuicao_ultima_data": "2026-06-19",
   "volumes": {
@@ -49,7 +49,7 @@
       },
       {
         "distribuidora": "Outras",
-        "volume": 3263.4,
+        "volume": 3263.2,
         "pct": 32.6
       }
     ],
@@ -100,7 +100,7 @@
       },
       {
         "label": "mar/26",
-        "volume": 10426
+        "volume": 10428
       },
       {
         "label": "abr/26",
@@ -111,13 +111,13 @@
       {
         "regiao": "SE",
         "nome": "Sudeste",
-        "volume": 4257.3,
+        "volume": 4257.1,
         "pct": 42.5
       },
       {
         "regiao": "S",
         "nome": "Sul",
-        "volume": 1904.2,
+        "volume": 1904.1,
         "pct": 19
       },
       {
