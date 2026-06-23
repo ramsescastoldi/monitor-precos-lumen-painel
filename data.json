@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "22/06/2026, 15:22:13",
+  "atualizado_em": "23/06/2026, 13:46:50",
   "semana_referencia": "2026-06-19",
-  "distribuicao_ultima_data": "2026-06-22",
+  "distribuicao_ultima_data": "2026-06-23",
   "volumes": {
     "mes_referencia": "abr/2026",
     "periodo_iso": "2026-04",
@@ -573,7 +573,7 @@
     "MT": {
       "n_cotacoes": 17,
       "n_distribuidoras": 17,
-      "data_ref": "2026-06-22T00:00:00.000Z",
+      "data_ref": "2026-06-23T00:00:00.000Z",
       "gasolina": 5.883,
       "etanol": 2.924,
       "s10": 6.302,
@@ -637,6 +637,31 @@
           "distribuicao": 5.37,
           "margem_rs": 1.189,
           "margem_pct": 22.14
+        }
+      }
+    },
+    "RO": {
+      "n_cotacoes": 2,
+      "n_distribuidoras": 2,
+      "data_ref": "2026-06-23T00:00:00.000Z",
+      "gasolina": null,
+      "etanol": null,
+      "s10": 6.245,
+      "s500": 6.29,
+      "margem": {
+        "gasolina": null,
+        "etanol": null,
+        "s10": {
+          "revenda": 7.394,
+          "distribuicao": 6.245,
+          "margem_rs": 1.149,
+          "margem_pct": 18.4
+        },
+        "s500": {
+          "revenda": 7.24,
+          "distribuicao": 6.29,
+          "margem_rs": 0.95,
+          "margem_pct": 15.1
         }
       }
     },
@@ -908,7 +933,7 @@
       "s500": 5.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -920,7 +945,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-19"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -944,7 +969,7 @@
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -980,7 +1005,7 @@
       "s500": 5.95,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -992,7 +1017,7 @@
       "s500": 5.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -1004,7 +1029,7 @@
       "s500": 5.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -1040,7 +1065,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-22"
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "MT",
@@ -1089,6 +1114,30 @@
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-06-16"
+    },
+    {
+      "estado": "RO",
+      "distribuidora": "Atem",
+      "cidade": "Porto Velho",
+      "gasolina": null,
+      "etanol": null,
+      "s10": 6.34,
+      "s500": 6.29,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-06-23"
+    },
+    {
+      "estado": "RO",
+      "distribuidora": "Bavel",
+      "cidade": "Porto Velho",
+      "gasolina": null,
+      "etanol": null,
+      "s10": 6.15,
+      "s500": null,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-06-23"
     },
     {
       "estado": "RS",
