@@ -64,13 +64,16 @@ jobs:
         env:
           EVOLUTION_APIKEY: ${{ secrets.EVOLUTION_APIKEY }}
         run: |
+          # Usa secret se definido, senao usa chave de fallback configurada pelo operador
+          APIKEY="${EVOLUTION_APIKEY:-a8f3d92e7c4b1a6f5e0d8c2b9a7f4e3d6c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7e}"
+
           BODY=$(node -e "process.stdout.write(JSON.stringify({ number: '120363423205444034@g.us', text: require('fs').readFileSync('/tmp/wpp_msg.txt','utf8') }))")
 
           echo "Enviando para 120363423205444034@g.us via bot-vendas..."
           RESPONSE=$(curl -sSL -X POST \
             'https://evolution.srv1662375.hstgr.cloud/message/sendText/bot-vendas' \
             -H 'Content-Type: application/json' \
-            -H "apikey: ${EVOLUTION_APIKEY}" \
+            -H "apikey: ${APIKEY}" \
             -d "${BODY}" \
             -w "\n__HTTP_STATUS__:%{http_code}")
 
