@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "30/06/2026, 13:36:28",
+  "atualizado_em": "30/06/2026, 15:26:30",
   "semana_referencia": "2026-06-19",
   "distribuicao_ultima_data": "2026-06-30",
   "volumes": {
@@ -500,6 +500,15 @@
     }
   },
   "distribuicao_estado": {
+    "BA": {
+      "n_cotacoes": 1,
+      "n_distribuidoras": 1,
+      "data_ref": "2026-06-30T00:00:00.000Z",
+      "gasolina": 5.95,
+      "etanol": null,
+      "s10": 6.4,
+      "s500": 5.9
+    },
     "DF": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
@@ -539,16 +548,16 @@
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
       "data_ref": "2026-06-30T00:00:00.000Z",
-      "gasolina": 5.608,
+      "gasolina": 5.557,
       "etanol": 3.398,
-      "s10": 6.168,
-      "s500": 5.49,
+      "s10": 6.138,
+      "s500": 5.505,
       "margem": {
         "gasolina": {
           "revenda": 6.802,
-          "distribuicao": 5.608,
-          "margem_rs": 1.194,
-          "margem_pct": 21.29
+          "distribuicao": 5.557,
+          "margem_rs": 1.245,
+          "margem_pct": 22.4
         },
         "etanol": {
           "revenda": 4.294,
@@ -558,15 +567,15 @@
         },
         "s10": {
           "revenda": 6.872,
-          "distribuicao": 6.168,
-          "margem_rs": 0.704,
-          "margem_pct": 11.41
+          "distribuicao": 6.138,
+          "margem_rs": 0.734,
+          "margem_pct": 11.96
         },
         "s500": {
           "revenda": 6.494,
-          "distribuicao": 5.49,
-          "margem_rs": 1.004,
-          "margem_pct": 18.29
+          "distribuicao": 5.505,
+          "margem_rs": 0.989,
+          "margem_pct": 17.97
         }
       }
     },
@@ -606,13 +615,13 @@
       }
     },
     "MT": {
-      "n_cotacoes": 18,
-      "n_distribuidoras": 18,
+      "n_cotacoes": 19,
+      "n_distribuidoras": 19,
       "data_ref": "2026-06-30T00:00:00.000Z",
       "gasolina": 5.855,
-      "etanol": 2.899,
-      "s10": 6.161,
-      "s500": 5.684,
+      "etanol": 2.9,
+      "s10": 6.174,
+      "s500": 5.681,
       "margem": {
         "gasolina": {
           "revenda": 6.74,
@@ -622,21 +631,21 @@
         },
         "etanol": {
           "revenda": 3.867,
-          "distribuicao": 2.899,
-          "margem_rs": 0.968,
-          "margem_pct": 33.39
+          "distribuicao": 2.9,
+          "margem_rs": 0.967,
+          "margem_pct": 33.34
         },
         "s10": {
           "revenda": 7.153,
-          "distribuicao": 6.161,
-          "margem_rs": 0.992,
-          "margem_pct": 16.1
+          "distribuicao": 6.174,
+          "margem_rs": 0.979,
+          "margem_pct": 15.86
         },
         "s500": {
           "revenda": 6.864,
-          "distribuicao": 5.684,
-          "margem_rs": 1.18,
-          "margem_pct": 20.76
+          "distribuicao": 5.681,
+          "margem_rs": 1.183,
+          "margem_pct": 20.82
         }
       }
     },
@@ -678,35 +687,35 @@
     "RO": {
       "n_cotacoes": 4,
       "n_distribuidoras": 4,
-      "data_ref": "2026-06-26T00:00:00.000Z",
-      "gasolina": 6.17,
-      "etanol": 4.2,
-      "s10": 6.243,
-      "s500": 6.245,
+      "data_ref": "2026-06-30T00:00:00.000Z",
+      "gasolina": 6.305,
+      "etanol": 3.88,
+      "s10": 6.3,
+      "s500": 6.143,
       "margem": {
         "gasolina": {
           "revenda": 7.345,
-          "distribuicao": 6.17,
-          "margem_rs": 1.175,
-          "margem_pct": 19.04
+          "distribuicao": 6.305,
+          "margem_rs": 1.04,
+          "margem_pct": 16.49
         },
         "etanol": {
           "revenda": 5.583,
-          "distribuicao": 4.2,
-          "margem_rs": 1.383,
-          "margem_pct": 32.93
+          "distribuicao": 3.88,
+          "margem_rs": 1.703,
+          "margem_pct": 43.89
         },
         "s10": {
           "revenda": 7.394,
-          "distribuicao": 6.243,
-          "margem_rs": 1.151,
-          "margem_pct": 18.44
+          "distribuicao": 6.3,
+          "margem_rs": 1.094,
+          "margem_pct": 17.37
         },
         "s500": {
           "revenda": 7.24,
-          "distribuicao": 6.245,
-          "margem_rs": 0.995,
-          "margem_pct": 15.93
+          "distribuicao": 6.143,
+          "margem_rs": 1.097,
+          "margem_pct": 17.86
         }
       }
     },
@@ -783,6 +792,18 @@
   },
   "distribuidoras_detalhe": [
     {
+      "estado": "BA",
+      "distribuidora": "Fic",
+      "cidade": "Luiz Eduardo M.",
+      "gasolina": 5.95,
+      "etanol": null,
+      "s10": 6.4,
+      "s500": 5.9,
+      "modalidade": "retira",
+      "observacoes": null,
+      "data_coleta": "2026-06-30"
+    },
+    {
       "estado": "DF",
       "distribuidora": "Royal Fic",
       "cidade": "Sao Francisco C.",
@@ -846,13 +867,13 @@
       "estado": "GO",
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
-      "gasolina": 5.8,
+      "gasolina": 5.49,
       "etanol": 3.05,
-      "s10": 6.16,
-      "s500": 5.43,
+      "s10": 6.01,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-06-26"
+      "data_coleta": "2026-06-30"
     },
     {
       "estado": "GO",
@@ -994,6 +1015,18 @@
       "etanol": 2.85,
       "s10": 6.15,
       "s500": 5.6,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-06-30"
+    },
+    {
+      "estado": "MT",
+      "distribuidora": "Ipiranga",
+      "cidade": "Cuiaba",
+      "gasolina": 5.86,
+      "etanol": 2.92,
+      "s10": 6.38,
+      "s500": 5.64,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-06-30"
@@ -1194,13 +1227,13 @@
       "estado": "RO",
       "distribuidora": "Ipiranga",
       "cidade": "Porto Velho",
-      "gasolina": null,
-      "etanol": null,
-      "s10": 6.15,
-      "s500": null,
+      "gasolina": 6.44,
+      "etanol": 3.56,
+      "s10": 6.38,
+      "s500": 5.94,
       "modalidade": null,
       "observacoes": null,
-      "data_coleta": "2026-06-26"
+      "data_coleta": "2026-06-30"
     },
     {
       "estado": "SC",
