@@ -9,7 +9,7 @@ import https from 'node:https';
 
 const { Client } = pg;
 
-const ESTADOS = new Set(['MT', 'RS', 'GO', 'DF', 'PR', 'MG', 'SP', 'RO', 'RJ', 'CE', 'SC', 'PA', 'MS']);
+const ESTADOS = new Set(['MT', 'RS', 'GO', 'DF', 'PR', 'MG', 'SP', 'RO', 'RJ', 'CE', 'SC', 'PA', 'MS', 'BA']);
 const PRODUTOS_VALIDOS = new Set(['GASOLINA', 'ETANOL', 'DIESEL', 'DIESEL S10']);
 
 const URLS = [
