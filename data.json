@@ -1,63 +1,59 @@
 {
-  "atualizado_em": "02/07/2026, 13:20:27",
+  "atualizado_em": "02/07/2026, 13:52:02",
   "semana_referencia": "2026-06-26",
   "distribuicao_ultima_data": "2026-07-02",
   "volumes": {
-    "mes_referencia": "abr/2026",
-    "periodo_iso": "2026-04",
-    "total_mil_m3": 10008,
+    "mes_referencia": "mai/2026",
+    "periodo_iso": "2026-05",
+    "total_mil_m3": 9913,
     "share_distribuidora": [
       {
-        "distribuidora": "RAIZEN S.A.",
-        "volume": 2043.7,
-        "pct": 20.4
+        "distribuidora": "VIBRA ENERGIA S.A",
+        "volume": 2079.2,
+        "pct": 21
       },
       {
-        "distribuidora": "VIBRA ENERGIA S.A",
-        "volume": 1983.8,
-        "pct": 19.8
+        "distribuidora": "RAIZEN S.A.",
+        "volume": 1765.8,
+        "pct": 17.8
       },
       {
         "distribuidora": "IPIRANGA PRODUTOS DE PETRÓLEO S.A",
-        "volume": 1765,
-        "pct": 17.6
-      },
-      {
-        "distribuidora": "ALE COMBUSTIVEIS S.A.",
-        "volume": 237.3,
-        "pct": 2.4
-      },
-      {
-        "distribuidora": "ATEM' S DISTRIBUIDORA DE PETRÓLEO S.A.",
-        "volume": 197.8,
-        "pct": 2
+        "volume": 1629.6,
+        "pct": 16.4
       },
       {
         "distribuidora": "ROYAL FIC DISTRIBUIDORA DE DERIVADOS DE PETRÓLEO S/A",
-        "volume": 193.1,
-        "pct": 1.9
+        "volume": 231.1,
+        "pct": 2.3
       },
       {
-        "distribuidora": "LARCO COMERCIAL DE PRODUTOS DE PETRÓLEO LTDA.",
-        "volume": 178.1,
-        "pct": 1.8
+        "distribuidora": "ALE COMBUSTIVEIS S.A.",
+        "volume": 226.1,
+        "pct": 2.3
+      },
+      {
+        "distribuidora": "ATEM' S DISTRIBUIDORA DE PETRÓLEO S.A.",
+        "volume": 210.4,
+        "pct": 2.1
       },
       {
         "distribuidora": "ON PETRO - DISTRIBUIDORA DE COMBUSTÍVEIS LTDA",
-        "volume": 145.7,
-        "pct": 1.5
+        "volume": 178.5,
+        "pct": 1.8
+      },
+      {
+        "distribuidora": "LARCO COMERCIAL DE PRODUTOS DE PETRÓLEO LTDA.",
+        "volume": 170.9,
+        "pct": 1.7
       },
       {
         "distribuidora": "Outras",
-        "volume": 3263.2,
-        "pct": 32.6
+        "volume": 3421.8,
+        "pct": 34.5
       }
     ],
     "evolucao_mensal": [
-      {
-        "label": "abr/25",
-        "volume": 9902
-      },
       {
         "label": "mai/25",
         "volume": 10110
@@ -105,38 +101,42 @@
       {
         "label": "abr/26",
         "volume": 10008
+      },
+      {
+        "label": "mai/26",
+        "volume": 9913
       }
     ],
     "por_regiao": [
       {
         "regiao": "SE",
         "nome": "Sudeste",
-        "volume": 4257.1,
-        "pct": 42.5
+        "volume": 4459.9,
+        "pct": 45
       },
       {
         "regiao": "S",
         "nome": "Sul",
-        "volume": 1904.1,
-        "pct": 19
+        "volume": 1854.9,
+        "pct": 18.7
       },
       {
         "regiao": "NE",
         "nome": "Nordeste",
-        "volume": 1792.8,
-        "pct": 17.9
+        "volume": 1566.8,
+        "pct": 15.8
       },
       {
         "regiao": "CO",
         "nome": "Centro-Oeste",
-        "volume": 1620.5,
-        "pct": 16.2
+        "volume": 1551.3,
+        "pct": 15.6
       },
       {
         "regiao": "N",
         "nome": "Norte",
-        "volume": 433.2,
-        "pct": 4.3
+        "volume": 480.4,
+        "pct": 4.8
       }
     ]
   },
