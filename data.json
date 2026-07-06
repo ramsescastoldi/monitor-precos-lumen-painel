@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "06/07/2026, 12:01:24",
+  "atualizado_em": "06/07/2026, 12:08:43",
   "semana_referencia": "2026-07-03",
   "distribuicao_ultima_data": "2026-07-06",
   "volumes": {
@@ -532,9 +532,9 @@
       "n_distribuidoras": 2,
       "data_ref": "2026-07-06T00:00:00.000Z",
       "gasolina": 5.89,
-      "etanol": 3.66,
-      "s10": 6.38,
-      "s500": 5.965,
+      "etanol": 3.67,
+      "s10": 6.405,
+      "s500": 5.865,
       "margem": {
         "gasolina": {
           "revenda": 7.082,
@@ -544,21 +544,21 @@
         },
         "etanol": {
           "revenda": 4.927,
-          "distribuicao": 3.66,
-          "margem_rs": 1.267,
-          "margem_pct": 34.62
+          "distribuicao": 3.67,
+          "margem_rs": 1.257,
+          "margem_pct": 34.25
         },
         "s10": {
           "revenda": 7.452,
-          "distribuicao": 6.38,
-          "margem_rs": 1.072,
-          "margem_pct": 16.8
+          "distribuicao": 6.405,
+          "margem_rs": 1.047,
+          "margem_pct": 16.35
         },
         "s500": {
           "revenda": 7.349,
-          "distribuicao": 5.965,
-          "margem_rs": 1.384,
-          "margem_pct": 23.2
+          "distribuicao": 5.865,
+          "margem_rs": 1.484,
+          "margem_pct": 25.3
         }
       }
     },
@@ -814,9 +814,9 @@
       "distribuidora": "Fic",
       "cidade": "Luiz Eduardo M.",
       "gasolina": 5.95,
-      "etanol": null,
-      "s10": 6.4,
-      "s500": 5.9,
+      "etanol": 3.68,
+      "s10": 6.45,
+      "s500": 5.7,
       "modalidade": "retira",
       "observacoes": null,
       "data_coleta": "2026-07-06"
