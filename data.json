@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "06/07/2026, 06:51:21",
+  "atualizado_em": "06/07/2026, 10:40:36",
   "semana_referencia": "2026-07-03",
-  "distribuicao_ultima_data": "2026-07-03",
+  "distribuicao_ultima_data": "2026-07-06",
   "volumes": {
     "mes_referencia": "mai/2026",
     "periodo_iso": "2026-05",
@@ -665,7 +665,7 @@
     "MT": {
       "n_cotacoes": 18,
       "n_distribuidoras": 18,
-      "data_ref": "2026-07-03T00:00:00.000Z",
+      "data_ref": "2026-07-06T00:00:00.000Z",
       "gasolina": 5.825,
       "etanol": 2.917,
       "s10": 6.148,
@@ -1101,7 +1101,7 @@
       "s500": 5.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-03"
+      "data_coleta": "2026-07-06"
     },
     {
       "estado": "MT",
@@ -1161,7 +1161,7 @@
       "s500": 5.61,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-03"
+      "data_coleta": "2026-07-06"
     },
     {
       "estado": "MT",
