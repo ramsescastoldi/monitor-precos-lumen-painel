@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "07/07/2026, 11:53:05",
+  "atualizado_em": "07/07/2026, 11:59:20",
   "semana_referencia": "2026-07-03",
   "distribuicao_ultima_data": "2026-07-07",
   "volumes": {
@@ -636,34 +636,34 @@
       "n_cotacoes": 19,
       "n_distribuidoras": 19,
       "data_ref": "2026-07-07T00:00:00.000Z",
-      "gasolina": 5.826,
-      "etanol": 2.925,
-      "s10": 6.121,
-      "s500": 5.646,
+      "gasolina": 5.824,
+      "etanol": 2.917,
+      "s10": 6.105,
+      "s500": 5.637,
       "margem": {
         "gasolina": {
           "revenda": 6.757,
-          "distribuicao": 5.826,
-          "margem_rs": 0.931,
-          "margem_pct": 15.98
+          "distribuicao": 5.824,
+          "margem_rs": 0.933,
+          "margem_pct": 16.02
         },
         "etanol": {
           "revenda": 3.708,
-          "distribuicao": 2.925,
-          "margem_rs": 0.783,
-          "margem_pct": 26.77
+          "distribuicao": 2.917,
+          "margem_rs": 0.791,
+          "margem_pct": 27.12
         },
         "s10": {
           "revenda": 7.086,
-          "distribuicao": 6.121,
-          "margem_rs": 0.965,
-          "margem_pct": 15.77
+          "distribuicao": 6.105,
+          "margem_rs": 0.981,
+          "margem_pct": 16.07
         },
         "s500": {
           "revenda": 6.783,
-          "distribuicao": 5.646,
-          "margem_rs": 1.137,
-          "margem_pct": 20.14
+          "distribuicao": 5.637,
+          "margem_rs": 1.146,
+          "margem_pct": 20.33
         }
       }
     },
@@ -1005,13 +1005,13 @@
       "estado": "MT",
       "distribuidora": "Idaza",
       "cidade": "Cuiaba",
-      "gasolina": 5.86,
-      "etanol": 3.05,
-      "s10": 6.47,
-      "s500": 5.8,
+      "gasolina": 5.84,
+      "etanol": 2.92,
+      "s10": 6.21,
+      "s500": 5.74,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-02"
+      "data_coleta": "2026-07-07"
     },
     {
       "estado": "MT",
@@ -1152,7 +1152,7 @@
       "gasolina": null,
       "etanol": null,
       "s10": 6,
-      "s500": 5.62,
+      "s500": 5.55,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-07-07"
