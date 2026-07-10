@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "09/07/2026, 13:45:27",
+  "atualizado_em": "10/07/2026, 09:55:17",
   "semana_referencia": "2026-07-03",
-  "distribuicao_ultima_data": "2026-07-09",
+  "distribuicao_ultima_data": "2026-07-10",
   "volumes": {
     "mes_referencia": "mai/2026",
     "periodo_iso": "2026-05",
@@ -635,11 +635,11 @@
     "MT": {
       "n_cotacoes": 17,
       "n_distribuidoras": 17,
-      "data_ref": "2026-07-09T00:00:00.000Z",
+      "data_ref": "2026-07-10T00:00:00.000Z",
       "gasolina": 5.814,
-      "etanol": 2.915,
-      "s10": 6.134,
-      "s500": 5.632,
+      "etanol": 2.911,
+      "s10": 6.136,
+      "s500": 5.64,
       "margem": {
         "gasolina": {
           "revenda": 6.757,
@@ -649,21 +649,21 @@
         },
         "etanol": {
           "revenda": 3.708,
-          "distribuicao": 2.915,
-          "margem_rs": 0.793,
-          "margem_pct": 27.2
+          "distribuicao": 2.911,
+          "margem_rs": 0.797,
+          "margem_pct": 27.38
         },
         "s10": {
           "revenda": 7.086,
-          "distribuicao": 6.134,
-          "margem_rs": 0.952,
-          "margem_pct": 15.52
+          "distribuicao": 6.136,
+          "margem_rs": 0.95,
+          "margem_pct": 15.48
         },
         "s500": {
           "revenda": 6.783,
-          "distribuicao": 5.632,
-          "margem_rs": 1.151,
-          "margem_pct": 20.44
+          "distribuicao": 5.64,
+          "margem_rs": 1.143,
+          "margem_pct": 20.27
         }
       }
     },
@@ -703,13 +703,13 @@
       }
     },
     "RO": {
-      "n_cotacoes": 3,
-      "n_distribuidoras": 3,
+      "n_cotacoes": 2,
+      "n_distribuidoras": 2,
       "data_ref": "2026-07-06T00:00:00.000Z",
       "gasolina": 6.295,
       "etanol": 3.88,
-      "s10": 6.297,
-      "s500": 6.06,
+      "s10": 6.275,
+      "s500": 5.945,
       "margem": {
         "gasolina": {
           "revenda": 7.36,
@@ -725,15 +725,15 @@
         },
         "s10": {
           "revenda": 7.368,
-          "distribuicao": 6.297,
-          "margem_rs": 1.071,
-          "margem_pct": 17.01
+          "distribuicao": 6.275,
+          "margem_rs": 1.093,
+          "margem_pct": 17.42
         },
         "s500": {
           "revenda": 7.256,
-          "distribuicao": 6.06,
-          "margem_rs": 1.196,
-          "margem_pct": 19.74
+          "distribuicao": 5.945,
+          "margem_rs": 1.311,
+          "margem_pct": 22.05
         }
       }
     },
@@ -971,11 +971,11 @@
       "cidade": "Cuiaba",
       "gasolina": 5.75,
       "etanol": 2.85,
-      "s10": 6.04,
-      "s500": 5.5,
+      "s10": 6.08,
+      "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-09"
+      "data_coleta": "2026-07-10"
     },
     {
       "estado": "MT",
@@ -1035,7 +1035,7 @@
       "s500": 5.66,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-09"
+      "data_coleta": "2026-07-10"
     },
     {
       "estado": "MT",
@@ -1054,12 +1054,12 @@
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
       "gasolina": 5.89,
-      "etanol": null,
+      "etanol": 2.86,
       "s10": 6.15,
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-09"
+      "data_coleta": "2026-07-10"
     },
     {
       "estado": "MT",
@@ -1071,7 +1071,7 @@
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-09"
+      "data_coleta": "2026-07-10"
     },
     {
       "estado": "MT",
@@ -1119,7 +1119,7 @@
       "s500": 5.59,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-09"
+      "data_coleta": "2026-07-10"
     },
     {
       "estado": "MT",
@@ -1168,18 +1168,6 @@
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-07-03"
-    },
-    {
-      "estado": "RO",
-      "distribuidora": "Atem",
-      "cidade": "Porto Velho",
-      "gasolina": null,
-      "etanol": null,
-      "s10": 6.34,
-      "s500": 6.29,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-06-26"
     },
     {
       "estado": "RO",
