@@ -17,24 +17,19 @@ const PRODUTO_COMB = {
   'DIESEL S10': 'd10', 'DIESEL': 'd500'
 };
 
+// https.get pelado, idêntico ao scraper-anp que roda no GitHub sem falhar
+// (gov.br derruba conexão de datacenter quando mandamos User-Agent de navegador)
 function baixarUma(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; LumenRadar/1.0)', 'Accept': '*/*' },
-      timeout: 120000
-    }, (res) => {
+    https.get(url, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        res.resume();
         return baixarUma(res.headers.location).then(resolve, reject);
       }
-      if (res.statusCode !== 200) { res.resume(); return reject(new Error('HTTP ' + res.statusCode)); }
       const chunks = [];
       res.on('data', c => chunks.push(c));
       res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
       res.on('error', reject);
-    });
-    req.on('timeout', () => req.destroy(new Error('timeout')));
-    req.on('error', reject);
+    }).on('error', reject);
   });
 }
 
