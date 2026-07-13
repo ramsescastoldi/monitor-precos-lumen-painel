@@ -1,0 +1,19 @@
+name: Export Radar (postos ANP → KV)
+
+on:
+  schedule:
+    # seg e qui 09:00 UTC (06:00 BRT) — depois do scrape ANP das 03h
+    - cron: '0 9 * * 1,4'
+  workflow_dispatch: {}
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --omit=dev
+      - run: node export-radar.mjs
