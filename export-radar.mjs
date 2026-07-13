@@ -17,19 +17,40 @@ const PRODUTO_COMB = {
   'DIESEL S10': 'd10', 'DIESEL': 'd500'
 };
 
-function baixar(url) {
+function baixarUma(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
+    const req = https.get(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; LumenRadar/1.0)', 'Accept': '*/*' },
+      timeout: 120000
+    }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return baixar(res.headers.location).then(resolve, reject);
+        res.resume();
+        return baixarUma(res.headers.location).then(resolve, reject);
       }
-      if (res.statusCode !== 200) return reject(new Error('HTTP ' + res.statusCode + ' em ' + url));
+      if (res.statusCode !== 200) { res.resume(); return reject(new Error('HTTP ' + res.statusCode)); }
       const chunks = [];
       res.on('data', c => chunks.push(c));
       res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
       res.on('error', reject);
-    }).on('error', reject);
+    });
+    req.on('timeout', () => req.destroy(new Error('timeout')));
+    req.on('error', reject);
   });
+}
+
+// gov.br/ANP oscila e às vezes reseta conexão de datacenter — tenta até 4x
+async function baixar(url) {
+  let ultimoErro;
+  for (let tent = 1; tent <= 4; tent++) {
+    try {
+      return await baixarUma(url);
+    } catch (e) {
+      ultimoErro = e;
+      console.log(`  download falhou (tentativa ${tent}/4): ${e.message || e.code || 'erro de rede'} — reintentando…`);
+      await new Promise(r => setTimeout(r, tent * 5000));
+    }
+  }
+  throw new Error('download falhou após 4 tentativas: ' + (ultimoErro?.message || ultimoErro?.code || ''));
 }
 
 const slug = s => String(s || '').toLowerCase().normalize('NFD')
