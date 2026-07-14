@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/07/2026, 09:30:50",
+  "atualizado_em": "14/07/2026, 09:36:56",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-14",
   "volumes": {
@@ -566,34 +566,34 @@
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
       "data_ref": "2026-07-14T00:00:00.000Z",
-      "gasolina": 5.45,
-      "etanol": 3.478,
-      "s10": 6.037,
-      "s500": 5.645,
+      "gasolina": 5.482,
+      "etanol": 3.426,
+      "s10": 6.023,
+      "s500": 5.588,
       "margem": {
         "gasolina": {
           "revenda": 6.677,
-          "distribuicao": 5.45,
-          "margem_rs": 1.227,
-          "margem_pct": 22.51
+          "distribuicao": 5.482,
+          "margem_rs": 1.195,
+          "margem_pct": 21.8
         },
         "etanol": {
           "revenda": 4.181,
-          "distribuicao": 3.478,
-          "margem_rs": 0.703,
-          "margem_pct": 20.21
+          "distribuicao": 3.426,
+          "margem_rs": 0.755,
+          "margem_pct": 22.04
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 6.037,
-          "margem_rs": 0.729,
-          "margem_pct": 12.08
+          "distribuicao": 6.023,
+          "margem_rs": 0.743,
+          "margem_pct": 12.34
         },
         "s500": {
           "revenda": 6.346,
-          "distribuicao": 5.645,
-          "margem_rs": 0.701,
-          "margem_pct": 12.42
+          "distribuicao": 5.588,
+          "margem_rs": 0.758,
+          "margem_pct": 13.56
         }
       }
     },
@@ -832,13 +832,13 @@
       "estado": "GO",
       "distribuidora": "Equador",
       "cidade": "Senador Canedo",
-      "gasolina": 5.42,
-      "etanol": null,
-      "s10": 5.99,
-      "s500": 5.61,
+      "gasolina": 5.49,
+      "etanol": 3.21,
+      "s10": 5.95,
+      "s500": 5.41,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "GO",
@@ -868,10 +868,10 @@
       "estado": "GO",
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
-      "gasolina": 5.35,
-      "etanol": 3.05,
-      "s10": 6,
-      "s500": null,
+      "gasolina": 5.47,
+      "etanol": 3.06,
+      "s10": 5.96,
+      "s500": 5.56,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-07-14"
