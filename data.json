@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/07/2026, 09:58:25",
+  "atualizado_em": "14/07/2026, 10:02:42",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-14",
   "volumes": {
@@ -530,11 +530,11 @@
     "BA": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-07-10T00:00:00.000Z",
+      "data_ref": "2026-07-14T00:00:00.000Z",
       "gasolina": 5.89,
       "etanol": 3.67,
       "s10": 6.315,
-      "s500": 5.865,
+      "s500": 5.775,
       "margem": {
         "gasolina": {
           "revenda": 7.093,
@@ -556,9 +556,9 @@
         },
         "s500": {
           "revenda": 7.262,
-          "distribuicao": 5.865,
-          "margem_rs": 1.397,
-          "margem_pct": 23.82
+          "distribuicao": 5.775,
+          "margem_rs": 1.487,
+          "margem_pct": 25.75
         }
       }
     },
@@ -566,44 +566,44 @@
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
       "data_ref": "2026-07-14T00:00:00.000Z",
-      "gasolina": 5.482,
-      "etanol": 3.51,
-      "s10": 6.04,
-      "s500": 5.588,
+      "gasolina": 5.478,
+      "etanol": 3.473,
+      "s10": 6.083,
+      "s500": 5.594,
       "margem": {
         "gasolina": {
           "revenda": 6.677,
-          "distribuicao": 5.482,
-          "margem_rs": 1.195,
-          "margem_pct": 21.8
+          "distribuicao": 5.478,
+          "margem_rs": 1.199,
+          "margem_pct": 21.89
         },
         "etanol": {
           "revenda": 4.181,
-          "distribuicao": 3.51,
-          "margem_rs": 0.671,
-          "margem_pct": 19.12
+          "distribuicao": 3.473,
+          "margem_rs": 0.708,
+          "margem_pct": 20.39
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 6.04,
-          "margem_rs": 0.726,
-          "margem_pct": 12.02
+          "distribuicao": 6.083,
+          "margem_rs": 0.683,
+          "margem_pct": 11.23
         },
         "s500": {
           "revenda": 6.346,
-          "distribuicao": 5.588,
-          "margem_rs": 0.758,
-          "margem_pct": 13.56
+          "distribuicao": 5.594,
+          "margem_rs": 0.752,
+          "margem_pct": 13.44
         }
       }
     },
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-07-10T00:00:00.000Z",
+      "data_ref": "2026-07-14T00:00:00.000Z",
       "gasolina": 5.47,
       "etanol": 3.607,
-      "s10": 6.003,
+      "s10": 6.153,
       "s500": 5.483,
       "margem": {
         "gasolina": {
@@ -620,9 +620,9 @@
         },
         "s10": {
           "revenda": 6.902,
-          "distribuicao": 6.003,
-          "margem_rs": 0.899,
-          "margem_pct": 14.98
+          "distribuicao": 6.153,
+          "margem_rs": 0.749,
+          "margem_pct": 12.17
         },
         "s500": {
           "revenda": 6.562,
@@ -823,19 +823,19 @@
       "gasolina": 5.83,
       "etanol": 3.66,
       "s10": 6.18,
-      "s500": 6.03,
+      "s500": 5.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "GO",
       "distribuidora": "Equador",
       "cidade": "Senador Canedo",
-      "gasolina": 5.49,
-      "etanol": 3.21,
-      "s10": 5.95,
-      "s500": 5.41,
+      "gasolina": 5.47,
+      "etanol": 3.06,
+      "s10": 5.96,
+      "s500": 5.56,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-07-14"
@@ -882,11 +882,11 @@
       "cidade": "Senador Canedo",
       "gasolina": 5.65,
       "etanol": 4.71,
-      "s10": 6.1,
-      "s500": 5.87,
+      "s10": 6.35,
+      "s500": 5.75,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "GO",
@@ -906,11 +906,11 @@
       "cidade": "Betim",
       "gasolina": 5.45,
       "etanol": 4.39,
-      "s10": 5.95,
+      "s10": 6.4,
       "s500": 5.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "MG",
