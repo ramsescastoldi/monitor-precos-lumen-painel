@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/07/2026, 10:02:42",
+  "atualizado_em": "14/07/2026, 10:20:26",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-14",
   "volumes": {
@@ -534,7 +534,7 @@
       "gasolina": 5.89,
       "etanol": 3.67,
       "s10": 6.315,
-      "s500": 5.775,
+      "s500": 5.95,
       "margem": {
         "gasolina": {
           "revenda": 7.093,
@@ -556,9 +556,9 @@
         },
         "s500": {
           "revenda": 7.262,
-          "distribuicao": 5.775,
-          "margem_rs": 1.487,
-          "margem_pct": 25.75
+          "distribuicao": 5.95,
+          "margem_rs": 1.312,
+          "margem_pct": 22.05
         }
       }
     },
@@ -636,16 +636,16 @@
       "n_cotacoes": 18,
       "n_distribuidoras": 18,
       "data_ref": "2026-07-14T00:00:00.000Z",
-      "gasolina": 5.815,
+      "gasolina": 5.814,
       "etanol": 2.92,
       "s10": 6.162,
       "s500": 5.664,
       "margem": {
         "gasolina": {
           "revenda": 6.824,
-          "distribuicao": 5.815,
-          "margem_rs": 1.009,
-          "margem_pct": 17.35
+          "distribuicao": 5.814,
+          "margem_rs": 1.01,
+          "margem_pct": 17.37
         },
         "etanol": {
           "revenda": 3.776,
@@ -811,10 +811,10 @@
       "gasolina": 5.95,
       "etanol": 3.68,
       "s10": 6.45,
-      "s500": 5.7,
+      "s500": 6.05,
       "modalidade": "retira",
       "observacoes": null,
-      "data_coleta": "2026-07-06"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "BA",
@@ -1000,13 +1000,13 @@
       "estado": "MT",
       "distribuidora": "Idaza",
       "cidade": "Cuiaba",
-      "gasolina": 5.84,
+      "gasolina": 5.82,
       "etanol": 2.92,
       "s10": 6.21,
       "s500": 5.74,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-08"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "MT",
