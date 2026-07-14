@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/07/2026, 09:08:18",
+  "atualizado_em": "14/07/2026, 09:13:24",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-14",
   "volumes": {
@@ -1050,11 +1050,11 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.75,
       "etanol": 2.9,
-      "s10": null,
+      "s10": 6.15,
       "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "MT",
