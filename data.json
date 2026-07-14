@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/07/2026, 09:26:23",
+  "atualizado_em": "14/07/2026, 09:30:50",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-14",
   "volumes": {
@@ -565,10 +565,10 @@
     "GO": {
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
-      "data_ref": "2026-07-10T00:00:00.000Z",
+      "data_ref": "2026-07-14T00:00:00.000Z",
       "gasolina": 5.45,
-      "etanol": 3.475,
-      "s10": 6.033,
+      "etanol": 3.478,
+      "s10": 6.037,
       "s500": 5.645,
       "margem": {
         "gasolina": {
@@ -579,15 +579,15 @@
         },
         "etanol": {
           "revenda": 4.181,
-          "distribuicao": 3.475,
-          "margem_rs": 0.706,
-          "margem_pct": 20.32
+          "distribuicao": 3.478,
+          "margem_rs": 0.703,
+          "margem_pct": 20.21
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 6.033,
-          "margem_rs": 0.733,
-          "margem_pct": 12.15
+          "distribuicao": 6.037,
+          "margem_rs": 0.729,
+          "margem_pct": 12.08
         },
         "s500": {
           "revenda": 6.346,
@@ -869,12 +869,12 @@
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
       "gasolina": 5.35,
-      "etanol": 3.04,
-      "s10": 5.98,
+      "etanol": 3.05,
+      "s10": 6,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-14"
     },
     {
       "estado": "GO",
