@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/07/2026, 09:40:30",
+  "atualizado_em": "17/07/2026, 12:21:52",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-17",
   "volumes": {
@@ -530,17 +530,17 @@
     "BA": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-07-14T00:00:00.000Z",
-      "gasolina": 5.89,
+      "data_ref": "2026-07-17T00:00:00.000Z",
+      "gasolina": 5.895,
       "etanol": 3.67,
       "s10": 6.315,
       "s500": 5.95,
       "margem": {
         "gasolina": {
           "revenda": 7.093,
-          "distribuicao": 5.89,
-          "margem_rs": 1.203,
-          "margem_pct": 20.42
+          "distribuicao": 5.895,
+          "margem_rs": 1.198,
+          "margem_pct": 20.32
         },
         "etanol": {
           "revenda": 4.955,
@@ -566,34 +566,34 @@
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
       "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.455,
-      "etanol": 3.47,
-      "s10": 6.085,
-      "s500": 5.562,
+      "gasolina": 5.413,
+      "etanol": 3.295,
+      "s10": 6.018,
+      "s500": 5.512,
       "margem": {
         "gasolina": {
           "revenda": 6.677,
-          "distribuicao": 5.455,
-          "margem_rs": 1.222,
-          "margem_pct": 22.4
+          "distribuicao": 5.413,
+          "margem_rs": 1.264,
+          "margem_pct": 23.35
         },
         "etanol": {
           "revenda": 4.181,
-          "distribuicao": 3.47,
-          "margem_rs": 0.711,
-          "margem_pct": 20.49
+          "distribuicao": 3.295,
+          "margem_rs": 0.886,
+          "margem_pct": 26.89
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 6.085,
-          "margem_rs": 0.681,
-          "margem_pct": 11.19
+          "distribuicao": 6.018,
+          "margem_rs": 0.748,
+          "margem_pct": 12.43
         },
         "s500": {
           "revenda": 6.346,
-          "distribuicao": 5.562,
-          "margem_rs": 0.784,
-          "margem_pct": 14.1
+          "distribuicao": 5.512,
+          "margem_rs": 0.834,
+          "margem_pct": 15.13
         }
       }
     },
@@ -601,16 +601,16 @@
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
       "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.463,
+      "gasolina": 5.447,
       "etanol": 3.6,
-      "s10": 6.157,
-      "s500": 5.477,
+      "s10": 5.99,
+      "s500": 5.46,
       "margem": {
         "gasolina": {
           "revenda": 6.35,
-          "distribuicao": 5.463,
-          "margem_rs": 0.887,
-          "margem_pct": 16.24
+          "distribuicao": 5.447,
+          "margem_rs": 0.903,
+          "margem_pct": 16.58
         },
         "etanol": {
           "revenda": 4.15,
@@ -620,15 +620,15 @@
         },
         "s10": {
           "revenda": 6.902,
-          "distribuicao": 6.157,
-          "margem_rs": 0.745,
-          "margem_pct": 12.1
+          "distribuicao": 5.99,
+          "margem_rs": 0.912,
+          "margem_pct": 15.23
         },
         "s500": {
           "revenda": 6.562,
-          "distribuicao": 5.477,
-          "margem_rs": 1.085,
-          "margem_pct": 19.81
+          "distribuicao": 5.46,
+          "margem_rs": 1.102,
+          "margem_pct": 20.18
         }
       }
     },
@@ -671,16 +671,16 @@
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
       "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.6,
+      "gasolina": 5.35,
       "etanol": 4.88,
-      "s10": 6.04,
-      "s500": 5.3,
+      "s10": 5.89,
+      "s500": 5.275,
       "margem": {
         "gasolina": {
           "revenda": 6.67,
-          "distribuicao": 5.6,
-          "margem_rs": 1.07,
-          "margem_pct": 19.11
+          "distribuicao": 5.35,
+          "margem_rs": 1.32,
+          "margem_pct": 24.67
         },
         "etanol": {
           "revenda": 4.223,
@@ -690,15 +690,15 @@
         },
         "s10": {
           "revenda": 6.891,
-          "distribuicao": 6.04,
-          "margem_rs": 0.851,
-          "margem_pct": 14.09
+          "distribuicao": 5.89,
+          "margem_rs": 1.001,
+          "margem_pct": 16.99
         },
         "s500": {
           "revenda": 6.325,
-          "distribuicao": 5.3,
-          "margem_rs": 1.025,
-          "margem_pct": 19.34
+          "distribuicao": 5.275,
+          "margem_rs": 1.05,
+          "margem_pct": 19.91
         }
       }
     },
@@ -771,16 +771,16 @@
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
       "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.625,
+      "gasolina": 5.47,
       "etanol": 3.77,
-      "s10": 5.977,
-      "s500": 5.31,
+      "s10": 5.827,
+      "s500": 5.26,
       "margem": {
         "gasolina": {
           "revenda": 6.451,
-          "distribuicao": 5.625,
-          "margem_rs": 0.826,
-          "margem_pct": 14.68
+          "distribuicao": 5.47,
+          "margem_rs": 0.981,
+          "margem_pct": 17.93
         },
         "etanol": {
           "revenda": 3.808,
@@ -790,15 +790,15 @@
         },
         "s10": {
           "revenda": 6.978,
-          "distribuicao": 5.977,
-          "margem_rs": 1.001,
-          "margem_pct": 16.75
+          "distribuicao": 5.827,
+          "margem_rs": 1.151,
+          "margem_pct": 19.75
         },
         "s500": {
           "revenda": 6.609,
-          "distribuicao": 5.31,
-          "margem_rs": 1.299,
-          "margem_pct": 24.46
+          "distribuicao": 5.26,
+          "margem_rs": 1.349,
+          "margem_pct": 25.65
         }
       }
     }
@@ -808,13 +808,13 @@
       "estado": "BA",
       "distribuidora": "Fic",
       "cidade": "Luiz Eduardo M.",
-      "gasolina": 5.95,
+      "gasolina": 5.96,
       "etanol": 3.68,
       "s10": 6.45,
       "s500": 6.05,
       "modalidade": "retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     },
     {
       "estado": "BA",
@@ -880,13 +880,13 @@
       "estado": "GO",
       "distribuidora": "Royal Fic",
       "cidade": "Senador Canedo",
-      "gasolina": 5.65,
-      "etanol": 4.71,
-      "s10": 6.35,
-      "s500": 5.75,
+      "gasolina": 5.4,
+      "etanol": 4.01,
+      "s10": 5.95,
+      "s500": 5.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     },
     {
       "estado": "GO",
@@ -904,13 +904,13 @@
       "estado": "MG",
       "distribuidora": "FIC",
       "cidade": "Betim",
-      "gasolina": 5.45,
+      "gasolina": 5.4,
       "etanol": 4.39,
-      "s10": 6.4,
-      "s500": 5.5,
+      "s10": 5.9,
+      "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     },
     {
       "estado": "MG",
@@ -1156,13 +1156,13 @@
       "estado": "PR",
       "distribuidora": "FIC",
       "cidade": "Araucaria",
-      "gasolina": 5.6,
+      "gasolina": 5.35,
       "etanol": 4.88,
-      "s10": 6.15,
-      "s500": 5.4,
+      "s10": 5.85,
+      "s500": 5.35,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     },
     {
       "estado": "RO",
@@ -1240,13 +1240,13 @@
       "estado": "SP",
       "distribuidora": "Royal Fic",
       "cidade": "Paulinia",
-      "gasolina": 5.7,
+      "gasolina": 5.39,
       "etanol": 4.44,
-      "s10": 6.25,
-      "s500": 5.45,
+      "s10": 5.8,
+      "s500": 5.3,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     }
   ],
   "top_postos": {
