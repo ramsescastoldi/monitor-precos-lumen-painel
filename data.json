@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/07/2026, 12:21:52",
+  "atualizado_em": "17/07/2026, 12:44:49",
   "semana_referencia": "2026-07-10",
   "distribuicao_ultima_data": "2026-07-17",
   "volumes": {
@@ -531,16 +531,16 @@
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
       "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.895,
+      "gasolina": 5.875,
       "etanol": 3.67,
-      "s10": 6.315,
-      "s500": 5.95,
+      "s10": 6.505,
+      "s500": 6.3,
       "margem": {
         "gasolina": {
           "revenda": 7.093,
-          "distribuicao": 5.895,
-          "margem_rs": 1.198,
-          "margem_pct": 20.32
+          "distribuicao": 5.875,
+          "margem_rs": 1.218,
+          "margem_pct": 20.73
         },
         "etanol": {
           "revenda": 4.955,
@@ -550,15 +550,15 @@
         },
         "s10": {
           "revenda": 7.371,
-          "distribuicao": 6.315,
-          "margem_rs": 1.056,
-          "margem_pct": 16.72
+          "distribuicao": 6.505,
+          "margem_rs": 0.866,
+          "margem_pct": 13.31
         },
         "s500": {
           "revenda": 7.262,
-          "distribuicao": 5.95,
-          "margem_rs": 1.312,
-          "margem_pct": 22.05
+          "distribuicao": 6.3,
+          "margem_rs": 0.962,
+          "margem_pct": 15.27
         }
       }
     },
@@ -810,8 +810,8 @@
       "cidade": "Luiz Eduardo M.",
       "gasolina": 5.96,
       "etanol": 3.68,
-      "s10": 6.45,
-      "s500": 6.05,
+      "s10": 6.52,
+      "s500": 6.3,
       "modalidade": "retira",
       "observacoes": null,
       "data_coleta": "2026-07-17"
@@ -820,13 +820,13 @@
       "estado": "BA",
       "distribuidora": "Royal Fic",
       "cidade": "Sao Francisco C.",
-      "gasolina": 5.83,
+      "gasolina": 5.79,
       "etanol": 3.66,
-      "s10": 6.18,
-      "s500": 5.85,
+      "s10": 6.49,
+      "s500": 6.3,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-17"
     },
     {
       "estado": "GO",
