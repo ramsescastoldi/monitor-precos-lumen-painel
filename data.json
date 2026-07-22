@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "22/07/2026, 11:24:30",
+  "atualizado_em": "22/07/2026, 11:29:45",
   "semana_referencia": "2026-07-17",
   "distribuicao_ultima_data": "2026-07-22",
   "volumes": {
@@ -565,64 +565,64 @@
     "GO": {
       "n_cotacoes": 6,
       "n_distribuidoras": 6,
-      "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.413,
-      "etanol": 3.295,
-      "s10": 6.018,
-      "s500": 5.512,
+      "data_ref": "2026-07-22T00:00:00.000Z",
+      "gasolina": 5.37,
+      "etanol": 3.248,
+      "s10": 5.94,
+      "s500": 5.503,
       "margem": {
         "gasolina": {
           "revenda": 6.642,
-          "distribuicao": 5.413,
-          "margem_rs": 1.229,
-          "margem_pct": 22.7
+          "distribuicao": 5.37,
+          "margem_rs": 1.272,
+          "margem_pct": 23.69
         },
         "etanol": {
           "revenda": 4.161,
-          "distribuicao": 3.295,
-          "margem_rs": 0.866,
-          "margem_pct": 26.28
+          "distribuicao": 3.248,
+          "margem_rs": 0.913,
+          "margem_pct": 28.11
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 6.018,
-          "margem_rs": 0.748,
-          "margem_pct": 12.43
+          "distribuicao": 5.94,
+          "margem_rs": 0.826,
+          "margem_pct": 13.91
         },
         "s500": {
           "revenda": 6.307,
-          "distribuicao": 5.512,
-          "margem_rs": 0.795,
-          "margem_pct": 14.42
+          "distribuicao": 5.503,
+          "margem_rs": 0.804,
+          "margem_pct": 14.61
         }
       }
     },
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.447,
-      "etanol": 3.6,
-      "s10": 5.99,
+      "data_ref": "2026-07-22T00:00:00.000Z",
+      "gasolina": 5.42,
+      "etanol": 3.587,
+      "s10": 5.967,
       "s500": 5.46,
       "margem": {
         "gasolina": {
           "revenda": 6.331,
-          "distribuicao": 5.447,
-          "margem_rs": 0.884,
-          "margem_pct": 16.23
+          "distribuicao": 5.42,
+          "margem_rs": 0.911,
+          "margem_pct": 16.81
         },
         "etanol": {
           "revenda": 4.112,
-          "distribuicao": 3.6,
-          "margem_rs": 0.512,
-          "margem_pct": 14.22
+          "distribuicao": 3.587,
+          "margem_rs": 0.525,
+          "margem_pct": 14.64
         },
         "s10": {
           "revenda": 6.856,
-          "distribuicao": 5.99,
-          "margem_rs": 0.866,
-          "margem_pct": 14.46
+          "distribuicao": 5.967,
+          "margem_rs": 0.889,
+          "margem_pct": 14.9
         },
         "s500": {
           "revenda": 6.498,
@@ -832,49 +832,49 @@
       "estado": "GO",
       "distribuidora": "Equador",
       "cidade": "Senador Canedo",
-      "gasolina": 5.47,
+      "gasolina": 5.41,
       "etanol": 3.06,
-      "s10": 6.05,
-      "s500": 5.51,
+      "s10": 5.91,
+      "s500": 5.41,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-17"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "GO",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Senador Canedo",
-      "gasolina": 5.48,
-      "etanol": 3.06,
-      "s10": 6.1,
+      "gasolina": 5.36,
+      "etanol": 3.04,
+      "s10": 5.95,
       "s500": 5.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-14"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "GO",
       "distribuidora": "Larco",
       "cidade": "Senador Canedo",
-      "gasolina": 5.4,
-      "etanol": null,
-      "s10": 6,
-      "s500": 5.45,
+      "gasolina": 5.35,
+      "etanol": 3.05,
+      "s10": 5.95,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-17"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "GO",
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
-      "gasolina": 5.33,
-      "etanol": 3.05,
-      "s10": 5.98,
+      "gasolina": 5.3,
+      "etanol": 3.08,
+      "s10": 5.85,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-17"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "GO",
@@ -916,13 +916,13 @@
       "estado": "MG",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Betim",
-      "gasolina": 5.49,
-      "etanol": 3.21,
-      "s10": 5.95,
+      "gasolina": 5.41,
+      "etanol": 3.17,
+      "s10": 5.88,
       "s500": 5.41,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-17"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MG",
