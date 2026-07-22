@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "22/07/2026, 11:34:20",
+  "atualizado_em": "22/07/2026, 11:51:24",
   "semana_referencia": "2026-07-17",
   "distribuicao_ultima_data": "2026-07-22",
   "volumes": {
@@ -563,37 +563,37 @@
       }
     },
     "GO": {
-      "n_cotacoes": 6,
-      "n_distribuidoras": 6,
+      "n_cotacoes": 7,
+      "n_distribuidoras": 7,
       "data_ref": "2026-07-22T00:00:00.000Z",
-      "gasolina": 5.37,
-      "etanol": 3.248,
-      "s10": 5.94,
-      "s500": 5.503,
+      "gasolina": 5.466,
+      "etanol": 3.23,
+      "s10": 5.966,
+      "s500": 5.482,
       "margem": {
         "gasolina": {
           "revenda": 6.642,
-          "distribuicao": 5.37,
-          "margem_rs": 1.272,
-          "margem_pct": 23.69
+          "distribuicao": 5.466,
+          "margem_rs": 1.176,
+          "margem_pct": 21.51
         },
         "etanol": {
           "revenda": 4.161,
-          "distribuicao": 3.248,
-          "margem_rs": 0.913,
-          "margem_pct": 28.11
+          "distribuicao": 3.23,
+          "margem_rs": 0.931,
+          "margem_pct": 28.82
         },
         "s10": {
           "revenda": 6.766,
-          "distribuicao": 5.94,
-          "margem_rs": 0.826,
-          "margem_pct": 13.91
+          "distribuicao": 5.966,
+          "margem_rs": 0.8,
+          "margem_pct": 13.41
         },
         "s500": {
           "revenda": 6.307,
-          "distribuicao": 5.503,
-          "margem_rs": 0.804,
-          "margem_pct": 14.61
+          "distribuicao": 5.482,
+          "margem_rs": 0.825,
+          "margem_pct": 15.05
         }
       }
     },
@@ -740,30 +740,30 @@
     "SC": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-07-17T00:00:00.000Z",
-      "gasolina": 5.5,
+      "data_ref": "2026-07-22T00:00:00.000Z",
+      "gasolina": 5.35,
       "etanol": null,
-      "s10": 6.135,
-      "s500": 5.34,
+      "s10": 5.965,
+      "s500": 5.2,
       "margem": {
         "gasolina": {
           "revenda": 6.519,
-          "distribuicao": 5.5,
-          "margem_rs": 1.019,
-          "margem_pct": 18.53
+          "distribuicao": 5.35,
+          "margem_rs": 1.169,
+          "margem_pct": 21.85
         },
         "etanol": null,
         "s10": {
           "revenda": 6.897,
-          "distribuicao": 6.135,
-          "margem_rs": 0.762,
-          "margem_pct": 12.42
+          "distribuicao": 5.965,
+          "margem_rs": 0.932,
+          "margem_pct": 15.62
         },
         "s500": {
           "revenda": 6.654,
-          "distribuicao": 5.34,
-          "margem_rs": 1.314,
-          "margem_pct": 24.61
+          "distribuicao": 5.2,
+          "margem_rs": 1.454,
+          "margem_pct": 27.96
         }
       }
     },
@@ -827,6 +827,18 @@
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-07-17"
+    },
+    {
+      "estado": "GO",
+      "distribuidora": "Atem",
+      "cidade": "Senador Canedor",
+      "gasolina": 6.04,
+      "etanol": 3.14,
+      "s10": 6.12,
+      "s500": 5.4,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "GO",
@@ -1142,6 +1154,18 @@
     },
     {
       "estado": "RO",
+      "distribuidora": "Atem",
+      "cidade": "Porto Velho",
+      "gasolina": 6.24,
+      "etanol": null,
+      "s10": 6.23,
+      "s500": 6.29,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-07-22"
+    },
+    {
+      "estado": "RO",
       "distribuidora": "Equador",
       "cidade": "Porto Velho",
       "gasolina": 6.19,
@@ -1180,13 +1204,13 @@
       "estado": "SC",
       "distribuidora": "Imperial Petroleo",
       "cidade": "itajai",
-      "gasolina": 5.5,
+      "gasolina": 5.35,
       "etanol": null,
-      "s10": 6.34,
-      "s500": 5.48,
+      "s10": 6,
+      "s500": 5.2,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-10"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "SP",
