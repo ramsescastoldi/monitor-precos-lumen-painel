@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "21/07/2026, 13:24:57",
+  "atualizado_em": "22/07/2026, 11:17:21",
   "semana_referencia": "2026-07-17",
-  "distribuicao_ultima_data": "2026-07-20",
+  "distribuicao_ultima_data": "2026-07-22",
   "volumes": {
     "mes_referencia": "mai/2026",
     "periodo_iso": "2026-05",
@@ -633,37 +633,37 @@
       }
     },
     "MT": {
-      "n_cotacoes": 17,
-      "n_distribuidoras": 17,
-      "data_ref": "2026-07-20T00:00:00.000Z",
-      "gasolina": 5.725,
-      "etanol": 2.882,
-      "s10": 6.191,
-      "s500": 5.66,
+      "n_cotacoes": 16,
+      "n_distribuidoras": 16,
+      "data_ref": "2026-07-22T00:00:00.000Z",
+      "gasolina": 5.703,
+      "etanol": 2.875,
+      "s10": 6.186,
+      "s500": 5.648,
       "margem": {
         "gasolina": {
           "revenda": 6.813,
-          "distribuicao": 5.725,
-          "margem_rs": 1.088,
-          "margem_pct": 19
+          "distribuicao": 5.703,
+          "margem_rs": 1.11,
+          "margem_pct": 19.46
         },
         "etanol": {
           "revenda": 3.776,
-          "distribuicao": 2.882,
-          "margem_rs": 0.894,
-          "margem_pct": 31.02
+          "distribuicao": 2.875,
+          "margem_rs": 0.901,
+          "margem_pct": 31.34
         },
         "s10": {
           "revenda": 7.03,
-          "distribuicao": 6.191,
-          "margem_rs": 0.839,
-          "margem_pct": 13.55
+          "distribuicao": 6.186,
+          "margem_rs": 0.844,
+          "margem_pct": 13.64
         },
         "s500": {
           "revenda": 6.756,
-          "distribuicao": 5.66,
-          "margem_rs": 1.096,
-          "margem_pct": 19.36
+          "distribuicao": 5.648,
+          "margem_rs": 1.108,
+          "margem_pct": 19.62
         }
       }
     },
@@ -946,7 +946,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -958,7 +958,7 @@
       "s500": 5.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -970,19 +970,7 @@
       "s500": 5.57,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
-    },
-    {
-      "estado": "MT",
-      "distribuidora": "Eco diesel",
-      "cidade": "Cuiaba",
-      "gasolina": 5.79,
-      "etanol": 2.9,
-      "s10": 6.15,
-      "s500": 5.67,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -994,7 +982,7 @@
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1006,7 +994,7 @@
       "s500": 5.74,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1018,7 +1006,7 @@
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1042,7 +1030,7 @@
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1054,7 +1042,7 @@
       "s500": 5.64,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1066,19 +1054,19 @@
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.67,
+      "gasolina": 5.55,
       "etanol": null,
-      "s10": 6.2,
-      "s500": 5.65,
+      "s10": 6.15,
+      "s500": 5.59,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1090,7 +1078,7 @@
       "s500": 5.67,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1102,7 +1090,7 @@
       "s500": null,
       "modalidade": null,
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1120,13 +1108,13 @@
       "estado": "MT",
       "distribuidora": "Watt",
       "cidade": "Cuiaba",
-      "gasolina": 5.81,
-      "etanol": 2.95,
-      "s10": 6.15,
-      "s500": 5.67,
+      "gasolina": 5.71,
+      "etanol": 2.9,
+      "s10": 6.09,
+      "s500": 5.59,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "MT",
@@ -1138,7 +1126,7 @@
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-20"
+      "data_coleta": "2026-07-22"
     },
     {
       "estado": "PR",
