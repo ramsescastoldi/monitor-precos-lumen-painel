@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "23/07/2026, 12:27:14",
+  "atualizado_em": "23/07/2026, 12:30:56",
   "semana_referencia": "2026-07-17",
   "distribuicao_ultima_data": "2026-07-22",
   "volumes": {
@@ -188,10 +188,34 @@
       ],
       "por_produto": [
         {
+          "produto": "Diesel",
+          "atual": 22938,
+          "anterior": 21984,
+          "var_pct": 4.3
+        },
+        {
+          "produto": "Gasolina",
+          "atual": 12782,
+          "anterior": 13085,
+          "var_pct": -2.3
+        },
+        {
+          "produto": "Etanol Hidratado",
+          "atual": 7770,
+          "anterior": 8437,
+          "var_pct": -7.9
+        },
+        {
+          "produto": "Etanol Anidro",
+          "atual": 5151,
+          "anterior": 4841,
+          "var_pct": 6.4
+        },
+        {
           "produto": "Outros",
-          "atual": 48972,
-          "anterior": 48709,
-          "var_pct": 0.5
+          "atual": 332,
+          "anterior": 363,
+          "var_pct": -8.7
         }
       ]
     }
