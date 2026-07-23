@@ -75,10 +75,13 @@ const client = new Client({ connectionString: DATABASE_URL, ssl: { rejectUnautho
 
   // Colunas: Ano | Mês | Distribuidor | Código do Produto | Nome do Produto | Região | Quantidade de Produto (mil m³)
   // (nomes com acento/encoding — pego por índice de chave robusto)
+  // Candidatos em ordem de prioridade: testa cada candidato contra TODAS as chaves
+  // antes de cair pro próximo — senão "Código do Produto" casa com 'produto'
+  // antes de "Nome do Produto" e o banco guarda o código em vez do nome.
   function col(row, ...candidates) {
-    for (const key of Object.keys(row)) {
-      const norm = key.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-      for (const c of candidates) {
+    for (const c of candidates) {
+      for (const key of Object.keys(row)) {
+        const norm = key.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
         if (norm.includes(c)) return row[key];
       }
     }
