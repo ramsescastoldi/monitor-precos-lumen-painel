@@ -99,7 +99,10 @@ const client = new Client({ connectionString: DATABASE_URL, ssl: { rejectUnautho
   const janela = new Set(ordenados);
   console.log(`Períodos no CSV: ${periodos.size}. Mantendo ${ordenados.length} mais recentes (${ordenados[ordenados.length-1]} a ${ordenados[0]}).`);
 
-  const rows = [];
+  // Agrega por chave: códigos de produto diferentes podem ter o mesmo NOME
+  // (ex. duas variantes de Gasolina A) — sem agregar, o INSERT ... ON CONFLICT
+  // recebe a mesma chave duas vezes e o Postgres rejeita.
+  const agg = new Map();
   for (const r of records) {
     const ano = parseInt(col(r, 'ano'), 10);
     const mes = parseInt(col(r, 'mes', 'mês'), 10);
@@ -109,9 +112,13 @@ const client = new Client({ connectionString: DATABASE_URL, ssl: { rejectUnautho
     const regiao = (col(r, 'regiao', 'região') || '').trim();
     const qtd = parseNumBR(col(r, 'quantidade'));
     if (!distribuidor || !produto || !regiao || qtd === null) continue;
-    rows.push([ano, mes, distribuidor, produto, regiao, qtd]);
+    const key = `${ano}|${mes}|${distribuidor}|${produto}|${regiao}`;
+    const cur = agg.get(key);
+    if (cur) cur[5] = Number((cur[5] + qtd).toFixed(4));
+    else agg.set(key, [ano, mes, distribuidor, produto, regiao, qtd]);
   }
-  console.log(`Linhas válidas na janela: ${rows.length}`);
+  const rows = [...agg.values()];
+  console.log(`Linhas válidas na janela (agregadas): ${rows.length}`);
 
   await client.connect();
   // Limpa a janela e re-insere (idempotente, simples)
