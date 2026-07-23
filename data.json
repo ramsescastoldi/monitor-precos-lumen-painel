@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "23/07/2026, 05:07:42",
+  "atualizado_em": "23/07/2026, 12:23:26",
   "semana_referencia": "2026-07-17",
   "distribuicao_ultima_data": "2026-07-22",
   "volumes": {
     "mes_referencia": "mai/2026",
     "periodo_iso": "2026-05",
-    "total_mil_m3": 9913,
+    "total_mil_m3": 9915,
     "share_distribuidora": [
       {
         "distribuidora": "VIBRA ENERGIA S.A",
@@ -49,7 +49,7 @@
       },
       {
         "distribuidora": "Outras",
-        "volume": 3421.8,
+        "volume": 3423.3,
         "pct": 34.5
       }
     ],
@@ -88,11 +88,11 @@
       },
       {
         "label": "jan/26",
-        "volume": 9624
+        "volume": 9626
       },
       {
         "label": "fev/26",
-        "volume": 8992
+        "volume": 8994
       },
       {
         "label": "mar/26",
@@ -100,11 +100,11 @@
       },
       {
         "label": "abr/26",
-        "volume": 10008
+        "volume": 10009
       },
       {
         "label": "mai/26",
-        "volume": 9913
+        "volume": 9915
       }
     ],
     "por_regiao": [
@@ -117,7 +117,7 @@
       {
         "regiao": "S",
         "nome": "Sul",
-        "volume": 1854.9,
+        "volume": 1856.4,
         "pct": 18.7
       },
       {
@@ -138,7 +138,63 @@
         "volume": 480.4,
         "pct": 4.8
       }
-    ]
+    ],
+    "comparativo_anual": {
+      "periodo": "jan–mai",
+      "meses": 5,
+      "ano_atual": 2026,
+      "ano_anterior": 2025,
+      "brasil": {
+        "atual": 48972,
+        "anterior": 48711,
+        "var_pct": 0.5
+      },
+      "por_regiao": [
+        {
+          "regiao": "SE",
+          "nome": "Sudeste",
+          "atual": 21250,
+          "anterior": 21398,
+          "var_pct": -0.7
+        },
+        {
+          "regiao": "S",
+          "nome": "Sul",
+          "atual": 9139,
+          "anterior": 8767,
+          "var_pct": 4.2
+        },
+        {
+          "regiao": "NE",
+          "nome": "Nordeste",
+          "atual": 8842,
+          "anterior": 8536,
+          "var_pct": 3.6
+        },
+        {
+          "regiao": "CO",
+          "nome": "Centro-Oeste",
+          "atual": 7666,
+          "anterior": 8197,
+          "var_pct": -6.5
+        },
+        {
+          "regiao": "N",
+          "nome": "Norte",
+          "atual": 2075,
+          "anterior": 1813,
+          "var_pct": 14.5
+        }
+      ],
+      "por_produto": [
+        {
+          "produto": "Outros",
+          "atual": 48972,
+          "anterior": 48709,
+          "var_pct": 0.5
+        }
+      ]
+    }
   },
   "kpis": {
     "n_postos": 3761,
