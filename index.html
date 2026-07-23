@@ -130,7 +130,18 @@
   .vol-card h3 { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--text); text-transform: none; letter-spacing: 0; }
   .vol-card .vol-sub { color: var(--text-muted); font-size: 11px; margin-bottom: 12px; }
   .vol-canvas-wrap { position: relative; height: 280px; }
-  @media (max-width: 800px) { .vol-grid { grid-template-columns: 1fr; } .vol-canvas-wrap { height: 240px; } }
+
+  /* Comparativo anual 2026 × 2025 */
+  .cmp-headline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; margin: 10px 0 16px; }
+  .cmp-var { font-size: 30px; font-weight: 700; }
+  .cmp-var.up { color: var(--green); }
+  .cmp-var.down { color: var(--red); }
+  .cmp-vols { color: var(--text-muted); font-size: 13px; }
+  .cmp-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: start; }
+  .cmp-badge { font-weight: 600; }
+  .cmp-badge.up { color: var(--green); }
+  .cmp-badge.down { color: var(--red); }
+  @media (max-width: 800px) { .vol-grid, .cmp-grid { grid-template-columns: 1fr; } .vol-canvas-wrap { height: 240px; } }
 </style>
 </head>
 <body>
@@ -225,6 +236,21 @@
 
 <h2>Mercado de combustíveis líquidos <span id="vol-mes" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
 <div class="vol-grid">
+  <div class="vol-card full" id="vol-comparativo" style="display:none">
+    <h3 id="cmp-title">Vendas do mercado — acumulado no ano</h3>
+    <div class="vol-sub" id="cmp-sub"></div>
+    <div class="cmp-headline">
+      <span class="cmp-var" id="cmp-var-brasil"></span>
+      <span class="cmp-vols" id="cmp-vols-brasil"></span>
+    </div>
+    <div class="cmp-grid">
+      <div class="vol-canvas-wrap"><canvas id="chart-cmp-regiao"></canvas></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Produto</th><th class="num" id="cmp-th-ant"></th><th class="num" id="cmp-th-atu"></th><th class="num">Var.</th></tr></thead>
+        <tbody id="cmp-tbody-produto"></tbody>
+      </table></div>
+    </div>
+  </div>
   <div class="vol-card">
     <h3>Participação por distribuidora</h3>
     <div class="vol-sub" id="vol-share-sub">Volume entregue no último mês</div>
@@ -539,6 +565,59 @@ function renderVolumes(v) {
   const tickColor = '#8b97b3';
   Chart.defaults.color = tickColor;
   Chart.defaults.font.family = 'Inter, sans-serif';
+
+  // 0) Comparativo anual acumulado (2026 × 2025) — só aparece se o data.json trouxer o bloco
+  const cmp = v.comparativo_anual;
+  const cmpCard = document.getElementById('vol-comparativo');
+  if (cmp && cmpCard) {
+    cmpCard.style.display = '';
+    const fmtVar = (p) => p == null ? '—' : (p >= 0 ? '▲ +' : '▼ ') + p.toLocaleString('pt-BR') + '%';
+    const clsVar = (p) => p == null ? '' : (p >= 0 ? 'up' : 'down');
+    const fmtVol = (n) => n.toLocaleString('pt-BR') + ' mil m³';
+
+    document.getElementById('cmp-title').textContent =
+      `Vendas do mercado ${cmp.ano_atual} × ${cmp.ano_anterior} — acumulado ${cmp.periodo}`;
+    document.getElementById('cmp-sub').textContent =
+      `Entregas de distribuidores ao mercado (ANP) · soma de ${cmp.periodo} de cada ano — compare com a variação do seu posto no mesmo período`;
+    const vb = document.getElementById('cmp-var-brasil');
+    vb.textContent = fmtVar(cmp.brasil.var_pct) + ' Brasil';
+    vb.className = 'cmp-var ' + clsVar(cmp.brasil.var_pct);
+    document.getElementById('cmp-vols-brasil').textContent =
+      `${cmp.ano_anterior}: ${fmtVol(cmp.brasil.anterior)} → ${cmp.ano_atual}: ${fmtVol(cmp.brasil.atual)}`;
+
+    // Gráfico por região: barras agrupadas ano anterior × atual, com var% no tooltip
+    _charts.push(new Chart(document.getElementById('chart-cmp-regiao'), {
+      type: 'bar',
+      data: {
+        labels: cmp.por_regiao.map(x => `${x.nome} (${fmtVar(x.var_pct)})`),
+        datasets: [
+          { label: String(cmp.ano_anterior), data: cmp.por_regiao.map(x => x.anterior), backgroundColor: 'rgba(139,151,179,0.55)', borderRadius: 4 },
+          { label: String(cmp.ano_atual), data: cmp.por_regiao.map(x => x.atual), backgroundColor: '#4f8aff', borderRadius: 4 }
+        ]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
+          tooltip: { callbacks: { label: (c) => ` ${c.dataset.label}: ${c.parsed.x.toLocaleString('pt-BR')} mil m³` } }
+        },
+        scales: { x: { grid: { color: gridColor }, ticks: { callback: (val) => (val/1000).toFixed(0) + 'k' } }, y: { grid: { display: false } } }
+      }
+    }));
+
+    // Tabela por produto
+    document.getElementById('cmp-th-ant').textContent = cmp.ano_anterior;
+    document.getElementById('cmp-th-atu').textContent = cmp.ano_atual;
+    document.getElementById('cmp-tbody-produto').innerHTML = cmp.por_produto.map(p => `
+      <tr>
+        <td>${p.produto}</td>
+        <td class="num">${p.anterior.toLocaleString('pt-BR')}</td>
+        <td class="num">${p.atual.toLocaleString('pt-BR')}</td>
+        <td class="num"><span class="cmp-badge ${clsVar(p.var_pct)}">${fmtVar(p.var_pct)}</span></td>
+      </tr>`).join('');
+  } else if (cmpCard) {
+    cmpCard.style.display = 'none';
+  }
 
   // 1) Share por distribuidora — doughnut
   _charts.push(new Chart(document.getElementById('chart-share'), {

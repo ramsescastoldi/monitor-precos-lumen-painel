@@ -299,14 +299,15 @@ function toNum(v) {
         }));
         if (outras > 0) share_distribuidora.push({ distribuidora: 'Outras', volume: Number(outras.toFixed(1)), pct: Number((outras / totalMes * 100).toFixed(1)) });
 
-        // 9b) Evolução mensal do volume total (12-13 meses)
+        // 9b) Evolução mensal do volume total (últimos 13 meses no gráfico,
+        //     mesmo com o banco guardando 25 pra permitir o comparativo anual)
         const evolRes = await client.query(
           `select ano, mes, sum(quantidade_mil_m3) as vol
            from volumes_distribuidor group by ano, mes order by ano, mes`);
         const evolucao_mensal = evolRes.rows.map(r => ({
           label: `${MESES_PT[r.mes]}/${String(r.ano).slice(2)}`,
           volume: Number(Number(r.vol).toFixed(0))
-        }));
+        })).slice(-13);
 
         // 9c) Volume por região no último mês
         const regRes = await client.query(
@@ -322,13 +323,81 @@ function toNum(v) {
           pct: Number((Number(r.vol) / totalReg * 100).toFixed(1))
         }));
 
+        // 9d) Comparativo anual acumulado (jan..mesU do ano atual vs mesmo período do ano anterior)
+        //     Só publica se o ano anterior tiver TODOS os meses do período no banco.
+        let comparativo_anual = null;
+        const anoAnt = anoU - 1;
+        const cobRes = await client.query(
+          `select ano, count(distinct mes) as n from volumes_distribuidor
+           where mes <= $1 and ano in ($2, $3) group by ano`, [mesU, anoU, anoAnt]);
+        const cobertura = Object.fromEntries(cobRes.rows.map(r => [r.ano, Number(r.n)]));
+        if (cobertura[anoU] === mesU && cobertura[anoAnt] === mesU) {
+          const REG_NOME2 = { N: 'Norte', NE: 'Nordeste', CO: 'Centro-Oeste', SE: 'Sudeste', S: 'Sul' };
+          const PROD_LABEL = { 'Gasolina A': 'Gasolina', 'EHC': 'Etanol Hidratado', 'EAC': 'Etanol Anidro', 'Diesel A': 'Diesel' };
+          const varPct = (atual, ant) => ant > 0 ? Number(((atual - ant) / ant * 100).toFixed(1)) : null;
+
+          const cmpRegRes = await client.query(
+            `select regiao,
+                    sum(case when ano = $2 then quantidade_mil_m3 else 0 end) as atual,
+                    sum(case when ano = $3 then quantidade_mil_m3 else 0 end) as anterior
+             from volumes_distribuidor where mes <= $1 and ano in ($2, $3)
+             group by regiao order by atual desc`, [mesU, anoU, anoAnt]);
+          const por_regiao_cmp = cmpRegRes.rows.map(r => ({
+            regiao: r.regiao,
+            nome: REG_NOME2[r.regiao] || r.regiao,
+            atual: Number(Number(r.atual).toFixed(0)),
+            anterior: Number(Number(r.anterior).toFixed(0)),
+            var_pct: varPct(Number(r.atual), Number(r.anterior))
+          }));
+
+          const cmpProdRes = await client.query(
+            `select produto,
+                    sum(case when ano = $2 then quantidade_mil_m3 else 0 end) as atual,
+                    sum(case when ano = $3 then quantidade_mil_m3 else 0 end) as anterior
+             from volumes_distribuidor where mes <= $1 and ano in ($2, $3)
+             group by produto order by atual desc`, [mesU, anoU, anoAnt]);
+          const por_produto = [];
+          let outrosA = 0, outrosB = 0;
+          for (const r of cmpProdRes.rows) {
+            const label = PROD_LABEL[r.produto];
+            if (label) {
+              por_produto.push({
+                produto: label,
+                atual: Number(Number(r.atual).toFixed(0)),
+                anterior: Number(Number(r.anterior).toFixed(0)),
+                var_pct: varPct(Number(r.atual), Number(r.anterior))
+              });
+            } else {
+              outrosA += Number(r.atual); outrosB += Number(r.anterior);
+            }
+          }
+          if (outrosA > 0 || outrosB > 0) {
+            por_produto.push({ produto: 'Outros', atual: Number(outrosA.toFixed(0)), anterior: Number(outrosB.toFixed(0)), var_pct: varPct(outrosA, outrosB) });
+          }
+
+          const brAtual = por_regiao_cmp.reduce((s, r) => s + r.atual, 0);
+          const brAnt = por_regiao_cmp.reduce((s, r) => s + r.anterior, 0);
+          comparativo_anual = {
+            periodo: `jan–${MESES_PT[mesU]}`,
+            meses: mesU,
+            ano_atual: anoU,
+            ano_anterior: anoAnt,
+            brasil: { atual: brAtual, anterior: brAnt, var_pct: varPct(brAtual, brAnt) },
+            por_regiao: por_regiao_cmp,
+            por_produto
+          };
+        } else {
+          console.warn(`AVISO: comparativo anual pulado — cobertura incompleta (${anoU}: ${cobertura[anoU] || 0}/${mesU} meses, ${anoAnt}: ${cobertura[anoAnt] || 0}/${mesU} meses).`);
+        }
+
         volumes = {
           mes_referencia: `${MESES_PT[mesU]}/${anoU}`,
           periodo_iso: `${anoU}-${String(mesU).padStart(2, '0')}`, // machine-checkable p/ healthcheck de frescor
           total_mil_m3: Number(totalMes.toFixed(0)),
           share_distribuidora,
           evolucao_mensal,
-          por_regiao
+          por_regiao,
+          comparativo_anual
         };
       }
     } catch (e) {

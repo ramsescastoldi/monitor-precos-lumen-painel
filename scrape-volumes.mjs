@@ -21,7 +21,8 @@ if (!DATABASE_URL) {
 const ZIP_URL = 'https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/mdpg/liquidos.zip';
 const CSV_NAME = 'Liquidos_Entregas_Distribuidor_Atual.csv';
 // Só mantém os últimos N meses no banco (mantém o painel leve e relevante)
-const MESES_JANELA = 13;
+// 25 meses = ano corrente + ano anterior inteiro → permite comparativo acumulado YoY
+const MESES_JANELA = 25;
 
 function fetchBuffer(url) {
   return new Promise((resolve, reject) => {
