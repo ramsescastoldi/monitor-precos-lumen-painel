@@ -39,6 +39,19 @@ function fetchBuffer(url) {
   });
 }
 
+// gov.br reseta conexão com frequência nos runners do GitHub — retry com backoff
+async function fetchWithRetry(url, tries = 4) {
+  for (let i = 1; i <= tries; i++) {
+    try {
+      return await fetchBuffer(url);
+    } catch (e) {
+      console.warn(`Tentativa ${i}/${tries} falhou: ${e.message || e.code || e}`);
+      if (i === tries) throw e;
+      await new Promise(r => setTimeout(r, 8000 * i));
+    }
+  }
+}
+
 function parseNumBR(s) {
   if (s === null || s === undefined || s === '') return null;
   const n = parseFloat(String(s).replace(/\./g, '').replace(',', '.').trim());
@@ -52,7 +65,7 @@ const client = new Client({ connectionString: DATABASE_URL, ssl: { rejectUnautho
   const zipPath = path.join(tmp, 'liquidos.zip');
 
   console.log('Baixando liquidos.zip...');
-  const buf = await fetchBuffer(ZIP_URL);
+  const buf = await fetchWithRetry(ZIP_URL);
   fs.writeFileSync(zipPath, buf);
   console.log(`Baixado ${(buf.length / 1024 / 1024).toFixed(1)} MB`);
 
@@ -158,9 +171,11 @@ const client = new Client({ connectionString: DATABASE_URL, ssl: { rejectUnautho
   console.log(`Tabela: ${tot.rows[0].t} registros, ${tot.rows[0].d} distribuidores, período ${tot.rows[0].min_p}-${tot.rows[0].max_p}`);
   await client.end();
   fs.rmSync(tmp, { recursive: true, force: true });
-})().catch(async (e) => {
-  console.error('ERRO:', e.message);
-  try { await client.query('rollback'); } catch {}
-  try { await client.end(); } catch {}
+})().catch((e) => {
+  console.error('ERRO:', e.message || e.code || e);
+  // NÃO usar await client.query()/end() aqui: se o client nunca conectou, a
+  // promise nunca resolve, o exit(1) nunca roda e o Node sai com código 0 —
+  // o workflow "passa" sem ter feito nada. Sair direto; transação aberta
+  // sofre rollback no servidor quando a conexão cai.
   process.exit(1);
 });
