@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "31/07/2026, 11:20:15",
+  "atualizado_em": "31/07/2026, 11:24:59",
   "semana_referencia": "2026-07-24",
   "distribuicao_ultima_data": "2026-07-31",
   "volumes": {
@@ -1199,7 +1199,7 @@
       "s500": 5.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-28"
+      "data_coleta": "2026-07-31"
     },
     {
       "estado": "PR",
@@ -1247,7 +1247,7 @@
       "s500": 5.2,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-07-28"
+      "data_coleta": "2026-07-31"
     },
     {
       "estado": "SC",
