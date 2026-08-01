@@ -6,3 +6,6 @@
 
 /index.html
   Cache-Control: public, max-age=60, must-revalidate
+
+/data.json
+  Access-Control-Allow-Origin: *
