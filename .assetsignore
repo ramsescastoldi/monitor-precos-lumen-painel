@@ -14,6 +14,10 @@ node_modules/
 # Build scripts e scrapers (rodam no build/GH Actions, não são servidos)
 scrape-anp.mjs
 scrape-distribuidoras.mjs
+scrape-petrobras.mjs
+scrape-volumes.mjs
+export-radar.mjs
+check-freshness.mjs
 update.mjs
 package.json
 package-lock.json
