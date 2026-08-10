@@ -116,6 +116,45 @@ function parseDateBR(s) {
     if (uf) coords[uf + ':' + slug(c[1])] = { lat: +c[2], lng: +c[3], nome: c[1] };
   }
 
+  // BA quase tempo real (Preço da Hora / NFC-e por posto) — atualiza preço e
+  // amplia a pesquisa da UF com postos que a ANP não visitou na semana
+  try {
+    if (process.env.SKIP_PDH) throw new Error('SKIP_PDH ligado (rodada só-ANP)');
+    const { coletarPrecoDaHora } = await import('./scrape-precodahora.mjs');
+    const porSlugBA = {};
+    for (const p of Object.values(porUF.BA || {}))
+      porSlugBA[p.m] = (porSlugBA[p.m] || 0) + 1;
+    // mercados maiores primeiro: se a cota do PRODEB cortar, o parcial vale mais
+    const cidadesBA = Object.keys(porSlugBA)
+      .sort((a, b) => porSlugBA[b] - porSlugBA[a])
+      .map(m => coords['BA:' + m] &&
+        { mu: coords['BA:' + m].nome, m, lat: coords['BA:' + m].lat, lng: coords['BA:' + m].lng })
+      .filter(Boolean);
+    if (cidadesBA.length) {
+      console.log(`\n[Preço da Hora BA] varrendo ${cidadesBA.length} cidades…`);
+      const vivos = await coletarPrecoDaHora(cidadesBA, { titulo, slug });
+      const porDigito = {};
+      for (const [cnpj, rec] of Object.entries(porUF.BA || {}))
+        porDigito[cnpj.replace(/\D/g, '')] = rec;
+      let atualizados = 0, novos = 0;
+      for (const [dig, rec] of vivos) {
+        const alvo = porDigito[dig];
+        if (alvo) {
+          for (const [comb, f] of Object.entries(rec.p))
+            if (!alvo.p[comb] || alvo.p[comb].d <= f.d) alvo.p[comb] = f;
+          if (rec.lat != null) { alvo.lat = rec.lat; alvo.lng = rec.lng; }
+          atualizados++;
+        } else {
+          (porUF.BA = porUF.BA || {})[dig] = rec;
+          novos++;
+        }
+      }
+      console.log(`  merge BA: ${atualizados} postos atualizados · ${novos} novos`);
+    }
+  } catch (e) {
+    console.error('[Preço da Hora BA] falhou (segue só ANP):', e.message);
+  }
+
   // resumo por cidade pesquisada (menor/média/maior por combustível + coordenada)
   const cidades = [];
   for (const [uf, mapa] of Object.entries(porUF)) {

@@ -2,7 +2,8 @@ name: Export Radar (postos ANP → KV)
 
 on:
   schedule:
-    # seg e qui 09:00 UTC (06:00 BRT) — depois do scrape ANP das 03h
+    # seg e qui 09:00 UTC (06:00 BRT) — backup só-ANP; a rodada completa
+    # (ANP + Preço da Hora BA) roda DIÁRIA no Mac via launchd
     - cron: '0 9 * * 1,4'
   workflow_dispatch: {}
 
@@ -10,6 +11,8 @@ jobs:
   export:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      SKIP_PDH: "1"   # Preço da Hora BA roda só no Mac (cota do PRODEB por IP)
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
