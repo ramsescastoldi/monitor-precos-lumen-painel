@@ -124,12 +124,18 @@ function parseDateBR(s) {
     const porSlugBA = {};
     for (const p of Object.values(porUF.BA || {}))
       porSlugBA[p.m] = (porSlugBA[p.m] || 0) + 1;
-    // mercados maiores primeiro: se a cota do PRODEB cortar, o parcial vale mais
-    const cidadesBA = Object.keys(porSlugBA)
+    // mercados maiores primeiro: se a cota do PRODEB cortar, o parcial vale mais.
+    // Top 5 todo dia; o resto RODA por dia do ano pra nenhuma cidade ficar
+    // eternamente atrás do deadline.
+    const ordenadas = Object.keys(porSlugBA)
       .sort((a, b) => porSlugBA[b] - porSlugBA[a])
       .map(m => coords['BA:' + m] &&
         { mu: coords['BA:' + m].nome, m, lat: coords['BA:' + m].lat, lng: coords['BA:' + m].lng })
       .filter(Boolean);
+    const giro = ordenadas.slice(5);
+    const dia = Math.floor(Date.now() / 86400000);
+    const corte = giro.length ? dia % giro.length : 0;
+    const cidadesBA = [...ordenadas.slice(0, 5), ...giro.slice(corte), ...giro.slice(0, corte)];
     if (cidadesBA.length) {
       console.log(`\n[Preço da Hora BA] varrendo ${cidadesBA.length} cidades…`);
       const vivos = await coletarPrecoDaHora(cidadesBA, { titulo, slug });
