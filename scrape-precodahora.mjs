@@ -130,7 +130,7 @@ export async function coletarPrecoDaHora(cidades, opts) {
   }
 
   async function varrer(cidade, params) {
-    let totalPaginas = 1, achou = 0;
+    let totalPaginas = 1, achou = 0, respostas = 0;
     for (let pagina = 1; pagina <= Math.min(totalPaginas, MAX_PAGINAS); pagina++) {
       let json;
       try { json = await pedir({ ...cidade, ...params, pagina }); }
@@ -141,20 +141,22 @@ export async function coletarPrecoDaHora(cidades, opts) {
         break;
       }
       if (!json) break;             // deadline ou cota persistente
-      requisicoes++;
+      requisicoes++; respostas++;
       totalPaginas = json.totalPaginas || 1;
       achou += absorver(json);
     }
-    return achou;
+    return { achou, respostas };
   }
 
   for (const cidade of cidades) {
     if (Date.now() > fim) { log('  PDH: deadline — devolvendo parcial'); break; }
     let achou = 0;
     if (modo === 'categoria') {
-      achou = await varrer(cidade, { categorias: CATEGORIA_COMBUSTIVEIS });
-      // categoria vazia na 1ª cidade útil = endpoint não filtra assim → termos
-      if (!achou && cidadesOk === 0) {
+      const r = await varrer(cidade, { categorias: CATEGORIA_COMBUSTIVEIS });
+      achou = r.achou;
+      // só desiste da categoria se o servidor RESPONDEU e veio sem combustível
+      // (429/deadline não contam — senão uma cota fechada dobra o custo à toa)
+      if (!achou && r.respostas > 0 && cidadesOk === 0) {
         log('  PDH: busca por categoria não rendeu — mudando pra termos');
         modo = 'termos';
       }
@@ -162,7 +164,7 @@ export async function coletarPrecoDaHora(cidades, opts) {
     if (modo === 'termos') {
       for (const termo of TERMOS) {
         if (Date.now() > fim) break;
-        achou += await varrer(cidade, { termo });
+        achou += (await varrer(cidade, { termo })).achou;
       }
     }
     if (achou) cidadesOk++;
