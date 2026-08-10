@@ -1,0 +1,40 @@
+name: Scrape composição de preço Petrobras (seg+qui 09h BRT)
+
+on:
+  schedule:
+    # 12:23 UTC = 09:23 BRT seg+qui — site atualiza a composição semanalmente
+    - cron: '23 12 * * 1,4'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Scrape composição por estado -> custo-distribuicao.json
+        run: node scrape-petrobras.mjs
+
+      - name: Commit custo-distribuicao.json (o deployer da VPS faz o deploy Cloudflare)
+        if: success()
+        run: |
+          git config user.name "Scraper Bot"
+          git config user.email "bot@lumenposto.com"
+          if git diff --quiet -- custo-distribuicao.json; then
+            echo "custo-distribuicao.json sem mudancas."
+          else
+            NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            git add custo-distribuicao.json
+            git commit -m "data: composicao de preco por estado — $NOW"
+            git push origin main
+            echo "custo-distribuicao.json pushado. O monitor-deployer na VPS detecta e faz wrangler deploy."
+          fi

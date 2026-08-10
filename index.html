@@ -123,6 +123,29 @@
   .auth-msg.info { background: rgba(79,138,255,0.1); color: var(--accent); border: 1px solid rgba(79,138,255,0.3); }
   .auth-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 11px; text-align: center; }
 
+  /* === Custo de distribuição (composição oficial) === */
+  .custo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .custo-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .custo-card h3 { margin: 0 0 2px; font-size: 14px; font-weight: 600; color: var(--text); text-transform: none; letter-spacing: 0; }
+  .custo-sub { color: var(--text-muted); font-size: 11px; margin-bottom: 12px; }
+  .custo-headline { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .custo-big { font-size: 28px; font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
+  .custo-big-label { color: var(--text-muted); font-size: 12px; }
+  .custo-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 10px 0 12px; }
+  .custo-bar span { display: block; height: 100%; }
+  .custo-row { display: grid; grid-template-columns: 12px 1fr auto auto; gap: 8px; align-items: baseline; font-size: 12px; padding: 4px 0; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+  .custo-row:first-of-type { border-top: none; }
+  .custo-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .custo-label { color: var(--text-muted); }
+  .custo-rs { font-weight: 600; text-align: right; }
+  .custo-pct { color: var(--text-muted); font-size: 10px; text-align: right; min-width: 46px; }
+  .custo-row.subtotal { border-top: 1px dashed var(--border); }
+  .custo-row.subtotal .custo-label, .custo-row.subtotal .custo-rs { color: var(--green); font-weight: 700; }
+  .custo-row.total .custo-label, .custo-row.total .custo-rs { color: var(--text); font-weight: 700; }
+  .custo-planilha { margin-top: 12px; padding: 8px 10px; background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.2); border-radius: 6px; font-size: 11px; color: var(--text-muted); }
+  .custo-planilha strong { color: var(--green); }
+  @media (max-width: 800px) { .custo-grid { grid-template-columns: 1fr; } }
+
   /* === Volumes / Mercado === */
   .vol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .vol-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
@@ -234,6 +257,10 @@
   <tbody id="tbody-distri"></tbody>
 </table></div>
 
+<h2 id="custo-h2" style="display:none">Custo de distribuição por estado <span id="custo-periodo" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="tabs" id="custo-tabs" style="display:none"></div>
+<div id="custo-content"></div>
+
 <h2>Mercado de combustíveis líquidos <span id="vol-mes" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
 <div class="vol-grid">
   <div class="vol-card full" id="vol-comparativo" style="display:none">
@@ -269,7 +296,7 @@
 </div>
 
 <footer>
-  Preços: ANP — Levantamento Semanal de Preços de Combustíveis. Volumes: ANP — Painel do Mercado de Combustíveis Líquidos (entregas de distribuidores). Distribuição B2B: cotação direta (planilha interna). Dados públicos.<br>
+  Preços: ANP — Levantamento Semanal de Preços de Combustíveis. Volumes: ANP — Painel do Mercado de Combustíveis Líquidos (entregas de distribuidores). Composição de preço: Petrobras (dados públicos semanais por estado). Distribuição B2B: cotação direta (planilha interna). Dados públicos.<br>
   <code>monitor.lumenclubpainel.com.br</code>
 </footer>
 </div>
@@ -677,6 +704,84 @@ function renderVolumes(v) {
   }));
 }
 
+// === Custo de distribuição (composição oficial por estado) ===
+let CUSTO = null;
+const CUSTO_CORES = { parcela_petrobras: '#4f8aff', mistura: '#2dd4bf', imposto_estadual: '#fbbf24', impostos_federais: '#a78bfa', dist_revenda: '#f87171' };
+
+function custoCardHtml(uf, prodKey, c) {
+  if (!c) return '<div class="custo-card"><p class="pending">Sem dado publicado para este estado.</p></div>';
+  const titulo = prodKey === 'gasolina' ? 'Gasolina comum' : 'Diesel';
+  const misturaKey = prodKey === 'gasolina' ? 'etanol_anidro' : 'biodiesel';
+  const misturaLabel = prodKey === 'gasolina' ? 'Etanol anidro' : 'Biodiesel';
+  const brl = (v) => 'R$ ' + Number(v).toFixed(2).replace('.', ',');
+
+  const parcelas = [
+    { key: 'parcela_petrobras', label: 'Produto na refinaria', cor: CUSTO_CORES.parcela_petrobras, v: c.parcela_petrobras },
+    { key: misturaKey, label: misturaLabel, cor: CUSTO_CORES.mistura, v: c[misturaKey] },
+    { key: 'imposto_estadual', label: 'Imposto estadual', cor: CUSTO_CORES.imposto_estadual, v: c.imposto_estadual },
+    { key: 'impostos_federais', label: 'Impostos federais', cor: CUSTO_CORES.impostos_federais, v: c.impostos_federais },
+    { key: 'dist_revenda', label: 'Distribuição + revenda', cor: CUSTO_CORES.dist_revenda, v: c.dist_revenda }
+  ];
+
+  const bar = parcelas.map(p => `<span style="width:${p.v.pct}%;background:${p.cor}" title="${p.label}: ${brl(p.v.rs)} (${p.v.pct}%)"></span>`).join('');
+  const rows = parcelas.slice(0, 4).map(p => `
+    <div class="custo-row"><span class="custo-dot" style="background:${p.cor}"></span><span class="custo-label">${p.label}</span><span class="custo-rs">${brl(p.v.rs)}</span><span class="custo-pct">${p.v.pct.toFixed(1).replace(".", ",")}%</span></div>`).join('');
+
+  // Cruzamento com a cotação real da planilha (preço que o posto paga na distribuidora)
+  const planKey = prodKey === 'gasolina' ? 'gasolina' : 's10';
+  const plan = (DATA.distribuicao_estado || {})[uf]?.[planKey];
+  let planHtml = '';
+  if (plan != null) {
+    const margemDist = plan - c.custo_antes_dist;
+    planHtml = `<div class="custo-planilha">Cotação real de distribuidora (planilha${prodKey === 'diesel' ? ', S10' : ''}): <strong>${brl(plan)}</strong> → margem estimada da distribuidora: <strong>${(margemDist >= 0 ? '+' : '') + margemDist.toFixed(2).replace('.', ',')} /L</strong> sobre o custo composto</div>`;
+  }
+
+  return `
+  <div class="custo-card">
+    <h3>${titulo}</h3>
+    <div class="custo-sub">Composição do preço médio na bomba — ${uf}</div>
+    <div class="custo-headline">
+      <span class="custo-big">${brl(c.custo_antes_dist)}</span>
+      <span class="custo-big-label">custo do litro antes da margem de distribuição + revenda</span>
+    </div>
+    <div class="custo-bar">${bar}</div>
+    ${rows}
+    <div class="custo-row subtotal"><span></span><span class="custo-label">Custo antes de distribuição/revenda</span><span class="custo-rs">${brl(c.custo_antes_dist)}</span><span class="custo-pct"></span></div>
+    <div class="custo-row"><span class="custo-dot" style="background:${CUSTO_CORES.dist_revenda}"></span><span class="custo-label">Distribuição + revenda</span><span class="custo-rs">${brl(c.dist_revenda.rs)}</span><span class="custo-pct">${c.dist_revenda.pct.toFixed(1).replace(".", ",")}%</span></div>
+    <div class="custo-row total"><span></span><span class="custo-label">Preço médio na bomba</span><span class="custo-rs">${brl(c.preco_medio)}</span><span class="custo-pct"></span></div>
+    ${planHtml}
+  </div>`;
+}
+
+function renderCusto(custo) {
+  if (!custo || !custo.estados) return;
+  const tabsEl = document.getElementById('custo-tabs');
+  const contentEl = document.getElementById('custo-content');
+  const h2 = document.getElementById('custo-h2');
+  const ufs = Object.keys(custo.estados).sort();
+  if (!ufs.length) return;
+  h2.style.display = '';
+  tabsEl.style.display = '';
+  if (custo.periodo) {
+    const f = (d) => d.split('-').reverse().slice(0, 2).join('/');
+    document.getElementById('custo-periodo').textContent = `— composição oficial do preço · semana ${f(custo.periodo.de)} a ${f(custo.periodo.ate)}`;
+  }
+  const inicial = ufs.includes('ES') ? 'ES' : ufs[0];
+  tabsEl.innerHTML = ufs.map(uf => `<button class="tab ${uf === inicial ? 'active' : ''}" data-uf="${uf}">${uf}</button>`).join('');
+  const render = (uf) => {
+    const e = custo.estados[uf];
+    contentEl.innerHTML = `<div class="custo-grid">${custoCardHtml(uf, 'gasolina', e.gasolina)}${custoCardHtml(uf, 'diesel', e.diesel)}</div>`;
+  };
+  tabsEl.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabsEl.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.uf);
+    });
+  });
+  render(inicial);
+}
+
 function shortName(nome) {
   if (!nome) return '—';
   return nome
@@ -694,7 +799,13 @@ function shortName(nome) {
     document.getElementById('updated').textContent = 'Erro ao carregar dados: ' + e.message;
     return;
   }
+  // Composição oficial de preço (opcional — painel funciona sem)
+  try {
+    const resC = await fetch('custo-distribuicao.json?t=' + Date.now(), { cache: 'no-store' });
+    if (resC.ok) CUSTO = await resC.json();
+  } catch (e) { /* segue sem o bloco de custo */ }
   renderPainel();
+  renderCusto(CUSTO);
 })();
 </script>
 </body>
