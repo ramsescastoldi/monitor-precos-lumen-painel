@@ -1,6 +1,6 @@
 {
-  "atualizado_em": "09/08/2026, 20:40:36",
-  "semana_referencia": "2026-07-31",
+  "atualizado_em": "10/08/2026, 04:04:46",
+  "semana_referencia": "2026-08-07",
   "distribuicao_ultima_data": "2026-08-06",
   "volumes": {
     "mes_referencia": "jun/2026",
@@ -221,386 +221,386 @@
     }
   },
   "kpis": {
-    "n_postos": 3657,
-    "n_cidades": 314,
+    "n_postos": 3713,
+    "n_cidades": 315,
     "n_estados": 14,
-    "n_coletas": 10847
+    "n_coletas": 11023
   },
   "agregados_estado": {
     "BA": {
-      "total_postos": 228,
+      "total_postos": 241,
       "gasolina": {
-        "n": 225,
-        "media": 7.04,
-        "min": 6.49,
+        "n": 237,
+        "media": 7.059,
+        "min": 6.44,
         "max": 7.84
       },
       "etanol": {
-        "n": 196,
-        "media": 4.791,
-        "min": 4.04,
-        "max": 6.39
+        "n": 214,
+        "media": 4.755,
+        "min": 4.02,
+        "max": 5.99
       },
       "s10": {
-        "n": 166,
-        "media": 7.674,
-        "min": 6.64,
-        "max": 8.57
+        "n": 183,
+        "media": 7.682,
+        "min": 6.77,
+        "max": 8.99
       },
       "s500": {
-        "n": 124,
-        "media": 7.315,
+        "n": 143,
+        "media": 7.194,
         "min": 6.18,
-        "max": 8.49
+        "max": 8.89
       }
     },
     "CE": {
-      "total_postos": 134,
+      "total_postos": 131,
       "gasolina": {
-        "n": 131,
-        "media": 6.91,
-        "min": 6.43,
+        "n": 127,
+        "media": 6.897,
+        "min": 6.35,
         "max": 7.9
       },
       "etanol": {
-        "n": 118,
-        "media": 5.194,
-        "min": 4.62,
+        "n": 117,
+        "media": 5.184,
+        "min": 4.59,
         "max": 6.19
       },
       "s10": {
-        "n": 120,
-        "media": 7.128,
+        "n": 115,
+        "media": 7.109,
         "min": 6.15,
         "max": 7.99
       },
       "s500": {
-        "n": 20,
-        "media": 7.033,
-        "min": 6.2,
-        "max": 7.69
+        "n": 21,
+        "media": 7.044,
+        "min": 6.1,
+        "max": 7.89
       }
     },
     "DF": {
       "total_postos": 50,
       "gasolina": {
         "n": 50,
-        "media": 6.554,
-        "min": 6.29,
+        "media": 6.516,
+        "min": 6.17,
         "max": 6.59
       },
       "etanol": {
         "n": 25,
-        "media": 4.174,
+        "media": 4.152,
         "min": 3.99,
-        "max": 4.26
+        "max": 4.77
       },
       "s10": {
         "n": 12,
-        "media": 6.881,
+        "media": 6.893,
         "min": 6.59,
         "max": 7.19
       },
       "s500": {
-        "n": 13,
-        "media": 6.932,
+        "n": 12,
+        "media": 6.916,
         "min": 6.54,
         "max": 7.32
       }
     },
     "GO": {
-      "total_postos": 160,
+      "total_postos": 170,
       "gasolina": {
-        "n": 159,
-        "media": 6.66,
-        "min": 5.69,
+        "n": 169,
+        "media": 6.642,
+        "min": 5.68,
         "max": 6.99
       },
       "etanol": {
-        "n": 158,
-        "media": 4.137,
-        "min": 3.28,
+        "n": 166,
+        "media": 4.103,
+        "min": 3.39,
         "max": 4.59
       },
       "s10": {
-        "n": 124,
-        "media": 6.73,
-        "min": 6.19,
+        "n": 140,
+        "media": 6.734,
+        "min": 6.29,
         "max": 7.99
       },
       "s500": {
-        "n": 87,
-        "media": 6.262,
-        "min": 5.63,
+        "n": 91,
+        "media": 6.282,
+        "min": 5.69,
         "max": 7.95
       }
     },
     "MG": {
-      "total_postos": 498,
+      "total_postos": 488,
       "gasolina": {
-        "n": 494,
-        "media": 6.318,
-        "min": 5.7,
+        "n": 484,
+        "media": 6.286,
+        "min": 5.74,
         "max": 7.19
       },
       "etanol": {
-        "n": 469,
-        "media": 4.074,
-        "min": 3.29,
+        "n": 455,
+        "media": 4.019,
+        "min": 2.99,
         "max": 5.12
       },
       "s10": {
-        "n": 338,
-        "media": 6.838,
-        "min": 5.99,
-        "max": 7.99
+        "n": 326,
+        "media": 6.81,
+        "min": 6.29,
+        "max": 7.69
       },
       "s500": {
-        "n": 241,
-        "media": 6.474,
+        "n": 242,
+        "media": 6.445,
         "min": 5.72,
         "max": 7.49
       }
     },
     "MS": {
-      "total_postos": 53,
+      "total_postos": 52,
       "gasolina": {
-        "n": 52,
+        "n": 51,
         "media": 6.578,
-        "min": 6.17,
+        "min": 6.1,
         "max": 7.29
       },
       "etanol": {
-        "n": 34,
-        "media": 4.024,
-        "min": 3.59,
+        "n": 33,
+        "media": 4.032,
+        "min": 3.62,
         "max": 4.97
       },
       "s10": {
-        "n": 30,
-        "media": 6.921,
+        "n": 27,
+        "media": 6.919,
         "min": 6.39,
         "max": 7.69
       },
       "s500": {
-        "n": 30,
-        "media": 6.527,
-        "min": 6.04,
+        "n": 29,
+        "media": 6.567,
+        "min": 5.99,
         "max": 7.58
       }
     },
     "MT": {
-      "total_postos": 84,
+      "total_postos": 87,
       "gasolina": {
-        "n": 82,
-        "media": 6.807,
-        "min": 6.23,
+        "n": 87,
+        "media": 6.756,
+        "min": 6.07,
         "max": 7.29
       },
       "etanol": {
         "n": 81,
-        "media": 3.746,
-        "min": 3.19,
+        "media": 3.708,
+        "min": 3.13,
         "max": 3.99
       },
       "s10": {
-        "n": 53,
-        "media": 6.976,
-        "min": 6.49,
+        "n": 59,
+        "media": 6.998,
+        "min": 6.05,
         "max": 7.98
       },
       "s500": {
-        "n": 45,
-        "media": 6.76,
-        "min": 6.03,
+        "n": 54,
+        "media": 6.694,
+        "min": 5.59,
         "max": 7.38
       }
     },
     "PA": {
       "total_postos": 115,
       "gasolina": {
-        "n": 112,
-        "media": 6.765,
-        "min": 5.97,
-        "max": 7.44
+        "n": 113,
+        "media": 6.809,
+        "min": 6.09,
+        "max": 7.7
       },
       "etanol": {
         "n": 53,
-        "media": 4.986,
+        "media": 4.956,
         "min": 3.95,
         "max": 5.82
       },
       "s10": {
-        "n": 82,
-        "media": 7.277,
+        "n": 83,
+        "media": 7.261,
         "min": 6.43,
-        "max": 9.15
+        "max": 8.8
       },
       "s500": {
-        "n": 51,
-        "media": 7.16,
+        "n": 50,
+        "media": 7.175,
         "min": 6.14,
-        "max": 8.33
+        "max": 8.75
       }
     },
     "PR": {
-      "total_postos": 278,
+      "total_postos": 281,
       "gasolina": {
-        "n": 269,
-        "media": 6.644,
-        "min": 5.79,
+        "n": 273,
+        "media": 6.602,
+        "min": 5.67,
         "max": 7.38
       },
       "etanol": {
         "n": 266,
-        "media": 4.186,
+        "media": 4.12,
         "min": 3.19,
         "max": 4.99
       },
       "s10": {
-        "n": 185,
-        "media": 6.898,
+        "n": 186,
+        "media": 6.919,
+        "min": 6.19,
+        "max": 7.99
+      },
+      "s500": {
+        "n": 127,
+        "media": 6.278,
+        "min": 5.49,
+        "max": 7.09
+      }
+    },
+    "RJ": {
+      "total_postos": 304,
+      "gasolina": {
+        "n": 303,
+        "media": 6.678,
+        "min": 5.94,
+        "max": 7.29
+      },
+      "etanol": {
+        "n": 255,
+        "media": 4.803,
+        "min": 3.98,
+        "max": 5.69
+      },
+      "s10": {
+        "n": 195,
+        "media": 7.113,
         "min": 5.89,
         "max": 7.99
       },
       "s500": {
-        "n": 129,
-        "media": 6.25,
-        "min": 5.49,
-        "max": 7.19
-      }
-    },
-    "RJ": {
-      "total_postos": 283,
-      "gasolina": {
-        "n": 282,
-        "media": 6.712,
-        "min": 5.94,
-        "max": 7.39
-      },
-      "etanol": {
-        "n": 235,
-        "media": 4.836,
-        "min": 4.07,
-        "max": 5.69
-      },
-      "s10": {
-        "n": 174,
-        "media": 7.168,
-        "min": 6.24,
-        "max": 8.59
-      },
-      "s500": {
-        "n": 105,
-        "media": 7.001,
-        "min": 5.89,
-        "max": 8.29
+        "n": 112,
+        "media": 6.933,
+        "min": 5.87,
+        "max": 7.99
       }
     },
     "RO": {
       "total_postos": 64,
       "gasolina": {
         "n": 63,
-        "media": 7.319,
+        "media": 7.317,
         "min": 6.97,
         "max": 7.89
       },
       "etanol": {
-        "n": 35,
-        "media": 5.378,
-        "min": 4.89,
+        "n": 37,
+        "media": 5.349,
+        "min": 4.88,
         "max": 5.99
       },
       "s10": {
-        "n": 56,
-        "media": 7.355,
+        "n": 53,
+        "media": 7.362,
         "min": 6.49,
         "max": 7.99
       },
       "s500": {
-        "n": 45,
-        "media": 7.244,
-        "min": 6.57,
-        "max": 7.94
+        "n": 44,
+        "media": 7.22,
+        "min": 6.49,
+        "max": 7.88
       }
     },
     "RS": {
-      "total_postos": 304,
+      "total_postos": 310,
       "gasolina": {
-        "n": 303,
-        "media": 6.298,
+        "n": 308,
+        "media": 6.348,
         "min": 5.52,
-        "max": 7.53
+        "max": 7.48
       },
       "etanol": {
-        "n": 150,
-        "media": 4.692,
+        "n": 145,
+        "media": 4.655,
         "min": 3.79,
-        "max": 5.83
+        "max": 5.93
       },
       "s10": {
-        "n": 196,
-        "media": 6.621,
+        "n": 210,
+        "media": 6.613,
         "min": 5.84,
-        "max": 7.69
+        "max": 7.89
       },
       "s500": {
-        "n": 175,
-        "media": 6.372,
-        "min": 5.57,
-        "max": 7.56
+        "n": 184,
+        "media": 6.328,
+        "min": 5.58,
+        "max": 7.69
       }
     },
     "SC": {
-      "total_postos": 171,
+      "total_postos": 175,
       "gasolina": {
-        "n": 170,
-        "media": 6.525,
+        "n": 174,
+        "media": 6.52,
         "min": 5.89,
         "max": 6.99
       },
       "etanol": {
-        "n": 113,
-        "media": 4.595,
-        "min": 4,
-        "max": 6.36
+        "n": 115,
+        "media": 4.539,
+        "min": 3.89,
+        "max": 5.49
       },
       "s10": {
-        "n": 121,
-        "media": 6.836,
-        "min": 6.18,
+        "n": 127,
+        "media": 6.803,
+        "min": 5.99,
         "max": 8.38
       },
       "s500": {
         "n": 64,
-        "media": 6.546,
-        "min": 5.98,
+        "media": 6.515,
+        "min": 5.94,
         "max": 7.47
       }
     },
     "SP": {
-      "total_postos": 1235,
+      "total_postos": 1245,
       "gasolina": {
-        "n": 1223,
-        "media": 6.411,
+        "n": 1232,
+        "media": 6.382,
         "min": 5.49,
         "max": 8.97
       },
       "etanol": {
-        "n": 1211,
-        "media": 3.729,
-        "min": 2.8,
+        "n": 1223,
+        "media": 3.665,
+        "min": 2.77,
         "max": 5.99
       },
       "s10": {
-        "n": 856,
-        "media": 6.923,
+        "n": 838,
+        "media": 6.895,
         "min": 5.99,
         "max": 9.19
       },
       "s500": {
-        "n": 446,
-        "media": 6.533,
+        "n": 440,
+        "media": 6.494,
         "min": 5.49,
         "max": 8.69
       }
@@ -617,28 +617,28 @@
       "s500": 5.945,
       "margem": {
         "gasolina": {
-          "revenda": 7.04,
+          "revenda": 7.059,
           "distribuicao": 5.925,
-          "margem_rs": 1.115,
-          "margem_pct": 18.82
+          "margem_rs": 1.134,
+          "margem_pct": 19.14
         },
         "etanol": {
-          "revenda": 4.791,
+          "revenda": 4.755,
           "distribuicao": 4.095,
-          "margem_rs": 0.696,
-          "margem_pct": 17
+          "margem_rs": 0.66,
+          "margem_pct": 16.12
         },
         "s10": {
-          "revenda": 7.674,
+          "revenda": 7.682,
           "distribuicao": 6.69,
-          "margem_rs": 0.984,
-          "margem_pct": 14.71
+          "margem_rs": 0.992,
+          "margem_pct": 14.83
         },
         "s500": {
-          "revenda": 7.315,
+          "revenda": 7.194,
           "distribuicao": 5.945,
-          "margem_rs": 1.37,
-          "margem_pct": 23.04
+          "margem_rs": 1.249,
+          "margem_pct": 21.01
         }
       }
     },
@@ -652,28 +652,28 @@
       "s500": 5.407,
       "margem": {
         "gasolina": {
-          "revenda": 6.66,
+          "revenda": 6.642,
           "distribuicao": 5.375,
-          "margem_rs": 1.285,
-          "margem_pct": 23.91
+          "margem_rs": 1.267,
+          "margem_pct": 23.57
         },
         "etanol": {
-          "revenda": 4.137,
+          "revenda": 4.103,
           "distribuicao": 3.252,
-          "margem_rs": 0.885,
-          "margem_pct": 27.21
+          "margem_rs": 0.851,
+          "margem_pct": 26.17
         },
         "s10": {
-          "revenda": 6.73,
+          "revenda": 6.734,
           "distribuicao": 5.925,
-          "margem_rs": 0.805,
-          "margem_pct": 13.59
+          "margem_rs": 0.809,
+          "margem_pct": 13.65
         },
         "s500": {
-          "revenda": 6.262,
+          "revenda": 6.282,
           "distribuicao": 5.407,
-          "margem_rs": 0.855,
-          "margem_pct": 15.81
+          "margem_rs": 0.875,
+          "margem_pct": 16.18
         }
       }
     },
@@ -687,28 +687,28 @@
       "s500": 5.397,
       "margem": {
         "gasolina": {
-          "revenda": 6.318,
+          "revenda": 6.286,
           "distribuicao": 5.48,
-          "margem_rs": 0.838,
-          "margem_pct": 15.29
+          "margem_rs": 0.806,
+          "margem_pct": 14.71
         },
         "etanol": {
-          "revenda": 4.074,
+          "revenda": 4.019,
           "distribuicao": 3.59,
-          "margem_rs": 0.484,
-          "margem_pct": 13.48
+          "margem_rs": 0.429,
+          "margem_pct": 11.95
         },
         "s10": {
-          "revenda": 6.838,
+          "revenda": 6.81,
           "distribuicao": 5.87,
-          "margem_rs": 0.968,
-          "margem_pct": 16.49
+          "margem_rs": 0.94,
+          "margem_pct": 16.01
         },
         "s500": {
-          "revenda": 6.474,
+          "revenda": 6.445,
           "distribuicao": 5.397,
-          "margem_rs": 1.077,
-          "margem_pct": 19.96
+          "margem_rs": 1.048,
+          "margem_pct": 19.42
         }
       }
     },
@@ -722,28 +722,28 @@
       "s500": 5.58,
       "margem": {
         "gasolina": {
-          "revenda": 6.807,
+          "revenda": 6.756,
           "distribuicao": 5.527,
-          "margem_rs": 1.28,
-          "margem_pct": 23.16
+          "margem_rs": 1.229,
+          "margem_pct": 22.24
         },
         "etanol": {
-          "revenda": 3.746,
+          "revenda": 3.708,
           "distribuicao": 2.778,
-          "margem_rs": 0.968,
-          "margem_pct": 34.85
+          "margem_rs": 0.93,
+          "margem_pct": 33.48
         },
         "s10": {
-          "revenda": 6.976,
+          "revenda": 6.998,
           "distribuicao": 6.109,
-          "margem_rs": 0.867,
-          "margem_pct": 14.19
+          "margem_rs": 0.889,
+          "margem_pct": 14.55
         },
         "s500": {
-          "revenda": 6.76,
+          "revenda": 6.694,
           "distribuicao": 5.58,
-          "margem_rs": 1.18,
-          "margem_pct": 21.15
+          "margem_rs": 1.114,
+          "margem_pct": 19.96
         }
       }
     },
@@ -757,28 +757,28 @@
       "s500": 5.195,
       "margem": {
         "gasolina": {
-          "revenda": 6.644,
+          "revenda": 6.602,
           "distribuicao": 5.15,
-          "margem_rs": 1.494,
-          "margem_pct": 29.01
+          "margem_rs": 1.452,
+          "margem_pct": 28.19
         },
         "etanol": {
-          "revenda": 4.186,
+          "revenda": 4.12,
           "distribuicao": 4.88,
-          "margem_rs": -0.694,
-          "margem_pct": -14.22
+          "margem_rs": -0.76,
+          "margem_pct": -15.57
         },
         "s10": {
-          "revenda": 6.898,
+          "revenda": 6.919,
           "distribuicao": 5.965,
-          "margem_rs": 0.933,
-          "margem_pct": 15.64
+          "margem_rs": 0.954,
+          "margem_pct": 15.99
         },
         "s500": {
-          "revenda": 6.25,
+          "revenda": 6.278,
           "distribuicao": 5.195,
-          "margem_rs": 1.055,
-          "margem_pct": 20.31
+          "margem_rs": 1.083,
+          "margem_pct": 20.85
         }
       }
     },
@@ -792,23 +792,23 @@
       "s500": 2.9,
       "margem": {
         "gasolina": {
-          "revenda": 7.319,
+          "revenda": 7.317,
           "distribuicao": 6.29,
-          "margem_rs": 1.029,
-          "margem_pct": 16.36
+          "margem_rs": 1.027,
+          "margem_pct": 16.33
         },
         "etanol": null,
         "s10": {
-          "revenda": 7.355,
+          "revenda": 7.362,
           "distribuicao": 6.36,
-          "margem_rs": 0.995,
-          "margem_pct": 15.64
+          "margem_rs": 1.002,
+          "margem_pct": 15.75
         },
         "s500": {
-          "revenda": 7.244,
+          "revenda": 7.22,
           "distribuicao": 2.9,
-          "margem_rs": 4.344,
-          "margem_pct": 149.79
+          "margem_rs": 4.32,
+          "margem_pct": 148.97
         }
       }
     },
@@ -822,28 +822,28 @@
       "s500": 5.19,
       "margem": {
         "gasolina": {
-          "revenda": 6.525,
+          "revenda": 6.52,
           "distribuicao": 5.26,
-          "margem_rs": 1.265,
-          "margem_pct": 24.05
+          "margem_rs": 1.26,
+          "margem_pct": 23.95
         },
         "etanol": {
-          "revenda": 4.595,
+          "revenda": 4.539,
           "distribuicao": 3.3,
-          "margem_rs": 1.295,
-          "margem_pct": 39.24
+          "margem_rs": 1.239,
+          "margem_pct": 37.55
         },
         "s10": {
-          "revenda": 6.836,
+          "revenda": 6.803,
           "distribuicao": 5.99,
-          "margem_rs": 0.846,
-          "margem_pct": 14.12
+          "margem_rs": 0.813,
+          "margem_pct": 13.57
         },
         "s500": {
-          "revenda": 6.546,
+          "revenda": 6.515,
           "distribuicao": 5.19,
-          "margem_rs": 1.356,
-          "margem_pct": 26.13
+          "margem_rs": 1.325,
+          "margem_pct": 25.53
         }
       }
     },
@@ -857,28 +857,28 @@
       "s500": 5.233,
       "margem": {
         "gasolina": {
-          "revenda": 6.411,
+          "revenda": 6.382,
           "distribuicao": 5.355,
-          "margem_rs": 1.056,
-          "margem_pct": 19.72
+          "margem_rs": 1.027,
+          "margem_pct": 19.18
         },
         "etanol": {
-          "revenda": 3.729,
+          "revenda": 3.665,
           "distribuicao": 3.17,
-          "margem_rs": 0.559,
-          "margem_pct": 17.63
+          "margem_rs": 0.495,
+          "margem_pct": 15.62
         },
         "s10": {
-          "revenda": 6.923,
+          "revenda": 6.895,
           "distribuicao": 5.883,
-          "margem_rs": 1.04,
-          "margem_pct": 17.68
+          "margem_rs": 1.012,
+          "margem_pct": 17.2
         },
         "s500": {
-          "revenda": 6.533,
+          "revenda": 6.494,
           "distribuicao": 5.233,
-          "margem_rs": 1.3,
-          "margem_pct": 24.84
+          "margem_rs": 1.261,
+          "margem_pct": 24.1
         }
       }
     }
@@ -1309,27 +1309,19 @@
     "BA": [
       {
         "municipio": "IPIRA",
+        "revenda": "POSTO PAGUE MENOS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "16.964.365...",
+        "gasolina": 6.44,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "IPIRA",
         "revenda": "AUTO POSTO AUGUSTU'S LTDA",
         "bandeira": "ALE",
         "cnpj_curto": "02.448.248...",
         "gasolina": 6.49,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "FEIRA DE SANTANA",
-        "revenda": "POSTO KALILANDIA LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "15.151.046...",
-        "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "ALAGOINHAS",
-        "revenda": "AUTO POSTO JONGA II COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
-        "bandeira": "LARCO",
-        "cnpj_curto": "14.356.970...",
-        "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
@@ -1337,7 +1329,7 @@
         "bandeira": "ALE",
         "cnpj_curto": "30.407.550...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
@@ -1345,7 +1337,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "37.321.647...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
@@ -1353,7 +1345,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "14.486.153...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
@@ -1361,15 +1353,15 @@
         "bandeira": "ALE",
         "cnpj_curto": "14.072.664...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
-        "municipio": "FEIRA DE SANTANA",
-        "revenda": "J A SOBRAL & CIA LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "13.799.101...",
+        "municipio": "ALAGOINHAS",
+        "revenda": "AUTO POSTO JONGA II COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "bandeira": "LARCO",
+        "cnpj_curto": "14.356.970...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
@@ -1377,15 +1369,23 @@
         "bandeira": "RAIZEN",
         "cnpj_curto": "15.151.046...",
         "gasolina": 6.51,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-06"
       },
       {
         "municipio": "FEIRA DE SANTANA",
-        "revenda": "TREVO DERIVADOS DE PETROLEO LTDA",
+        "revenda": "MAXDIESEL DERIVADOS DE PETROLEO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "14.486.153...",
-        "gasolina": 6.52,
-        "data_coleta": "2026-07-30"
+        "cnpj_curto": "08.997.756...",
+        "gasolina": 6.53,
+        "data_coleta": "2026-08-06"
+      },
+      {
+        "municipio": "SALVADOR",
+        "revenda": "J A SOBRAL & CIA LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "13.799.101...",
+        "gasolina": 6.53,
+        "data_coleta": "2026-08-06"
       }
     ],
     "CE": [
@@ -1394,90 +1394,90 @@
         "revenda": "ACOPEL - AMERICO COMERCIAL DE PETROLEO LTDA",
         "bandeira": "RAIZEN",
         "cnpj_curto": "04.196.165...",
-        "gasolina": 6.43,
-        "data_coleta": "2026-07-27"
+        "gasolina": 6.35,
+        "data_coleta": "2026-08-03"
       },
       {
-        "municipio": "CAUCAIA",
-        "revenda": "POSTO PLANALTO COMERCIO, SERVICOS E DERIVADOS DE PETROLEO EIRELI",
+        "municipio": "CRATEUS",
+        "revenda": "POSTO DE COMBUSTIVEL SAO CRISTOVAO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "15.692.375...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CAUCAIA",
-        "revenda": "WJ CHAVES COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "22.780.990...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CAUCAIA",
-        "revenda": "L G CAUCAIA COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "23.209.959...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CAUCAIA",
-        "revenda": "BOQUEIRAO COMERCIO DE DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "07.130.954...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CAUCAIA",
-        "revenda": "PONTES & LANDIM PETROLEO LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "02.333.098...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CAUCAIA",
-        "revenda": "P&E COMERCIO DE DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "54.028.463...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-30"
+        "cnpj_curto": "69.714.822...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-05"
       },
       {
         "municipio": "CAUCAIA",
         "revenda": "PONTES & LADIM COMBUSTIVEIS LTDA - EPP.",
         "bandeira": "RAIZEN",
         "cnpj_curto": "17.120.954...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-30"
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-06"
       },
       {
-        "municipio": "CAUCAIA",
-        "revenda": "SOUSA HOLANDA PETROLEO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "01.405.683...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-30"
+        "municipio": "CRATEUS",
+        "revenda": "WQFRANCISCA JANAINA RODRIGUES",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "20.212.972...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-05"
       },
       {
         "municipio": "FORTALEZA",
-        "revenda": "J A COMERCIO COMBUSTIVEIS LTDA",
-        "bandeira": "SP",
-        "cnpj_curto": "02.696.818...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-27"
+        "revenda": "SOUZA COMÉRCIO DE PETRÓLEO E SERVIÇOS LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "04.078.953...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORTALEZA",
+        "revenda": "PAPAGAIO COMERCIO DE DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "11.535.248...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORTALEZA",
+        "revenda": "SOBRAL & PALACIO PETROLEO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "07.240.641...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORTALEZA",
+        "revenda": "SOBRAL & PALACIO PETROLEO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "07.240.641...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORTALEZA",
+        "revenda": "IGUATEMI DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.304.199...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORTALEZA",
+        "revenda": "ACOPEL - AMERICO COMERCIAL DE PETROLEO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "04.196.165...",
+        "gasolina": 6.43,
+        "data_coleta": "2026-08-03"
       }
     ],
     "DF": [
       {
         "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO JPC DERIVADOS DE PETROLEO LTDA",
+        "revenda": "ROCHA COMERCIO VAREJISTA DE DERIVADOS DE PETROLEO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "07.129.219...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "04.056.374...",
+        "gasolina": 6.17,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "BRASILIA",
@@ -1485,97 +1485,105 @@
         "bandeira": "RAIZEN",
         "cnpj_curto": "12.093.145...",
         "gasolina": 6.39,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO QNO LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "33.714.876...",
-        "gasolina": 6.47,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO 314 NORTE LTDA - ME",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "03.530.749...",
-        "gasolina": 6.48,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO CHAVES LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "00.746.278...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO SOF NORTE LTDA",
+        "revenda": "BRASAL COMBUSTIVEIS LTDA",
         "bandeira": "RAIZEN",
-        "cnpj_curto": "03.951.672...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "00.097.626...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BRASILIA",
         "revenda": "AUTO POSTO ESQUINA LIMITADA",
         "bandeira": "IPIRANGA",
         "cnpj_curto": "02.551.867...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-28"
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "CASCOL COMBUSTIVEIS PARA VEICULOS LTDA",
+        "revenda": "SMAFF COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "00.306.597...",
-        "gasolina": 6.55,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "05.662.975...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "ROCHA COMERCIO VAREJISTA DE DERIVADOS DE PETROLEO LTDA",
+        "revenda": "METRO COMERCIAL DE COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "04.056.374...",
-        "gasolina": 6.55,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "09.232.995...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "BRASILIA",
-        "revenda": "AUTO POSTO CAPITAL LTDA.",
+        "revenda": "AUTO POSTO JPC DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.129.219...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "BRASILIA",
+        "revenda": "AUTO POSTO NN 10 LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "11.936.605...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "BRASILIA",
+        "revenda": "AUTO POSTO SOF NORTE LTDA",
         "bandeira": "RAIZEN",
-        "cnpj_curto": "08.978.109...",
-        "gasolina": 6.56,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "03.951.672...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "BRASILIA",
+        "revenda": "AUTO POSTO CINCO ESTRELAS LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "00.692.418...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-04"
       }
     ],
     "GO": [
+      {
+        "municipio": "FORMOSA",
+        "revenda": "PARANA DE DENTRO COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "18.183.805...",
+        "gasolina": 5.68,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORMOSA",
+        "revenda": "PARANA COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "11.216.796...",
+        "gasolina": 5.68,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "FORMOSA",
+        "revenda": "PARANA DO MEIO COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "13.140.612...",
+        "gasolina": 5.68,
+        "data_coleta": "2026-08-03"
+      },
       {
         "municipio": "FORMOSA",
         "revenda": "PETRO  IDEAL REVENDA DE COMBUSTIVEIS LTDA",
         "bandeira": "ALE",
         "cnpj_curto": "44.612.408...",
         "gasolina": 5.69,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "GOIATUBA",
-        "revenda": "POSTO JB MOURA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "08.845.982...",
-        "gasolina": 5.98,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "GOIATUBA",
-        "revenda": "POSTO NOVO HORIZONTE GOIATUBA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "33.503.987...",
-        "gasolina": 5.98,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "ITUMBIARA",
@@ -1583,23 +1591,7 @@
         "bandeira": "NEXTA",
         "cnpj_curto": "25.629.809...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "FORMOSA",
-        "revenda": "PARANA DE FORA COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "48.113.920...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "GOIATUBA",
-        "revenda": "A1 COMBUSTIVEIS GOIATUBA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "18.590.664...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "FORMOSA",
@@ -1607,147 +1599,147 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "42.904.827...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "FORMOSA",
-        "revenda": "PARANA DO MEIO COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "revenda": "PARANA DE FORA COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "13.140.612...",
+        "cnpj_curto": "48.113.920...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-03"
       },
       {
-        "municipio": "FORMOSA",
-        "revenda": "PARANA COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "municipio": "ITUMBIARA",
+        "revenda": "AUTO POSTO CABORNA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "11.216.796...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "25.101.213...",
+        "gasolina": 6.09,
+        "data_coleta": "2026-08-04"
       },
       {
-        "municipio": "FORMOSA",
-        "revenda": "PARANA DE DENTRO COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "18.183.805...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
+        "municipio": "MORRINHOS",
+        "revenda": "AUTO POSTO CONQUISTA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "12.618.990...",
+        "gasolina": 6.09,
+        "data_coleta": "2026-08-07"
+      },
+      {
+        "municipio": "MORRINHOS",
+        "revenda": "AUTO POSTO LAMBARI LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "33.318.692...",
+        "gasolina": 6.09,
+        "data_coleta": "2026-08-07"
       }
     ],
     "MG": [
       {
         "municipio": "BELO HORIZONTE",
-        "revenda": "POSTO MARIO WERNECK LIMITADA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "03.665.115...",
-        "gasolina": 5.7,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CONTAGEM",
-        "revenda": "POSTO TRES BARRAS LTDA",
+        "revenda": "AUTO POSTO MACPETRO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "02.973.900...",
-        "gasolina": 5.77,
-        "data_coleta": "2026-07-29"
+        "cnpj_curto": "06.032.070...",
+        "gasolina": 5.74,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BELO HORIZONTE",
-        "revenda": "POSTO SAO BERNARDO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "10.673.246...",
-        "gasolina": 5.78,
-        "data_coleta": "2026-07-27"
+        "revenda": "POSTO QUICK LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "17.365.867...",
+        "gasolina": 5.75,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BELO HORIZONTE",
         "revenda": "POSTO BARBOSA LTDA",
         "bandeira": "ALE",
         "cnpj_curto": "17.160.094...",
-        "gasolina": 5.78,
-        "data_coleta": "2026-07-27"
+        "gasolina": 5.75,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BELO HORIZONTE",
         "revenda": "GNV SETE BELO LTDA",
         "bandeira": "VIBRA",
         "cnpj_curto": "04.399.544...",
-        "gasolina": 5.78,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELO HORIZONTE",
-        "revenda": "POSTO MINAS SHOPPING LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "06.980.628...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELO HORIZONTE",
-        "revenda": "CELT -COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "01.830.179...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-27"
+        "gasolina": 5.75,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BELO HORIZONTE",
         "revenda": "POSTO PAULISTINHA LTDA",
         "bandeira": "RAIZEN",
         "cnpj_curto": "01.438.754...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CONTAGEM",
-        "revenda": "FARIA REVENDEDORA DE COMBUSTIVEIS LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "04.373.546...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-29"
+        "gasolina": 5.75,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "BELO HORIZONTE",
-        "revenda": "AUTO POSTO MACPETRO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "06.032.070...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-27"
+        "revenda": "POSTO SAO BERNARDO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "10.673.246...",
+        "gasolina": 5.75,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "BELO HORIZONTE",
+        "revenda": "CELT -COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "01.830.179...",
+        "gasolina": 5.76,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "CONTAGEM",
+        "revenda": "VENETO EMPREENDIMENTO COMERCIAL LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "05.655.316...",
+        "gasolina": 5.77,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "BELO HORIZONTE",
+        "revenda": "POSTO DOM BOSCO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "19.380.393...",
+        "gasolina": 5.78,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "BELO HORIZONTE",
+        "revenda": "POSTO WAP LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "18.742.536...",
+        "gasolina": 5.78,
+        "data_coleta": "2026-08-03"
       }
     ],
     "MS": [
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "ALLOY AUTO POSTO II LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "03.244.399...",
-        "gasolina": 6.17,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CAMPO GRANDE",
         "revenda": "POSTO ACACIA LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "03.799.368...",
-        "gasolina": 6.17,
-        "data_coleta": "2026-07-27"
+        "gasolina": 6.1,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
         "revenda": "AUTO POSTO SAO JOSE LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "01.227.430...",
-        "gasolina": 6.17,
-        "data_coleta": "2026-07-27"
+        "gasolina": 6.1,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "HIDEO SAITO",
+        "revenda": "ALLOY AUTO POSTO II LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "00.923.607...",
-        "gasolina": 6.18,
-        "data_coleta": "2026-07-27"
+        "cnpj_curto": "03.244.399...",
+        "gasolina": 6.17,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
@@ -1755,7 +1747,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "00.406.548...",
         "gasolina": 6.19,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
@@ -1763,7 +1755,7 @@
         "bandeira": "ROYAL FIC",
         "cnpj_curto": "02.780.366...",
         "gasolina": 6.19,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
@@ -1771,31 +1763,39 @@
         "bandeira": "VIBRA",
         "cnpj_curto": "03.024.296...",
         "gasolina": 6.28,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "COMERCIO DE COMBUSTIVEIS CARAVAGIO LTDA",
+        "revenda": "POSTO FIGUEIRA LTDA",
         "bandeira": "VIBRA",
-        "cnpj_curto": "03.113.246...",
+        "cnpj_curto": "02.322.969...",
         "gasolina": 6.29,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "AUTO POSTO SHIMA LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "01.330.663...",
+        "revenda": "AUTO POSTO CASTELO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "01.742.740...",
         "gasolina": 6.29,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "AUTO POSTO MILENIO LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "01.332.532...",
+        "revenda": "AUTO POSTO AERO RANCHO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "03.866.429...",
         "gasolina": 6.29,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "CAMPO GRANDE",
+        "revenda": "COMERCIO DE COMBUSTIVEIS SERVANTES LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "01.386.815...",
+        "gasolina": 6.29,
+        "data_coleta": "2026-08-03"
       }
     ],
     "MT": [
@@ -1804,8 +1804,64 @@
         "revenda": "BRAUNA COMERCIO DE COMBUSTIVEIS LTDA.",
         "bandeira": "BRANCA",
         "cnpj_curto": "14.309.077...",
+        "gasolina": 6.07,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "SINOP",
+        "revenda": "J.D.COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "06.980.032...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "VARZEA GRANDE",
+        "revenda": "COMERCIAL AMAZONIA DE PETROLEO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "09.001.879...",
         "gasolina": 6.23,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-07"
+      },
+      {
+        "municipio": "RONDONOPOLIS",
+        "revenda": "AUTO POSTO TRANSAMERICA LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "15.521.660...",
+        "gasolina": 6.35,
+        "data_coleta": "2026-08-05"
+      },
+      {
+        "municipio": "RONDONOPOLIS",
+        "revenda": "URSAO AUTO POSTO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "24.671.085...",
+        "gasolina": 6.37,
+        "data_coleta": "2026-08-05"
+      },
+      {
+        "municipio": "VARZEA GRANDE",
+        "revenda": "GARRA COMBUSTIVEIS LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "08.751.804...",
+        "gasolina": 6.39,
+        "data_coleta": "2026-08-07"
+      },
+      {
+        "municipio": "CUIABA",
+        "revenda": "DIAS BLANCO COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "06.248.123...",
+        "gasolina": 6.45,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "CUIABA",
+        "revenda": "AUTO POSTO POSITIVO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "04.795.561...",
+        "gasolina": 6.45,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "RONDONOPOLIS",
@@ -1813,31 +1869,7 @@
         "bandeira": "VIBRA",
         "cnpj_curto": "08.490.193...",
         "gasolina": 6.49,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "RONDONOPOLIS",
-        "revenda": "COMERCIAL ARAPONGAS DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "10.280.800...",
-        "gasolina": 6.49,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "CACERES",
-        "revenda": "MONTE GERIZIM - COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "08.688.481...",
-        "gasolina": 6.53,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CUIABA",
-        "revenda": "COMERCIAL DE COMBUSTIVEIS FLAMBOYANT LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "02.220.321...",
-        "gasolina": 6.53,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-05"
       },
       {
         "municipio": "CACERES",
@@ -1845,89 +1877,17 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "03.927.792...",
         "gasolina": 6.53,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CACERES",
-        "revenda": "AUTO POSTO COSTA MARQUES LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "24.961.245...",
-        "gasolina": 6.53,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CACERES",
-        "revenda": "PETROLUZ CACERES AUTO POSTO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "03.578.055...",
-        "gasolina": 6.55,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CACERES",
-        "revenda": "COMLUC - COMERCIO DE LUBRIFICANTES E COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "03.927.792...",
-        "gasolina": 6.55,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "CACERES",
-        "revenda": "PETROLUZ BANDEIRANTES AUTO POSTO LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "19.791.528...",
-        "gasolina": 6.55,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-05"
       }
     ],
     "PA": [
-      {
-        "municipio": "BELEM",
-        "revenda": "POSTO HUMAITA LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "04.319.281...",
-        "gasolina": 5.97,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELEM",
-        "revenda": "AUTO POSTO BICOLOR LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "05.458.851...",
-        "gasolina": 5.97,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELEM",
-        "revenda": "IRMAOS TEIXEIRA LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "04.976.718...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELEM",
-        "revenda": "RODRIGUES & DIAS COM. COMBUSTIVEIS LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "05.474.193...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "BELEM",
-        "revenda": "A J N CAIADO LTDA",
-        "bandeira": "SABBÁ",
-        "cnpj_curto": "04.989.455...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-27"
-      },
       {
         "municipio": "ANANINDEUA",
         "revenda": "POSTO UBN LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "03.577.000...",
         "gasolina": 6.09,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "ANANINDEUA",
@@ -1935,15 +1895,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "03.577.000...",
         "gasolina": 6.12,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "ANANINDEUA",
-        "revenda": "GP PETROLEO COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "SABBÁ",
-        "cnpj_curto": "06.945.995...",
-        "gasolina": 6.14,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "ANANINDEUA",
@@ -1951,7 +1903,15 @@
         "bandeira": "IPIRANGA",
         "cnpj_curto": "06.164.013...",
         "gasolina": 6.14,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "ANANINDEUA",
+        "revenda": "GP PETROLEO COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "SABBÁ",
+        "cnpj_curto": "06.945.995...",
+        "gasolina": 6.14,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "ANANINDEUA",
@@ -1959,65 +1919,105 @@
         "bandeira": "IPIRANGA",
         "cnpj_curto": "02.328.689...",
         "gasolina": 6.14,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "BELEM",
+        "revenda": "AUTO POSTO ACAI LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "01.497.008...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-05"
+      },
+      {
+        "municipio": "ANANINDEUA",
+        "revenda": "RIBEIRO DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "04.111.209...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "ANANINDEUA",
+        "revenda": "LIDER COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "SABBÁ",
+        "cnpj_curto": "17.403.053...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "BELEM",
+        "revenda": "POSTO SANTA FE COMERCIO DE COMBUSTIVEL LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "05.497.400...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-05"
+      },
+      {
+        "municipio": "CASTANHAL",
+        "revenda": "REDE DE POSTOS DE COMBUSTIVEIS APEU LTDA",
+        "bandeira": "SABBÁ",
+        "cnpj_curto": "26.666.570...",
+        "gasolina": 6.29,
+        "data_coleta": "2026-08-04"
       }
     ],
     "PR": [
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "BEGNINI COMERCIO DE COMBUSTIVEIS LTDA",
+        "revenda": "POSTO BOA VISTA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "09.182.266...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "GUARAPUAVA",
-        "revenda": "IDEAL GUAPO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "03.626.094...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "GUARAPUAVA",
-        "revenda": "FATIMA SANTA PICCINI EIRELI",
-        "bandeira": "IDAZA",
-        "cnpj_curto": "30.530.946...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "GUARAPUAVA",
-        "revenda": "G. DE CESARO & CIA LTDA.",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "07.940.812...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "77.488.005...",
+        "gasolina": 5.67,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "GUARAPUAVA",
         "revenda": "REDE GUAPO DE POSTOS DE COMBUSTIVEL LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "17.569.551...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-28"
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "GUARAPUAVA",
+        "revenda": "IDEAL GUAPO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "03.626.094...",
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "GUARAPUAVA",
         "revenda": "POSTO CALED LTDA.",
         "bandeira": "BRANCA",
         "cnpj_curto": "02.520.592...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-07-28"
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "POSTO BOA VISTA LTDA",
+        "revenda": "BEGNINI COMERCIO DE COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "77.488.005...",
-        "gasolina": 5.87,
-        "data_coleta": "2026-07-27"
+        "cnpj_curto": "09.182.266...",
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "GUARAPUAVA",
+        "revenda": "G. DE CESARO & CIA LTDA.",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.940.812...",
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "LONDRINA",
+        "revenda": "SANTA ANA ENERGIA LESTE LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "43.652.557...",
+        "gasolina": 5.97,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "GUARAPUAVA",
@@ -2025,41 +2025,41 @@
         "bandeira": "IPIRANGA",
         "cnpj_curto": "03.157.919...",
         "gasolina": 5.97,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "LONDRINA",
+        "revenda": "SANTA ANA ENERGIA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "15.604.238...",
+        "gasolina": 5.97,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "STAWS COMÉRCIO DE COMBUSTÍVEIS LTDA.",
+        "revenda": "AUTO POSTO FERLIN LTDA",
         "bandeira": "VIBRA",
-        "cnpj_curto": "07.864.856...",
+        "cnpj_curto": "82.580.697...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "GUARAPUAVA",
-        "revenda": "FERLIM COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "01.628.563...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
+        "data_coleta": "2026-08-04"
       }
     ],
     "RJ": [
       {
         "municipio": "RIO DE JANEIRO",
-        "revenda": "MULTI POSTO CENTRO AUTOMOTIVO LTDA.",
+        "revenda": "AUTO CENTER TURBINADO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "07.303.380...",
+        "cnpj_curto": "09.494.778...",
         "gasolina": 5.94,
-        "data_coleta": "2026-07-29"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "RIO DE JANEIRO",
-        "revenda": "CENTRO DE ABASTECIMENTO CHESSED LTDA",
+        "revenda": "POSTO PORTELAO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "11.054.754...",
-        "gasolina": 5.98,
-        "data_coleta": "2026-07-29"
+        "cnpj_curto": "05.250.615...",
+        "gasolina": 5.99,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "RIO DE JANEIRO",
@@ -2067,7 +2067,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "05.159.154...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-29"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "CAMPOS DOS GOYTACAZES",
@@ -2075,7 +2075,47 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "17.305.026...",
         "gasolina": 6.17,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "RIO DE JANEIRO",
+        "revenda": "GNVIA RIO POSTO DE SERVIÇOS LTDA.",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "06.218.809...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "DUQUE DE CAXIAS",
+        "revenda": "POSTO E LANCHONETE XODO DO PAPAI LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "29.309.564...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-07"
+      },
+      {
+        "municipio": "DUQUE DE CAXIAS",
+        "revenda": "GOLF DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "NEXTA",
+        "cnpj_curto": "01.280.449...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-08-07"
+      },
+      {
+        "municipio": "RESENDE",
+        "revenda": "AUTO POSTO MATE AMARGO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "29.178.001...",
+        "gasolina": 6.24,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "RIO DE JANEIRO",
+        "revenda": "AUTO POSTO ML DE SAO CRISTOVAO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "05.601.741...",
+        "gasolina": 6.24,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "RIO DE JANEIRO",
@@ -2083,57 +2123,25 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "03.355.226...",
         "gasolina": 6.24,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "RIO DE JANEIRO",
-        "revenda": "AUTO POSTO VALDEVEZ LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "42.236.778...",
-        "gasolina": 6.27,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "NITEROI",
-        "revenda": "POSTO DE GASOLINA DR MARCH LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "27.709.948...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "RIO DE JANEIRO",
-        "revenda": "PORTAL DA PRAIA AUTO POSTO LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "00.171.013...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "RIO DE JANEIRO",
-        "revenda": "CARBAT DIST E ASSES DO COM DE DERIV DE PET LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "29.456.787...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "RIO DE JANEIRO",
-        "revenda": "BARRA GAS COMERCIO E SERVICOS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "11.513.372...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-07-29"
+        "data_coleta": "2026-08-03"
       }
     ],
     "RO": [
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "PETROBRASIL LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "03.604.591...",
+        "gasolina": 6.97,
+        "data_coleta": "2026-08-04"
+      },
       {
         "municipio": "JI-PARANA",
         "revenda": "BRASIL PETROLEO COMERCIO DE COMBUSTIVEL LTDA",
         "bandeira": "VIBRA",
         "cnpj_curto": "14.100.717...",
         "gasolina": 6.97,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "JI-PARANA",
@@ -2141,39 +2149,7 @@
         "bandeira": "IPIRANGA",
         "cnpj_curto": "42.897.375...",
         "gasolina": 6.98,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "JI-PARANA",
-        "revenda": "AUTO POSTO ECO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "07.405.721...",
-        "gasolina": 6.99,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CACOAL",
-        "revenda": "A. DA SILVA SOUZA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "07.042.246...",
-        "gasolina": 7.02,
-        "data_coleta": "2026-07-29"
-      },
-      {
-        "municipio": "JI-PARANA",
-        "revenda": "AUTO POSTO PATRAO COMERCIO DE COMBUSTIVEIS LTDA.",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "23.889.352...",
-        "gasolina": 7.02,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "JI-PARANA",
-        "revenda": "FVD COMBUSTIVEIS LTDA",
-        "bandeira": "EQUADOR",
-        "cnpj_curto": "52.360.060...",
-        "gasolina": 7.02,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "JI-PARANA",
@@ -2181,7 +2157,23 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "35.506.012...",
         "gasolina": 7.02,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "AUTO POSTO PATRAO COMERCIO DE COMBUSTIVEIS LTDA.",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "23.889.352...",
+        "gasolina": 7.02,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "CACOAL",
+        "revenda": "A. DA SILVA SOUZA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "07.042.246...",
+        "gasolina": 7.02,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "JI-PARANA",
@@ -2189,7 +2181,15 @@
         "bandeira": "VIBRA",
         "cnpj_curto": "29.857.082...",
         "gasolina": 7.04,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "KMR AUTO POSTO LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "04.796.015...",
+        "gasolina": 7.07,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "JI-PARANA",
@@ -2197,15 +2197,15 @@
         "bandeira": "VIBRA",
         "cnpj_curto": "33.601.891...",
         "gasolina": 7.14,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "JI-PARANA",
-        "revenda": "AUTO POSTO S. N. EIRELI",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "11.719.998...",
+        "revenda": "AUTO POSTO MOURAO COMERCIO DE COMBUSTIVEIS LTDA.",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "11.662.549...",
         "gasolina": 7.19,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       }
     ],
     "RS": [
@@ -2215,79 +2215,79 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "45.543.915...",
         "gasolina": 5.52,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "CANOAS",
-        "revenda": "GOLD COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "22.436.501...",
-        "gasolina": 5.59,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "ESTEIO",
-        "revenda": "POSTO DE COMBUSTIVEIS PADRE CLARET LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "04.609.322...",
-        "gasolina": 5.63,
-        "data_coleta": "2026-07-30"
-      },
-      {
-        "municipio": "SAPIRANGA",
-        "revenda": "AFG COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "22.435.951...",
-        "gasolina": 5.65,
-        "data_coleta": "2026-07-30"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "PORTO ALEGRE",
-        "revenda": "COMERCIAL DE COMBUSTIVEIS INTERCAP LTDA",
+        "revenda": "CARREFOUR COMERCIO E INDUSTRIA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "08.597.984...",
-        "gasolina": 5.67,
-        "data_coleta": "2026-07-27"
+        "cnpj_curto": "45.543.915...",
+        "gasolina": 5.74,
+        "data_coleta": "2026-08-04"
       },
       {
-        "municipio": "SAPUCAIA DO SUL",
-        "revenda": "AUTO POSTO ALMIRANTE LTDA",
+        "municipio": "PORTO ALEGRE",
+        "revenda": "TORTELLI COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.256.950...",
+        "gasolina": 5.84,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "SANTA MARIA",
+        "revenda": "MABB - COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "31.500.790...",
+        "gasolina": 5.85,
+        "data_coleta": "2026-08-05"
+      },
+      {
+        "municipio": "SANTA MARIA",
+        "revenda": "H. D. PORTELLA & CIA LTDA",
         "bandeira": "IPIRANGA",
-        "cnpj_curto": "11.393.320...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-30"
+        "cnpj_curto": "07.663.077...",
+        "gasolina": 5.85,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "SANTA MARIA",
+        "revenda": "H. D. PORTELLA & CIA LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "07.663.077...",
+        "gasolina": 5.85,
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "PORTO ALEGRE",
+        "revenda": "REDE FARROUPILHA GESTAO, VAREJO E INOVACAO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "87.091.997...",
+        "gasolina": 5.86,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "PORTO ALEGRE",
+        "revenda": "VAZ COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "27.272.187...",
+        "gasolina": 5.86,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "VIAMAO",
-        "revenda": "DALPETRO ABASTECEDORA DE COMBUSTÍVEIS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "10.955.271...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CANOAS",
-        "revenda": "AKI COMERCIO DE COMBUSTIVEIS E SERVICOS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "38.474.353...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CANOAS",
-        "revenda": "AUTO POSTO ALMIRANTE LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "11.393.320...",
-        "gasolina": 5.71,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "CANOAS",
-        "revenda": "POSTO PRIO COMERCIO DE COMBUSTIVEIS LTDA",
+        "revenda": "POSTO DE COMBUSTIVEL DA FIGUEIRA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "36.531.587...",
-        "gasolina": 5.71,
-        "data_coleta": "2026-07-27"
+        "cnpj_curto": "02.308.408...",
+        "gasolina": 5.86,
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "SANTA MARIA",
+        "revenda": "COMERCIO DE COMBUSTIVEIS PADOIN LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "04.340.316...",
+        "gasolina": 5.89,
+        "data_coleta": "2026-08-03"
       }
     ],
     "SC": [
@@ -2297,7 +2297,15 @@
         "bandeira": "RAIZEN MIME",
         "cnpj_curto": "01.012.022...",
         "gasolina": 5.89,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "JOINVILLE",
+        "revenda": "AUTO POSTO PETROVEIGA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "04.575.823...",
+        "gasolina": 5.93,
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "XANXERE",
@@ -2305,7 +2313,7 @@
         "bandeira": "MAXSUL",
         "cnpj_curto": "26.529.830...",
         "gasolina": 5.95,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "XANXERE",
@@ -2313,15 +2321,7 @@
         "bandeira": "RODOIL",
         "cnpj_curto": "29.014.215...",
         "gasolina": 5.95,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "JOINVILLE",
-        "revenda": "AUTO POSTO PETROVEIGA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "04.575.823...",
-        "gasolina": 5.97,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "JOINVILLE",
@@ -2329,7 +2329,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "03.977.064...",
         "gasolina": 5.97,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "XANXERE",
@@ -2337,23 +2337,23 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "26.547.580...",
         "gasolina": 5.99,
-        "data_coleta": "2026-07-28"
-      },
-      {
-        "municipio": "XANXERE",
-        "revenda": "MP POSTOS E LOGISTICA LTDA",
-        "bandeira": "RAIZEN MIME",
-        "cnpj_curto": "23.448.964...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "LAGUNA",
         "revenda": "AUTO POSTO CABECUDAS LTDA",
         "bandeira": "IPIRANGA",
         "cnpj_curto": "82.540.576...",
-        "gasolina": 6.15,
-        "data_coleta": "2026-07-27"
+        "gasolina": 6.08,
+        "data_coleta": "2026-08-06"
+      },
+      {
+        "municipio": "MAFRA",
+        "revenda": "IDEAL GUAPO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "03.626.094...",
+        "gasolina": 6.09,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "FLORIANOPOLIS",
@@ -2361,33 +2361,33 @@
         "bandeira": "IPIRANGA",
         "cnpj_curto": "02.314.908...",
         "gasolina": 6.16,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
-        "municipio": "FLORIANOPOLIS",
-        "revenda": "AVILA COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "01.401.005...",
-        "gasolina": 6.16,
-        "data_coleta": "2026-07-27"
+        "municipio": "LAGUNA",
+        "revenda": "SIM REDE DE POSTOS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.473.735...",
+        "gasolina": 6.17,
+        "data_coleta": "2026-08-06"
       }
     ],
     "SP": [
-      {
-        "municipio": "SUMARE",
-        "revenda": "AUTO POSTO NOVA VENEZA LTDA.",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "02.342.234...",
-        "gasolina": 5.49,
-        "data_coleta": "2026-07-28"
-      },
       {
         "municipio": "ARARAQUARA",
         "revenda": "AUTO POSTO SOARES LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "11.087.237...",
         "gasolina": 5.49,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
+      },
+      {
+        "municipio": "SAO PAULO",
+        "revenda": "JARDIM NORTE POSTO DE SERVICOS & CONVENIENCIAS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "07.435.700...",
+        "gasolina": 5.49,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "ARARAQUARA",
@@ -2395,7 +2395,7 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "29.017.490...",
         "gasolina": 5.49,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-04"
       },
       {
         "municipio": "ARARAQUARA",
@@ -2403,39 +2403,31 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "17.324.326...",
         "gasolina": 5.54,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "SAO PAULO",
         "revenda": "AUTO POSTO 1 DE ABRIL LTDA",
         "bandeira": "VIBRA",
         "cnpj_curto": "09.212.694...",
-        "gasolina": 5.67,
-        "data_coleta": "2026-07-28"
+        "gasolina": 5.57,
+        "data_coleta": "2026-08-04"
       },
       {
-        "municipio": "TABOAO DA SERRA",
-        "revenda": "AUTO POSTO EUROPA LTDA.",
+        "municipio": "TAUBATE",
+        "revenda": "AUTO POSTO LINCE DO VALE LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "04.847.983...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "27.017.843...",
+        "gasolina": 5.59,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "SAO PAULO",
-        "revenda": "MARANELLO - COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA",
+        "revenda": "CENTRO AUTOMOTIVO CANTAREIRA LTDA.",
         "bandeira": "BRANCA",
-        "cnpj_curto": "10.945.290...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-27"
-      },
-      {
-        "municipio": "ITAQUAQUECETUBA",
-        "revenda": "AUTO POSTO SUPER PARADA LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "10.463.160...",
-        "gasolina": 5.69,
-        "data_coleta": "2026-07-28"
+        "cnpj_curto": "02.862.678...",
+        "gasolina": 5.59,
+        "data_coleta": "2026-08-03"
       },
       {
         "municipio": "SAO PAULO",
@@ -2443,15 +2435,23 @@
         "bandeira": "BRANCA",
         "cnpj_curto": "06.106.738...",
         "gasolina": 5.69,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
       },
       {
-        "municipio": "SAO JOSE DOS CAMPOS",
-        "revenda": "AUTO POSTO AGUIA DE OURO LTDA",
+        "municipio": "SANTOS",
+        "revenda": "AUTO POSTO NOVO MILENIO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "01.659.794...",
+        "cnpj_curto": "03.542.311...",
         "gasolina": 5.69,
-        "data_coleta": "2026-07-27"
+        "data_coleta": "2026-08-03"
+      },
+      {
+        "municipio": "SAO PAULO",
+        "revenda": "MARANELLO - COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "10.945.290...",
+        "gasolina": 5.69,
+        "data_coleta": "2026-08-03"
       }
     ]
   },
@@ -2474,206 +2474,213 @@
       {
         "bandeira": "VIBRA",
         "n": 45,
-        "media": 6.932,
+        "media": 6.963,
         "min": 6.53,
-        "max": 7.39
+        "max": 7.56
       },
       {
         "bandeira": "BRANCA",
-        "n": 101,
-        "media": 7.069,
-        "min": 6.51,
+        "n": 104,
+        "media": 7.072,
+        "min": 6.44,
         "max": 7.84
       },
       {
         "bandeira": "RAIZEN",
-        "n": 36,
-        "media": 7.089,
+        "n": 39,
+        "media": 7.093,
         "min": 6.51,
         "max": 7.59
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 30,
-        "media": 7.143,
+        "n": 33,
+        "media": 7.167,
         "min": 6.53,
-        "max": 7.6
+        "max": 7.84
+      },
+      {
+        "bandeira": "PETROBAHIA",
+        "n": 4,
+        "media": 7.318,
+        "min": 6.93,
+        "max": 7.59
       }
     ],
     "CE": [
       {
         "bandeira": "RAIZEN",
-        "n": 33,
-        "media": 6.679,
-        "min": 6.43,
+        "n": 32,
+        "media": 6.643,
+        "min": 6.35,
         "max": 7.9
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 13,
-        "media": 6.846,
-        "min": 6.49,
+        "n": 16,
+        "media": 6.852,
+        "min": 6.43,
+        "max": 7.49
+      },
+      {
+        "bandeira": "VIBRA",
+        "n": 27,
+        "media": 6.898,
+        "min": 6.43,
         "max": 7.49
       },
       {
         "bandeira": "SP",
-        "n": 11,
-        "media": 6.921,
-        "min": 6.49,
+        "n": 10,
+        "media": 6.901,
+        "min": 6.43,
         "max": 7.5
       },
       {
-        "bandeira": "VIBRA",
-        "n": 31,
-        "media": 6.947,
-        "min": 6.49,
-        "max": 7.49
-      },
-      {
         "bandeira": "BRANCA",
-        "n": 41,
-        "media": 7.064,
-        "min": 6.47,
+        "n": 40,
+        "media": 7.093,
+        "min": 6.39,
         "max": 7.49
       }
     ],
     "DF": [
       {
+        "bandeira": "IPIRANGA",
+        "n": 4,
+        "media": 6.433,
+        "min": 6.39,
+        "max": 6.56
+      },
+      {
         "bandeira": "BRANCA",
         "n": 10,
-        "media": 6.539,
-        "min": 6.29,
-        "max": 6.59
+        "media": 6.472,
+        "min": 6.17,
+        "max": 6.58
       },
       {
         "bandeira": "RAIZEN",
         "n": 12,
-        "media": 6.547,
+        "media": 6.5,
         "min": 6.39,
         "max": 6.59
       },
       {
-        "bandeira": "IPIRANGA",
-        "n": 5,
-        "media": 6.554,
-        "min": 6.49,
-        "max": 6.58
-      },
-      {
         "bandeira": "VIBRA",
-        "n": 23,
-        "media": 6.565,
-        "min": 6.47,
+        "n": 24,
+        "media": 6.556,
+        "min": 6.48,
         "max": 6.59
       }
     ],
     "GO": [
       {
         "bandeira": "ALE",
-        "n": 6,
-        "media": 6.537,
+        "n": 5,
+        "media": 6.466,
         "min": 5.69,
-        "max": 6.89
+        "max": 6.86
       },
       {
         "bandeira": "BRANCA",
-        "n": 70,
-        "media": 6.577,
-        "min": 5.98,
+        "n": 71,
+        "media": 6.585,
+        "min": 5.68,
         "max": 6.89
       },
       {
         "bandeira": "NEXTA",
-        "n": 4,
-        "media": 6.59,
+        "n": 5,
+        "media": 6.61,
         "min": 5.99,
-        "max": 6.89
+        "max": 6.84
       },
       {
         "bandeira": "VIBRA",
-        "n": 27,
-        "media": 6.693,
-        "min": 5.99,
+        "n": 30,
+        "media": 6.617,
+        "min": 5.68,
         "max": 6.99
       },
       {
-        "bandeira": "RAIZEN",
-        "n": 18,
-        "media": 6.764,
-        "min": 6.49,
-        "max": 6.89
-      },
-      {
         "bandeira": "IPIRANGA",
-        "n": 33,
-        "media": 6.78,
+        "n": 35,
+        "media": 6.738,
         "min": 6.42,
         "max": 6.97
+      },
+      {
+        "bandeira": "RAIZEN",
+        "n": 22,
+        "media": 6.748,
+        "min": 6.26,
+        "max": 6.89
       }
     ],
     "MG": [
       {
         "bandeira": "BRANCA",
-        "n": 157,
-        "media": 6.271,
-        "min": 5.77,
-        "max": 6.91
+        "n": 158,
+        "media": 6.235,
+        "min": 5.74,
+        "max": 6.94
       },
       {
         "bandeira": "ALE",
-        "n": 33,
-        "media": 6.296,
-        "min": 5.78,
+        "n": 34,
+        "media": 6.242,
+        "min": 5.75,
         "max": 6.95
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 84,
-        "media": 6.33,
-        "min": 5.7,
-        "max": 6.99
+        "n": 80,
+        "media": 6.295,
+        "min": 5.75,
+        "max": 6.95
       },
       {
         "bandeira": "VIBRA",
-        "n": 140,
-        "media": 6.352,
-        "min": 5.78,
+        "n": 135,
+        "media": 6.33,
+        "min": 5.75,
         "max": 7.19
       },
       {
         "bandeira": "RAIZEN",
-        "n": 74,
-        "media": 6.364,
-        "min": 5.79,
+        "n": 71,
+        "media": 6.337,
+        "min": 5.75,
         "max": 6.99
       }
     ],
     "MS": [
       {
         "bandeira": "BRANCA",
-        "n": 5,
-        "media": 6.176,
-        "min": 6.17,
+        "n": 4,
+        "media": 6.14,
+        "min": 6.1,
         "max": 6.19
       },
       {
         "bandeira": "VIBRA",
         "n": 22,
-        "media": 6.61,
+        "media": 6.615,
         "min": 6.28,
         "max": 7.17
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 9,
-        "media": 6.613,
+        "n": 11,
+        "media": 6.618,
         "min": 6.29,
         "max": 7.29
       },
       {
         "bandeira": "TAURUS",
-        "n": 14,
-        "media": 6.666,
+        "n": 13,
+        "media": 6.647,
         "min": 6.29,
         "max": 7.05
       }
@@ -2681,105 +2688,112 @@
     "MT": [
       {
         "bandeira": "BRANCA",
-        "n": 33,
-        "media": 6.732,
-        "min": 6.23,
+        "n": 31,
+        "media": 6.63,
+        "min": 6.07,
         "max": 7.29
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 13,
-        "media": 6.835,
-        "min": 6.59,
-        "max": 7.04
-      },
-      {
-        "bandeira": "RAIZEN",
-        "n": 11,
-        "media": 6.851,
-        "min": 6.59,
-        "max": 6.99
-      },
-      {
-        "bandeira": "VIBRA",
-        "n": 21,
-        "media": 6.868,
-        "min": 6.49,
+        "n": 14,
+        "media": 6.774,
+        "min": 6.37,
         "max": 7.25
       },
       {
+        "bandeira": "RAIZEN",
+        "n": 13,
+        "media": 6.784,
+        "min": 6.35,
+        "max": 6.99
+      },
+      {
         "bandeira": "IDAZA",
-        "n": 3,
-        "media": 6.893,
+        "n": 4,
+        "media": 6.838,
         "min": 6.79,
-        "max": 7.1
+        "max": 6.98
+      },
+      {
+        "bandeira": "VIBRA",
+        "n": 24,
+        "media": 6.888,
+        "min": 6.49,
+        "max": 7.25
       }
     ],
     "PA": [
       {
         "bandeira": "SABBÁ",
-        "n": 13,
-        "media": 6.558,
-        "min": 5.99,
-        "max": 7.13
-      },
-      {
-        "bandeira": "IPIRANGA",
-        "n": 27,
-        "media": 6.759,
-        "min": 5.97,
-        "max": 7.37
-      },
-      {
-        "bandeira": "RAIZEN",
-        "n": 3,
-        "media": 6.79,
-        "min": 6.59,
-        "max": 7.09
+        "n": 18,
+        "media": 6.688,
+        "min": 6.14,
+        "max": 7.49
       },
       {
         "bandeira": "BRANCA",
-        "n": 43,
-        "media": 6.794,
+        "n": 42,
+        "media": 6.776,
         "min": 6.09,
-        "max": 7.22
+        "max": 7.7
+      },
+      {
+        "bandeira": "IPIRANGA",
+        "n": 25,
+        "media": 6.828,
+        "min": 6.14,
+        "max": 7.37
       },
       {
         "bandeira": "VIBRA",
         "n": 23,
-        "media": 6.81,
-        "min": 5.97,
+        "media": 6.928,
+        "min": 6.39,
         "max": 7.44
       }
     ],
     "PR": [
       {
         "bandeira": "STANG",
-        "n": 3,
-        "media": 6.343,
-        "min": 6.15,
+        "n": 4,
+        "media": 6.29,
+        "min": 5.99,
         "max": 6.49
       },
       {
         "bandeira": "BRANCA",
-        "n": 74,
-        "media": 6.525,
-        "min": 5.79,
-        "max": 7.15
+        "n": 76,
+        "media": 6.45,
+        "min": 5.67,
+        "max": 6.99
+      },
+      {
+        "bandeira": "RODOIL",
+        "n": 4,
+        "media": 6.46,
+        "min": 6.27,
+        "max": 6.79
       },
       {
         "bandeira": "RAIZEN",
-        "n": 62,
-        "media": 6.662,
+        "n": 58,
+        "media": 6.641,
         "min": 5.99,
         "max": 6.99
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 63,
-        "media": 6.67,
+        "n": 66,
+        "media": 6.664,
         "min": 5.97,
         "max": 7.38
+      },
+      {
+        "bandeira": "VIBRA",
+        "n": 52,
+        "media": 6.719,
+        "min": 5.99,
+        "max": 7.29
       },
       {
         "bandeira": "POTENCIAL",
@@ -2787,80 +2801,80 @@
         "media": 6.76,
         "min": 6.57,
         "max": 6.89
-      },
-      {
-        "bandeira": "VIBRA",
-        "n": 51,
-        "media": 6.776,
-        "min": 5.99,
-        "max": 7.29
       }
     ],
     "RJ": [
       {
-        "bandeira": "VIBRA",
-        "n": 76,
-        "media": 6.703,
-        "min": 6.29,
-        "max": 7.19
+        "bandeira": "NEXTA",
+        "n": 3,
+        "media": 6.313,
+        "min": 6.19,
+        "max": 6.39
       },
       {
         "bandeira": "BRANCA",
-        "n": 101,
-        "media": 6.707,
+        "n": 109,
+        "media": 6.642,
         "min": 5.94,
         "max": 7.19
       },
       {
         "bandeira": "RAIZEN",
-        "n": 41,
-        "media": 6.727,
-        "min": 6.37,
+        "n": 54,
+        "media": 6.644,
+        "min": 6.19,
         "max": 7.25
       },
       {
-        "bandeira": "IPIRANGA",
-        "n": 53,
-        "media": 6.73,
+        "bandeira": "ALE",
+        "n": 10,
+        "media": 6.693,
         "min": 6.29,
-        "max": 7.39
+        "max": 6.99
       },
       {
-        "bandeira": "ALE",
-        "n": 9,
-        "media": 6.746,
-        "min": 6.34,
-        "max": 6.99
+        "bandeira": "IPIRANGA",
+        "n": 50,
+        "media": 6.722,
+        "min": 6.28,
+        "max": 7.29
+      },
+      {
+        "bandeira": "VIBRA",
+        "n": 77,
+        "media": 6.737,
+        "min": 6.29,
+        "max": 7.25
       }
     ],
     "RO": [
       {
         "bandeira": "VIBRA",
-        "n": 19,
-        "media": 7.249,
+        "n": 23,
+        "media": 7.233,
         "min": 6.97,
         "max": 7.49
       },
       {
         "bandeira": "BRANCA",
         "n": 9,
-        "media": 7.262,
-        "min": 7.02,
-        "max": 7.45
-      },
-      {
-        "bandeira": "EQUADOR",
-        "n": 6,
-        "media": 7.307,
+        "media": 7.258,
         "min": 7.02,
         "max": 7.45
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 20,
-        "media": 7.372,
+        "n": 18,
+        "media": 7.388,
         "min": 6.98,
         "max": 7.89
+      },
+      {
+        "bandeira": "EQUADOR",
+        "n": 4,
+        "media": 7.395,
+        "min": 7.24,
+        "max": 7.45
       },
       {
         "bandeira": "SABBÁ",
@@ -2879,103 +2893,117 @@
     ],
     "RS": [
       {
-        "bandeira": "RODOIL",
-        "n": 11,
-        "media": 6.133,
-        "min": 5.74,
-        "max": 6.59
-      },
-      {
         "bandeira": "BRANCA",
-        "n": 74,
-        "media": 6.19,
+        "n": 80,
+        "media": 6.243,
         "min": 5.52,
         "max": 7.21
       },
       {
-        "bandeira": "IPIRANGA",
-        "n": 93,
-        "media": 6.305,
-        "min": 5.69,
-        "max": 7.34
-      },
-      {
         "bandeira": "CHARRUA",
-        "n": 17,
-        "media": 6.322,
-        "min": 5.78,
+        "n": 16,
+        "media": 6.326,
+        "min": 5.99,
         "max": 6.76
       },
       {
         "bandeira": "RAIZEN",
-        "n": 44,
-        "media": 6.341,
-        "min": 5.78,
-        "max": 7.53
+        "n": 42,
+        "media": 6.352,
+        "min": 5.89,
+        "max": 6.79
+      },
+      {
+        "bandeira": "RODOIL",
+        "n": 13,
+        "media": 6.362,
+        "min": 5.89,
+        "max": 6.79
+      },
+      {
+        "bandeira": "IPIRANGA",
+        "n": 88,
+        "media": 6.396,
+        "min": 5.85,
+        "max": 7.48
       },
       {
         "bandeira": "VIBRA",
-        "n": 58,
-        "media": 6.403,
-        "min": 5.88,
-        "max": 7.34
+        "n": 63,
+        "media": 6.401,
+        "min": 5.89,
+        "max": 7.48
+      },
+      {
+        "bandeira": "SANTA LUCIA",
+        "n": 4,
+        "media": 6.583,
+        "min": 6.49,
+        "max": 6.86
       }
     ],
     "SC": [
       {
         "bandeira": "MAXSUL",
-        "n": 8,
-        "media": 6.414,
+        "n": 7,
+        "media": 6.416,
         "min": 5.95,
-        "max": 6.69
+        "max": 6.64
       },
       {
         "bandeira": "STANG",
         "n": 5,
-        "media": 6.442,
-        "min": 6.26,
+        "media": 6.462,
+        "min": 6.36,
         "max": 6.67
       },
       {
         "bandeira": "RODOIL",
-        "n": 9,
-        "media": 6.457,
+        "n": 8,
+        "media": 6.463,
         "min": 5.95,
         "max": 6.74
       },
       {
         "bandeira": "BRANCA",
         "n": 47,
-        "media": 6.513,
-        "min": 5.97,
-        "max": 6.99
-      },
-      {
-        "bandeira": "IPIRANGA",
-        "n": 40,
-        "media": 6.535,
-        "min": 6.15,
+        "media": 6.477,
+        "min": 5.93,
         "max": 6.99
       },
       {
         "bandeira": "RAIZEN MIME",
-        "n": 15,
-        "media": 6.541,
+        "n": 13,
+        "media": 6.538,
         "min": 5.89,
         "max": 6.79
       },
       {
+        "bandeira": "IPIRANGA",
+        "n": 44,
+        "media": 6.552,
+        "min": 6.08,
+        "max": 6.99
+      },
+      {
         "bandeira": "VIBRA",
-        "n": 30,
-        "media": 6.549,
+        "n": 34,
+        "media": 6.553,
         "min": 6.19,
         "max": 6.79
       },
       {
+        "bandeira": "DIBRAPE",
+        "n": 3,
+        "media": 6.563,
+        "min": 6.55,
+        "max": 6.57
+      },
+      {
         "bandeira": "ALE",
-        "n": 8,
-        "media": 6.663,
-        "min": 6.39,
+        "n": 6,
+        "media": 6.687,
+        "min": 6.44,
         "max": 6.79
       }
     ],
@@ -2988,80 +3016,86 @@
         "max": 5.99
       },
       {
-        "bandeira": "BRANCA",
-        "n": 473,
-        "media": 6.244,
-        "min": 5.49,
-        "max": 6.99
-      },
-      {
         "bandeira": "NEXTA",
         "n": 8,
-        "media": 6.27,
+        "media": 6.19,
         "min": 5.89,
         "max": 6.69
       },
       {
+        "bandeira": "BRANCA",
+        "n": 473,
+        "media": 6.201,
+        "min": 5.49,
+        "max": 7.79
+      },
+      {
         "bandeira": "ALE",
-        "n": 19,
-        "media": 6.414,
+        "n": 18,
+        "media": 6.394,
         "min": 5.99,
         "max": 7.19
       },
       {
         "bandeira": "IPIRANGA",
-        "n": 271,
-        "media": 6.507,
-        "min": 5.69,
+        "n": 289,
+        "media": 6.493,
+        "min": 5.87,
         "max": 8.49
       },
       {
-        "bandeira": "RAIZEN",
-        "n": 228,
-        "media": 6.531,
-        "min": 5.89,
-        "max": 8.97
+        "bandeira": "VIBRA",
+        "n": 219,
+        "media": 6.508,
+        "min": 5.57,
+        "max": 7.99
       },
       {
-        "bandeira": "VIBRA",
+        "bandeira": "RAIZEN",
         "n": 221,
-        "media": 6.539,
-        "min": 5.67,
-        "max": 7.99
+        "media": 6.514,
+        "min": 5.79,
+        "max": 8.97
       }
     ]
   },
   "ranking_municipal": {
     "baratas": [
       {
+        "estado": "GO",
+        "municipio": "FORMOSA",
+        "media": 5.785,
+        "n": 6
+      },
+      {
+        "estado": "PR",
+        "municipio": "GUARAPUAVA",
+        "media": 5.859,
+        "n": 14
+      },
+      {
         "estado": "RS",
         "municipio": "VIAMAO",
-        "media": 5.868,
+        "media": 5.902,
         "n": 6
       },
       {
         "estado": "MG",
         "municipio": "CONTAGEM",
-        "media": 5.907,
+        "media": 5.934,
         "n": 19
-      },
-      {
-        "estado": "PR",
-        "municipio": "GUARAPUAVA",
-        "media": 5.937,
-        "n": 14
-      },
-      {
-        "estado": "GO",
-        "municipio": "FORMOSA",
-        "media": 5.94,
-        "n": 6
       },
       {
         "estado": "MG",
         "municipio": "SABARA",
-        "media": 5.991,
+        "media": 5.96,
         "n": 8
+      },
+      {
+        "estado": "SP",
+        "municipio": "TAUBATE",
+        "media": 5.961,
+        "n": 15
       },
       {
         "estado": "MG",
@@ -3070,58 +3104,52 @@
         "n": 14
       },
       {
-        "estado": "RS",
-        "municipio": "CANOAS",
-        "media": 6.004,
-        "n": 16
-      },
-      {
-        "estado": "SP",
-        "municipio": "TAUBATE",
-        "media": 6.006,
-        "n": 15
-      },
-      {
-        "estado": "RS",
-        "municipio": "CRUZ ALTA",
-        "media": 6.017,
-        "n": 3
-      },
-      {
-        "estado": "RS",
-        "municipio": "ESTEIO",
-        "media": 6.018,
-        "n": 8
-      },
-      {
-        "estado": "RS",
-        "municipio": "OSORIO",
-        "media": 6.04,
-        "n": 3
-      },
-      {
-        "estado": "RS",
-        "municipio": "GUAIBA",
-        "media": 6.043,
-        "n": 8
+        "estado": "MG",
+        "municipio": "SETE LAGOAS",
+        "media": 6.001,
+        "n": 14
       },
       {
         "estado": "MG",
         "municipio": "BELO HORIZONTE",
-        "media": 6.053,
+        "media": 6.003,
         "n": 41
+      },
+      {
+        "estado": "MG",
+        "municipio": "UBERABA",
+        "media": 6.013,
+        "n": 7
+      },
+      {
+        "estado": "RS",
+        "municipio": "OSORIO",
+        "media": 6.018,
+        "n": 4
       },
       {
         "estado": "RS",
         "municipio": "CACHOEIRA DO SUL",
-        "media": 6.065,
+        "media": 6.04,
         "n": 8
       },
       {
+        "estado": "MG",
+        "municipio": "MONTES CLAROS",
+        "media": 6.041,
+        "n": 14
+      },
+      {
         "estado": "RS",
-        "municipio": "PORTO ALEGRE",
-        "media": 6.067,
-        "n": 36
+        "municipio": "GUAIBA",
+        "media": 6.048,
+        "n": 8
+      },
+      {
+        "estado": "MG",
+        "municipio": "TEOFILO OTONI",
+        "media": 6.05,
+        "n": 8
       }
     ],
     "caras": [
@@ -3129,19 +3157,19 @@
         "estado": "BA",
         "municipio": "LIVRAMENTO DE NOSSA SENHORA",
         "media": 7.84,
-        "n": 7
+        "n": 3
       },
       {
         "estado": "BA",
-        "municipio": "CAETITE",
-        "media": 7.59,
-        "n": 8
+        "municipio": "BRUMADO",
+        "media": 7.571,
+        "n": 14
       },
       {
         "estado": "CE",
         "municipio": "ITAPIPOCA",
         "media": 7.489,
-        "n": 9
+        "n": 8
       },
       {
         "estado": "CE",
@@ -3152,26 +3180,14 @@
       {
         "estado": "RO",
         "municipio": "PORTO VELHO",
-        "media": 7.485,
+        "media": 7.481,
         "n": 19
       },
       {
         "estado": "BA",
-        "municipio": "PORTO SEGURO",
-        "media": 7.406,
-        "n": 5
-      },
-      {
-        "estado": "BA",
-        "municipio": "JUAZEIRO",
+        "municipio": "CAETITE",
         "media": 7.39,
-        "n": 4
-      },
-      {
-        "estado": "RO",
-        "municipio": "VILHENA",
-        "media": 7.389,
-        "n": 7
+        "n": 8
       },
       {
         "estado": "RO",
@@ -3180,15 +3196,39 @@
         "n": 8
       },
       {
+        "estado": "RO",
+        "municipio": "VILHENA",
+        "media": 7.383,
+        "n": 7
+      },
+      {
         "estado": "BA",
         "municipio": "SANTO ANTONIO DE JESUS",
         "media": 7.38,
+        "n": 8
+      },
+      {
+        "estado": "BA",
+        "municipio": "PORTO SEGURO",
+        "media": 7.362,
         "n": 5
+      },
+      {
+        "estado": "PA",
+        "municipio": "ALTAMIRA",
+        "media": 7.318,
+        "n": 10
+      },
+      {
+        "estado": "BA",
+        "municipio": "JUAZEIRO",
+        "media": 7.298,
+        "n": 8
       },
       {
         "estado": "RS",
         "municipio": "BAGE",
-        "media": 7.269,
+        "media": 7.29,
         "n": 9
       },
       {
@@ -3199,21 +3239,9 @@
       },
       {
         "estado": "BA",
-        "municipio": "ILHEUS",
-        "media": 7.262,
-        "n": 9
-      },
-      {
-        "estado": "BA",
         "municipio": "EUNAPOLIS",
-        "media": 7.258,
+        "media": 7.256,
         "n": 8
-      },
-      {
-        "estado": "PA",
-        "municipio": "ALTAMIRA",
-        "media": 7.253,
-        "n": 10
       }
     ]
   }
