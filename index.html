@@ -791,19 +791,19 @@ function shortName(nome) {
 }
 
 (async function loadAndRender() {
+  // custo-distribuicao.json é opcional — painel funciona sem
+  const [resD, resC] = await Promise.all([
+    fetch('data.json?t=' + Date.now(), { cache: 'no-store' }).catch(() => null),
+    fetch('custo-distribuicao.json?t=' + Date.now(), { cache: 'no-store' }).catch(() => null)
+  ]);
   try {
-    const res = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    DATA = await res.json();
+    if (!resD || !resD.ok) throw new Error(resD ? 'HTTP ' + resD.status : 'rede');
+    DATA = await resD.json();
   } catch (e) {
     document.getElementById('updated').textContent = 'Erro ao carregar dados: ' + e.message;
     return;
   }
-  // Composição oficial de preço (opcional — painel funciona sem)
-  try {
-    const resC = await fetch('custo-distribuicao.json?t=' + Date.now(), { cache: 'no-store' });
-    if (resC.ok) CUSTO = await resC.json();
-  } catch (e) { /* segue sem o bloco de custo */ }
+  try { if (resC?.ok) CUSTO = await resC.json(); } catch (e) { /* segue sem custo */ }
   renderPainel();
   renderCusto(CUSTO);
 })();

@@ -37,3 +37,4 @@ README.md
 
 # Ignore o próprio ignore
 .assetsignore
+graphify-out/

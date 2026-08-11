@@ -1,50 +1,46 @@
 # monitor-precos-lumen-painel
 
-Painel público de disparidade de preços de combustíveis para o **Lumen Posto Club**.
+Painel de preços de combustíveis para membros do **Lumen Posto Club** (auth OTP WhatsApp).
 URL: https://monitor.lumenclubpainel.com.br
 
-## Como funciona
+## Arquitetura (desde 2026-05-18)
 
 ```
-Cron horário (GitHub Actions)
+GitHub Actions (crons)                       VPS (IP fixo)
+  scrape-anp.yml         seg+qui 03h BRT       container monitor-deployer:
+  scrape-distribuidoras  diário 11h17 BRT        a cada 1h: git fetch;
+  scrape-volumes         dia 2 e 21, 12h BRT     se main mudou → wrangler deploy
+  scrape-petrobras       seg+qui 09h23 BRT       (Cloudflare Workers Assets)
        ↓
-POST Netlify build hook
+  scraper → Supabase → node update.mjs → data.json
+  scrape-petrobras → custo-distribuicao.json (sem banco)
        ↓
-Netlify build: node update.mjs
-       ↓
-update.mjs:
-  1. conecta no Supabase via SUPABASE_DB_URL
-  2. consulta revendedores ativos + última coleta de preços (7 dias)
-  3. calcula agregados por estado (média, min, max)
-  4. anonimiza revendedores (MT-A, MT-B, ...)
-  5. injeta JSON em index.html no marcador `const DATA = {};  // END_DATA`
-       ↓
-Netlify serve / (index.html, data.json)
+  git commit + push (diff real)
 ```
 
-## Configuração inicial (uma vez)
+O `index.html` é estático: faz `fetch('data.json')` + `fetch('custo-distribuicao.json')` em runtime.
+O token Cloudflare é filtrado por IP — deploy SÓ roda da VPS, nunca do GitHub Actions.
 
-1. **Netlify Site Settings → Environment variables:** adicionar
-   `SUPABASE_DB_URL = postgresql://postgres.xxovxgefmopoiammqrod:...@aws-1-sa-east-1.pooler.supabase.com:6543/postgres`
+## Scrapers
 
-2. **Netlify Site Settings → Build & deploy → Build hooks:** criar build hook chamado "refresh-cron". Copiar URL.
+- `scrape-anp.mjs` — preços de revenda por posto (ANP SHPC, 15 UFs em `ESTADOS`) → Supabase
+- `scrape-distribuidoras.mjs` — planilha Google Sheets de cotações B2B → Supabase
+- `scrape-volumes.mjs` — entregas por distribuidor (ANP líquidos, mensal) → Supabase
+- `scrape-petrobras.mjs` — composição oficial de preço por UF (site Petrobras) → `custo-distribuicao.json` direto (sem banco)
+- `update.mjs` — Supabase → agregados/margens/volumes → `data.json`
+- `check-freshness.mjs` — alerta Telegram se volumes defasarem ≥3 meses
+- `export-radar.mjs` — postos ANP → KV do Radar de Preços (backup; rodada completa roda no Mac)
 
-3. **GitHub repo settings → Secrets and variables → Actions:** adicionar secret
-   `NETLIFY_BUILD_HOOK = <URL do build hook do passo 2>`
+## Secrets (GitHub Actions)
 
-4. **Netlify Domain management:** adicionar custom domain `monitor.lumenclubpainel.com.br`. Pegar valor do CNAME target (ex: `<site>.netlify.app`).
-
-5. **Hostinger DNS** (via MCP ou manual): adicionar CNAME `monitor` → `<site>.netlify.app`.
+- `SUPABASE_DB_URL` — Postgres direto (transaction pooler)
+- `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` — healthcheck de frescor
 
 ## Rodar local
-```bash
-SUPABASE_DB_URL='postgresql://...' npm run build
-# abrir index.html no browser
-```
 
-## Estrutura
-- `update.mjs` — script de build (consulta DB + gera HTML)
-- `index.html` — template HTML com marcador `const DATA = {};  // END_DATA`
-- `netlify.toml` — config de build
-- `.github/workflows/refresh.yml` — cron que dispara build hook
-- `data.json` — JSON bruto (gerado pelo build)
+```bash
+npm install
+SUPABASE_DB_URL='postgresql://...' node update.mjs   # gera data.json
+node scrape-petrobras.mjs                            # gera custo-distribuicao.json (sem env)
+python3 -m http.server 8000                          # abrir http://localhost:8000
+```
