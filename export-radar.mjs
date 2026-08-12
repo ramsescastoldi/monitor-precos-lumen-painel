@@ -70,6 +70,8 @@ function parseDateBR(s) {
   // porUF[uf][cnpj] = { n, b, mu, m, e, p:{comb:{v,d}} }
   const porUF = {};
   const indiceAM = {};              // chave de endereço → posto (merge do Busca Preço AM)
+  const indicePR = {};              // chave de endereço → posto (merge do Nota Paraná)
+  const somenteUF = process.env.ONLY_UF; // roda só uma UF: pula as outras fontes vivas e o índice de cidades
   let linhas = 0;
 
   for (const url of URLS) {
@@ -104,6 +106,8 @@ function parseDateBR(s) {
       // AM não tem CNPJ na NFC-e do Busca Preço: o merge é por endereço
       if (uf === 'AM' && novo)
         indiceAM[chaveANP(r['Nome da Rua'], r['Numero Rua'], r['Municipio'])] = posto;
+      if (uf === 'PR' && novo)
+        indicePR[chaveANP(r['Nome da Rua'], r['Numero Rua'], r['Municipio'])] = posto;
       // fica só com a coleta mais recente por produto
       if (!posto.p[comb] || posto.p[comb].d < data) posto.p[comb] = { v: preco, d: data };
     }
@@ -119,13 +123,36 @@ function parseDateBR(s) {
     const c = linha.split(',');
     if (c.length < 6) continue;
     const uf = UF_COD[+c[5]];
-    if (uf) coords[uf + ':' + slug(c[1])] = { lat: +c[2], lng: +c[3], nome: c[1] };
+    if (uf) coords[uf + ':' + slug(c[1])] = { lat: +c[2], lng: +c[3], nome: c[1], ibge: +c[0], uf };
+  }
+
+  // fonte NFC-e (Map<cnpjDigitos, posto>) sobre a base ANP da UF: preço mais novo
+  // vence e posto que a ANP não visitou entra na pesquisa
+  function mesclarPorCNPJ(uf, vivos) {
+    const porDigito = {};
+    for (const [cnpj, rec] of Object.entries(porUF[uf] || {}))
+      porDigito[cnpj.replace(/\D/g, '')] = rec;
+    let atualizados = 0, novos = 0;
+    for (const [dig, rec] of vivos) {
+      const alvo = porDigito[dig];
+      if (alvo) {
+        for (const [comb, f] of Object.entries(rec.p))
+          if (!alvo.p[comb] || alvo.p[comb].d <= f.d) alvo.p[comb] = f;
+        if (rec.lat != null) { alvo.lat = rec.lat; alvo.lng = rec.lng; }
+        atualizados++;
+      } else {
+        (porUF[uf] = porUF[uf] || {})[dig] = rec;
+        novos++;
+      }
+    }
+    console.log(`  merge ${uf}: ${atualizados} postos atualizados · ${novos} novos`);
   }
 
   // BA quase tempo real (Preço da Hora / NFC-e por posto) — atualiza preço e
   // amplia a pesquisa da UF com postos que a ANP não visitou na semana
   try {
     if (process.env.SKIP_PDH) throw new Error('SKIP_PDH ligado (rodada só-ANP)');
+    if (somenteUF && somenteUF !== 'BA') throw new Error('ONLY_UF ativo, pulando BA');
     const { coletarPrecoDaHora } = await import('./scrape-precodahora.mjs');
     const porSlugBA = {};
     for (const p of Object.values(porUF.BA || {}))
@@ -145,32 +172,48 @@ function parseDateBR(s) {
     if (cidadesBA.length) {
       console.log(`\n[Preço da Hora BA] varrendo ${cidadesBA.length} cidades…`);
       const vivos = await coletarPrecoDaHora(cidadesBA, { titulo, slug });
-      const porDigito = {};
-      for (const [cnpj, rec] of Object.entries(porUF.BA || {}))
-        porDigito[cnpj.replace(/\D/g, '')] = rec;
-      let atualizados = 0, novos = 0;
-      for (const [dig, rec] of vivos) {
-        const alvo = porDigito[dig];
-        if (alvo) {
-          for (const [comb, f] of Object.entries(rec.p))
-            if (!alvo.p[comb] || alvo.p[comb].d <= f.d) alvo.p[comb] = f;
-          if (rec.lat != null) { alvo.lat = rec.lat; alvo.lng = rec.lng; }
-          atualizados++;
-        } else {
-          (porUF.BA = porUF.BA || {})[dig] = rec;
-          novos++;
-        }
-      }
-      console.log(`  merge BA: ${atualizados} postos atualizados · ${novos} novos`);
+      mesclarPorCNPJ('BA', vivos);
     }
   } catch (e) {
     console.error('[Preço da Hora BA] falhou (segue só ANP):', e.message);
+  }
+
+  // AL quase tempo real (Economiza Alagoas / NFC-e por posto, API oficial da Sefaz).
+  // Mesmo papel do Preço da Hora na BA — e aqui a cobertura vai além da ANP:
+  // Maceió passa de ~20 postos da pesquisa semanal pra 100+ com preço do dia.
+  try {
+    if (process.env.SKIP_PDH) throw new Error('SKIP_PDH ligado (rodada só-ANP)');
+    if (somenteUF && somenteUF !== 'AL') throw new Error('ONLY_UF ativo, pulando AL');
+    const { coletarEconomizaAL } = await import('./scrape-economiza-al.mjs');
+    const porSlugAL = {};
+    for (const p of Object.values(porUF.AL || {}))
+      porSlugAL[p.m] = (porSlugAL[p.m] || 0) + 1;
+    // toda cidade de AL entra (a API cobre o estado inteiro, não só o que a ANP
+    // visitou); as praças com mais postos na ANP primeiro, pro parcial valer mais.
+    // Top 10 todo dia; o resto gira por dia do ano — a varredura completa não cabe
+    // no deadline e sem giro o rabo da lista ficaria eternamente sem coleta.
+    const ordenadasAL = Object.values(coords)
+      .filter(c => c.uf === 'AL')
+      .map(c => ({ mu: c.nome, m: slug(c.nome), ibge: c.ibge }))
+      .sort((a, b) => (porSlugAL[b.m] || 0) - (porSlugAL[a.m] || 0));
+    const giroAL = ordenadasAL.slice(10);
+    const corteAL = giroAL.length ? Math.floor(Date.now() / 86400000) % giroAL.length : 0;
+    const cidadesAL = [...ordenadasAL.slice(0, 10),
+      ...giroAL.slice(corteAL), ...giroAL.slice(0, corteAL)];
+    if (cidadesAL.length) {
+      console.log(`\n[Economiza AL] varrendo ${cidadesAL.length} cidades…`);
+      const vivos = await coletarEconomizaAL(cidadesAL, { titulo, slug });
+      mesclarPorCNPJ('AL', vivos);
+    }
+  } catch (e) {
+    console.error('[Economiza AL] falhou (segue só ANP):', e.message);
   }
 
   // AM quase tempo real (Busca Preço Amazonas / NFC-e por posto). Mesmo papel do
   // Preço da Hora na BA, mas casando por endereço — lá não vem CNPJ.
   try {
     if (process.env.SKIP_BPAM) throw new Error('SKIP_BPAM ligado (rodada só-ANP)');
+    if (somenteUF && somenteUF !== 'AM') throw new Error('ONLY_UF ativo, pulando AM');
     const { coletarBuscaPrecoAM } = await import('./scrape-buscapreco-am.mjs');
     console.log('\n[Busca Preço AM] varrendo municípios…');
     const vivos = await coletarBuscaPrecoAM({ titulo, slug });
@@ -190,6 +233,47 @@ function parseDateBR(s) {
     console.log(`  merge AM: ${atualizados} postos atualizados · ${novos} novos`);
   } catch (e) {
     console.error('[Busca Preço AM] falhou (segue só ANP):', e.message);
+  }
+
+  // PR quase tempo real (Nota Paraná / NFC-e por posto, API oficial da Sefaz) — mesmo
+  // papel do Preço da Hora na BA (top-5 cidades + giro diário pro resto), mas casando
+  // por endereço como o AM: a API do Nota Paraná não devolve CNPJ.
+  try {
+    if (process.env.SKIP_NP) throw new Error('SKIP_NP ligado (rodada só-ANP)');
+    if (somenteUF && somenteUF !== 'PR') throw new Error('ONLY_UF ativo, pulando PR');
+    const { coletarNotaParana } = await import('./scrape-notaparana.mjs');
+    const porSlugPR = {};
+    for (const p of Object.values(porUF.PR || {}))
+      porSlugPR[p.m] = (porSlugPR[p.m] || 0) + 1;
+    const ordenadas = Object.keys(porSlugPR)
+      .sort((a, b) => porSlugPR[b] - porSlugPR[a])
+      .map(m => coords['PR:' + m] &&
+        { mu: coords['PR:' + m].nome, m, lat: coords['PR:' + m].lat, lng: coords['PR:' + m].lng })
+      .filter(Boolean);
+    const giro = ordenadas.slice(5);
+    const dia = Math.floor(Date.now() / 86400000);
+    const corte = giro.length ? dia % giro.length : 0;
+    const cidadesPR = [...ordenadas.slice(0, 5), ...giro.slice(corte), ...giro.slice(0, corte)];
+    if (cidadesPR.length) {
+      console.log(`\n[Nota Paraná] varrendo ${cidadesPR.length} cidades…`);
+      const vivos = await coletarNotaParana(cidadesPR, { titulo, slug });
+      let atualizados = 0, novos = 0;
+      for (const [chave, rec] of vivos) {
+        const alvo = indicePR[chave];
+        if (alvo) {
+          for (const [comb, f] of Object.entries(rec.p))
+            if (!alvo.p[comb] || alvo.p[comb].d <= f.d) alvo.p[comb] = f;
+          if (rec.lat != null) { alvo.lat = rec.lat; alvo.lng = rec.lng; }
+          atualizados++;
+        } else {
+          (porUF.PR = porUF.PR || {})['np:' + chave] = rec;
+          novos++;
+        }
+      }
+      console.log(`  merge PR: ${atualizados} postos atualizados · ${novos} novos`);
+    }
+  } catch (e) {
+    console.error('[Nota Paraná] falhou (segue só ANP):', e.message);
   }
 
   // resumo por cidade pesquisada (menor/média/maior por combustível + coordenada)
@@ -217,16 +301,21 @@ function parseDateBR(s) {
       console.log(`  ${uf}: ${Object.keys(mapa).length} postos`);
     return;
   }
-  try {
-    const r = await fetch(SYNC_URL, { method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: SYNC_KEY, cidades }) });
-    const j = await r.json().catch(() => ({}));
-    console.log('  índice de cidades →', r.ok && j.ok ? 'ok' : 'FALHOU ' + r.status);
-  } catch (e) { console.error('  índice de cidades FALHOU:', e.message); }
+  if (somenteUF) {
+    console.log(`  ONLY_UF=${somenteUF}: pulando índice de cidades (não mexe nas outras UFs).`);
+  } else {
+    try {
+      const r = await fetch(SYNC_URL, { method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key: SYNC_KEY, cidades }) });
+      const j = await r.json().catch(() => ({}));
+      console.log('  índice de cidades →', r.ok && j.ok ? 'ok' : 'FALHOU ' + r.status);
+    } catch (e) { console.error('  índice de cidades FALHOU:', e.message); }
+  }
 
   let totalPostos = 0, falhas = 0;
   for (const [uf, mapa] of Object.entries(porUF)) {
+    if (somenteUF && uf !== somenteUF) continue;
     const postos = Object.values(mapa);
     totalPostos += postos.length;
     const semana = postos.reduce((mx, p) =>

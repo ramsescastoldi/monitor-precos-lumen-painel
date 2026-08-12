@@ -32,6 +32,7 @@ O token Cloudflare é filtrado por IP — deploy SÓ roda da VPS, nunca do GitHu
 - `export-radar.mjs` — postos ANP → KV do Radar de Preços (backup; rodada completa roda no Mac)
 - `scrape-precodahora.mjs` — BA quase tempo real (NFC-e, Preço da Hora); merge por CNPJ
 - `scrape-buscapreco-am.mjs` — AM quase tempo real (NFC-e, Busca Preço Amazonas); merge por endereço (não tem CNPJ). `node test_buscapreco_am.mjs` = auto-teste do parser
+- `scrape-economiza-al.mjs` — AL quase tempo real (NFC-e, API oficial Economiza Alagoas); merge por CNPJ. Precisa de `ECONOMIZA_AL_TOKEN` (cofre `~/.config/castoldi/chaves.env`; sem ele o bloco só avisa e a UF segue com a ANP). `node test_economiza_al.mjs` = auto-teste do parser
 
 ## Secrets (GitHub Actions)
 

@@ -8,7 +8,11 @@ echo "===== radar-export $(date '+%Y-%m-%d %H:%M:%S') ====="
 git pull --ff-only --quiet 2>&1 | head -2
 npm install --no-audit --no-fund --silent 2>&1 | tail -1
 
+# token da API da Sefaz/AL (Economiza Alagoas) vem do cofre
+set -a; source /Users/ramsescastoldi/.config/castoldi/chaves.env; set +a
+
 # ritmo lento pra caber na cota do PRODEB; deadline devolve parcial
-# BPAM não tem cota conhecida: ritmo normal e deadline próprio
-PDH_PAUSA_MS=90000 PDH_DEADLINE_MIN=240 BPAM_PAUSA_MS=1500 BPAM_DEADLINE_MIN=40 node export-radar.mjs
+# BPAM e AL não têm cota conhecida: ritmo normal e deadline próprio
+PDH_PAUSA_MS=90000 PDH_DEADLINE_MIN=240 BPAM_PAUSA_MS=1500 BPAM_DEADLINE_MIN=40 \
+  AL_PAUSA_MS=900 AL_DEADLINE_MIN=45 node export-radar.mjs
 echo "===== fim $(date '+%H:%M:%S') (exit $?) ====="

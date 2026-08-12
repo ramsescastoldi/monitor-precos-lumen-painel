@@ -185,7 +185,7 @@ export async function coletarBuscaPrecoAM(opts) {
   const deadlineMin = +(opts.deadlineMin || process.env.BPAM_DEADLINE_MIN || 40);
   const fim = Date.now() + deadlineMin * 60000;
 
-  const sessao = await abrirSessao();
+  let sessao = await abrirSessao();
   // o <select> de municípios só existe na PÁGINA DE RESULTADO, não na home
   const municipios = municipiosDaPagina(
     await consultar(sessao, { termo: TERMOS[0], municipio: '', pagina: 1 }));
@@ -195,6 +195,7 @@ export async function coletarBuscaPrecoAM(opts) {
 
   const postos = new Map();
   let requisicoes = 0, errosRede = 0, municipiosOk = 0, mudas = 0;
+  let sessoesRefeitas = 0, falhasSeguidas = 0;
 
   for (const municipio of municipios) {
     if (Date.now() > fim) { log('  BPAM: deadline — devolvendo parcial'); break; }
@@ -214,7 +215,19 @@ export async function coletarBuscaPrecoAM(opts) {
         }
         requisicoes++;
         if (pagina === 1) {
-          const itens = +(html.match(/Encontrados (\d+) itens/)?.[1] || 0);
+          // sem o marcador não é página de resultado: a sessão caiu no meio da
+          // rajada e o site devolve a busca vazia. Sem isso a varredura inteira
+          // termina com 0 postos sem reclamar (aconteceu no 1º teste ao vivo).
+          const marcador = html.match(/Encontrados (\d+) itens/);
+          if (!marcador) {
+            sessao = await abrirSessao();
+            sessoesRefeitas++;
+            pagina--;                 // repete a mesma página com a sessão nova
+            if (++falhasSeguidas > 5) throw new Error('sessão não se sustenta — encerrando');
+            continue;
+          }
+          falhasSeguidas = 0;
+          const itens = +marcador[1];
           if (!itens) break;
           paginas = Math.max(...[...html.matchAll(/\/item\/grupo\/page\/(\d+)/g)]
             .map(m => +m[1]).concat(1));
@@ -230,7 +243,7 @@ export async function coletarBuscaPrecoAM(opts) {
   for (const posto of postos.values())
     for (const f of Object.values(posto.p)) delete f._t;
   log(`  Busca Preço AM: ${postos.size} postos · ${municipiosOk}/${municipios.length} municípios · ` +
-      `${requisicoes} requisições`);
+      `${requisicoes} requisições${sessoesRefeitas ? ` · ${sessoesRefeitas} sessões refeitas` : ''}`);
   if (mudas > 5 && !postos.size)
     log(`  BPAM ATENÇÃO: ${mudas} páginas com itens não renderam preço — layout do site mudou?`);
   return postos;
