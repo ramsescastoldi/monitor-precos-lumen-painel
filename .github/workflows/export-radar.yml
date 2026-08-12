@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      SKIP_PDH: "1"   # Preço da Hora BA roda só no Mac (cota do PRODEB por IP)
+      SKIP_PDH: "1"    # Preço da Hora BA roda só no Mac (cota do PRODEB por IP)
+      SKIP_BPAM: "1"   # Busca Preço AM idem: varredura longa, roda no Mac
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6

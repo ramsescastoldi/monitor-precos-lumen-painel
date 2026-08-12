@@ -5,6 +5,7 @@
 
 import { parse } from 'csv-parse/sync';
 import https from 'node:https';
+import { chaveANP } from './scrape-buscapreco-am.mjs';
 
 const URLS = [
   'https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-gasolina-etanol.csv',
@@ -68,6 +69,7 @@ function parseDateBR(s) {
   console.log('Export Radar — início', new Date().toISOString());
   // porUF[uf][cnpj] = { n, b, mu, m, e, p:{comb:{v,d}} }
   const porUF = {};
+  const indiceAM = {};              // chave de endereço → posto (merge do Busca Preço AM)
   let linhas = 0;
 
   for (const url of URLS) {
@@ -89,6 +91,7 @@ function parseDateBR(s) {
       if (!uf || !preco || !data || !cnpj) continue;
 
       porUF[uf] = porUF[uf] || {};
+      const novo = !porUF[uf][cnpj];
       const posto = porUF[uf][cnpj] = porUF[uf][cnpj] || {
         n: titulo(r['Revenda']),
         b: titulo(r['Bandeira']),
@@ -98,6 +101,9 @@ function parseDateBR(s) {
                   (r['Bairro'] ? ' - ' + r['Bairro'] : '')),
         p: {}
       };
+      // AM não tem CNPJ na NFC-e do Busca Preço: o merge é por endereço
+      if (uf === 'AM' && novo)
+        indiceAM[chaveANP(r['Nome da Rua'], r['Numero Rua'], r['Municipio'])] = posto;
       // fica só com a coleta mais recente por produto
       if (!posto.p[comb] || posto.p[comb].d < data) posto.p[comb] = { v: preco, d: data };
     }
@@ -161,6 +167,31 @@ function parseDateBR(s) {
     console.error('[Preço da Hora BA] falhou (segue só ANP):', e.message);
   }
 
+  // AM quase tempo real (Busca Preço Amazonas / NFC-e por posto). Mesmo papel do
+  // Preço da Hora na BA, mas casando por endereço — lá não vem CNPJ.
+  try {
+    if (process.env.SKIP_BPAM) throw new Error('SKIP_BPAM ligado (rodada só-ANP)');
+    const { coletarBuscaPrecoAM } = await import('./scrape-buscapreco-am.mjs');
+    console.log('\n[Busca Preço AM] varrendo municípios…');
+    const vivos = await coletarBuscaPrecoAM({ titulo, slug });
+    let atualizados = 0, novos = 0;
+    for (const [chave, rec] of vivos) {
+      const alvo = indiceAM[chave];
+      if (alvo) {
+        for (const [comb, f] of Object.entries(rec.p))
+          if (!alvo.p[comb] || alvo.p[comb].d <= f.d) alvo.p[comb] = f;
+        if (rec.lat != null) { alvo.lat = rec.lat; alvo.lng = rec.lng; }
+        atualizados++;
+      } else {
+        (porUF.AM = porUF.AM || {})['am:' + chave] = rec;
+        novos++;
+      }
+    }
+    console.log(`  merge AM: ${atualizados} postos atualizados · ${novos} novos`);
+  } catch (e) {
+    console.error('[Busca Preço AM] falhou (segue só ANP):', e.message);
+  }
+
   // resumo por cidade pesquisada (menor/média/maior por combustível + coordenada)
   const cidades = [];
   for (const [uf, mapa] of Object.entries(porUF)) {
@@ -180,6 +211,12 @@ function parseDateBR(s) {
     }
   }
   console.log(`\nCidades pesquisadas com coordenada: ${cidades.length}`);
+  if (process.env.DRY_RUN) {           // conferir a coleta sem escrever no KV
+    console.log('DRY_RUN: nada enviado ao KV.');
+    for (const [uf, mapa] of Object.entries(porUF))
+      console.log(`  ${uf}: ${Object.keys(mapa).length} postos`);
+    return;
+  }
   try {
     const r = await fetch(SYNC_URL, { method: 'POST',
       headers: { 'Content-Type': 'application/json' },

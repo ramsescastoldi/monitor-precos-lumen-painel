@@ -30,6 +30,8 @@ O token Cloudflare é filtrado por IP — deploy SÓ roda da VPS, nunca do GitHu
 - `update.mjs` — Supabase → agregados/margens/volumes → `data.json`
 - `check-freshness.mjs` — alerta Telegram se volumes defasarem ≥3 meses
 - `export-radar.mjs` — postos ANP → KV do Radar de Preços (backup; rodada completa roda no Mac)
+- `scrape-precodahora.mjs` — BA quase tempo real (NFC-e, Preço da Hora); merge por CNPJ
+- `scrape-buscapreco-am.mjs` — AM quase tempo real (NFC-e, Busca Preço Amazonas); merge por endereço (não tem CNPJ). `node test_buscapreco_am.mjs` = auto-teste do parser
 
 ## Secrets (GitHub Actions)
 
