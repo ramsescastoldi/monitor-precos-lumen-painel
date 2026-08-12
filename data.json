@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "12/08/2026, 10:54:41",
+  "atualizado_em": "12/08/2026, 10:59:48",
   "semana_referencia": "2026-08-07",
   "distribuicao_ultima_data": "2026-08-12",
   "volumes": {
@@ -745,8 +745,8 @@
       "data_ref": "2026-08-12T00:00:00.000Z",
       "gasolina": 5.449,
       "etanol": 2.716,
-      "s10": 6.102,
-      "s500": 5.531,
+      "s10": 6.103,
+      "s500": 5.53,
       "margem": {
         "gasolina": {
           "revenda": 6.756,
@@ -762,15 +762,15 @@
         },
         "s10": {
           "revenda": 6.998,
-          "distribuicao": 6.102,
-          "margem_rs": 0.896,
-          "margem_pct": 14.68
+          "distribuicao": 6.103,
+          "margem_rs": 0.895,
+          "margem_pct": 14.66
         },
         "s500": {
           "revenda": 6.694,
-          "distribuicao": 5.531,
-          "margem_rs": 1.163,
-          "margem_pct": 21.03
+          "distribuicao": 5.53,
+          "margem_rs": 1.164,
+          "margem_pct": 21.05
         }
       }
     },
@@ -1169,11 +1169,11 @@
       "cidade": "Cuiaba",
       "gasolina": 5.44,
       "etanol": 2.7,
-      "s10": 6.1,
-      "s500": 5.53,
+      "s10": null,
+      "s500": 5.52,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-10"
+      "data_coleta": "2026-08-12"
     },
     {
       "estado": "MT",
