@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/08/2026, 11:50:59",
+  "atualizado_em": "14/08/2026, 11:57:02",
   "semana_referencia": "2026-08-07",
   "distribuicao_ultima_data": "2026-08-14",
   "volumes": {
@@ -708,34 +708,34 @@
       "n_cotacoes": 15,
       "n_distribuidoras": 15,
       "data_ref": "2026-08-14T00:00:00.000Z",
-      "gasolina": 5.383,
-      "etanol": 2.725,
-      "s10": 6.146,
-      "s500": 5.518,
+      "gasolina": 5.381,
+      "etanol": 2.731,
+      "s10": 6.159,
+      "s500": 5.523,
       "margem": {
         "gasolina": {
           "revenda": 6.756,
-          "distribuicao": 5.383,
-          "margem_rs": 1.373,
-          "margem_pct": 25.51
+          "distribuicao": 5.381,
+          "margem_rs": 1.375,
+          "margem_pct": 25.55
         },
         "etanol": {
           "revenda": 3.708,
-          "distribuicao": 2.725,
-          "margem_rs": 0.983,
-          "margem_pct": 36.07
+          "distribuicao": 2.731,
+          "margem_rs": 0.977,
+          "margem_pct": 35.77
         },
         "s10": {
           "revenda": 6.998,
-          "distribuicao": 6.146,
-          "margem_rs": 0.852,
-          "margem_pct": 13.86
+          "distribuicao": 6.159,
+          "margem_rs": 0.839,
+          "margem_pct": 13.62
         },
         "s500": {
           "revenda": 6.694,
-          "distribuicao": 5.518,
-          "margem_rs": 1.176,
-          "margem_pct": 21.31
+          "distribuicao": 5.523,
+          "margem_rs": 1.171,
+          "margem_pct": 21.2
         }
       }
     },
@@ -1075,7 +1075,7 @@
       "distribuidora": "Viva",
       "cidade": "Varzea Grande",
       "gasolina": null,
-      "etanol": 2.67,
+      "etanol": 2.74,
       "s10": null,
       "s500": null,
       "modalidade": "Retira",
@@ -1098,10 +1098,10 @@
       "estado": "MT",
       "distribuidora": "WK distribuidora",
       "cidade": "Varzea Grande",
-      "gasolina": 5.3,
+      "gasolina": 5.28,
       "etanol": null,
-      "s10": 6.04,
-      "s500": 5.45,
+      "s10": null,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-08-14"
