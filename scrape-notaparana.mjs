@@ -17,6 +17,16 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
 // termos aceitos pela busca (fuelTermMP do cliente, index.html) — sem diesel comum:
 // a API mistura demais com S10 nesse termo e o radar não prioriza d500 aqui
 const TERMOS = { gc: 'gasolina comum', ga: 'gasolina aditivada', et: 'etanol', d10: 'diesel s10' };
+// código ANP do produto, que vem na própria NFC-e (campo cdanp). O termo da busca
+// NÃO basta pra classificar: "gasolina comum" traz frasco de aditivo, filtro e
+// naylon de roçadeira, e os que caem na faixa 1–15 entrariam como preço de bomba
+// (amostra de Curitiba: 8,37 / 14,99). Com o cdanp certo a faixa fecha sozinha
+// (gasolina comum veio 5,99–6,79). Posto que digita código próprio fica de fora —
+// perde-se um pouco de cobertura pra não envenenar o mínimo da cidade.
+const ANP_COMB = {
+  '320102001': 'gc', '320102002': 'ga', '810101001': 'et',
+  '820101012': 'd500', '820101034': 'd10'
+};
 const RAIO_KM = 20;
 const PAUSA_MS_PADRAO = 4000;
 const DIAS_MAX = 10;
@@ -102,8 +112,10 @@ export async function coletarNotaParana(cidades, opts) {
         const est = p.estabelecimento || {};
         const valor = parseFloat(p.valor);
         const quando = Date.parse(p.datahora);
-        // guardas anti-envenenamento: UF, faixa de preço, frescor, município
-        const ok = est.uf === 'PR' && slug(est.mun) === cidade.m &&
+        // guardas anti-envenenamento: produto (código ANP), UF, faixa de preço,
+        // frescor, município
+        const ok = ANP_COMB[String(p.cdanp || '')] === comb &&
+          est.uf === 'PR' && slug(est.mun) === cidade.m &&
           valor >= VALOR_MIN && valor <= VALOR_MAX && !isNaN(quando) && quando >= corteData;
         if (!ok) { descartados++; continue; }
 
