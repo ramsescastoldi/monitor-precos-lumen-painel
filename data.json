@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/08/2026, 15:39:46",
+  "atualizado_em": "14/08/2026, 15:46:55",
   "semana_referencia": "2026-08-07",
   "distribuicao_ultima_data": "2026-08-14",
   "volumes": {
@@ -665,37 +665,37 @@
       }
     },
     "GO": {
-      "n_cotacoes": 4,
-      "n_distribuidoras": 4,
+      "n_cotacoes": 5,
+      "n_distribuidoras": 5,
       "data_ref": "2026-08-14T00:00:00.000Z",
-      "gasolina": 5.343,
-      "etanol": 2.975,
-      "s10": 6.007,
-      "s500": 5.45,
+      "gasolina": 5.328,
+      "etanol": 2.95,
+      "s10": 5.978,
+      "s500": 5.44,
       "margem": {
         "gasolina": {
           "revenda": 6.642,
-          "distribuicao": 5.343,
-          "margem_rs": 1.299,
-          "margem_pct": 24.31
+          "distribuicao": 5.328,
+          "margem_rs": 1.314,
+          "margem_pct": 24.66
         },
         "etanol": {
           "revenda": 4.103,
-          "distribuicao": 2.975,
-          "margem_rs": 1.128,
-          "margem_pct": 37.92
+          "distribuicao": 2.95,
+          "margem_rs": 1.153,
+          "margem_pct": 39.08
         },
         "s10": {
           "revenda": 6.734,
-          "distribuicao": 6.007,
-          "margem_rs": 0.727,
-          "margem_pct": 12.1
+          "distribuicao": 5.978,
+          "margem_rs": 0.756,
+          "margem_pct": 12.65
         },
         "s500": {
           "revenda": 6.282,
-          "distribuicao": 5.45,
-          "margem_rs": 0.832,
-          "margem_pct": 15.27
+          "distribuicao": 5.44,
+          "margem_rs": 0.842,
+          "margem_pct": 15.48
         }
       }
     },
@@ -957,6 +957,18 @@
       "etanol": 2.9,
       "s10": 5.92,
       "s500": 5.43,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-08-14"
+    },
+    {
+      "estado": "GO",
+      "distribuidora": "Rodoil",
+      "cidade": "Senador Canedo",
+      "gasolina": 5.27,
+      "etanol": 2.85,
+      "s10": 5.89,
+      "s500": 5.41,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-08-14"
