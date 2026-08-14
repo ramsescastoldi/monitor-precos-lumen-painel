@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/08/2026, 15:34:48",
+  "atualizado_em": "14/08/2026, 15:39:46",
   "semana_referencia": "2026-08-07",
   "distribuicao_ultima_data": "2026-08-14",
   "volumes": {
@@ -871,7 +871,7 @@
       "gasolina": 5.255,
       "etanol": 3.02,
       "s10": 5.85,
-      "s500": 5.4,
+      "s500": 5.417,
       "margem": {
         "gasolina": {
           "revenda": 6.382,
@@ -893,9 +893,9 @@
         },
         "s500": {
           "revenda": 6.494,
-          "distribuicao": 5.4,
-          "margem_rs": 1.094,
-          "margem_pct": 20.26
+          "distribuicao": 5.417,
+          "margem_rs": 1.077,
+          "margem_pct": 19.88
         }
       }
     }
@@ -1268,7 +1268,7 @@
       "gasolina": null,
       "etanol": null,
       "s10": 5.83,
-      "s500": 5.2,
+      "s500": 5.25,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-08-14"
