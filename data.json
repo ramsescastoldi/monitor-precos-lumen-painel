@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/08/2026, 09:18:09",
+  "atualizado_em": "17/08/2026, 10:20:11",
   "semana_referencia": "2026-08-14",
   "distribuicao_ultima_data": "2026-08-17",
   "volumes": {
@@ -637,7 +637,7 @@
     "BA": {
       "n_cotacoes": 2,
       "n_distribuidoras": 1,
-      "data_ref": "2026-08-14T00:00:00.000Z",
+      "data_ref": "2026-08-17T00:00:00.000Z",
       "gasolina": 5.61,
       "etanol": null,
       "s10": 6.27,
@@ -667,7 +667,7 @@
     "GO": {
       "n_cotacoes": 5,
       "n_distribuidoras": 5,
-      "data_ref": "2026-08-14T00:00:00.000Z",
+      "data_ref": "2026-08-17T00:00:00.000Z",
       "gasolina": 5.328,
       "etanol": 2.95,
       "s10": 5.978,
@@ -702,7 +702,7 @@
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-08-14T00:00:00.000Z",
+      "data_ref": "2026-08-17T00:00:00.000Z",
       "gasolina": 5.297,
       "etanol": 3.055,
       "s10": 5.88,
@@ -772,7 +772,7 @@
     "PR": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-08-14T00:00:00.000Z",
+      "data_ref": "2026-08-17T00:00:00.000Z",
       "gasolina": 5.185,
       "etanol": null,
       "s10": 5.903,
@@ -867,7 +867,7 @@
     "SP": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-08-14T00:00:00.000Z",
+      "data_ref": "2026-08-17T00:00:00.000Z",
       "gasolina": 5.255,
       "etanol": 3.02,
       "s10": 5.85,
@@ -911,7 +911,7 @@
       "s500": 5.72,
       "modalidade": "retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     },
     {
       "estado": "BA",
@@ -923,7 +923,7 @@
       "s500": 5.84,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     },
     {
       "estado": "GO",
@@ -983,7 +983,7 @@
       "s500": 5.42,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     },
     {
       "estado": "MG",
@@ -995,7 +995,7 @@
       "s500": 5.35,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     },
     {
       "estado": "MG",
@@ -1247,7 +1247,7 @@
       "s500": 5.19,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     },
     {
       "estado": "RO",
@@ -1319,7 +1319,7 @@
       "s500": 5.2,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-14"
+      "data_coleta": "2026-08-17"
     }
   ],
   "top_postos": {
