@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "20/08/2026, 11:59:29",
+  "atualizado_em": "21/08/2026, 09:43:49",
   "semana_referencia": "2026-08-14",
-  "distribuicao_ultima_data": "2026-08-18",
+  "distribuicao_ultima_data": "2026-08-21",
   "volumes": {
     "mes_referencia": "jun/2026",
     "periodo_iso": "2026-06",
@@ -737,35 +737,35 @@
     "MT": {
       "n_cotacoes": 16,
       "n_distribuidoras": 16,
-      "data_ref": "2026-08-18T00:00:00.000Z",
-      "gasolina": 5.4,
-      "etanol": 2.786,
-      "s10": 6.153,
-      "s500": 5.505,
+      "data_ref": "2026-08-21T00:00:00.000Z",
+      "gasolina": 5.392,
+      "etanol": 2.787,
+      "s10": 6.163,
+      "s500": 5.509,
       "margem": {
         "gasolina": {
           "revenda": 6.748,
-          "distribuicao": 5.4,
-          "margem_rs": 1.348,
-          "margem_pct": 24.96
+          "distribuicao": 5.392,
+          "margem_rs": 1.356,
+          "margem_pct": 25.15
         },
         "etanol": {
           "revenda": 3.689,
-          "distribuicao": 2.786,
-          "margem_rs": 0.903,
-          "margem_pct": 32.41
+          "distribuicao": 2.787,
+          "margem_rs": 0.902,
+          "margem_pct": 32.36
         },
         "s10": {
           "revenda": 6.967,
-          "distribuicao": 6.153,
-          "margem_rs": 0.814,
-          "margem_pct": 13.23
+          "distribuicao": 6.163,
+          "margem_rs": 0.804,
+          "margem_pct": 13.05
         },
         "s500": {
           "revenda": 6.707,
-          "distribuicao": 5.505,
-          "margem_rs": 1.202,
-          "margem_pct": 21.83
+          "distribuicao": 5.509,
+          "margem_rs": 1.198,
+          "margem_pct": 21.75
         }
       }
     },
@@ -989,7 +989,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1001,7 +1001,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1013,7 +1013,7 @@
       "s500": 5.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1025,7 +1025,7 @@
       "s500": 5.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1037,7 +1037,7 @@
       "s500": 5.69,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1049,7 +1049,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1073,7 +1073,7 @@
       "s500": 5.43,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1085,7 +1085,7 @@
       "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1097,19 +1097,19 @@
       "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.39,
-      "etanol": null,
-      "s10": 6.2,
-      "s500": 5.42,
+      "gasolina": 5.28,
+      "etanol": 2.8,
+      "s10": 6.3,
+      "s500": 5.48,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1121,7 +1121,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1133,7 +1133,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1145,7 +1145,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1157,7 +1157,7 @@
       "s500": 5.58,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "MT",
@@ -1169,7 +1169,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     },
     {
       "estado": "PR",
