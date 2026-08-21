@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "21/08/2026, 09:51:20",
+  "atualizado_em": "21/08/2026, 09:57:23",
   "semana_referencia": "2026-08-14",
   "distribuicao_ultima_data": "2026-08-21",
   "volumes": {
@@ -837,35 +837,35 @@
     "SP": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-08-18T00:00:00.000Z",
-      "gasolina": 5.245,
-      "etanol": 3.02,
-      "s10": 5.84,
-      "s500": 5.233,
+      "data_ref": "2026-08-21T00:00:00.000Z",
+      "gasolina": 5.235,
+      "etanol": 3.28,
+      "s10": 5.857,
+      "s500": 5.267,
       "margem": {
         "gasolina": {
           "revenda": 6.374,
-          "distribuicao": 5.245,
-          "margem_rs": 1.129,
-          "margem_pct": 21.53
+          "distribuicao": 5.235,
+          "margem_rs": 1.139,
+          "margem_pct": 21.76
         },
         "etanol": {
           "revenda": 3.638,
-          "distribuicao": 3.02,
-          "margem_rs": 0.618,
-          "margem_pct": 20.46
+          "distribuicao": 3.28,
+          "margem_rs": 0.358,
+          "margem_pct": 10.91
         },
         "s10": {
           "revenda": 6.884,
-          "distribuicao": 5.84,
-          "margem_rs": 1.044,
-          "margem_pct": 17.88
+          "distribuicao": 5.857,
+          "margem_rs": 1.027,
+          "margem_pct": 17.53
         },
         "s500": {
           "revenda": 6.484,
-          "distribuicao": 5.233,
-          "margem_rs": 1.251,
-          "margem_pct": 23.91
+          "distribuicao": 5.267,
+          "margem_rs": 1.217,
+          "margem_pct": 23.11
         }
       }
     }
@@ -1259,13 +1259,13 @@
       "estado": "SP",
       "distribuidora": "Royal Fic",
       "cidade": "Paulinia",
-      "gasolina": 5.25,
-      "etanol": 3.02,
-      "s10": 5.9,
-      "s500": 5.2,
+      "gasolina": 5.23,
+      "etanol": 3.28,
+      "s10": 5.95,
+      "s500": 5.3,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-18"
+      "data_coleta": "2026-08-21"
     }
   ],
   "top_postos": {
