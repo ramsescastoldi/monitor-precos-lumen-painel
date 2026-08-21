@@ -1,63 +1,59 @@
 {
-  "atualizado_em": "21/08/2026, 11:57:40",
+  "atualizado_em": "21/08/2026, 12:35:47",
   "semana_referencia": "2026-08-14",
   "distribuicao_ultima_data": "2026-08-21",
   "volumes": {
-    "mes_referencia": "jun/2026",
-    "periodo_iso": "2026-06",
-    "total_mil_m3": 10133,
+    "mes_referencia": "jul/2026",
+    "periodo_iso": "2026-07",
+    "total_mil_m3": 11088,
     "share_distribuidora": [
       {
         "distribuidora": "VIBRA ENERGIA S.A",
-        "volume": 2181.7,
-        "pct": 21.5
+        "volume": 2254.5,
+        "pct": 20.3
       },
       {
         "distribuidora": "RAIZEN S.A.",
-        "volume": 1932.7,
-        "pct": 19.1
+        "volume": 2134.5,
+        "pct": 19.3
       },
       {
         "distribuidora": "IPIRANGA PRODUTOS DE PETRÓLEO S.A",
-        "volume": 1785.1,
-        "pct": 17.6
+        "volume": 1905.1,
+        "pct": 17.2
       },
       {
         "distribuidora": "ALE COMBUSTIVEIS S.A.",
-        "volume": 232,
-        "pct": 2.3
+        "volume": 275.9,
+        "pct": 2.5
       },
       {
         "distribuidora": "ROYAL FIC DISTRIBUIDORA DE DERIVADOS DE PETRÓLEO S/A",
-        "volume": 220.4,
-        "pct": 2.2
+        "volume": 266.9,
+        "pct": 2.4
       },
       {
         "distribuidora": "ATEM' S DISTRIBUIDORA DE PETRÓLEO S.A.",
-        "volume": 215.5,
+        "volume": 236.5,
         "pct": 2.1
       },
       {
         "distribuidora": "LARCO COMERCIAL DE PRODUTOS DE PETRÓLEO LTDA.",
-        "volume": 185,
-        "pct": 1.8
+        "volume": 192.8,
+        "pct": 1.7
       },
       {
-        "distribuidora": "PETROBAHIA S/A",
-        "volume": 155,
-        "pct": 1.5
+        "distribuidora": "PETRÓLEO SABBÁ S.A.",
+        "volume": 180.8,
+        "pct": 1.6
       },
       {
         "distribuidora": "Outras",
-        "volume": 3225.3,
-        "pct": 31.8
+        "volume": 3641.3,
+        "pct": 32.8
       }
     ],
     "evolucao_mensal": [
-      {
-        "label": "jun/25",
-        "volume": 9670
-      },
       {
         "label": "jul/25",
         "volume": 10409
@@ -105,117 +101,121 @@
       {
         "label": "jun/26",
         "volume": 10133
+      },
+      {
+        "label": "jul/26",
+        "volume": 11088
       }
     ],
     "por_regiao": [
       {
         "regiao": "SE",
         "nome": "Sudeste",
-        "volume": 4381.9,
-        "pct": 43.2
-      },
-      {
-        "regiao": "NE",
-        "nome": "Nordeste",
-        "volume": 1825.8,
-        "pct": 18
+        "volume": 4734.4,
+        "pct": 42.7
       },
       {
         "regiao": "S",
         "nome": "Sul",
-        "volume": 1690.4,
-        "pct": 16.7
+        "volume": 2070,
+        "pct": 18.7
+      },
+      {
+        "regiao": "NE",
+        "nome": "Nordeste",
+        "volume": 1887.5,
+        "pct": 17
       },
       {
         "regiao": "CO",
         "nome": "Centro-Oeste",
-        "volume": 1678.7,
-        "pct": 16.6
+        "volume": 1762.1,
+        "pct": 15.9
       },
       {
         "regiao": "N",
         "nome": "Norte",
-        "volume": 555.9,
-        "pct": 5.5
+        "volume": 634.3,
+        "pct": 5.7
       }
     ],
     "comparativo_anual": {
-      "periodo": "jan–jun",
-      "meses": 6,
+      "periodo": "jan–jul",
+      "meses": 7,
       "ano_atual": 2026,
       "ano_anterior": 2025,
       "brasil": {
-        "atual": 58784,
-        "anterior": 57004,
-        "var_pct": 3.1
+        "atual": 69873,
+        "anterior": 67412,
+        "var_pct": 3.7
       },
       "por_regiao": [
         {
           "regiao": "SE",
           "nome": "Sudeste",
-          "atual": 25626,
-          "anterior": 25596,
+          "atual": 30360,
+          "anterior": 30335,
           "var_pct": 0.1
-        },
-        {
-          "regiao": "NE",
-          "nome": "Nordeste",
-          "atual": 10666,
-          "anterior": 10008,
-          "var_pct": 6.6
         },
         {
           "regiao": "S",
           "nome": "Sul",
-          "atual": 10527,
-          "anterior": 9861,
-          "var_pct": 6.8
+          "atual": 12597,
+          "anterior": 11623,
+          "var_pct": 8.4
+        },
+        {
+          "regiao": "NE",
+          "nome": "Nordeste",
+          "atual": 12554,
+          "anterior": 11741,
+          "var_pct": 6.9
         },
         {
           "regiao": "CO",
           "nome": "Centro-Oeste",
-          "atual": 9334,
-          "anterior": 9262,
-          "var_pct": 0.8
+          "atual": 11096,
+          "anterior": 10891,
+          "var_pct": 1.9
         },
         {
           "regiao": "N",
           "nome": "Norte",
-          "atual": 2631,
-          "anterior": 2277,
-          "var_pct": 15.6
+          "atual": 3266,
+          "anterior": 2822,
+          "var_pct": 15.7
         }
       ],
       "por_produto": [
         {
           "produto": "Diesel",
-          "atual": 27408,
-          "anterior": 26206,
-          "var_pct": 4.6
+          "atual": 32825,
+          "anterior": 31236,
+          "var_pct": 5.1
         },
         {
           "produto": "Gasolina",
-          "atual": 15366,
-          "anterior": 15461,
-          "var_pct": -0.6
+          "atual": 18191,
+          "anterior": 18220,
+          "var_pct": -0.2
         },
         {
           "produto": "Etanol Hidratado",
-          "atual": 9425,
-          "anterior": 9406,
-          "var_pct": 0.2
+          "atual": 11135,
+          "anterior": 11014,
+          "var_pct": 1.1
         },
         {
           "produto": "Etanol Anidro",
-          "atual": 6180,
-          "anterior": 5494,
-          "var_pct": 12.5
+          "atual": 7246,
+          "anterior": 6428,
+          "var_pct": 12.7
         },
         {
           "produto": "Outros",
-          "atual": 406,
-          "anterior": 437,
-          "var_pct": -7.1
+          "atual": 476,
+          "anterior": 514,
+          "var_pct": -7.5
         }
       ]
     }
