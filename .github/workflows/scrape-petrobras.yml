@@ -2,8 +2,9 @@ name: Scrape composição de preço Petrobras (seg+qui 09h BRT)
 
 on:
   schedule:
-    # 12:23 UTC = 09:23 BRT seg+qui — site atualiza a composição semanalmente
-    - cron: '23 12 * * 1,4'
+    # 12:23 UTC = 09:23 BRT, todo dia — a Petrobras publica a semana em dia variável;
+    # seg+qui perdia a virada e o painel ficava uma semana atrasado. Scrape é barato.
+    - cron: '23 12 * * *'
   workflow_dispatch:
 
 jobs:
