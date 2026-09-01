@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "01/09/2026, 09:10:01",
+  "atualizado_em": "01/09/2026, 09:47:55",
   "semana_referencia": "2026-08-28",
   "distribuicao_ultima_data": "2026-09-01",
   "volumes": {
@@ -733,34 +733,34 @@
       "n_cotacoes": 18,
       "n_distribuidoras": 18,
       "data_ref": "2026-09-01T00:00:00.000Z",
-      "gasolina": 5.419,
-      "etanol": 2.822,
-      "s10": 6.255,
-      "s500": 5.522,
+      "gasolina": 5.423,
+      "etanol": 2.89,
+      "s10": 6.278,
+      "s500": 5.528,
       "margem": {
         "gasolina": {
           "revenda": 6.799,
-          "distribuicao": 5.419,
-          "margem_rs": 1.38,
-          "margem_pct": 25.47
+          "distribuicao": 5.423,
+          "margem_rs": 1.376,
+          "margem_pct": 25.37
         },
         "etanol": {
           "revenda": 3.749,
-          "distribuicao": 2.822,
-          "margem_rs": 0.927,
-          "margem_pct": 32.85
+          "distribuicao": 2.89,
+          "margem_rs": 0.859,
+          "margem_pct": 29.72
         },
         "s10": {
           "revenda": 7.013,
-          "distribuicao": 6.255,
-          "margem_rs": 0.758,
-          "margem_pct": 12.12
+          "distribuicao": 6.278,
+          "margem_rs": 0.735,
+          "margem_pct": 11.71
         },
         "s500": {
           "revenda": 6.745,
-          "distribuicao": 5.522,
-          "margem_rs": 1.223,
-          "margem_pct": 22.15
+          "distribuicao": 5.528,
+          "margem_rs": 1.217,
+          "margem_pct": 22.02
         }
       }
     },
@@ -992,10 +992,10 @@
       "estado": "MT",
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
-      "gasolina": 5.29,
-      "etanol": 2.8,
-      "s10": 6.25,
-      "s500": 5.49,
+      "gasolina": 5.39,
+      "etanol": 2.98,
+      "s10": 6.15,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-01"
@@ -1004,8 +1004,8 @@
       "estado": "MT",
       "distribuidora": "Equador",
       "cidade": "Varzea Grande",
-      "gasolina": 5.24,
-      "etanol": 2.83,
+      "gasolina": 5.26,
+      "etanol": 2.93,
       "s10": 6.25,
       "s500": 5.43,
       "modalidade": "Retira",
@@ -1016,10 +1016,10 @@
       "estado": "MT",
       "distribuidora": "Idaza",
       "cidade": "Cuiaba",
-      "gasolina": 5.48,
-      "etanol": 2.79,
-      "s10": 6.23,
-      "s500": 5.69,
+      "gasolina": 5.31,
+      "etanol": 2.95,
+      "s10": 6.25,
+      "s500": 5.71,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-01"
@@ -1028,8 +1028,8 @@
       "estado": "MT",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Varzea Grande",
-      "gasolina": 5.35,
-      "etanol": 2.8,
+      "gasolina": 5.25,
+      "etanol": 3.03,
       "s10": null,
       "s500": 5.45,
       "modalidade": "Retira",
@@ -1064,10 +1064,10 @@
       "estado": "MT",
       "distribuidora": "On Petro",
       "cidade": "Cuiaba",
-      "gasolina": 5.24,
-      "etanol": null,
-      "s10": 6.3,
-      "s500": 5.54,
+      "gasolina": 5.26,
+      "etanol": 3,
+      "s10": 6.5,
+      "s500": 5.62,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-01"
@@ -1088,9 +1088,9 @@
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.36,
+      "gasolina": 5.55,
       "etanol": null,
-      "s10": 6.23,
+      "s10": 6.4,
       "s500": 5.43,
       "modalidade": "Retira",
       "observacoes": null,
@@ -1101,9 +1101,9 @@
       "distribuidora": "Setta",
       "cidade": "Cuiaba",
       "gasolina": 5.25,
-      "etanol": 2.78,
+      "etanol": 2.95,
       "s10": 6.25,
-      "s500": 5.45,
+      "s500": 5.48,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-01"
@@ -1151,7 +1151,7 @@
       "gasolina": 5.4,
       "etanol": 2.83,
       "s10": 6.14,
-      "s500": 5.6,
+      "s500": 5.51,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-01"
