@@ -303,8 +303,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-// === Auth OTP via n8n + WhatsApp (reutiliza endpoints do painel-lumen-posto) ===
-const AUTH_BASE = 'https://n8n.srv1662375.hstgr.cloud/webhook';
+// === Auth OTP via Worker do painel (proxy do n8n COM trava de pagamento:
+// atrasado não recebe código — ver worker.js do lumen-painel) ===
+const AUTH_BASE = 'https://painel.lumenclubpainel.com.br/api';
 const SESSION_KEY = 'lumen_session_token';
 
 const $ = (id) => document.getElementById(id);
