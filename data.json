@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "08/09/2026, 11:21:12",
+  "atualizado_em": "08/09/2026, 11:26:19",
   "semana_referencia": "2026-09-04",
   "distribuicao_ultima_data": "2026-09-08",
   "volumes": {
@@ -809,27 +809,32 @@
       }
     },
     "SC": {
-      "n_cotacoes": 2,
-      "n_distribuidoras": 2,
+      "n_cotacoes": 3,
+      "n_distribuidoras": 3,
       "data_ref": "2026-09-08T00:00:00.000Z",
-      "gasolina": null,
+      "gasolina": 5.2,
       "etanol": null,
-      "s10": 6.72,
-      "s500": 5.455,
+      "s10": 6.535,
+      "s500": 5.603,
       "margem": {
-        "gasolina": null,
+        "gasolina": {
+          "revenda": 6.417,
+          "distribuicao": 5.2,
+          "margem_rs": 1.217,
+          "margem_pct": 23.4
+        },
         "etanol": null,
         "s10": {
           "revenda": 6.768,
-          "distribuicao": 6.72,
-          "margem_rs": 0.048,
-          "margem_pct": 0.71
+          "distribuicao": 6.535,
+          "margem_rs": 0.233,
+          "margem_pct": 3.57
         },
         "s500": {
           "revenda": 6.403,
-          "distribuicao": 5.455,
-          "margem_rs": 0.948,
-          "margem_pct": 17.38
+          "distribuicao": 5.603,
+          "margem_rs": 0.8,
+          "margem_pct": 14.28
         }
       }
     },
@@ -1215,6 +1220,18 @@
       "s10": null,
       "s500": 5.35,
       "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-09-08"
+    },
+    {
+      "estado": "SC",
+      "distribuidora": "Potencial",
+      "cidade": "itajai",
+      "gasolina": 5.2,
+      "etanol": null,
+      "s10": 6.35,
+      "s500": 5.9,
+      "modalidade": null,
       "observacoes": null,
       "data_coleta": "2026-09-08"
     },
