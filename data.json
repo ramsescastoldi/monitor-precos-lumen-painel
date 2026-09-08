@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "07/09/2026, 15:48:15",
+  "atualizado_em": "08/09/2026, 08:38:06",
   "semana_referencia": "2026-09-04",
-  "distribuicao_ultima_data": "2026-09-03",
+  "distribuicao_ultima_data": "2026-09-08",
   "volumes": {
     "mes_referencia": "jul/2026",
     "periodo_iso": "2026-07",
@@ -737,7 +737,7 @@
     "MT": {
       "n_cotacoes": 14,
       "n_distribuidoras": 14,
-      "data_ref": "2026-09-03T00:00:00.000Z",
+      "data_ref": "2026-09-08T00:00:00.000Z",
       "gasolina": 5.445,
       "etanol": 2.974,
       "s10": 6.461,
@@ -770,13 +770,13 @@
       }
     },
     "PR": {
-      "n_cotacoes": 2,
-      "n_distribuidoras": 2,
+      "n_cotacoes": 1,
+      "n_distribuidoras": 1,
       "data_ref": "2026-09-03T00:00:00.000Z",
       "gasolina": 5.28,
       "etanol": null,
-      "s10": 6.385,
-      "s500": 5.455,
+      "s10": 6.79,
+      "s500": 5.72,
       "margem": {
         "gasolina": {
           "revenda": 6.561,
@@ -787,15 +787,15 @@
         "etanol": null,
         "s10": {
           "revenda": 6.914,
-          "distribuicao": 6.385,
-          "margem_rs": 0.529,
-          "margem_pct": 8.29
+          "distribuicao": 6.79,
+          "margem_rs": 0.124,
+          "margem_pct": 1.83
         },
         "s500": {
           "revenda": 6.253,
-          "distribuicao": 5.455,
-          "margem_rs": 0.798,
-          "margem_pct": 14.63
+          "distribuicao": 5.72,
+          "margem_rs": 0.533,
+          "margem_pct": 9.32
         }
       }
     },
@@ -1003,7 +1003,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1015,7 +1015,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1027,7 +1027,7 @@
       "s500": 5.66,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1039,7 +1039,7 @@
       "s500": 5.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1063,7 +1063,7 @@
       "s500": 5.58,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1075,7 +1075,7 @@
       "s500": 5.62,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1087,7 +1087,7 @@
       "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1099,7 +1099,7 @@
       "s500": 5.53,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1111,7 +1111,7 @@
       "s500": 5.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1135,7 +1135,7 @@
       "s500": 5.53,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "MT",
@@ -1147,19 +1147,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
-    },
-    {
-      "estado": "PR",
-      "distribuidora": "Estrada",
-      "cidade": "Araucaria",
-      "gasolina": null,
-      "etanol": null,
-      "s10": 5.98,
-      "s500": 5.19,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-08-26"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "PR",
