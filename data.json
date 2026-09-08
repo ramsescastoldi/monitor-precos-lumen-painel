@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "08/09/2026, 08:38:06",
+  "atualizado_em": "08/09/2026, 08:43:02",
   "semana_referencia": "2026-09-04",
   "distribuicao_ultima_data": "2026-09-08",
   "volumes": {
@@ -665,37 +665,37 @@
       }
     },
     "GO": {
-      "n_cotacoes": 5,
-      "n_distribuidoras": 5,
-      "data_ref": "2026-09-03T00:00:00.000Z",
-      "gasolina": 5.28,
-      "etanol": 3.12,
-      "s10": 5.924,
-      "s500": 5.386,
+      "n_cotacoes": 4,
+      "n_distribuidoras": 4,
+      "data_ref": "2026-09-08T00:00:00.000Z",
+      "gasolina": 5.36,
+      "etanol": 3.18,
+      "s10": 6.158,
+      "s500": 5.545,
       "margem": {
         "gasolina": {
           "revenda": 6.453,
-          "distribuicao": 5.28,
-          "margem_rs": 1.173,
-          "margem_pct": 22.22
+          "distribuicao": 5.36,
+          "margem_rs": 1.093,
+          "margem_pct": 20.39
         },
         "etanol": {
           "revenda": 3.9,
-          "distribuicao": 3.12,
-          "margem_rs": 0.78,
-          "margem_pct": 25
+          "distribuicao": 3.18,
+          "margem_rs": 0.72,
+          "margem_pct": 22.64
         },
         "s10": {
           "revenda": 6.667,
-          "distribuicao": 5.924,
-          "margem_rs": 0.743,
-          "margem_pct": 12.54
+          "distribuicao": 6.158,
+          "margem_rs": 0.509,
+          "margem_pct": 8.27
         },
         "s500": {
           "revenda": 6.205,
-          "distribuicao": 5.386,
-          "margem_rs": 0.819,
-          "margem_pct": 15.21
+          "distribuicao": 5.545,
+          "margem_rs": 0.66,
+          "margem_pct": 11.9
         }
       }
     },
@@ -802,36 +802,36 @@
     "SC": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-08-26T00:00:00.000Z",
+      "data_ref": "2026-09-08T00:00:00.000Z",
       "gasolina": null,
       "etanol": null,
-      "s10": 5.98,
-      "s500": 5.2,
+      "s10": 6.72,
+      "s500": 5.56,
       "margem": {
         "gasolina": null,
         "etanol": null,
         "s10": {
           "revenda": 6.768,
-          "distribuicao": 5.98,
-          "margem_rs": 0.788,
-          "margem_pct": 13.18
+          "distribuicao": 6.72,
+          "margem_rs": 0.048,
+          "margem_pct": 0.71
         },
         "s500": {
           "revenda": 6.403,
-          "distribuicao": 5.2,
-          "margem_rs": 1.203,
-          "margem_pct": 23.13
+          "distribuicao": 5.56,
+          "margem_rs": 0.843,
+          "margem_pct": 15.16
         }
       }
     },
     "SP": {
       "n_cotacoes": 2,
       "n_distribuidoras": 2,
-      "data_ref": "2026-09-03T00:00:00.000Z",
+      "data_ref": "2026-09-08T00:00:00.000Z",
       "gasolina": 5.32,
       "etanol": 3.28,
-      "s10": 6.265,
-      "s500": 5.365,
+      "s10": 6.635,
+      "s500": 5.54,
       "margem": {
         "gasolina": {
           "revenda": 6.368,
@@ -847,15 +847,15 @@
         },
         "s10": {
           "revenda": 6.902,
-          "distribuicao": 6.265,
-          "margem_rs": 0.637,
-          "margem_pct": 10.17
+          "distribuicao": 6.635,
+          "margem_rs": 0.267,
+          "margem_pct": 4.02
         },
         "s500": {
           "revenda": 6.463,
-          "distribuicao": 5.365,
-          "margem_rs": 1.098,
-          "margem_pct": 20.47
+          "distribuicao": 5.54,
+          "margem_rs": 0.923,
+          "margem_pct": 16.66
         }
       }
     }
@@ -901,37 +901,25 @@
       "estado": "GO",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Senador Canedo",
-      "gasolina": 5.25,
-      "etanol": 3.08,
-      "s10": 5.85,
-      "s500": 5.35,
+      "gasolina": 5.44,
+      "etanol": 3.16,
+      "s10": 6.3,
+      "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-03"
-    },
-    {
-      "estado": "GO",
-      "distribuidora": "Larco",
-      "cidade": "Senador Canedo",
-      "gasolina": 5.3,
-      "etanol": 3.08,
-      "s10": 5.87,
-      "s500": 5.37,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-09-03"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "GO",
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
-      "gasolina": 5.23,
-      "etanol": 3.11,
-      "s10": 5.84,
-      "s500": 5.34,
+      "gasolina": 5.38,
+      "etanol": 3.17,
+      "s10": 6.27,
+      "s500": 5.66,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-01"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "GO",
@@ -1167,11 +1155,11 @@
       "cidade": "Itajai",
       "gasolina": null,
       "etanol": null,
-      "s10": 5.98,
-      "s500": 5.2,
+      "s10": 6.72,
+      "s500": 5.56,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-26"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "SP",
@@ -1179,11 +1167,11 @@
       "cidade": "Paulinia",
       "gasolina": null,
       "etanol": null,
-      "s10": 5.98,
-      "s500": 5.25,
+      "s10": 6.72,
+      "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-08-26"
+      "data_coleta": "2026-09-08"
     },
     {
       "estado": "SP",
