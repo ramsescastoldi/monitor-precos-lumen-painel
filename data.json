@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "11/09/2026, 11:14:15",
+  "atualizado_em": "11/09/2026, 11:21:05",
   "semana_referencia": "2026-09-04",
   "distribuicao_ultima_data": "2026-09-11",
   "volumes": {
@@ -747,28 +747,28 @@
       "n_cotacoes": 17,
       "n_distribuidoras": 17,
       "data_ref": "2026-09-11T00:00:00.000Z",
-      "gasolina": 5.463,
-      "etanol": 3.088,
-      "s10": 6.981,
+      "gasolina": 5.46,
+      "etanol": 3.091,
+      "s10": 7.014,
       "s500": 5.926,
       "margem": {
         "gasolina": {
           "revenda": 6.81,
-          "distribuicao": 5.463,
-          "margem_rs": 1.347,
-          "margem_pct": 24.66
+          "distribuicao": 5.46,
+          "margem_rs": 1.35,
+          "margem_pct": 24.73
         },
         "etanol": {
           "revenda": 3.815,
-          "distribuicao": 3.088,
-          "margem_rs": 0.727,
-          "margem_pct": 23.54
+          "distribuicao": 3.091,
+          "margem_rs": 0.724,
+          "margem_pct": 23.42
         },
         "s10": {
           "revenda": 7.021,
-          "distribuicao": 6.981,
-          "margem_rs": 0.04,
-          "margem_pct": 0.57
+          "distribuicao": 7.014,
+          "margem_rs": 0.007,
+          "margem_pct": 0.1
         },
         "s500": {
           "revenda": 6.733,
@@ -1047,7 +1047,7 @@
       "estado": "MT",
       "distribuidora": "Equador",
       "cidade": "Varzea Grande",
-      "gasolina": 5.4,
+      "gasolina": 5.35,
       "etanol": 3.15,
       "s10": 7,
       "s500": 6,
@@ -1120,8 +1120,8 @@
       "distribuidora": "Petroluz",
       "cidade": "Varzea Grande",
       "gasolina": 5.2,
-      "etanol": 3.1,
-      "s10": null,
+      "etanol": 3.15,
+      "s10": 7.45,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
