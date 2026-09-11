@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "10/09/2026, 14:46:28",
+  "atualizado_em": "11/09/2026, 10:30:17",
   "semana_referencia": "2026-09-04",
-  "distribuicao_ultima_data": "2026-09-08",
+  "distribuicao_ultima_data": "2026-09-11",
   "volumes": {
     "mes_referencia": "jul/2026",
     "periodo_iso": "2026-07",
@@ -665,19 +665,19 @@
       }
     },
     "GO": {
-      "n_cotacoes": 4,
-      "n_distribuidoras": 4,
+      "n_cotacoes": 3,
+      "n_distribuidoras": 3,
       "data_ref": "2026-09-08T00:00:00.000Z",
-      "gasolina": 5.36,
+      "gasolina": 5.407,
       "etanol": 3.18,
-      "s10": 6.32,
-      "s500": 5.65,
+      "s10": 6.473,
+      "s500": 5.737,
       "margem": {
         "gasolina": {
           "revenda": 6.453,
-          "distribuicao": 5.36,
-          "margem_rs": 1.093,
-          "margem_pct": 20.39
+          "distribuicao": 5.407,
+          "margem_rs": 1.046,
+          "margem_pct": 19.35
         },
         "etanol": {
           "revenda": 3.9,
@@ -687,15 +687,15 @@
         },
         "s10": {
           "revenda": 6.667,
-          "distribuicao": 6.32,
-          "margem_rs": 0.347,
-          "margem_pct": 5.49
+          "distribuicao": 6.473,
+          "margem_rs": 0.194,
+          "margem_pct": 3
         },
         "s500": {
           "revenda": 6.205,
-          "distribuicao": 5.65,
-          "margem_rs": 0.555,
-          "margem_pct": 9.82
+          "distribuicao": 5.737,
+          "margem_rs": 0.468,
+          "margem_pct": 8.16
         }
       }
     },
@@ -746,7 +746,7 @@
     "MT": {
       "n_cotacoes": 16,
       "n_distribuidoras": 16,
-      "data_ref": "2026-09-08T00:00:00.000Z",
+      "data_ref": "2026-09-11T00:00:00.000Z",
       "gasolina": 5.449,
       "etanol": 3.039,
       "s10": 6.876,
@@ -901,18 +901,6 @@
     },
     {
       "estado": "GO",
-      "distribuidora": "Equador",
-      "cidade": "Senador Canedo",
-      "gasolina": 5.22,
-      "etanol": null,
-      "s10": 5.86,
-      "s500": 5.39,
-      "modalidade": "Retira",
-      "observacoes": null,
-      "data_coleta": "2026-08-26"
-    },
-    {
-      "estado": "GO",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Senador Canedo",
       "gasolina": 5.44,
@@ -1041,7 +1029,7 @@
       "s500": 5.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1053,7 +1041,7 @@
       "s500": 6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1065,7 +1053,7 @@
       "s500": 5.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1077,7 +1065,7 @@
       "s500": 5.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1113,7 +1101,7 @@
       "s500": 5.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1125,7 +1113,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1137,7 +1125,7 @@
       "s500": 5.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1149,7 +1137,7 @@
       "s500": 5.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "MT",
@@ -1185,7 +1173,7 @@
       "s500": 5.61,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-11"
     },
     {
       "estado": "PR",
