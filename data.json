@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "21/09/2026, 16:32:41",
+  "atualizado_em": "21/09/2026, 16:54:12",
   "semana_referencia": "2026-09-18",
   "distribuicao_ultima_data": "2026-09-21",
   "volumes": {
     "mes_referencia": "jul/2026",
     "periodo_iso": "2026-07",
-    "total_mil_m3": 11088,
+    "total_mil_m3": 11089,
     "share_distribuidora": [
       {
         "distribuidora": "VIBRA ENERGIA S.A",
@@ -15,11 +15,11 @@
       {
         "distribuidora": "RAIZEN S.A.",
         "volume": 2134.5,
-        "pct": 19.3
+        "pct": 19.2
       },
       {
         "distribuidora": "IPIRANGA PRODUTOS DE PETRÓLEO S.A",
-        "volume": 1905.1,
+        "volume": 1905.6,
         "pct": 17.2
       },
       {
@@ -49,7 +49,7 @@
       },
       {
         "distribuidora": "Outras",
-        "volume": 3641.3,
+        "volume": 3641.6,
         "pct": 32.8
       }
     ],
@@ -96,15 +96,15 @@
       },
       {
         "label": "mai/26",
-        "volume": 9792
+        "volume": 9793
       },
       {
         "label": "jun/26",
-        "volume": 10133
+        "volume": 10134
       },
       {
         "label": "jul/26",
-        "volume": 11088
+        "volume": 11089
       }
     ],
     "por_regiao": [
@@ -129,7 +129,7 @@
       {
         "regiao": "CO",
         "nome": "Centro-Oeste",
-        "volume": 1762.1,
+        "volume": 1762.8,
         "pct": 15.9
       },
       {
@@ -145,7 +145,7 @@
       "ano_atual": 2026,
       "ano_anterior": 2025,
       "brasil": {
-        "atual": 69873,
+        "atual": 69876,
         "anterior": 67412,
         "var_pct": 3.7
       },
@@ -153,14 +153,14 @@
         {
           "regiao": "SE",
           "nome": "Sudeste",
-          "atual": 30360,
+          "atual": 30361,
           "anterior": 30335,
           "var_pct": 0.1
         },
         {
           "regiao": "S",
           "nome": "Sul",
-          "atual": 12597,
+          "atual": 12599,
           "anterior": 11623,
           "var_pct": 8.4
         },
@@ -189,19 +189,19 @@
       "por_produto": [
         {
           "produto": "Diesel",
-          "atual": 32825,
+          "atual": 32826,
           "anterior": 31236,
           "var_pct": 5.1
         },
         {
           "produto": "Gasolina",
-          "atual": 18191,
+          "atual": 18192,
           "anterior": 18220,
           "var_pct": -0.2
         },
         {
           "produto": "Etanol Hidratado",
-          "atual": 11135,
+          "atual": 11136,
           "anterior": 11014,
           "var_pct": 1.1
         },
