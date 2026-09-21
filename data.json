@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "21/09/2026, 09:22:09",
+  "atualizado_em": "21/09/2026, 09:38:53",
   "semana_referencia": "2026-09-18",
   "distribuicao_ultima_data": "2026-09-21",
   "volumes": {
@@ -712,34 +712,34 @@
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
       "data_ref": "2026-09-21T00:00:00.000Z",
-      "gasolina": 5.29,
-      "etanol": 3.31,
-      "s10": 6.22,
-      "s500": 5.697,
+      "gasolina": 5.277,
+      "etanol": 3.345,
+      "s10": 6.59,
+      "s500": 5.93,
       "margem": {
         "gasolina": {
           "revenda": 6.327,
-          "distribuicao": 5.29,
-          "margem_rs": 1.037,
-          "margem_pct": 19.6
+          "distribuicao": 5.277,
+          "margem_rs": 1.05,
+          "margem_pct": 19.9
         },
         "etanol": {
           "revenda": 4.154,
-          "distribuicao": 3.31,
-          "margem_rs": 0.844,
-          "margem_pct": 25.5
+          "distribuicao": 3.345,
+          "margem_rs": 0.809,
+          "margem_pct": 24.19
         },
         "s10": {
           "revenda": 6.905,
-          "distribuicao": 6.22,
-          "margem_rs": 0.685,
-          "margem_pct": 11.01
+          "distribuicao": 6.59,
+          "margem_rs": 0.315,
+          "margem_pct": 4.78
         },
         "s500": {
           "revenda": 6.433,
-          "distribuicao": 5.697,
-          "margem_rs": 0.736,
-          "margem_pct": 12.92
+          "distribuicao": 5.93,
+          "margem_rs": 0.503,
+          "margem_pct": 8.48
         }
       }
     },
@@ -1017,13 +1017,13 @@
       "estado": "MG",
       "distribuidora": "Potencial",
       "cidade": "Betim",
-      "gasolina": 5.29,
-      "etanol": null,
-      "s10": 5.71,
-      "s500": 5.35,
+      "gasolina": 5.25,
+      "etanol": 3.38,
+      "s10": 6.82,
+      "s500": 6.05,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-08"
+      "data_coleta": "2026-09-21"
     },
     {
       "estado": "MT",
