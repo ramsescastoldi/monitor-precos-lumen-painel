@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "29/09/2026, 09:26:23",
+  "atualizado_em": "29/09/2026, 09:53:16",
   "semana_referencia": "2026-09-25",
   "distribuicao_ultima_data": "2026-09-29",
   "volumes": {
@@ -747,34 +747,34 @@
       "n_cotacoes": 18,
       "n_distribuidoras": 18,
       "data_ref": "2026-09-29T00:00:00.000Z",
-      "gasolina": 5.393,
-      "etanol": 3.184,
-      "s10": 7.138,
-      "s500": 6.409,
+      "gasolina": 5.37,
+      "etanol": 3.18,
+      "s10": 7.112,
+      "s500": 6.428,
       "margem": {
         "gasolina": {
           "revenda": 6.849,
-          "distribuicao": 5.393,
-          "margem_rs": 1.456,
-          "margem_pct": 27
+          "distribuicao": 5.37,
+          "margem_rs": 1.479,
+          "margem_pct": 27.54
         },
         "etanol": {
           "revenda": 4.057,
-          "distribuicao": 3.184,
-          "margem_rs": 0.873,
-          "margem_pct": 27.42
+          "distribuicao": 3.18,
+          "margem_rs": 0.877,
+          "margem_pct": 27.58
         },
         "s10": {
           "revenda": 7.659,
-          "distribuicao": 7.138,
-          "margem_rs": 0.521,
-          "margem_pct": 7.3
+          "distribuicao": 7.112,
+          "margem_rs": 0.547,
+          "margem_pct": 7.69
         },
         "s500": {
           "revenda": 7.246,
-          "distribuicao": 6.409,
-          "margem_rs": 0.837,
-          "margem_pct": 13.06
+          "distribuicao": 6.428,
+          "margem_rs": 0.818,
+          "margem_pct": 12.73
         }
       }
     },
@@ -987,10 +987,10 @@
       "estado": "MT",
       "distribuidora": "Centro Oeste",
       "cidade": "Varzea Grande",
-      "gasolina": 5.19,
-      "etanol": 3.15,
-      "s10": 7.15,
-      "s500": 6.45,
+      "gasolina": 5.16,
+      "etanol": 3.09,
+      "s10": 7.05,
+      "s500": 6.55,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-29"
@@ -1047,10 +1047,10 @@
       "estado": "MT",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Varzea Grande",
-      "gasolina": 5.25,
+      "gasolina": 5.2,
       "etanol": 3.15,
-      "s10": 7.2,
-      "s500": null,
+      "s10": 7.1,
+      "s500": 6.5,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-09-29"
@@ -1107,9 +1107,9 @@
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.59,
+      "gasolina": 5.35,
       "etanol": 3.16,
-      "s10": 7.1,
+      "s10": 6.95,
       "s500": 6.85,
       "modalidade": "Retira",
       "observacoes": null,
