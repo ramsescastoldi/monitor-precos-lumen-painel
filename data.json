@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "28/09/2026, 17:38:01",
+  "atualizado_em": "29/09/2026, 09:26:23",
   "semana_referencia": "2026-09-25",
-  "distribuicao_ultima_data": "2026-09-25",
+  "distribuicao_ultima_data": "2026-09-29",
   "volumes": {
     "mes_referencia": "jul/2026",
     "periodo_iso": "2026-07",
@@ -702,7 +702,7 @@
     "M": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-09-21T00:00:00.000Z",
+      "data_ref": "2026-09-29T00:00:00.000Z",
       "gasolina": 5.5,
       "etanol": null,
       "s10": null,
@@ -746,7 +746,7 @@
     "MT": {
       "n_cotacoes": 18,
       "n_distribuidoras": 18,
-      "data_ref": "2026-09-25T00:00:00.000Z",
+      "data_ref": "2026-09-29T00:00:00.000Z",
       "gasolina": 5.393,
       "etanol": 3.184,
       "s10": 7.138,
@@ -945,7 +945,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-21"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MG",
@@ -981,7 +981,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -993,7 +993,7 @@
       "s500": 6.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1005,7 +1005,7 @@
       "s500": 6.52,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-21"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1017,7 +1017,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1029,7 +1029,7 @@
       "s500": 6.1,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1041,7 +1041,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1053,7 +1053,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1077,7 +1077,7 @@
       "s500": 6.87,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1089,7 +1089,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1101,7 +1101,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1113,7 +1113,7 @@
       "s500": 6.85,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1125,7 +1125,7 @@
       "s500": 6.6,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1149,7 +1149,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-21"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1161,7 +1161,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-17"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1173,7 +1173,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "MT",
@@ -1185,7 +1185,7 @@
       "s500": 6.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-09-25"
+      "data_coleta": "2026-09-29"
     },
     {
       "estado": "PR",
