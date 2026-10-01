@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "01/10/2026, 09:03:29",
+  "atualizado_em": "01/10/2026, 09:13:49",
   "semana_referencia": "2026-09-25",
   "distribuicao_ultima_data": "2026-10-01",
   "volumes": {
@@ -747,16 +747,16 @@
       "n_cotacoes": 17,
       "n_distribuidoras": 17,
       "data_ref": "2026-10-01T00:00:00.000Z",
-      "gasolina": 5.372,
+      "gasolina": 5.353,
       "etanol": 3.176,
-      "s10": 7.095,
-      "s500": 6.443,
+      "s10": 7.043,
+      "s500": 6.439,
       "margem": {
         "gasolina": {
           "revenda": 6.849,
-          "distribuicao": 5.372,
-          "margem_rs": 1.477,
-          "margem_pct": 27.49
+          "distribuicao": 5.353,
+          "margem_rs": 1.496,
+          "margem_pct": 27.95
         },
         "etanol": {
           "revenda": 4.057,
@@ -766,15 +766,15 @@
         },
         "s10": {
           "revenda": 7.659,
-          "distribuicao": 7.095,
-          "margem_rs": 0.564,
-          "margem_pct": 7.95
+          "distribuicao": 7.043,
+          "margem_rs": 0.616,
+          "margem_pct": 8.75
         },
         "s500": {
           "revenda": 7.246,
-          "distribuicao": 6.443,
-          "margem_rs": 0.803,
-          "margem_pct": 12.46
+          "distribuicao": 6.439,
+          "margem_rs": 0.807,
+          "margem_pct": 12.53
         }
       }
     },
@@ -1011,9 +1011,9 @@
       "estado": "MT",
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
-      "gasolina": 5.45,
+      "gasolina": 5.35,
       "etanol": 3.27,
-      "s10": 7.5,
+      "s10": 7.2,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
@@ -1025,8 +1025,8 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.3,
       "etanol": 3.25,
-      "s10": 6.95,
-      "s500": 6.1,
+      "s10": 6.99,
+      "s500": 6.15,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-01"
@@ -1035,10 +1035,10 @@
       "estado": "MT",
       "distribuidora": "Idaza",
       "cidade": "Cuiaba",
-      "gasolina": null,
-      "etanol": 3.22,
-      "s10": null,
-      "s500": null,
+      "gasolina": 5.4,
+      "etanol": 3.3,
+      "s10": 7.09,
+      "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-01"
@@ -1048,7 +1048,7 @@
       "distribuidora": "Imperial Petroleo",
       "cidade": "Varzea Grande",
       "gasolina": 5.2,
-      "etanol": 3.15,
+      "etanol": 3.17,
       "s10": 7.1,
       "s500": 6.5,
       "modalidade": "Retira",
@@ -1083,9 +1083,9 @@
       "estado": "MT",
       "distribuidora": "On Petro",
       "cidade": "Cuiaba",
-      "gasolina": 5.35,
-      "etanol": 3.2,
-      "s10": 7.42,
+      "gasolina": 5.3,
+      "etanol": 3.13,
+      "s10": 7.08,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
@@ -1095,9 +1095,9 @@
       "estado": "MT",
       "distribuidora": "Petroluz",
       "cidade": "Varzea Grande",
-      "gasolina": 5.2,
-      "etanol": 3.16,
-      "s10": 7.1,
+      "gasolina": 5.16,
+      "etanol": 3.14,
+      "s10": 7.05,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
@@ -1119,10 +1119,10 @@
       "estado": "MT",
       "distribuidora": "Setta",
       "cidade": "Cuiaba",
-      "gasolina": 5.32,
-      "etanol": 3.27,
-      "s10": 7.18,
-      "s500": 6.6,
+      "gasolina": 5.22,
+      "etanol": 3.12,
+      "s10": 7.03,
+      "s500": 6.8,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-01"
@@ -1156,9 +1156,9 @@
       "distribuidora": "Watt",
       "cidade": "Cuiaba",
       "gasolina": 5.4,
-      "etanol": 3.03,
-      "s10": 6.97,
-      "s500": null,
+      "etanol": 3.18,
+      "s10": 7.04,
+      "s500": 6.34,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-01"
