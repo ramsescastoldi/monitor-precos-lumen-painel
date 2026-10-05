@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "05/10/2026, 14:33:20",
+  "atualizado_em": "05/10/2026, 14:38:34",
   "semana_referencia": "2026-10-02",
   "distribuicao_ultima_data": "2026-10-05",
   "volumes": {
@@ -674,7 +674,7 @@
       "n_distribuidoras": 1,
       "data_ref": "2026-10-05T00:00:00.000Z",
       "gasolina": 5.25,
-      "etanol": null,
+      "etanol": 3.15,
       "s10": null,
       "s500": null
     },
@@ -683,9 +683,9 @@
       "n_distribuidoras": 17,
       "data_ref": "2026-10-05T00:00:00.000Z",
       "gasolina": 5.3,
-      "etanol": 3.179,
-      "s10": 7.043,
-      "s500": 6.649,
+      "etanol": 3.175,
+      "s10": 7.04,
+      "s500": 6.644,
       "margem": {
         "gasolina": {
           "revenda": 6.899,
@@ -695,21 +695,21 @@
         },
         "etanol": {
           "revenda": 4.139,
-          "distribuicao": 3.179,
-          "margem_rs": 0.96,
-          "margem_pct": 30.2
+          "distribuicao": 3.175,
+          "margem_rs": 0.964,
+          "margem_pct": 30.36
         },
         "s10": {
           "revenda": 7.714,
-          "distribuicao": 7.043,
-          "margem_rs": 0.671,
-          "margem_pct": 9.53
+          "distribuicao": 7.04,
+          "margem_rs": 0.674,
+          "margem_pct": 9.57
         },
         "s500": {
           "revenda": 7.2,
-          "distribuicao": 6.649,
-          "margem_rs": 0.551,
-          "margem_pct": 8.29
+          "distribuicao": 6.644,
+          "margem_rs": 0.556,
+          "margem_pct": 8.37
         }
       }
     },
@@ -834,7 +834,7 @@
       "distribuidora": "Nexta",
       "cidade": "Varzea Grande",
       "gasolina": 5.25,
-      "etanol": null,
+      "etanol": 3.15,
       "s10": null,
       "s500": null,
       "modalidade": "Retira",
@@ -883,8 +883,8 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.27,
       "etanol": 3.3,
-      "s10": 7.03,
-      "s500": 6.85,
+      "s10": 7,
+      "s500": 6.78,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-05"
@@ -1014,7 +1014,7 @@
       "distribuidora": "Viva",
       "cidade": "Varzea Grande",
       "gasolina": null,
-      "etanol": 3.21,
+      "etanol": 3.15,
       "s10": null,
       "s500": null,
       "modalidade": "Retira",
@@ -1039,7 +1039,7 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.2,
       "etanol": null,
-      "s10": 6.96,
+      "s10": 6.95,
       "s500": 6.75,
       "modalidade": "Retira",
       "observacoes": null,
