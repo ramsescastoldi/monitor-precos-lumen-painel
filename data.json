@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "07/10/2026, 17:03:21",
+  "atualizado_em": "08/10/2026, 09:21:48",
   "semana_referencia": "2026-10-02",
   "distribuicao_ultima_data": "2026-10-05",
   "volumes": {
@@ -1130,25 +1130,9 @@
       },
       {
         "municipio": "SALVADOR",
-        "revenda": "POSTO CASAGRANDE LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "05.125.819...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "BRUMADO",
-        "revenda": "AUTO POSTO AGUIA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "34.215.756...",
-        "gasolina": 5.99,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "SALVADOR",
-        "revenda": "AUTO POSTO BUDIÃO LTDA.",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "13.635.461...",
+        "revenda": "J A SOBRAL & CIA LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "13.799.101...",
         "gasolina": 5.99,
         "data_coleta": "2026-09-28"
       },
@@ -1169,10 +1153,26 @@
         "data_coleta": "2026-09-28"
       },
       {
-        "municipio": "SALVADOR",
-        "revenda": "POSTO TRANSICAO LTDA",
+        "municipio": "BRUMADO",
+        "revenda": "POSTO FILINHO COMERCIO DE COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "12.149.827...",
+        "cnpj_curto": "32.944.463...",
+        "gasolina": 5.99,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "BRUMADO",
+        "revenda": "AUTO POSTO AGUIA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "34.215.756...",
+        "gasolina": 5.99,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "SALVADOR",
+        "revenda": "POSTO CASAGRANDE LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "05.125.819...",
         "gasolina": 5.99,
         "data_coleta": "2026-09-28"
       }
@@ -1204,17 +1204,17 @@
       },
       {
         "municipio": "CAUCAIA",
-        "revenda": "P&E COMERCIO DE DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "54.028.463...",
+        "revenda": "SEVERINO ALMEIDA CHAVES",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "09.411.539...",
         "gasolina": 6.49,
         "data_coleta": "2026-10-01"
       },
       {
         "municipio": "CAUCAIA",
-        "revenda": "SEVERINO ALMEIDA CHAVES",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "09.411.539...",
+        "revenda": "P&E COMERCIO DE DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "54.028.463...",
         "gasolina": 6.49,
         "data_coleta": "2026-10-01"
       },
@@ -1310,6 +1310,14 @@
       },
       {
         "municipio": "BRASILIA",
+        "revenda": "SMAFF COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "05.662.975...",
+        "gasolina": 6.59,
+        "data_coleta": "2026-09-29"
+      },
+      {
+        "municipio": "BRASILIA",
         "revenda": "AUTO POSTO JPC DERIVADOS DE PETROLEO LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "07.129.219...",
@@ -1331,46 +1339,14 @@
         "cnpj_curto": "00.692.418...",
         "gasolina": 6.59,
         "data_coleta": "2026-09-29"
-      },
-      {
-        "municipio": "BRASILIA",
-        "revenda": "SMAFF COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "05.662.975...",
-        "gasolina": 6.59,
-        "data_coleta": "2026-09-29"
       }
     ],
     "ES": [
       {
         "municipio": "SERRA",
-        "revenda": "AUTO POSTO SCHUENG LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "27.664.597...",
-        "gasolina": 6.08,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "SERRA",
-        "revenda": "AUTO POSTO CORAL LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "07.571.908...",
-        "gasolina": 6.08,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "SERRA",
-        "revenda": "AUTO POSTO LUCAS - EPP.",
-        "bandeira": "ALE",
-        "cnpj_curto": "17.375.525...",
-        "gasolina": 6.08,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "SERRA",
-        "revenda": "POSTO MARLIM BRANCO LTDA - ME",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "23.305.603...",
+        "revenda": "POSTO DE COMBUSTIVEIS OTAVIO EIRELI",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "07.470.392...",
         "gasolina": 6.08,
         "data_coleta": "2026-09-28"
       },
@@ -1384,10 +1360,50 @@
       },
       {
         "municipio": "SERRA",
-        "revenda": "POSTO DE COMBUSTIVEIS OTAVIO EIRELI",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "07.470.392...",
+        "revenda": "AUTO POSTO LUCAS - EPP.",
+        "bandeira": "ALE",
+        "cnpj_curto": "17.375.525...",
         "gasolina": 6.08,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "SERRA",
+        "revenda": "AUTO POSTO CORAL LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "07.571.908...",
+        "gasolina": 6.08,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "SERRA",
+        "revenda": "POSTO MARLIM BRANCO LTDA - ME",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "23.305.603...",
+        "gasolina": 6.08,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "SERRA",
+        "revenda": "AUTO POSTO SCHUENG LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "27.664.597...",
+        "gasolina": 6.08,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "VITORIA",
+        "revenda": "POSTO PARADA VITORIA LTDA",
+        "bandeira": "ALE",
+        "cnpj_curto": "11.942.147...",
+        "gasolina": 6.09,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "VITORIA",
+        "revenda": "POSTO ARVOREDO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "27.066.273...",
+        "gasolina": 6.09,
         "data_coleta": "2026-09-28"
       },
       {
@@ -1400,25 +1416,9 @@
       },
       {
         "municipio": "VITORIA",
-        "revenda": "POSTO ARVOREDO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "27.066.273...",
-        "gasolina": 6.09,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "VITORIA",
-        "revenda": "AUTO POSTO VITORIA COMERCIO DE COMBUSTIVEIS LTDA",
+        "revenda": "AUTO POSTO PORTO LTDA",
         "bandeira": "VIBRA",
-        "cnpj_curto": "26.980.450...",
-        "gasolina": 6.09,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "VITORIA",
-        "revenda": "POSTO PARADA VITORIA LTDA",
-        "bandeira": "ALE",
-        "cnpj_curto": "11.942.147...",
+        "cnpj_curto": "28.761.038...",
         "gasolina": 6.09,
         "data_coleta": "2026-09-28"
       }
@@ -1426,9 +1426,17 @@
     "GO": [
       {
         "municipio": "GOIATUBA",
-        "revenda": "AUTO POSTO SCAPIM LTDA. - ME",
+        "revenda": "POSTO NOVO HORIZONTE GOIATUBA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "10.482.745...",
+        "cnpj_curto": "33.503.987...",
+        "gasolina": 5.79,
+        "data_coleta": "2026-09-29"
+      },
+      {
+        "municipio": "GOIATUBA",
+        "revenda": "AUTO POSTO VIP LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "11.824.545...",
         "gasolina": 5.79,
         "data_coleta": "2026-09-29"
       },
@@ -1442,17 +1450,9 @@
       },
       {
         "municipio": "GOIATUBA",
-        "revenda": "AUTO POSTO VIP LTDA",
+        "revenda": "AUTO POSTO SCAPIM LTDA. - ME",
         "bandeira": "BRANCA",
-        "cnpj_curto": "11.824.545...",
-        "gasolina": 5.79,
-        "data_coleta": "2026-09-29"
-      },
-      {
-        "municipio": "GOIATUBA",
-        "revenda": "POSTO NOVO HORIZONTE GOIATUBA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "33.503.987...",
+        "cnpj_curto": "10.482.745...",
         "gasolina": 5.79,
         "data_coleta": "2026-09-29"
       },
@@ -1540,9 +1540,9 @@
       },
       {
         "municipio": "SETE LAGOAS",
-        "revenda": "GNV IGAS LTDA",
-        "bandeira": "ALE",
-        "cnpj_curto": "04.758.543...",
+        "revenda": "AUTO POSTO DA SERRA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "00.761.829...",
         "gasolina": 5.85,
         "data_coleta": "2026-09-30"
       },
@@ -1556,18 +1556,10 @@
       },
       {
         "municipio": "SETE LAGOAS",
-        "revenda": "AUTO POSTO DA SERRA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "00.761.829...",
+        "revenda": "GNV IGAS LTDA",
+        "bandeira": "ALE",
+        "cnpj_curto": "04.758.543...",
         "gasolina": 5.85,
-        "data_coleta": "2026-09-30"
-      },
-      {
-        "municipio": "SETE LAGOAS",
-        "revenda": "CANAAN POSTO E SERVICOS LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "02.677.398...",
-        "gasolina": 5.87,
         "data_coleta": "2026-09-30"
       },
       {
@@ -1575,6 +1567,14 @@
         "revenda": "LP COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "56.429.271...",
+        "gasolina": 5.87,
+        "data_coleta": "2026-09-30"
+      },
+      {
+        "municipio": "SETE LAGOAS",
+        "revenda": "CANAAN POSTO E SERVICOS LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "02.677.398...",
         "gasolina": 5.87,
         "data_coleta": "2026-09-30"
       },
@@ -1598,14 +1598,6 @@
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "NOGUEIRA CASSARO COMERCIO VAREJISTA DE COMBUSTIVEIS E LUBRIFICANTES LTDA.",
-        "bandeira": "ROYAL FIC",
-        "cnpj_curto": "02.780.366...",
-        "gasolina": 6.15,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "CAMPO GRANDE",
         "revenda": "POSTO ACACIA LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "03.799.368...",
@@ -1614,10 +1606,10 @@
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "PETRORADIO COMERCIO DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "00.406.548...",
-        "gasolina": 6.19,
+        "revenda": "NOGUEIRA CASSARO COMERCIO VAREJISTA DE COMBUSTIVEIS E LUBRIFICANTES LTDA.",
+        "bandeira": "ROYAL FIC",
+        "cnpj_curto": "02.780.366...",
+        "gasolina": 6.15,
         "data_coleta": "2026-09-28"
       },
       {
@@ -1625,6 +1617,14 @@
         "revenda": "AUTO POSTO SAO JOSE LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "01.227.430...",
+        "gasolina": 6.19,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "CAMPO GRANDE",
+        "revenda": "PETRORADIO COMERCIO DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "00.406.548...",
         "gasolina": 6.19,
         "data_coleta": "2026-09-28"
       },
@@ -1638,14 +1638,6 @@
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "AUTO POSTO SHIMA LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "01.330.663...",
-        "gasolina": 6.25,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "CAMPO GRANDE",
         "revenda": "COMERCIO DE COMBUSTIVEIS CARAVAGIO LTDA",
         "bandeira": "VIBRA",
         "cnpj_curto": "03.113.246...",
@@ -1654,17 +1646,25 @@
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "POSTO GUENO LTDA",
+        "revenda": "AUTO POSTO SHIMA LTDA",
         "bandeira": "VIBRA",
-        "cnpj_curto": "03.024.296...",
+        "cnpj_curto": "01.330.663...",
+        "gasolina": 6.25,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "CAMPO GRANDE",
+        "revenda": "AUTO POSTO TIJUCA LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "01.793.768...",
         "gasolina": 6.29,
         "data_coleta": "2026-09-28"
       },
       {
         "municipio": "CAMPO GRANDE",
-        "revenda": "TROKAR POSTOS DE SERVICOS LTDA",
+        "revenda": "VITORIA COMERCIO E TRANSPORTES LTDA.",
         "bandeira": "VIBRA",
-        "cnpj_curto": "02.969.905...",
+        "cnpj_curto": "02.422.918...",
         "gasolina": 6.29,
         "data_coleta": "2026-09-28"
       }
@@ -1680,17 +1680,17 @@
       },
       {
         "municipio": "RONDONOPOLIS",
-        "revenda": "AUTO POSTO TRANSAMERICA LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "15.521.660...",
+        "revenda": "URSAO AUTO POSTO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "24.671.085...",
         "gasolina": 6.25,
         "data_coleta": "2026-09-29"
       },
       {
         "municipio": "RONDONOPOLIS",
-        "revenda": "URSAO AUTO POSTO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "24.671.085...",
+        "revenda": "AUTO POSTO TRANSAMERICA LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "15.521.660...",
         "gasolina": 6.25,
         "data_coleta": "2026-09-29"
       },
@@ -1712,19 +1712,19 @@
       },
       {
         "municipio": "RONDONOPOLIS",
-        "revenda": "C S M COMERCIO DERIVADOS DE PETROLEO LTDA",
-        "bandeira": "RAIZEN",
-        "cnpj_curto": "03.965.940...",
-        "gasolina": 6.45,
-        "data_coleta": "2026-09-29"
-      },
-      {
-        "municipio": "RONDONOPOLIS",
         "revenda": "COMERCIAL RIO BRANCO DE PETROLEO LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "07.703.199...",
         "gasolina": 6.45,
         "data_coleta": "2026-10-01"
+      },
+      {
+        "municipio": "RONDONOPOLIS",
+        "revenda": "AUTO POSTO FERNANDO CORREA DA COSTA LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "15.782.755...",
+        "gasolina": 6.45,
+        "data_coleta": "2026-09-29"
       },
       {
         "municipio": "RONDONOPOLIS",
@@ -1736,9 +1736,9 @@
       },
       {
         "municipio": "RONDONOPOLIS",
-        "revenda": "AUTO POSTO FERNANDO CORREA DA COSTA LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "15.782.755...",
+        "revenda": "C S M COMERCIO DERIVADOS DE PETROLEO LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "03.965.940...",
         "gasolina": 6.45,
         "data_coleta": "2026-09-29"
       },
@@ -1754,14 +1754,6 @@
     "PA": [
       {
         "municipio": "ANANINDEUA",
-        "revenda": "LORENA COMERCIO DE PRODUTOS DE PETROLEO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "06.266.344...",
-        "gasolina": 6.09,
-        "data_coleta": "2026-09-29"
-      },
-      {
-        "municipio": "ANANINDEUA",
         "revenda": "POSTO UBN LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "03.577.000...",
@@ -1786,10 +1778,10 @@
       },
       {
         "municipio": "ANANINDEUA",
-        "revenda": "AUTO POSTO PROVIDENCIA LTDA",
-        "bandeira": "ATEM' S",
-        "cnpj_curto": "05.907.707...",
-        "gasolina": 6.12,
+        "revenda": "LORENA COMERCIO DE PRODUTOS DE PETROLEO LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "06.266.344...",
+        "gasolina": 6.09,
         "data_coleta": "2026-09-29"
       },
       {
@@ -1802,9 +1794,9 @@
       },
       {
         "municipio": "ANANINDEUA",
-        "revenda": "POSTO EXEMPLO COMERCIO LTDA",
-        "bandeira": "IPIRANGA",
-        "cnpj_curto": "06.164.013...",
+        "revenda": "AUTO POSTO PROVIDENCIA LTDA",
+        "bandeira": "ATEM' S",
+        "cnpj_curto": "05.907.707...",
         "gasolina": 6.12,
         "data_coleta": "2026-09-29"
       },
@@ -1818,10 +1810,10 @@
       },
       {
         "municipio": "ANANINDEUA",
-        "revenda": "LIDER COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "SABBÁ",
-        "cnpj_curto": "17.403.053...",
-        "gasolina": 6.15,
+        "revenda": "POSTO EXEMPLO COMERCIO LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "06.164.013...",
+        "gasolina": 6.12,
         "data_coleta": "2026-09-29"
       },
       {
@@ -1831,22 +1823,30 @@
         "cnpj_curto": "01.497.008...",
         "gasolina": 6.15,
         "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "ANANINDEUA",
+        "revenda": "LIDER COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "SABBÁ",
+        "cnpj_curto": "17.403.053...",
+        "gasolina": 6.15,
+        "data_coleta": "2026-09-29"
       }
     ],
     "PR": [
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "G. DE CESARO & CIA LTDA.",
+        "revenda": "IDEAL GUAPO LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "07.940.812...",
+        "cnpj_curto": "03.626.094...",
         "gasolina": 5.59,
         "data_coleta": "2026-09-28"
       },
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "POSTO CALED LTDA.",
+        "revenda": "G. DE CESARO & CIA LTDA.",
         "bandeira": "BRANCA",
-        "cnpj_curto": "02.520.592...",
+        "cnpj_curto": "07.940.812...",
         "gasolina": 5.59,
         "data_coleta": "2026-09-28"
       },
@@ -1860,9 +1860,9 @@
       },
       {
         "municipio": "GUARAPUAVA",
-        "revenda": "IDEAL GUAPO LTDA",
+        "revenda": "POSTO CALED LTDA.",
         "bandeira": "BRANCA",
-        "cnpj_curto": "03.626.094...",
+        "cnpj_curto": "02.520.592...",
         "gasolina": 5.59,
         "data_coleta": "2026-09-28"
       },
@@ -1883,6 +1883,14 @@
         "data_coleta": "2026-09-28"
       },
       {
+        "municipio": "PONTA GROSSA",
+        "revenda": "AUTO POSTO PROGRESSO PONTA GROSSA LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "47.536.308...",
+        "gasolina": 5.89,
+        "data_coleta": "2026-10-01"
+      },
+      {
         "municipio": "GUARAPUAVA",
         "revenda": "FATIMA SANTA PICCINI EIRELI",
         "bandeira": "IDAZA",
@@ -1897,14 +1905,6 @@
         "cnpj_curto": "13.616.378...",
         "gasolina": 5.89,
         "data_coleta": "2026-10-02"
-      },
-      {
-        "municipio": "PONTA GROSSA",
-        "revenda": "AUTO POSTO PROGRESSO PONTA GROSSA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "47.536.308...",
-        "gasolina": 5.89,
-        "data_coleta": "2026-10-01"
       },
       {
         "municipio": "CAMPO MOURAO",
@@ -1965,14 +1965,6 @@
         "data_coleta": "2026-10-01"
       },
       {
-        "municipio": "RIO DE JANEIRO",
-        "revenda": "POSTO DE SERVICOS GEREMARIO DANTAS DE JACAREPAGUA LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "05.407.997...",
-        "gasolina": 6.28,
-        "data_coleta": "2026-09-28"
-      },
-      {
         "municipio": "SANTO ANTONIO DE PADUA",
         "revenda": "GNV PADUA COMERCIO DE COMBUSTIVEL LTDA",
         "bandeira": "BRANCA",
@@ -1981,20 +1973,28 @@
         "data_coleta": "2026-09-28"
       },
       {
-        "municipio": "NOVA IGUACU",
-        "revenda": "POSTO DE GASOLINA VIA LIGHT D IGUACU LTDA",
+        "municipio": "RIO DE JANEIRO",
+        "revenda": "POSTO DE SERVICOS GEREMARIO DANTAS DE JACAREPAGUA LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "02.754.990...",
-        "gasolina": 6.29,
-        "data_coleta": "2026-10-01"
+        "cnpj_curto": "05.407.997...",
+        "gasolina": 6.28,
+        "data_coleta": "2026-09-28"
       },
       {
-        "municipio": "BELFORD ROXO",
-        "revenda": "POSTO NOVO AMIGO LTDA",
-        "bandeira": "ALE",
-        "cnpj_curto": "02.181.025...",
+        "municipio": "SAO JOAO DE MERITI",
+        "revenda": "AUTO POSTO RODA VIVA DE SAO JOAO DE MERITI LTDA",
+        "bandeira": "IPIRANGA",
+        "cnpj_curto": "30.243.299...",
         "gasolina": 6.29,
-        "data_coleta": "2026-09-28"
+        "data_coleta": "2026-09-30"
+      },
+      {
+        "municipio": "SAO JOAO DE MERITI",
+        "revenda": "POSTO MERITI LTDA",
+        "bandeira": "RAIZEN",
+        "cnpj_curto": "31.916.802...",
+        "gasolina": 6.29,
+        "data_coleta": "2026-09-30"
       }
     ],
     "RO": [
@@ -2016,17 +2016,17 @@
       },
       {
         "municipio": "JI-PARANA",
-        "revenda": "VAREA COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "35.506.012...",
+        "revenda": "AUTO POSTO PATRAO COMERCIO DE COMBUSTIVEIS LTDA.",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "23.889.352...",
         "gasolina": 7.17,
         "data_coleta": "2026-09-28"
       },
       {
         "municipio": "JI-PARANA",
-        "revenda": "AUTO POSTO PATRAO COMERCIO DE COMBUSTIVEIS LTDA.",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "23.889.352...",
+        "revenda": "VAREA COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "35.506.012...",
         "gasolina": 7.17,
         "data_coleta": "2026-09-28"
       },
@@ -2037,30 +2037,6 @@
         "cnpj_curto": "03.604.591...",
         "gasolina": 7.18,
         "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "JI-PARANA",
-        "revenda": "KMR AUTO POSTO LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "04.796.015...",
-        "gasolina": 7.19,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "JI-PARANA",
-        "revenda": "MOURAO COMERCIO DE COMBUSTIVEIS LTDA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "33.601.891...",
-        "gasolina": 7.19,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "CACOAL",
-        "revenda": "A. DA SILVA SOUZA",
-        "bandeira": "VIBRA",
-        "cnpj_curto": "07.042.246...",
-        "gasolina": 7.19,
-        "data_coleta": "2026-09-29"
       },
       {
         "municipio": "JI-PARANA",
@@ -2077,6 +2053,30 @@
         "cnpj_curto": "11.719.998...",
         "gasolina": 7.19,
         "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "CACOAL",
+        "revenda": "A. DA SILVA SOUZA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "07.042.246...",
+        "gasolina": 7.19,
+        "data_coleta": "2026-09-29"
+      },
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "MOURAO COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "33.601.891...",
+        "gasolina": 7.19,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "JI-PARANA",
+        "revenda": "KMR AUTO POSTO LTDA",
+        "bandeira": "VIBRA",
+        "cnpj_curto": "04.796.015...",
+        "gasolina": 7.19,
+        "data_coleta": "2026-09-28"
       }
     ],
     "RS": [
@@ -2085,6 +2085,14 @@
         "revenda": "POSTO DE COMBUSTIVEIS ANDINO LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "93.013.845...",
+        "gasolina": 5.63,
+        "data_coleta": "2026-09-30"
+      },
+      {
+        "municipio": "PORTO ALEGRE",
+        "revenda": "J. C. BARCELLOS & CIA. LTDA.",
+        "bandeira": "RODOIL",
+        "cnpj_curto": "11.933.008...",
         "gasolina": 5.63,
         "data_coleta": "2026-09-30"
       },
@@ -2101,14 +2109,6 @@
         "revenda": "COMERCIAL DE COMBUSTIVEIS INTERCAP LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "08.597.984...",
-        "gasolina": 5.63,
-        "data_coleta": "2026-09-30"
-      },
-      {
-        "municipio": "PORTO ALEGRE",
-        "revenda": "J. C. BARCELLOS & CIA. LTDA.",
-        "bandeira": "RODOIL",
-        "cnpj_curto": "11.933.008...",
         "gasolina": 5.63,
         "data_coleta": "2026-09-30"
       },
@@ -2228,27 +2228,27 @@
       },
       {
         "municipio": "MAFRA",
-        "revenda": "IDEAL GUAPO LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "03.626.094...",
+        "revenda": "AUTO POSTO SAMPAIO COMERCIO DE COMBUSTIVEIS LTDA",
+        "bandeira": "STANG",
+        "cnpj_curto": "09.404.910...",
         "gasolina": 5.99,
         "data_coleta": "2026-09-29"
       },
       {
-        "municipio": "JOINVILLE",
-        "revenda": "POSTO DE COMBUSTIVEIS SINAL VERDE LTDA",
+        "municipio": "XANXERE",
+        "revenda": "AE COMERCIO DE COMBUSTIVEIS LTDA - ME",
         "bandeira": "BRANCA",
-        "cnpj_curto": "07.163.053...",
+        "cnpj_curto": "26.547.580...",
         "gasolina": 5.99,
-        "data_coleta": "2026-09-28"
+        "data_coleta": "2026-09-29"
       }
     ],
     "SP": [
       {
-        "municipio": "TAUBATE",
-        "revenda": "AUTO POSTO LINCE DO VALE LTDA",
+        "municipio": "SAO PAULO",
+        "revenda": "CENTRO AUTOMOTIVO CANTAREIRA LTDA.",
         "bandeira": "BRANCA",
-        "cnpj_curto": "27.017.843...",
+        "cnpj_curto": "02.862.678...",
         "gasolina": 5.49,
         "data_coleta": "2026-09-28"
       },
@@ -2261,11 +2261,19 @@
         "data_coleta": "2026-09-28"
       },
       {
-        "municipio": "SAO PAULO",
-        "revenda": "CENTRO AUTOMOTIVO CANTAREIRA LTDA.",
+        "municipio": "TAUBATE",
+        "revenda": "AUTO POSTO LINCE DO VALE LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "02.862.678...",
+        "cnpj_curto": "27.017.843...",
         "gasolina": 5.49,
+        "data_coleta": "2026-09-28"
+      },
+      {
+        "municipio": "PIRACICABA",
+        "revenda": "AUTO POSTO ROLADOR LTDA",
+        "bandeira": "BRANCA",
+        "cnpj_curto": "00.879.335...",
+        "gasolina": 5.59,
         "data_coleta": "2026-09-28"
       },
       {
@@ -2281,14 +2289,6 @@
         "revenda": "AUTO POSTO BENEDETTI DE MARILIA LTDA",
         "bandeira": "BRANCA",
         "cnpj_curto": "56.135.731...",
-        "gasolina": 5.59,
-        "data_coleta": "2026-09-28"
-      },
-      {
-        "municipio": "PIRACICABA",
-        "revenda": "AUTO POSTO ROLADOR LTDA",
-        "bandeira": "BRANCA",
-        "cnpj_curto": "00.879.335...",
         "gasolina": 5.59,
         "data_coleta": "2026-09-28"
       },
@@ -2309,20 +2309,20 @@
         "data_coleta": "2026-09-29"
       },
       {
-        "municipio": "TAUBATE",
-        "revenda": "AUTO POSTO F3 LTDA",
+        "municipio": "SAO PAULO",
+        "revenda": "CENTRO AUTOMOTIVO PORTAL DO LITORAL LTDA.",
         "bandeira": "BRANCA",
-        "cnpj_curto": "12.194.868...",
+        "cnpj_curto": "06.106.738...",
         "gasolina": 5.69,
         "data_coleta": "2026-09-28"
       },
       {
-        "municipio": "AVARE",
-        "revenda": "FELIX FAGUNDES POSTO AUTOMOTIVO LTDA",
+        "municipio": "SAO PAULO",
+        "revenda": "MARANELLO - COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA",
         "bandeira": "BRANCA",
-        "cnpj_curto": "14.929.417...",
+        "cnpj_curto": "10.945.290...",
         "gasolina": 5.69,
-        "data_coleta": "2026-09-30"
+        "data_coleta": "2026-09-28"
       }
     ]
   },
