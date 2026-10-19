@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "19/10/2026, 10:22:45",
+  "atualizado_em": "19/10/2026, 10:35:53",
   "semana_referencia": "2026-10-09",
   "distribuicao_ultima_data": "2026-10-19",
   "volumes": {
@@ -717,34 +717,34 @@
       "n_cotacoes": 13,
       "n_distribuidoras": 13,
       "data_ref": "2026-10-19T00:00:00.000Z",
-      "gasolina": 5.218,
-      "etanol": 3.165,
-      "s10": 6.915,
-      "s500": 6.727,
+      "gasolina": 5.208,
+      "etanol": 3.164,
+      "s10": 6.904,
+      "s500": 6.709,
       "margem": {
         "gasolina": {
           "revenda": 6.919,
-          "distribuicao": 5.218,
-          "margem_rs": 1.701,
-          "margem_pct": 32.6
+          "distribuicao": 5.208,
+          "margem_rs": 1.711,
+          "margem_pct": 32.85
         },
         "etanol": {
           "revenda": 4.143,
-          "distribuicao": 3.165,
-          "margem_rs": 0.978,
-          "margem_pct": 30.9
+          "distribuicao": 3.164,
+          "margem_rs": 0.979,
+          "margem_pct": 30.94
         },
         "s10": {
           "revenda": 7.711,
-          "distribuicao": 6.915,
-          "margem_rs": 0.796,
-          "margem_pct": 11.51
+          "distribuicao": 6.904,
+          "margem_rs": 0.807,
+          "margem_pct": 11.69
         },
         "s500": {
           "revenda": 7.266,
-          "distribuicao": 6.727,
-          "margem_rs": 0.539,
-          "margem_pct": 8.01
+          "distribuicao": 6.709,
+          "margem_rs": 0.557,
+          "margem_pct": 8.3
         }
       }
     },
@@ -1003,9 +1003,9 @@
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
       "gasolina": 5.35,
-      "etanol": null,
-      "s10": 6.85,
-      "s500": 6.85,
+      "etanol": 3.16,
+      "s10": 6.7,
+      "s500": 6.65,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-19"
@@ -1026,7 +1026,7 @@
       "estado": "MT",
       "distribuidora": "Watt",
       "cidade": "Cuiaba",
-      "gasolina": 5.25,
+      "gasolina": 5.13,
       "etanol": 3.15,
       "s10": 6.99,
       "s500": 6.39,
