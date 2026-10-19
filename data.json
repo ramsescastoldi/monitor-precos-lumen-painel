@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "19/10/2026, 11:00:14",
+  "atualizado_em": "19/10/2026, 11:04:35",
   "semana_referencia": "2026-10-09",
   "distribuicao_ultima_data": "2026-10-19",
   "volumes": {
@@ -673,7 +673,7 @@
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
       "data_ref": "2026-10-19T00:00:00.000Z",
-      "gasolina": 5.21,
+      "gasolina": 5.1,
       "etanol": 3.09,
       "s10": null,
       "s500": null
@@ -858,7 +858,7 @@
       "estado": "M",
       "distribuidora": "Nexta",
       "cidade": "Varzea Grande",
-      "gasolina": 5.21,
+      "gasolina": 5.1,
       "etanol": 3.09,
       "s10": null,
       "s500": null,
