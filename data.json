@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "19/10/2026, 10:35:53",
+  "atualizado_em": "19/10/2026, 10:41:52",
   "semana_referencia": "2026-10-09",
   "distribuicao_ultima_data": "2026-10-19",
   "volumes": {
@@ -718,9 +718,9 @@
       "n_distribuidoras": 13,
       "data_ref": "2026-10-19T00:00:00.000Z",
       "gasolina": 5.208,
-      "etanol": 3.164,
-      "s10": 6.904,
-      "s500": 6.709,
+      "etanol": 3.17,
+      "s10": 6.872,
+      "s500": 6.703,
       "margem": {
         "gasolina": {
           "revenda": 6.919,
@@ -730,21 +730,21 @@
         },
         "etanol": {
           "revenda": 4.143,
-          "distribuicao": 3.164,
-          "margem_rs": 0.979,
-          "margem_pct": 30.94
+          "distribuicao": 3.17,
+          "margem_rs": 0.973,
+          "margem_pct": 30.69
         },
         "s10": {
           "revenda": 7.711,
-          "distribuicao": 6.904,
-          "margem_rs": 0.807,
-          "margem_pct": 11.69
+          "distribuicao": 6.872,
+          "margem_rs": 0.839,
+          "margem_pct": 12.21
         },
         "s500": {
           "revenda": 7.266,
-          "distribuicao": 6.709,
-          "margem_rs": 0.557,
-          "margem_pct": 8.3
+          "distribuicao": 6.703,
+          "margem_rs": 0.563,
+          "margem_pct": 8.4
         }
       }
     },
@@ -907,9 +907,9 @@
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
       "gasolina": 5.2,
-      "etanol": null,
-      "s10": 7.08,
-      "s500": 6.97,
+      "etanol": 3.22,
+      "s10": 6.9,
+      "s500": 6.9,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-19"
@@ -1028,7 +1028,7 @@
       "cidade": "Cuiaba",
       "gasolina": 5.13,
       "etanol": 3.15,
-      "s10": 6.99,
+      "s10": 6.76,
       "s500": 6.39,
       "modalidade": "Retira",
       "observacoes": null,
