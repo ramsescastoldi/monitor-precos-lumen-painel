@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "19/10/2026, 11:04:35",
+  "atualizado_em": "19/10/2026, 11:15:42",
   "semana_referencia": "2026-10-09",
   "distribuicao_ultima_data": "2026-10-19",
   "volumes": {
@@ -714,37 +714,37 @@
       }
     },
     "MT": {
-      "n_cotacoes": 13,
-      "n_distribuidoras": 13,
+      "n_cotacoes": 14,
+      "n_distribuidoras": 14,
       "data_ref": "2026-10-19T00:00:00.000Z",
-      "gasolina": 5.185,
-      "etanol": 3.199,
-      "s10": 6.732,
-      "s500": 6.699,
+      "gasolina": 5.187,
+      "etanol": 3.201,
+      "s10": 6.734,
+      "s500": 6.704,
       "margem": {
         "gasolina": {
           "revenda": 6.919,
-          "distribuicao": 5.185,
-          "margem_rs": 1.734,
-          "margem_pct": 33.44
+          "distribuicao": 5.187,
+          "margem_rs": 1.732,
+          "margem_pct": 33.39
         },
         "etanol": {
           "revenda": 4.143,
-          "distribuicao": 3.199,
-          "margem_rs": 0.944,
-          "margem_pct": 29.51
+          "distribuicao": 3.201,
+          "margem_rs": 0.942,
+          "margem_pct": 29.43
         },
         "s10": {
           "revenda": 7.711,
-          "distribuicao": 6.732,
-          "margem_rs": 0.979,
-          "margem_pct": 14.54
+          "distribuicao": 6.734,
+          "margem_rs": 0.977,
+          "margem_pct": 14.51
         },
         "s500": {
           "revenda": 7.266,
-          "distribuicao": 6.699,
-          "margem_rs": 0.567,
-          "margem_pct": 8.46
+          "distribuicao": 6.704,
+          "margem_rs": 0.562,
+          "margem_pct": 8.38
         }
       }
     },
@@ -910,6 +910,18 @@
       "etanol": 3.22,
       "s10": 6.75,
       "s500": 6.7,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-10-19"
+    },
+    {
+      "estado": "MT",
+      "distribuidora": "Ciapetro",
+      "cidade": "Varzea Grande",
+      "gasolina": 5.2,
+      "etanol": 3.22,
+      "s10": 6.75,
+      "s500": 6.75,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-19"
