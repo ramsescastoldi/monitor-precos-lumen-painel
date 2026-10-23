@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "23/10/2026, 10:39:52",
+  "atualizado_em": "23/10/2026, 10:56:23",
   "semana_referencia": "2026-10-17",
   "distribuicao_ultima_data": "2026-10-23",
   "volumes": {
@@ -711,9 +711,9 @@
     "M": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-10-19T00:00:00.000Z",
+      "data_ref": "2026-10-23T00:00:00.000Z",
       "gasolina": 5.1,
-      "etanol": 3.09,
+      "etanol": null,
       "s10": null,
       "s500": null
     },
@@ -756,16 +756,16 @@
       "n_cotacoes": 13,
       "n_distribuidoras": 13,
       "data_ref": "2026-10-23T00:00:00.000Z",
-      "gasolina": 5.25,
+      "gasolina": 5.244,
       "etanol": 3.199,
-      "s10": 6.64,
-      "s500": 6.597,
+      "s10": 6.632,
+      "s500": 6.586,
       "margem": {
         "gasolina": {
           "revenda": 6.855,
-          "distribuicao": 5.25,
-          "margem_rs": 1.605,
-          "margem_pct": 30.57
+          "distribuicao": 5.244,
+          "margem_rs": 1.611,
+          "margem_pct": 30.72
         },
         "etanol": {
           "revenda": 4.08,
@@ -775,15 +775,15 @@
         },
         "s10": {
           "revenda": 7.701,
-          "distribuicao": 6.64,
-          "margem_rs": 1.061,
-          "margem_pct": 15.98
+          "distribuicao": 6.632,
+          "margem_rs": 1.069,
+          "margem_pct": 16.12
         },
         "s500": {
           "revenda": 7.291,
-          "distribuicao": 6.597,
-          "margem_rs": 0.694,
-          "margem_pct": 10.52
+          "distribuicao": 6.586,
+          "margem_rs": 0.705,
+          "margem_pct": 10.7
         }
       }
     },
@@ -1020,12 +1020,12 @@
       "distribuidora": "Nexta",
       "cidade": "Varzea Grande",
       "gasolina": 5.1,
-      "etanol": 3.09,
+      "etanol": null,
       "s10": null,
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-19"
+      "data_coleta": "2026-10-23"
     },
     {
       "estado": "MG",
@@ -1211,13 +1211,13 @@
       "estado": "MT",
       "distribuidora": "WK distribuidora",
       "cidade": "Varzea Grande",
-      "gasolina": 5.15,
+      "gasolina": 5.08,
       "etanol": null,
-      "s10": 6.64,
-      "s500": 6.7,
+      "s10": 6.53,
+      "s500": 6.57,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-19"
+      "data_coleta": "2026-10-23"
     },
     {
       "estado": "PA",
