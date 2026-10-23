@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "23/10/2026, 09:09:24",
+  "atualizado_em": "23/10/2026, 09:15:21",
   "semana_referencia": "2026-10-17",
   "distribuicao_ultima_data": "2026-10-23",
   "volumes": {
@@ -787,6 +787,31 @@
         }
       }
     },
+    "PA": {
+      "n_cotacoes": 1,
+      "n_distribuidoras": 1,
+      "data_ref": "2026-10-23T00:00:00.000Z",
+      "gasolina": null,
+      "etanol": null,
+      "s10": 6.49,
+      "s500": 6.8,
+      "margem": {
+        "gasolina": null,
+        "etanol": null,
+        "s10": {
+          "revenda": 7.516,
+          "distribuicao": 6.49,
+          "margem_rs": 1.026,
+          "margem_pct": 15.81
+        },
+        "s500": {
+          "revenda": 7.494,
+          "distribuicao": 6.8,
+          "margem_rs": 0.694,
+          "margem_pct": 10.21
+        }
+      }
+    },
     "PR": {
       "n_cotacoes": 4,
       "n_distribuidoras": 4,
@@ -902,7 +927,7 @@
       "etanol": 4.06,
       "s10": 7.15,
       "s500": 6.99,
-      "modalidade": null,
+      "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-23"
     },
@@ -1205,6 +1230,18 @@
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-19"
+    },
+    {
+      "estado": "PA",
+      "distribuidora": "Equador",
+      "cidade": "Itaituba",
+      "gasolina": null,
+      "etanol": null,
+      "s10": 6.49,
+      "s500": 6.8,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-10-23"
     },
     {
       "estado": "PR",
