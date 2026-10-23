@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "22/10/2026, 15:37:02",
+  "atualizado_em": "23/10/2026, 09:09:24",
   "semana_referencia": "2026-10-17",
-  "distribuicao_ultima_data": "2026-10-20",
+  "distribuicao_ultima_data": "2026-10-23",
   "volumes": {
     "mes_referencia": "set/2026",
     "periodo_iso": "2026-09",
@@ -634,6 +634,15 @@
     }
   },
   "distribuicao_estado": {
+    "AC": {
+      "n_cotacoes": 1,
+      "n_distribuidoras": 1,
+      "data_ref": "2026-10-23T00:00:00.000Z",
+      "gasolina": 6.2,
+      "etanol": 4.06,
+      "s10": 7.15,
+      "s500": 6.99
+    },
     "BA": {
       "n_cotacoes": 2,
       "n_distribuidoras": 1,
@@ -814,23 +823,38 @@
       }
     },
     "RO": {
-      "n_cotacoes": 1,
-      "n_distribuidoras": 1,
-      "data_ref": "2026-10-14T00:00:00.000Z",
-      "gasolina": null,
-      "etanol": null,
-      "s10": 6.65,
-      "s500": null,
+      "n_cotacoes": 2,
+      "n_distribuidoras": 2,
+      "data_ref": "2026-10-23T00:00:00.000Z",
+      "gasolina": 5.95,
+      "etanol": 3.85,
+      "s10": 6.725,
+      "s500": 6.38,
       "margem": {
-        "gasolina": null,
-        "etanol": null,
+        "gasolina": {
+          "revenda": 7.406,
+          "distribuicao": 5.95,
+          "margem_rs": 1.456,
+          "margem_pct": 24.47
+        },
+        "etanol": {
+          "revenda": 5.172,
+          "distribuicao": 3.85,
+          "margem_rs": 1.322,
+          "margem_pct": 34.34
+        },
         "s10": {
           "revenda": 7.559,
-          "distribuicao": 6.65,
-          "margem_rs": 0.909,
-          "margem_pct": 13.67
+          "distribuicao": 6.725,
+          "margem_rs": 0.834,
+          "margem_pct": 12.4
         },
-        "s500": null
+        "s500": {
+          "revenda": 7.37,
+          "distribuicao": 6.38,
+          "margem_rs": 0.99,
+          "margem_pct": 15.52
+        }
       }
     },
     "SP": {
@@ -870,6 +894,18 @@
     }
   },
   "distribuidoras_detalhe": [
+    {
+      "estado": "AC",
+      "distribuidora": "Equador",
+      "cidade": "Rio branco",
+      "gasolina": 6.2,
+      "etanol": 4.06,
+      "s10": 7.15,
+      "s500": 6.99,
+      "modalidade": null,
+      "observacoes": null,
+      "data_coleta": "2026-10-23"
+    },
     {
       "estado": "BA",
       "distribuidora": "Royal Fic",
@@ -1217,6 +1253,18 @@
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-20"
+    },
+    {
+      "estado": "RO",
+      "distribuidora": "Equador",
+      "cidade": "Porto Velho",
+      "gasolina": 5.95,
+      "etanol": 3.85,
+      "s10": 6.8,
+      "s500": 6.38,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-10-23"
     },
     {
       "estado": "RO",
