@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "26/10/2026, 08:42:57",
+  "atualizado_em": "26/10/2026, 11:29:59",
   "semana_referencia": "2026-10-17",
-  "distribuicao_ultima_data": "2026-10-23",
+  "distribuicao_ultima_data": "2026-10-26",
   "volumes": {
     "mes_referencia": "set/2026",
     "periodo_iso": "2026-09",
@@ -755,35 +755,35 @@
     "MT": {
       "n_cotacoes": 14,
       "n_distribuidoras": 14,
-      "data_ref": "2026-10-23T00:00:00.000Z",
-      "gasolina": 5.234,
-      "etanol": 3.199,
-      "s10": 6.604,
-      "s500": 6.593,
+      "data_ref": "2026-10-26T00:00:00.000Z",
+      "gasolina": 5.231,
+      "etanol": 3.206,
+      "s10": 6.613,
+      "s500": 6.616,
       "margem": {
         "gasolina": {
           "revenda": 6.855,
-          "distribuicao": 5.234,
-          "margem_rs": 1.621,
-          "margem_pct": 30.97
+          "distribuicao": 5.231,
+          "margem_rs": 1.624,
+          "margem_pct": 31.05
         },
         "etanol": {
           "revenda": 4.08,
-          "distribuicao": 3.199,
-          "margem_rs": 0.881,
-          "margem_pct": 27.54
+          "distribuicao": 3.206,
+          "margem_rs": 0.874,
+          "margem_pct": 27.26
         },
         "s10": {
           "revenda": 7.701,
-          "distribuicao": 6.604,
-          "margem_rs": 1.097,
-          "margem_pct": 16.61
+          "distribuicao": 6.613,
+          "margem_rs": 1.088,
+          "margem_pct": 16.45
         },
         "s500": {
           "revenda": 7.291,
-          "distribuicao": 6.593,
-          "margem_rs": 0.698,
-          "margem_pct": 10.59
+          "distribuicao": 6.616,
+          "margem_rs": 0.675,
+          "margem_pct": 10.2
         }
       }
     },
@@ -1073,7 +1073,7 @@
       "s500": 6.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1091,13 +1091,13 @@
       "estado": "MT",
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
-      "gasolina": null,
+      "gasolina": 5.19,
       "etanol": 3.22,
-      "s10": 6.67,
+      "s10": 6.65,
       "s500": 6.69,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1109,7 +1109,7 @@
       "s500": 6.58,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1121,7 +1121,7 @@
       "s500": 6.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1133,7 +1133,7 @@
       "s500": 6.5,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1151,13 +1151,13 @@
       "estado": "MT",
       "distribuidora": "On Petro",
       "cidade": "Cuiaba",
-      "gasolina": 5.14,
-      "etanol": 3.2,
-      "s10": 6.59,
-      "s500": 6.62,
+      "gasolina": 5.15,
+      "etanol": 3.29,
+      "s10": 6.73,
+      "s500": 6.72,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1169,7 +1169,7 @@
       "s500": 6.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1178,10 +1178,10 @@
       "gasolina": 5.35,
       "etanol": 3.19,
       "s10": 6.5,
-      "s500": 6.6,
+      "s500": 6.8,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1193,7 +1193,7 @@
       "s500": 6.7,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1217,7 +1217,7 @@
       "s500": 6.54,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "MT",
@@ -1229,7 +1229,7 @@
       "s500": 6.57,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-26"
     },
     {
       "estado": "PA",
