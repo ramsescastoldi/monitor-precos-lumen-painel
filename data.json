@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "26/10/2026, 11:29:59",
+  "atualizado_em": "26/10/2026, 11:34:29",
   "semana_referencia": "2026-10-17",
   "distribuicao_ultima_data": "2026-10-26",
   "volumes": {
@@ -757,9 +757,9 @@
       "n_distribuidoras": 14,
       "data_ref": "2026-10-26T00:00:00.000Z",
       "gasolina": 5.231,
-      "etanol": 3.206,
-      "s10": 6.613,
-      "s500": 6.616,
+      "etanol": 3.209,
+      "s10": 6.6,
+      "s500": 6.628,
       "margem": {
         "gasolina": {
           "revenda": 6.855,
@@ -769,21 +769,21 @@
         },
         "etanol": {
           "revenda": 4.08,
-          "distribuicao": 3.206,
-          "margem_rs": 0.874,
-          "margem_pct": 27.26
+          "distribuicao": 3.209,
+          "margem_rs": 0.871,
+          "margem_pct": 27.14
         },
         "s10": {
           "revenda": 7.701,
-          "distribuicao": 6.613,
-          "margem_rs": 1.088,
-          "margem_pct": 16.45
+          "distribuicao": 6.6,
+          "margem_rs": 1.101,
+          "margem_pct": 16.68
         },
         "s500": {
           "revenda": 7.291,
-          "distribuicao": 6.616,
-          "margem_rs": 0.675,
-          "margem_pct": 10.2
+          "distribuicao": 6.628,
+          "margem_rs": 0.663,
+          "margem_pct": 10
         }
       }
     },
@@ -1103,9 +1103,9 @@
       "estado": "MT",
       "distribuidora": "Equador",
       "cidade": "Varzea Grande",
-      "gasolina": 5.2,
+      "gasolina": 5.15,
       "etanol": 3.17,
-      "s10": 6.68,
+      "s10": 6.55,
       "s500": 6.58,
       "modalidade": "Retira",
       "observacoes": null,
@@ -1128,9 +1128,9 @@
       "distribuidora": "Imperial Petroleo",
       "cidade": "Varzea Grande",
       "gasolina": 5.1,
-      "etanol": 3.17,
-      "s10": 6.5,
-      "s500": 6.5,
+      "etanol": 3.19,
+      "s10": 6.45,
+      "s500": 6.55,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-26"
@@ -1187,10 +1187,10 @@
       "estado": "MT",
       "distribuidora": "Setta",
       "cidade": "Cuiaba",
-      "gasolina": 5.11,
-      "etanol": 3.2,
+      "gasolina": 5.15,
+      "etanol": 3.22,
       "s10": 6.5,
-      "s500": 6.7,
+      "s500": 6.8,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-10-26"
