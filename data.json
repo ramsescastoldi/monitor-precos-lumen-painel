@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "27/10/2026, 09:54:35",
+  "atualizado_em": "27/10/2026, 10:03:36",
   "semana_referencia": "2026-10-17",
   "distribuicao_ultima_data": "2026-10-27",
   "volumes": {
@@ -806,11 +806,11 @@
     "PR": {
       "n_cotacoes": 4,
       "n_distribuidoras": 4,
-      "data_ref": "2026-10-23T00:00:00.000Z",
+      "data_ref": "2026-10-27T00:00:00.000Z",
       "gasolina": 5.04,
       "etanol": 3.625,
       "s10": 6.367,
-      "s500": 6.23,
+      "s500": 6.267,
       "margem": {
         "gasolina": {
           "revenda": 6.536,
@@ -832,9 +832,9 @@
         },
         "s500": {
           "revenda": 6.917,
-          "distribuicao": 6.23,
-          "margem_rs": 0.687,
-          "margem_pct": 11.03
+          "distribuicao": 6.267,
+          "margem_rs": 0.65,
+          "margem_pct": 10.37
         }
       }
     },
@@ -876,11 +876,11 @@
     "SP": {
       "n_cotacoes": 4,
       "n_distribuidoras": 4,
-      "data_ref": "2026-10-23T00:00:00.000Z",
+      "data_ref": "2026-10-27T00:00:00.000Z",
       "gasolina": 5.017,
       "etanol": 3.47,
-      "s10": 6.325,
-      "s500": 6.23,
+      "s10": 6.298,
+      "s500": 6.203,
       "margem": {
         "gasolina": {
           "revenda": 6.386,
@@ -896,15 +896,15 @@
         },
         "s10": {
           "revenda": 7.341,
-          "distribuicao": 6.325,
-          "margem_rs": 1.016,
-          "margem_pct": 16.06
+          "distribuicao": 6.298,
+          "margem_rs": 1.043,
+          "margem_pct": 16.56
         },
         "s500": {
           "revenda": 6.964,
-          "distribuicao": 6.23,
-          "margem_rs": 0.734,
-          "margem_pct": 11.78
+          "distribuicao": 6.203,
+          "margem_rs": 0.761,
+          "margem_pct": 12.27
         }
       }
     }
@@ -1265,10 +1265,10 @@
       "gasolina": null,
       "etanol": null,
       "s10": 6.35,
-      "s500": null,
+      "s500": 6.34,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-27"
     },
     {
       "estado": "PR",
@@ -1324,11 +1324,11 @@
       "cidade": "Paulinia",
       "gasolina": null,
       "etanol": null,
-      "s10": 6.37,
-      "s500": 6.38,
+      "s10": 6.26,
+      "s500": 6.27,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-10-23"
+      "data_coleta": "2026-10-27"
     },
     {
       "estado": "SP",
