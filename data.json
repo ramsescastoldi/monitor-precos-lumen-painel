@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "09/11/2026, 14:28:08",
+  "atualizado_em": "09/11/2026, 14:32:39",
   "semana_referencia": "2026-10-30",
   "distribuicao_ultima_data": "2026-11-09",
   "volumes": {
@@ -708,34 +708,34 @@
       "n_cotacoes": 13,
       "n_distribuidoras": 13,
       "data_ref": "2026-11-09T00:00:00.000Z",
-      "gasolina": 5.208,
-      "etanol": 3.268,
-      "s10": 6.498,
-      "s500": 6.526,
+      "gasolina": 5.212,
+      "etanol": 3.273,
+      "s10": 6.481,
+      "s500": 6.517,
       "margem": {
         "gasolina": {
           "revenda": 6.746,
-          "distribuicao": 5.208,
-          "margem_rs": 1.538,
-          "margem_pct": 29.53
+          "distribuicao": 5.212,
+          "margem_rs": 1.534,
+          "margem_pct": 29.43
         },
         "etanol": {
           "revenda": 4.06,
-          "distribuicao": 3.268,
-          "margem_rs": 0.792,
-          "margem_pct": 24.24
+          "distribuicao": 3.273,
+          "margem_rs": 0.787,
+          "margem_pct": 24.05
         },
         "s10": {
           "revenda": 7.634,
-          "distribuicao": 6.498,
-          "margem_rs": 1.136,
-          "margem_pct": 17.48
+          "distribuicao": 6.481,
+          "margem_rs": 1.153,
+          "margem_pct": 17.79
         },
         "s500": {
           "revenda": 7.288,
-          "distribuicao": 6.526,
-          "margem_rs": 0.762,
-          "margem_pct": 11.68
+          "distribuicao": 6.517,
+          "margem_rs": 0.771,
+          "margem_pct": 11.83
         }
       }
     },
@@ -882,10 +882,10 @@
       "estado": "MT",
       "distribuidora": "Ciapetro",
       "cidade": "Varzea Grande",
-      "gasolina": 5.2,
-      "etanol": 3.22,
-      "s10": 6.6,
-      "s500": 6.6,
+      "gasolina": 5.25,
+      "etanol": 3.27,
+      "s10": 6.4,
+      "s500": 6.5,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-11-04"
