@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "09/11/2026, 15:00:44",
+  "atualizado_em": "09/11/2026, 16:11:44",
   "semana_referencia": "2026-10-30",
   "distribuicao_ultima_data": "2026-11-09",
   "volumes": {
@@ -717,34 +717,34 @@
       "n_cotacoes": 13,
       "n_distribuidoras": 13,
       "data_ref": "2026-11-09T00:00:00.000Z",
-      "gasolina": 5.207,
-      "etanol": 3.28,
-      "s10": 6.474,
-      "s500": 6.519,
+      "gasolina": 5.213,
+      "etanol": 3.288,
+      "s10": 6.458,
+      "s500": 6.508,
       "margem": {
         "gasolina": {
           "revenda": 6.746,
-          "distribuicao": 5.207,
-          "margem_rs": 1.539,
-          "margem_pct": 29.56
+          "distribuicao": 5.213,
+          "margem_rs": 1.533,
+          "margem_pct": 29.41
         },
         "etanol": {
           "revenda": 4.06,
-          "distribuicao": 3.28,
-          "margem_rs": 0.78,
-          "margem_pct": 23.78
+          "distribuicao": 3.288,
+          "margem_rs": 0.772,
+          "margem_pct": 23.48
         },
         "s10": {
           "revenda": 7.634,
-          "distribuicao": 6.474,
-          "margem_rs": 1.16,
-          "margem_pct": 17.92
+          "distribuicao": 6.458,
+          "margem_rs": 1.176,
+          "margem_pct": 18.21
         },
         "s500": {
           "revenda": 7.288,
-          "distribuicao": 6.519,
-          "margem_rs": 0.769,
-          "margem_pct": 11.8
+          "distribuicao": 6.508,
+          "margem_rs": 0.78,
+          "margem_pct": 11.99
         }
       }
     },
@@ -999,10 +999,10 @@
       "estado": "MT",
       "distribuidora": "Setta",
       "cidade": "Cuiaba",
-      "gasolina": 5.18,
-      "etanol": 3.25,
-      "s10": 6.5,
-      "s500": 6.6,
+      "gasolina": 5.25,
+      "etanol": 3.35,
+      "s10": 6.3,
+      "s500": 6.48,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-11-09"
