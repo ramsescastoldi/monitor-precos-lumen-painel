@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "10/11/2026, 09:38:31",
+  "atualizado_em": "10/11/2026, 10:12:32",
   "semana_referencia": "2026-10-30",
   "distribuicao_ultima_data": "2026-11-10",
   "volumes": {
@@ -635,25 +635,25 @@
   },
   "distribuicao_estado": {
     "GO": {
-      "n_cotacoes": 3,
-      "n_distribuidoras": 3,
+      "n_cotacoes": 4,
+      "n_distribuidoras": 4,
       "data_ref": "2026-11-10T00:00:00.000Z",
-      "gasolina": 5.303,
-      "etanol": 3.37,
+      "gasolina": 5.278,
+      "etanol": 3.368,
       "s10": 6.303,
-      "s500": 6.535,
+      "s500": 6.523,
       "margem": {
         "gasolina": {
           "revenda": 6.314,
-          "distribuicao": 5.303,
-          "margem_rs": 1.011,
-          "margem_pct": 19.06
+          "distribuicao": 5.278,
+          "margem_rs": 1.036,
+          "margem_pct": 19.63
         },
         "etanol": {
           "revenda": 3.961,
-          "distribuicao": 3.37,
-          "margem_rs": 0.591,
-          "margem_pct": 17.54
+          "distribuicao": 3.368,
+          "margem_rs": 0.593,
+          "margem_pct": 17.61
         },
         "s10": {
           "revenda": 7.254,
@@ -663,9 +663,9 @@
         },
         "s500": {
           "revenda": 6.896,
-          "distribuicao": 6.535,
-          "margem_rs": 0.361,
-          "margem_pct": 5.52
+          "distribuicao": 6.523,
+          "margem_rs": 0.373,
+          "margem_pct": 5.72
         }
       }
     },
@@ -717,34 +717,34 @@
       "n_cotacoes": 13,
       "n_distribuidoras": 13,
       "data_ref": "2026-11-10T00:00:00.000Z",
-      "gasolina": 5.204,
-      "etanol": 3.294,
-      "s10": 6.453,
-      "s500": 6.493,
+      "gasolina": 5.214,
+      "etanol": 3.305,
+      "s10": 6.42,
+      "s500": 6.484,
       "margem": {
         "gasolina": {
           "revenda": 6.746,
-          "distribuicao": 5.204,
-          "margem_rs": 1.542,
-          "margem_pct": 29.63
+          "distribuicao": 5.214,
+          "margem_rs": 1.532,
+          "margem_pct": 29.38
         },
         "etanol": {
           "revenda": 4.06,
-          "distribuicao": 3.294,
-          "margem_rs": 0.766,
-          "margem_pct": 23.25
+          "distribuicao": 3.305,
+          "margem_rs": 0.755,
+          "margem_pct": 22.84
         },
         "s10": {
           "revenda": 7.634,
-          "distribuicao": 6.453,
-          "margem_rs": 1.181,
-          "margem_pct": 18.3
+          "distribuicao": 6.42,
+          "margem_rs": 1.214,
+          "margem_pct": 18.91
         },
         "s500": {
           "revenda": 7.288,
-          "distribuicao": 6.493,
-          "margem_rs": 0.795,
-          "margem_pct": 12.24
+          "distribuicao": 6.484,
+          "margem_rs": 0.804,
+          "margem_pct": 12.4
         }
       }
     },
@@ -852,6 +852,18 @@
       "data_coleta": "2026-11-10"
     },
     {
+      "estado": "GO",
+      "distribuidora": "Rodoil",
+      "cidade": "Senador Canedo",
+      "gasolina": 5.2,
+      "etanol": 3.36,
+      "s10": 6.3,
+      "s500": 6.5,
+      "modalidade": "Retira",
+      "observacoes": null,
+      "data_coleta": "2026-11-10"
+    },
+    {
       "estado": "M",
       "distribuidora": "Nexta",
       "cidade": "Varzea Grande",
@@ -915,13 +927,13 @@
       "estado": "MT",
       "distribuidora": "Eco diesel",
       "cidade": "Cuiaba",
-      "gasolina": 5.18,
-      "etanol": 3.27,
-      "s10": 6.6,
-      "s500": 6.65,
+      "gasolina": 5.3,
+      "etanol": 3.4,
+      "s10": 6.35,
+      "s500": 6.55,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-09"
+      "data_coleta": "2026-11-10"
     },
     {
       "estado": "MT",
@@ -1037,7 +1049,7 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.15,
       "etanol": null,
-      "s10": 6.45,
+      "s10": 6.3,
       "s500": 6.35,
       "modalidade": "Retira",
       "observacoes": null,
