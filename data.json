@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "10/11/2026, 09:26:17",
+  "atualizado_em": "10/11/2026, 09:38:31",
   "semana_referencia": "2026-10-30",
   "distribuicao_ultima_data": "2026-11-10",
   "volumes": {
@@ -718,7 +718,7 @@
       "n_distribuidoras": 13,
       "data_ref": "2026-11-10T00:00:00.000Z",
       "gasolina": 5.204,
-      "etanol": 3.288,
+      "etanol": 3.294,
       "s10": 6.453,
       "s500": 6.493,
       "margem": {
@@ -730,9 +730,9 @@
         },
         "etanol": {
           "revenda": 4.06,
-          "distribuicao": 3.288,
-          "margem_rs": 0.772,
-          "margem_pct": 23.48
+          "distribuicao": 3.294,
+          "margem_rs": 0.766,
+          "margem_pct": 23.25
         },
         "s10": {
           "revenda": 7.634,
@@ -1012,7 +1012,7 @@
       "distribuidora": "Viva",
       "cidade": "Varzea Grande",
       "gasolina": null,
-      "etanol": 3.25,
+      "etanol": 3.33,
       "s10": null,
       "s500": null,
       "modalidade": "Retira",
@@ -1041,7 +1041,7 @@
       "s500": 6.35,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-09"
+      "data_coleta": "2026-11-10"
     },
     {
       "estado": "PR",
