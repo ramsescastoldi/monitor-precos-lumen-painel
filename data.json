@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "10/11/2026, 10:24:34",
+  "atualizado_em": "10/11/2026, 10:50:26",
   "semana_referencia": "2026-10-30",
   "distribuicao_ultima_data": "2026-11-10",
   "volumes": {
@@ -719,7 +719,7 @@
       "data_ref": "2026-11-10T00:00:00.000Z",
       "gasolina": 5.214,
       "etanol": 3.305,
-      "s10": 6.399,
+      "s10": 6.395,
       "s500": 6.478,
       "margem": {
         "gasolina": {
@@ -736,9 +736,9 @@
         },
         "s10": {
           "revenda": 7.634,
-          "distribuicao": 6.399,
-          "margem_rs": 1.235,
-          "margem_pct": 19.3
+          "distribuicao": 6.395,
+          "margem_rs": 1.239,
+          "margem_pct": 19.37
         },
         "s500": {
           "revenda": 7.288,
@@ -965,7 +965,7 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.15,
       "etanol": 3.35,
-      "s10": 6.35,
+      "s10": 6.3,
       "s500": 6.45,
       "modalidade": "Retira",
       "observacoes": null,
