@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "10/11/2026, 16:52:23",
+  "atualizado_em": "11/11/2026, 16:45:38",
   "periodo": {
     "de": "2026-11-01",
     "ate": "2026-11-07"
@@ -63,64 +63,6 @@
     }
   },
   "estados": {
-    "AL": {
-      "gasolina": {
-        "preco_medio": 6.55,
-        "custo_antes_dist": 4.79,
-        "dist_revenda": {
-          "rs": 1.76,
-          "pct": 26.9
-        },
-        "etanol_anidro": {
-          "rs": 1.15,
-          "pct": 17.5
-        },
-        "imposto_estadual": {
-          "rs": 1.57,
-          "pct": 24
-        },
-        "impostos_federais": {
-          "rs": 0.06,
-          "pct": 0.9
-        },
-        "parcela_petrobras": {
-          "rs": 2.01,
-          "pct": 30.7
-        },
-        "periodo": {
-          "de": "2026-11-01",
-          "ate": "2026-11-07"
-        }
-      },
-      "diesel": {
-        "preco_medio": 7.36,
-        "custo_antes_dist": 5.07,
-        "dist_revenda": {
-          "rs": 2.29,
-          "pct": 31.2
-        },
-        "biodiesel": {
-          "rs": 0.84,
-          "pct": 11.5
-        },
-        "imposto_estadual": {
-          "rs": 1.17,
-          "pct": 15.9
-        },
-        "impostos_federais": {
-          "rs": 0.32,
-          "pct": 4.4
-        },
-        "parcela_petrobras": {
-          "rs": 2.73,
-          "pct": 37.1
-        },
-        "periodo": {
-          "de": "2026-11-01",
-          "ate": "2026-11-07"
-        }
-      }
-    },
     "AM": {
       "gasolina": {
         "preco_medio": 7.01,
@@ -318,34 +260,6 @@
         "parcela_petrobras": {
           "rs": 2.06,
           "pct": 32.1
-        },
-        "periodo": {
-          "de": "2026-11-01",
-          "ate": "2026-11-07"
-        }
-      },
-      "diesel": {
-        "preco_medio": 6.91,
-        "custo_antes_dist": 5.11,
-        "dist_revenda": {
-          "rs": 1.8,
-          "pct": 26
-        },
-        "biodiesel": {
-          "rs": 0.79,
-          "pct": 11.4
-        },
-        "imposto_estadual": {
-          "rs": 1.17,
-          "pct": 16.9
-        },
-        "impostos_federais": {
-          "rs": 0.32,
-          "pct": 4.6
-        },
-        "parcela_petrobras": {
-          "rs": 2.83,
-          "pct": 41
         },
         "periodo": {
           "de": "2026-11-01",
@@ -759,34 +673,6 @@
           "de": "2026-11-01",
           "ate": "2026-11-07"
         }
-      },
-      "diesel": {
-        "preco_medio": 7.14,
-        "custo_antes_dist": 5.03,
-        "dist_revenda": {
-          "rs": 2.11,
-          "pct": 29.6
-        },
-        "biodiesel": {
-          "rs": 0.84,
-          "pct": 11.8
-        },
-        "imposto_estadual": {
-          "rs": 1.17,
-          "pct": 16.4
-        },
-        "impostos_federais": {
-          "rs": 0.32,
-          "pct": 4.5
-        },
-        "parcela_petrobras": {
-          "rs": 2.69,
-          "pct": 37.7
-        },
-        "periodo": {
-          "de": "2026-11-01",
-          "ate": "2026-11-07"
-        }
       }
     },
     "RS": {
@@ -933,34 +819,6 @@
           "de": "2026-11-01",
           "ate": "2026-11-07"
         }
-      },
-      "diesel": {
-        "preco_medio": 7.21,
-        "custo_antes_dist": 5.15,
-        "dist_revenda": {
-          "rs": 2.06,
-          "pct": 28.5
-        },
-        "biodiesel": {
-          "rs": 0.79,
-          "pct": 11
-        },
-        "imposto_estadual": {
-          "rs": 1.17,
-          "pct": 16.2
-        },
-        "impostos_federais": {
-          "rs": 0.32,
-          "pct": 4.5
-        },
-        "parcela_petrobras": {
-          "rs": 2.87,
-          "pct": 39.8
-        },
-        "periodo": {
-          "de": "2026-11-01",
-          "ate": "2026-11-07"
-        }
       }
     },
     "SP": {
@@ -1014,6 +872,36 @@
         "parcela_petrobras": {
           "rs": 2.81,
           "pct": 38.5
+        },
+        "periodo": {
+          "de": "2026-11-01",
+          "ate": "2026-11-07"
+        }
+      }
+    },
+    "AL": {
+      "diesel": {
+        "preco_medio": 7.36,
+        "custo_antes_dist": 5.07,
+        "dist_revenda": {
+          "rs": 2.29,
+          "pct": 31.2
+        },
+        "biodiesel": {
+          "rs": 0.84,
+          "pct": 11.5
+        },
+        "imposto_estadual": {
+          "rs": 1.17,
+          "pct": 15.9
+        },
+        "impostos_federais": {
+          "rs": 0.32,
+          "pct": 4.4
+        },
+        "parcela_petrobras": {
+          "rs": 2.73,
+          "pct": 37.1
         },
         "periodo": {
           "de": "2026-11-01",
