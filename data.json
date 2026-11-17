@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/11/2026, 16:41:18",
+  "atualizado_em": "17/11/2026, 16:46:21",
   "semana_referencia": "2026-11-13",
   "distribuicao_ultima_data": "2026-11-17",
   "volumes": {
@@ -702,7 +702,7 @@
     "M": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-11-16T00:00:00.000Z",
+      "data_ref": "2026-11-17T00:00:00.000Z",
       "gasolina": 5.1,
       "etanol": 3.33,
       "s10": 6.17,
@@ -746,10 +746,10 @@
     "MT": {
       "n_cotacoes": 14,
       "n_distribuidoras": 14,
-      "data_ref": "2026-11-16T00:00:00.000Z",
+      "data_ref": "2026-11-17T00:00:00.000Z",
       "gasolina": 5.176,
       "etanol": 3.338,
-      "s10": 6.259,
+      "s10": 6.25,
       "s500": 6.353,
       "margem": {
         "gasolina": {
@@ -766,9 +766,9 @@
         },
         "s10": {
           "revenda": 7.535,
-          "distribuicao": 6.259,
-          "margem_rs": 1.276,
-          "margem_pct": 20.39
+          "distribuicao": 6.25,
+          "margem_rs": 1.285,
+          "margem_pct": 20.56
         },
         "s500": {
           "revenda": 7.251,
@@ -969,7 +969,7 @@
       "s500": 6.3,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MG",
@@ -1017,7 +1017,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1041,7 +1041,7 @@
       "s500": 6.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1049,11 +1049,11 @@
       "cidade": "Varzea Grande",
       "gasolina": 5.15,
       "etanol": 3.3,
-      "s10": 6.22,
+      "s10": 6.1,
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1065,7 +1065,7 @@
       "s500": 6.46,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1077,7 +1077,7 @@
       "s500": 6.3,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1101,7 +1101,7 @@
       "s500": 6.33,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1113,7 +1113,7 @@
       "s500": 6.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1125,7 +1125,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1137,7 +1137,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1161,7 +1161,7 @@
       "s500": 6.45,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "MT",
@@ -1173,7 +1173,7 @@
       "s500": 6.35,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-16"
+      "data_coleta": "2026-11-17"
     },
     {
       "estado": "PA",
