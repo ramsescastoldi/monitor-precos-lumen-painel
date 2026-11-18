@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "18/11/2026, 11:50:10",
+  "atualizado_em": "18/11/2026, 11:56:54",
   "semana_referencia": "2026-11-13",
   "distribuicao_ultima_data": "2026-11-18",
   "volumes": {
@@ -685,35 +685,35 @@
     "GO": {
       "n_cotacoes": 5,
       "n_distribuidoras": 5,
-      "data_ref": "2026-11-10T00:00:00.000Z",
-      "gasolina": 5.278,
-      "etanol": 3.392,
-      "s10": 6.332,
-      "s500": 6.555,
+      "data_ref": "2026-11-18T00:00:00.000Z",
+      "gasolina": 5.184,
+      "etanol": 3.38,
+      "s10": 6.21,
+      "s500": 6.368,
       "margem": {
         "gasolina": {
           "revenda": 6.574,
-          "distribuicao": 5.278,
-          "margem_rs": 1.296,
-          "margem_pct": 24.55
+          "distribuicao": 5.184,
+          "margem_rs": 1.39,
+          "margem_pct": 26.81
         },
         "etanol": {
           "revenda": 4.347,
-          "distribuicao": 3.392,
-          "margem_rs": 0.955,
-          "margem_pct": 28.15
+          "distribuicao": 3.38,
+          "margem_rs": 0.967,
+          "margem_pct": 28.61
         },
         "s10": {
           "revenda": 7.197,
-          "distribuicao": 6.332,
-          "margem_rs": 0.865,
-          "margem_pct": 13.66
+          "distribuicao": 6.21,
+          "margem_rs": 0.987,
+          "margem_pct": 15.89
         },
         "s500": {
           "revenda": 6.918,
-          "distribuicao": 6.555,
-          "margem_rs": 0.363,
-          "margem_pct": 5.54
+          "distribuicao": 6.368,
+          "margem_rs": 0.55,
+          "margem_pct": 8.64
         }
       }
     },
@@ -973,13 +973,13 @@
       "estado": "GO",
       "distribuidora": "Equador",
       "cidade": "Senador Canedo",
-      "gasolina": 5.31,
-      "etanol": 3.35,
-      "s10": 6.34,
-      "s500": 6.57,
+      "gasolina": 5.11,
+      "etanol": 3.3,
+      "s10": 6.03,
+      "s500": 6.11,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-10"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "GO",
@@ -997,13 +997,13 @@
       "estado": "GO",
       "distribuidora": "Larco",
       "cidade": "Senador Canedo",
-      "gasolina": 5.3,
-      "etanol": 3.42,
-      "s10": 6.35,
-      "s500": null,
+      "gasolina": 5.03,
+      "etanol": 3.41,
+      "s10": 6.05,
+      "s500": 6.08,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-10"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "GO",
@@ -1111,7 +1111,7 @@
       "s500": 6.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1123,7 +1123,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1135,7 +1135,7 @@
       "s500": 6.46,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1147,7 +1147,7 @@
       "s500": 6.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1171,7 +1171,7 @@
       "s500": 6.39,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1183,7 +1183,7 @@
       "s500": 6.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1195,7 +1195,7 @@
       "s500": 6.15,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1207,7 +1207,7 @@
       "s500": 6.19,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
@@ -1231,7 +1231,7 @@
       "s500": 6.34,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MT",
