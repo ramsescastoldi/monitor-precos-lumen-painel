@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "18/11/2026, 11:56:54",
+  "atualizado_em": "18/11/2026, 12:35:48",
   "semana_referencia": "2026-11-13",
   "distribuicao_ultima_data": "2026-11-18",
   "volumes": {
@@ -686,34 +686,34 @@
       "n_cotacoes": 5,
       "n_distribuidoras": 5,
       "data_ref": "2026-11-18T00:00:00.000Z",
-      "gasolina": 5.184,
-      "etanol": 3.38,
-      "s10": 6.21,
-      "s500": 6.368,
+      "gasolina": 5.164,
+      "etanol": 3.388,
+      "s10": 6.146,
+      "s500": 6.335,
       "margem": {
         "gasolina": {
           "revenda": 6.574,
-          "distribuicao": 5.184,
-          "margem_rs": 1.39,
-          "margem_pct": 26.81
+          "distribuicao": 5.164,
+          "margem_rs": 1.41,
+          "margem_pct": 27.3
         },
         "etanol": {
           "revenda": 4.347,
-          "distribuicao": 3.38,
-          "margem_rs": 0.967,
-          "margem_pct": 28.61
+          "distribuicao": 3.388,
+          "margem_rs": 0.959,
+          "margem_pct": 28.31
         },
         "s10": {
           "revenda": 7.197,
-          "distribuicao": 6.21,
-          "margem_rs": 0.987,
-          "margem_pct": 15.89
+          "distribuicao": 6.146,
+          "margem_rs": 1.051,
+          "margem_pct": 17.1
         },
         "s500": {
           "revenda": 6.918,
-          "distribuicao": 6.368,
-          "margem_rs": 0.55,
-          "margem_pct": 8.64
+          "distribuicao": 6.335,
+          "margem_rs": 0.583,
+          "margem_pct": 9.2
         }
       }
     },
@@ -729,7 +729,7 @@
     "MG": {
       "n_cotacoes": 3,
       "n_distribuidoras": 3,
-      "data_ref": "2026-11-17T00:00:00.000Z",
+      "data_ref": "2026-11-18T00:00:00.000Z",
       "gasolina": 5.38,
       "etanol": 3.595,
       "s10": 6.307,
@@ -899,17 +899,17 @@
     "SP": {
       "n_cotacoes": 5,
       "n_distribuidoras": 5,
-      "data_ref": "2026-11-10T00:00:00.000Z",
-      "gasolina": 5.175,
+      "data_ref": "2026-11-18T00:00:00.000Z",
+      "gasolina": 5.135,
       "etanol": 3.73,
-      "s10": 6.236,
-      "s500": 6.25,
+      "s10": 6.21,
+      "s500": 6.228,
       "margem": {
         "gasolina": {
           "revenda": 6.387,
-          "distribuicao": 5.175,
-          "margem_rs": 1.212,
-          "margem_pct": 23.42
+          "distribuicao": 5.135,
+          "margem_rs": 1.252,
+          "margem_pct": 24.38
         },
         "etanol": {
           "revenda": 4.076,
@@ -919,15 +919,15 @@
         },
         "s10": {
           "revenda": 7.312,
-          "distribuicao": 6.236,
-          "margem_rs": 1.076,
-          "margem_pct": 17.25
+          "distribuicao": 6.21,
+          "margem_rs": 1.102,
+          "margem_pct": 17.75
         },
         "s500": {
           "revenda": 7.034,
-          "distribuicao": 6.25,
-          "margem_rs": 0.784,
-          "margem_pct": 12.54
+          "distribuicao": 6.228,
+          "margem_rs": 0.806,
+          "margem_pct": 12.94
         }
       }
     }
@@ -1009,13 +1009,13 @@
       "estado": "GO",
       "distribuidora": "Rodoil",
       "cidade": "Senador Canedo",
-      "gasolina": 5.2,
-      "etanol": 3.36,
-      "s10": 6.3,
-      "s500": 6.5,
+      "gasolina": 5.1,
+      "etanol": 3.4,
+      "s10": 5.98,
+      "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-10"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "GO",
@@ -1063,7 +1063,7 @@
       "s500": 6.13,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-17"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "MG",
@@ -1345,13 +1345,13 @@
       "estado": "SP",
       "distribuidora": "Imperial Petroleo",
       "cidade": "Paulinia",
-      "gasolina": 5.2,
+      "gasolina": 5.04,
       "etanol": null,
-      "s10": 6.2,
-      "s500": 6.19,
+      "s10": 6.07,
+      "s500": 6.1,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-10"
+      "data_coleta": "2026-11-18"
     },
     {
       "estado": "SP",
