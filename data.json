@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/11/2026, 19:29:09",
+  "atualizado_em": "18/11/2026, 10:06:32",
   "semana_referencia": "2026-11-13",
   "distribuicao_ultima_data": "2026-11-17",
   "volumes": {
@@ -765,16 +765,16 @@
       "n_cotacoes": 14,
       "n_distribuidoras": 14,
       "data_ref": "2026-11-17T00:00:00.000Z",
-      "gasolina": 5.176,
+      "gasolina": 5.172,
       "etanol": 3.338,
-      "s10": 6.25,
-      "s500": 6.353,
+      "s10": 6.004,
+      "s500": 6.345,
       "margem": {
         "gasolina": {
           "revenda": 6.745,
-          "distribuicao": 5.176,
-          "margem_rs": 1.569,
-          "margem_pct": 30.31
+          "distribuicao": 5.172,
+          "margem_rs": 1.573,
+          "margem_pct": 30.41
         },
         "etanol": {
           "revenda": 4.12,
@@ -784,15 +784,15 @@
         },
         "s10": {
           "revenda": 7.535,
-          "distribuicao": 6.25,
-          "margem_rs": 1.285,
-          "margem_pct": 20.56
+          "distribuicao": 6.004,
+          "margem_rs": 1.531,
+          "margem_pct": 25.5
         },
         "s500": {
           "revenda": 7.251,
-          "distribuicao": 6.353,
-          "margem_rs": 0.898,
-          "margem_pct": 14.14
+          "distribuicao": 6.345,
+          "margem_rs": 0.906,
+          "margem_pct": 14.28
         }
       }
     },
@@ -1189,10 +1189,10 @@
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
-      "gasolina": 5.2,
+      "gasolina": 5.15,
       "etanol": 3.33,
-      "s10": 6.35,
-      "s500": 6.25,
+      "s10": 3.15,
+      "s500": 6.15,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-11-17"
