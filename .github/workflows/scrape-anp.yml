@@ -32,7 +32,7 @@ jobs:
             echo "ERRO: secret SUPABASE_DB_URL nao configurado no repo."
             exit 1
           fi
-          node scrape-anp.mjs
+          node scrape-anp.mjs || echo "AVISO: scrape ANP falhou (rede) — gerando data.json com o que já está no banco"
           node update.mjs
 
       - name: Commit data.json (o deployer da VPS faz o deploy Cloudflare)
