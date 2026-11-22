@@ -41,11 +41,11 @@ jobs:
         run: |
           git config user.name "Scraper Bot"
           git config user.email "bot@lumenposto.com"
-          if git diff --quiet -- data.json; then
+          if git diff --quiet -- data.json municipios.json && ! git ls-files --others --exclude-standard | grep -q municipios.json; then
             echo "data.json sem mudancas."
           else
             NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-            git add data.json
+            git add data.json municipios.json
             git commit -m "data: scrape volumes ANP — $NOW"
             git push origin main
             echo "data.json pushado. monitor-deployer (VPS) detecta e faz wrangler deploy."

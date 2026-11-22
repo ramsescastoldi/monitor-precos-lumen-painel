@@ -435,6 +435,33 @@ function toNum(v) {
     // O index.html agora consome data.json em runtime (fetch). Não injetamos mais.
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
+    // municipios.json separado (LPC por cidade): min/médio/max por município x produto,
+    // última semana. Arquivo à parte pra não inchar o data.json — o site busca sob demanda.
+    const munRes = await client.query(`
+      with ref as (select max(data_coleta) as max_d from precos_externos_anp)
+      select estado, municipio, produto,
+             avg(valor_venda)::numeric(5,3) as media,
+             min(valor_venda)::numeric(5,3) as min,
+             max(valor_venda)::numeric(5,3) as max,
+             count(*) as n
+      from precos_externos_anp, ref
+      where data_coleta > ref.max_d - interval '7 days'
+      group by estado, municipio, produto
+      order by estado, municipio, produto
+    `);
+    const municipios = {};
+    for (const r of munRes.rows) {
+      const c = COMBUSTIVEIS.find(x => x.anpProd === r.produto);
+      if (!c) continue;
+      municipios[r.estado] ??= {};
+      municipios[r.estado][r.municipio] ??= {};
+      municipios[r.estado][r.municipio][c.key] = {
+        n: Number(r.n), media: toNum(r.media), min: toNum(r.min), max: toNum(r.max)
+      };
+    }
+    fs.writeFileSync('municipios.json', JSON.stringify({ semana_referencia: semanaRef, municipios }));
+    console.log(`municipios.json: ${munRes.rows.length} linhas`);
+
     console.log(`OK build: ${kpi.n_postos} postos, ${kpi.n_cidades} cidades, ${kpi.n_estados} estados (semana ref ${semanaRef})`);
     console.log(`Estados: ${Object.keys(agregados_estado).join(', ')}`);
   } catch (e) {

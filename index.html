@@ -51,6 +51,7 @@
   .fuel-name { color: var(--text-muted); font-size: 13px; }
   .fuel-value { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
   .fuel-range { color: var(--text-muted); font-size: 10px; font-variant-numeric: tabular-nums; display: block; text-align: right; margin-top: 2px; }
+  .cid-select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 14px; }
   .margem-block { margin-top: 12px; padding: 8px 10px; background: rgba(79,138,255,0.06); border: 1px solid rgba(79,138,255,0.18); border-radius: 6px; }
   .margem-title { color: var(--text-muted); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
   .margem-row { display: grid; grid-template-columns: 60px 1fr 1fr auto; gap: 6px; font-size: 11px; padding: 2px 0; font-variant-numeric: tabular-nums; align-items: baseline; }
@@ -233,6 +234,16 @@
 
 <h2>💰 Custo informado pelos revendedores <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(anônimo · mediana · últimos 21 dias)</span></h2>
 <section id="contribuicoes"><p class="pending">Carregando…</p></section>
+
+<h2>🔎 Preços na sua cidade <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(ANP semanal · mín / médio / máx por município)</span></h2>
+<section class="uf-card" id="cidade-box">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <select id="cid-uf" class="cid-select"><option value="">UF…</option></select>
+    <select id="cid-mun" class="cid-select" style="min-width:220px" disabled><option value="">Cidade…</option></select>
+  </div>
+  <div id="cid-result"><p class="pending">Escolha o estado e a cidade.</p></div>
+  <p class="anp-note" style="margin-top:10px;font-size:11px">Pesquisa semanal da ANP (LPC). Se o seu posto nunca foi amostrado, o preço da sua cidade pode não refletir o seu — compare com a bomba.</p>
+</section>
 
 <h2>Top postos mais baratos por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina)</span></h2>
 <div class="tabs" id="top-tabs"></div>
@@ -511,6 +522,39 @@ function renderRank(tbodyId, items) {
       <td class="num"><strong>${fmtBRL(r.media)}</strong></td>
       <td class="num">${r.n}</td>
     </tr>`).join('') || '<tr><td colspan="4" class="pending" style="text-align:center;padding:16px">Sem dados</td></tr>';
+}
+
+// Preços na sua cidade (municipios.json, fetch sob demanda)
+let MUN = null;
+async function initCidade() {
+  const selUf = document.getElementById('cid-uf');
+  const selMun = document.getElementById('cid-mun');
+  const out = document.getElementById('cid-result');
+  try {
+    const res = await fetch('municipios.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw 0;
+    MUN = (await res.json()).municipios;
+  } catch {
+    document.getElementById('cidade-box').innerHTML = '<p class="pending">Consulta por cidade ainda sem dados — disponível na próxima atualização ANP.</p>';
+    return;
+  }
+  selUf.innerHTML = '<option value="">UF…</option>' + Object.keys(MUN).sort().map(u => `<option>${u}</option>`).join('');
+  selUf.addEventListener('change', () => {
+    const uf = selUf.value;
+    selMun.disabled = !uf;
+    selMun.innerHTML = '<option value="">Cidade…</option>' + (uf ? Object.keys(MUN[uf]).sort().map(m => `<option>${m}</option>`).join('') : '');
+    out.innerHTML = '<p class="pending">Escolha a cidade.</p>';
+  });
+  selMun.addEventListener('change', () => {
+    const d = MUN[selUf.value]?.[selMun.value];
+    if (!d) { out.innerHTML = '<p class="pending">Sem dados.</p>'; return; }
+    const fuels = [['gasolina','Gasolina'],['etanol','Etanol'],['s10','Diesel S10'],['s500','Diesel S500']];
+    out.innerHTML = fuels.map(([k, label]) => {
+      const v = d[k];
+      if (!v) return `<div class="fuel-row"><span class="fuel-name">${label}</span><span class="pending">não amostrado</span></div>`;
+      return `<div class="fuel-row"><span class="fuel-name">${label}</span><span><span class="fuel-value">${fmtBRL(v.media)}</span><span class="fuel-range">n=${v.n} · min ${v.min.toFixed(2).replace('.',',')} / max ${v.max.toFixed(2).replace('.',',')}</span></span></div>`;
+    }).join('');
+  });
 }
 
 // Distribuidoras detalhadas (último bloco)
@@ -842,6 +886,7 @@ function shortName(nome) {
   try { if (resC?.ok) CUSTO = await resC.json(); } catch (e) { /* segue sem custo */ }
   renderPainel();
   renderCusto(CUSTO);
+  initCidade();
 })();
 </script>
 </body>
