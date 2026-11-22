@@ -438,6 +438,7 @@ async function loadContribuicoes() {
   const el = document.getElementById('contribuicoes');
   try {
     const r = await api('agregado', { session: localStorage.getItem(SESSION_KEY) });
+    if (r.precisa_dias) { el.innerHTML = '<p class="pending">🔒 Seção liberada após contribuir com seu custo em <b>' + r.precisa_dias + ' dias diferentes</b> — você já tem ' + (r.tem || 0) + '. Continue contribuindo!</p>'; return; }
     const ufs = r.ok ? Object.keys(r.ufs).sort() : [];
     if (!ufs.length) { el.innerHTML = '<p class="pending">Seja o primeiro a contribuir — o custo real da sua região aparece aqui.</p>'; return; }
     const cell = (c) => c ? '<span class="fuel-value">R$ ' + c.mediana.toFixed(2).replace('.', ',') + '</span><span class="fuel-range">n=' + c.n + '</span>' : '—';
