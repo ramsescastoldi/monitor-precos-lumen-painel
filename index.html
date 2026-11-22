@@ -231,6 +231,9 @@
 <h2>Resumo por estado</h2>
 <section class="estados" id="estados"></section>
 
+<h2>💰 Custo informado pelos revendedores <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(anônimo · mediana · últimos 21 dias)</span></h2>
+<section id="contribuicoes"><p class="pending">Carregando…</p></section>
+
 <h2>Top postos mais baratos por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina)</span></h2>
 <div class="tabs" id="top-tabs"></div>
 <div id="top-content"></div>
@@ -358,7 +361,7 @@ async function checkExistingSession() {
   showStep('checking');
   try {
     const r = await api('check', { session: token });
-    if (r.ok) { $('auth-overlay').classList.add('hidden'); return true; }
+    if (r.ok) { $('auth-overlay').classList.add('hidden'); loadContribuicoes(); return true; }
     localStorage.removeItem(SESSION_KEY);
     showStep('login');
     return false;
@@ -417,7 +420,7 @@ btnPreco.addEventListener('click', async () => {
     if (r.ok && r.session) {
       localStorage.setItem(SESSION_KEY, r.session);
       showMsg('msg-preco', 'Obrigado por contribuir! Acesso liberado.', 'success');
-      setTimeout(() => $('auth-overlay').classList.add('hidden'), 500);
+      setTimeout(() => { $('auth-overlay').classList.add('hidden'); loadContribuicoes(); }, 500);
     } else if (r.bloqueado) {
       showMsg('msg-preco', r.erro || 'Informação descartada e acesso suspenso.', 'error');
       setTimeout(() => showStep('login'), 4000);
@@ -430,6 +433,19 @@ btnPreco.addEventListener('click', async () => {
   }
   setBtnLoading(btnPreco, false);
 });
+
+async function loadContribuicoes() {
+  const el = document.getElementById('contribuicoes');
+  try {
+    const r = await api('agregado', { session: localStorage.getItem(SESSION_KEY) });
+    const ufs = r.ok ? Object.keys(r.ufs).sort() : [];
+    if (!ufs.length) { el.innerHTML = '<p class="pending">Seja o primeiro a contribuir — o custo real da sua região aparece aqui.</p>'; return; }
+    const cell = (c) => c ? '<span class="fuel-value">R$ ' + c.mediana.toFixed(2).replace('.', ',') + '</span><span class="fuel-range">n=' + c.n + '</span>' : '—';
+    let html = '<div class="table-wrap"><table><thead><tr><th>UF</th><th class="num">S10</th><th class="num">S500</th><th class="num">Gasolina</th><th class="num">Etanol</th></tr></thead><tbody>';
+    for (const uf of ufs) { const p = r.ufs[uf]; html += '<tr><td>' + uf + '</td><td class="num">' + cell(p.s10) + '</td><td class="num">' + cell(p.s500) + '</td><td class="num">' + cell(p.gc) + '</td><td class="num">' + cell(p.etanol) + '</td></tr>'; }
+    el.innerHTML = html + '</tbody></table></div>';
+  } catch (e) { el.innerHTML = '<p class="pending">Falha ao carregar as contribuições.</p>'; }
+}
 
 $('btn-back-login').addEventListener('click', () => { TMP = null; hideMsg('msg-preco'); showStep('login'); });
 $('auth-login').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnEntrar.click(); });
