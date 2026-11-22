@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b1220;
-    --bg-card: #131c2e;
-    --bg-card-hover: #182240;
-    --border: #1f2c4a;
+    --bg: #0D1B2A;
+    --bg-card: #13263c;
+    --bg-card-hover: #18304c;
+    --border: #24405c;
     --text: #e6edf7;
-    --text-muted: #8b97b3;
-    --accent: #4f8aff;
+    --text-muted: #91a3bb;
+    --accent: #E9B44C;
     --green: #2dd4bf;
     --red: #f87171;
     --yellow: #fbbf24;
@@ -85,7 +85,7 @@
   /* === Auth overlay === */
   #auth-overlay {
     position: fixed; inset: 0; z-index: 999;
-    background: linear-gradient(135deg, #0b1220 0%, #1a2440 100%);
+    background: linear-gradient(135deg, #0D1B2A 0%, #16304a 100%);
     display: flex; align-items: center; justify-content: center; padding: 16px;
   }
   #auth-overlay.hidden { display: none; }
@@ -109,7 +109,7 @@
   .auth-input.otp { letter-spacing: 6px; text-align: center; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
   .auth-btn {
     width: 100%; margin-top: 14px; padding: 12px 14px;
-    background: var(--accent); color: white; border: none; border-radius: 8px;
+    background: var(--accent); color: #111; border: none; border-radius: 8px;
     font: inherit; font-weight: 600; font-size: 14px; cursor: pointer;
     transition: opacity 0.15s;
   }
@@ -120,8 +120,13 @@
   .auth-msg { margin-top: 14px; font-size: 13px; padding: 10px 12px; border-radius: 6px; }
   .auth-msg.error { background: rgba(248,113,113,0.1); color: var(--red); border: 1px solid rgba(248,113,113,0.3); }
   .auth-msg.success { background: rgba(45,212,191,0.1); color: var(--green); border: 1px solid rgba(45,212,191,0.3); }
-  .auth-msg.info { background: rgba(79,138,255,0.1); color: var(--accent); border: 1px solid rgba(79,138,255,0.3); }
+  .auth-msg.info { background: rgba(233,180,76,0.1); color: var(--accent); border: 1px solid rgba(233,180,76,0.3); }
   .auth-footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 11px; text-align: center; }
+  .auth-footer a { color: var(--accent); }
+  .logo-svg { display: block; height: 40px; width: auto; margin-bottom: 14px; }
+  header .logo-svg { height: 34px; margin-bottom: 10px; }
+  .preco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+  .preco-grid label { display: block; color: var(--text-muted); font-size: 11px; font-weight: 600; margin-bottom: 4px; }
 
   /* === Custo de distribuição (composição oficial) === */
   .custo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -172,22 +177,34 @@
 <!-- Tela de autenticação -->
 <div id="auth-overlay">
   <div class="auth-card">
-    <div class="auth-logo">🔐 Monitor de Preços</div>
-    <div class="auth-sub">Acesso exclusivo aos membros do Lumen Posto Club</div>
+    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 372 128"><rect width="64" height="64" fill="#E9B44C"/><g fill="#0D1B2A"><rect width="24" height="16"/><rect x="40" width="24" height="16"/><rect y="32" width="24" height="32"/><rect x="40" y="32" width="24" height="32"/></g><g fill="#E6EDF7"><rect x="88" width="8" height="64"/><path d="M108,16 H116 V44 A12,12 0 0 0 140,44 V16 H148 V64 H140 V60 A20,20 0 0 1 108,44 Z"/><rect x="160" y="16" width="8" height="48"/><path d="M160,36 A20,20 0 0 1 200,36 V64 H192 V36 A12,12 0 0 0 168,36 Z"/><path d="M192,36 A20,20 0 0 1 232,36 V64 H224 V36 A12,12 0 0 0 200,36 Z"/><path fill-rule="evenodd" d="M284.73,55 A24,24 0 1 1 289.81,43 L250.28,43 A16,16 0 0 0 271.57,55 Z M250.28,37 A16,16 0 0 1 281.72,37 Z"/><rect x="300" y="16" width="8" height="48"/><path d="M300,36 A20,20 0 0 1 340,36 V64 H332 V36 A12,12 0 0 0 308,36 Z"/></g><text x="88" y="96" fill="#E9B44C" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="6">BUSINESS</text></svg>
+    <div class="auth-logo">Monitor de Preços</div>
+    <div class="auth-sub">Acesso exclusivo aos revendedores cadastrados no Revenda Lumen Club</div>
 
-    <div class="auth-step active" id="step-phone">
-      <label class="auth-label" for="auth-phone">Seu WhatsApp</label>
-      <input class="auth-input" id="auth-phone" type="tel" placeholder="65 99999-8888" autocomplete="tel">
-      <button class="auth-btn" id="btn-send-otp">Enviar código</button>
-      <div class="auth-msg" id="msg-phone" style="display:none"></div>
+    <div class="auth-step active" id="step-login">
+      <label class="auth-label" for="auth-login">WhatsApp ou CNPJ do cadastro</label>
+      <input class="auth-input" id="auth-login" type="text" inputmode="numeric" placeholder="(65) 99999-9999 ou CNPJ" autocomplete="tel">
+      <button class="auth-btn" id="btn-entrar">Entrar</button>
+      <div class="auth-msg" id="msg-login" style="display:none"></div>
     </div>
 
-    <div class="auth-step" id="step-otp">
-      <label class="auth-label" for="auth-otp">Código recebido por WhatsApp</label>
-      <input class="auth-input otp" id="auth-otp" type="text" inputmode="numeric" maxlength="6" pattern="\d{6}" placeholder="000000" autocomplete="one-time-code">
-      <button class="auth-btn" id="btn-verify-otp">Validar</button>
-      <button class="auth-link" id="btn-back-phone">← Trocar número</button>
-      <div class="auth-msg" id="msg-otp" style="display:none"></div>
+    <div class="auth-step" id="step-preco">
+      <div class="auth-sub" id="preco-ola" style="margin-bottom:12px"></div>
+      <div class="auth-sub" style="margin-bottom:16px">Para entrar, contribua com seu <b>preço de custo</b> de hoje (o que você paga na distribuidora). A informação é <b>anônima</b> — não fica vinculada ao seu cadastro. Preencha os produtos que você compra (mínimo 2).</div>
+      <div class="preco-grid">
+        <div><label for="p-s10">Diesel S10 (R$/L)</label><input class="auth-input" id="p-s10" type="text" inputmode="decimal" placeholder="6,40"></div>
+        <div><label for="p-s500">Diesel S500 (R$/L)</label><input class="auth-input" id="p-s500" type="text" inputmode="decimal" placeholder="6,20"></div>
+        <div><label for="p-gc">Gasolina comum (R$/L)</label><input class="auth-input" id="p-gc" type="text" inputmode="decimal" placeholder="5,80"></div>
+        <div><label for="p-etanol">Etanol (R$/L)</label><input class="auth-input" id="p-etanol" type="text" inputmode="decimal" placeholder="3,10"></div>
+      </div>
+      <label class="auth-label" for="p-bandeira" style="margin-top:10px">Bandeira do posto</label>
+      <select class="auth-input" id="p-bandeira">
+        <option value="">Selecione…</option>
+        <option>Bandeira branca</option><option>Vibra (BR)</option><option>Ipiranga</option><option>Shell (Raízen)</option><option>Ale</option><option>SIM</option><option>Rodoil</option><option>Atem</option><option>Outra</option>
+      </select>
+      <button class="auth-btn" id="btn-preco">Enviar e acessar</button>
+      <button class="auth-link" id="btn-back-login">← Trocar cadastro</button>
+      <div class="auth-msg" id="msg-preco" style="display:none"></div>
     </div>
 
     <div class="auth-step" id="step-checking">
@@ -195,15 +212,16 @@
     </div>
 
     <div class="auth-footer">
-      Sessão válida por 30 dias · só membros do grupo pago<br>
-      Não é membro? Adquira em lumenpostoclub.com
+      Preço discrepante da sua região é descartado e suspende o acesso.<br>
+      Ainda não tem cadastro? <a href="https://grupo.lumenclubpainel.com.br" target="_blank" rel="noopener">Entre no grupo Revenda Lumen Club</a>
     </div>
   </div>
 </div>
 
 <div class="container">
 <header>
-  <h1>Monitor de Preços — Lumen Posto Club</h1>
+  <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 372 96"><rect width="64" height="64" fill="#E9B44C"/><g fill="#0D1B2A"><rect width="24" height="16"/><rect x="40" width="24" height="16"/><rect y="32" width="24" height="32"/><rect x="40" y="32" width="24" height="32"/></g><g fill="#E6EDF7"><rect x="88" width="8" height="64"/><path d="M108,16 H116 V44 A12,12 0 0 0 140,44 V16 H148 V64 H140 V60 A20,20 0 0 1 108,44 Z"/><rect x="160" y="16" width="8" height="48"/><path d="M160,36 A20,20 0 0 1 200,36 V64 H192 V36 A12,12 0 0 0 168,36 Z"/><path d="M192,36 A20,20 0 0 1 232,36 V64 H224 V36 A12,12 0 0 0 200,36 Z"/><path fill-rule="evenodd" d="M284.73,55 A24,24 0 1 1 289.81,43 L250.28,43 A16,16 0 0 0 271.57,55 Z M250.28,37 A16,16 0 0 1 281.72,37 Z"/><rect x="300" y="16" width="8" height="48"/><path d="M300,36 A20,20 0 0 1 340,36 V64 H332 V36 A12,12 0 0 0 308,36 Z"/></g></svg>
+  <h1>Monitor de Preços — Lumen Business</h1>
   <p class="subtitle">Preços por revendedor (ANP, semanal) + margem aparente revenda × distribuição (planilha)</p>
   <p class="updated" id="updated">Carregando…</p>
 </header>
@@ -303,20 +321,19 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-// === Auth OTP via Worker do painel (proxy do n8n COM trava de pagamento:
-// atrasado não recebe código — ver worker.js do lumen-painel) ===
-const AUTH_BASE = 'https://painel.lumenclubpainel.com.br/api';
-const SESSION_KEY = 'lumen_session_token';
+// === Gate: cadastro Revenda Lumen Club (planilha leadspostos) + pedágio de preço anônimo ===
+const API = 'https://grupo.lumenclubpainel.com.br/api/monitor';
+const SESSION_KEY = 'monitor_sessao';
 
 const $ = (id) => document.getElementById(id);
 function showStep(name) {
-  for (const id of ['step-phone', 'step-otp', 'step-checking']) {
+  for (const id of ['step-login', 'step-preco', 'step-checking']) {
     $(id).classList.toggle('active', id === 'step-' + name);
   }
 }
 function showMsg(elId, text, type) {
   const el = $(elId);
-  el.textContent = text;
+  el.innerHTML = text;
   el.className = 'auth-msg ' + (type || 'info');
   el.style.display = 'block';
 }
@@ -327,7 +344,7 @@ function setBtnLoading(btn, loading) {
 }
 
 async function api(path, body) {
-  const res = await fetch(AUTH_BASE + '/' + path, {
+  const res = await fetch(API + '/' + path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
@@ -337,84 +354,85 @@ async function api(path, body) {
 
 async function checkExistingSession() {
   const token = localStorage.getItem(SESSION_KEY);
-  if (!token) {
-    showStep('phone');
-    return false;
-  }
+  if (!token) { showStep('login'); return false; }
   showStep('checking');
   try {
-    const r = await api('painel-check-session', { session_token: token });
-    if (r.ok) {
-      $('auth-overlay').classList.add('hidden');
-      return true;
-    }
+    const r = await api('check', { session: token });
+    if (r.ok) { $('auth-overlay').classList.add('hidden'); return true; }
     localStorage.removeItem(SESSION_KEY);
-    showStep('phone');
+    showStep('login');
     return false;
   } catch (e) {
-    showStep('phone');
-    showMsg('msg-phone', 'Falha ao verificar sessão. Tente novamente.', 'error');
+    showStep('login');
     return false;
   }
 }
 
-let currentPhone = null;
-const btnSend = $('btn-send-otp');
-btnSend.dataset.label = btnSend.textContent;
-btnSend.addEventListener('click', async () => {
-  const phone = $('auth-phone').value.trim();
-  if (!phone) { showMsg('msg-phone', 'Digite seu WhatsApp.', 'error'); return; }
-  hideMsg('msg-phone');
-  setBtnLoading(btnSend, true);
+let TMP = null;
+const btnEntrar = $('btn-entrar');
+btnEntrar.dataset.label = btnEntrar.textContent;
+btnEntrar.addEventListener('click', async () => {
+  const login = $('auth-login').value.trim();
+  if (!login) { showMsg('msg-login', 'Digite o WhatsApp ou o CNPJ do cadastro.', 'error'); return; }
+  hideMsg('msg-login');
+  setBtnLoading(btnEntrar, true);
   try {
-    const r = await api('painel-request-otp', { phone });
-    if (r.ok) {
-      currentPhone = phone;
-      showStep('otp');
-      hideMsg('msg-otp');
-      showMsg('msg-otp', r.message || 'Código enviado pelo WhatsApp.', 'success');
-      setTimeout(() => $('auth-otp').focus(), 100);
+    const r = await api('entrar', { login });
+    if (r.ok && r.tmp) {
+      TMP = r.tmp;
+      $('preco-ola').textContent = 'Olá, ' + (r.nome || 'revendedor') + '! (' + (r.uf || '—') + ')';
+      showStep('preco');
+      hideMsg('msg-preco');
+    } else if (r.bloqueado) {
+      showMsg('msg-login', r.erro || 'Acesso suspenso.', 'error');
+    } else if (r.cadastro === false) {
+      showMsg('msg-login', 'Cadastro não encontrado ou ainda não validado.<br>Faça seu cadastro no <a href="' + (r.link || 'https://grupo.lumenclubpainel.com.br') + '" target="_blank" rel="noopener" style="color:var(--accent)">grupo Revenda Lumen Club</a>.', 'error');
     } else {
-      showMsg('msg-phone', r.message || 'Erro ao enviar código.', 'error');
+      showMsg('msg-login', r.erro || 'Não foi possível entrar.', 'error');
     }
   } catch (e) {
-    showMsg('msg-phone', 'Erro de rede. Tente novamente.', 'error');
+    showMsg('msg-login', 'Erro de rede. Tente novamente.', 'error');
   }
-  setBtnLoading(btnSend, false);
+  setBtnLoading(btnEntrar, false);
 });
 
-const btnVerify = $('btn-verify-otp');
-btnVerify.dataset.label = btnVerify.textContent;
-btnVerify.addEventListener('click', async () => {
-  const otp = $('auth-otp').value.trim();
-  if (otp.length !== 6) { showMsg('msg-otp', 'Código tem 6 dígitos.', 'error'); return; }
-  hideMsg('msg-otp');
-  setBtnLoading(btnVerify, true);
+const btnPreco = $('btn-preco');
+btnPreco.dataset.label = btnPreco.textContent;
+btnPreco.addEventListener('click', async () => {
+  const corpo = {
+    tmp: TMP,
+    bandeira: $('p-bandeira').value,
+    s10: $('p-s10').value.trim(),
+    s500: $('p-s500').value.trim(),
+    gc: $('p-gc').value.trim(),
+    etanol: $('p-etanol').value.trim()
+  };
+  if (!corpo.bandeira) { showMsg('msg-preco', 'Selecione a bandeira.', 'error'); return; }
+  const n = ['s10','s500','gc','etanol'].filter((k) => corpo[k]).length;
+  if (n < 2) { showMsg('msg-preco', 'Informe pelo menos 2 preços de custo.', 'error'); return; }
+  hideMsg('msg-preco');
+  setBtnLoading(btnPreco, true);
   try {
-    const r = await api('painel-verify-otp', { phone: currentPhone, otp });
-    if (r.ok && r.session_token) {
-      localStorage.setItem(SESSION_KEY, r.session_token);
-      showMsg('msg-otp', r.message || 'Acesso liberado.', 'success');
-      setTimeout(() => $('auth-overlay').classList.add('hidden'), 400);
+    const r = await api('preco', corpo);
+    if (r.ok && r.session) {
+      localStorage.setItem(SESSION_KEY, r.session);
+      showMsg('msg-preco', 'Obrigado por contribuir! Acesso liberado.', 'success');
+      setTimeout(() => $('auth-overlay').classList.add('hidden'), 500);
+    } else if (r.bloqueado) {
+      showMsg('msg-preco', r.erro || 'Informação descartada e acesso suspenso.', 'error');
+      setTimeout(() => showStep('login'), 4000);
     } else {
-      showMsg('msg-otp', r.message || 'Código inválido.', 'error');
+      showMsg('msg-preco', r.erro || 'Não foi possível enviar.', 'error');
+      if ((r.erro || '').includes('expirou')) setTimeout(() => showStep('login'), 1500);
     }
   } catch (e) {
-    showMsg('msg-otp', 'Erro de rede. Tente novamente.', 'error');
+    showMsg('msg-preco', 'Erro de rede. Tente novamente.', 'error');
   }
-  setBtnLoading(btnVerify, false);
+  setBtnLoading(btnPreco, false);
 });
 
-$('btn-back-phone').addEventListener('click', () => {
-  $('auth-otp').value = '';
-  hideMsg('msg-otp');
-  hideMsg('msg-phone');
-  showStep('phone');
-});
-
-// Enter pra submeter
-$('auth-phone').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnSend.click(); });
-$('auth-otp').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnVerify.click(); });
+$('btn-back-login').addEventListener('click', () => { TMP = null; hideMsg('msg-preco'); showStep('login'); });
+$('auth-login').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnEntrar.click(); });
 
 // Boot
 checkExistingSession();
