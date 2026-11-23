@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "22/11/2026, 17:47:33",
+  "atualizado_em": "23/11/2026, 11:30:31",
   "semana_referencia": "2026-11-13",
-  "distribuicao_ultima_data": "2026-11-18",
+  "distribuicao_ultima_data": "2026-11-23",
   "volumes": {
     "mes_referencia": "set/2026",
     "periodo_iso": "2026-09",
@@ -720,7 +720,7 @@
     "M": {
       "n_cotacoes": 1,
       "n_distribuidoras": 1,
-      "data_ref": "2026-11-18T00:00:00.000Z",
+      "data_ref": "2026-11-23T00:00:00.000Z",
       "gasolina": 5.13,
       "etanol": 3.35,
       "s10": null,
@@ -764,35 +764,35 @@
     "MT": {
       "n_cotacoes": 14,
       "n_distribuidoras": 14,
-      "data_ref": "2026-11-18T00:00:00.000Z",
-      "gasolina": 5.177,
-      "etanol": 3.331,
-      "s10": 6.001,
-      "s500": 6.336,
+      "data_ref": "2026-11-23T00:00:00.000Z",
+      "gasolina": 5.174,
+      "etanol": 3.335,
+      "s10": 6.011,
+      "s500": 6.333,
       "margem": {
         "gasolina": {
           "revenda": 6.745,
-          "distribuicao": 5.177,
-          "margem_rs": 1.568,
-          "margem_pct": 30.29
+          "distribuicao": 5.174,
+          "margem_rs": 1.571,
+          "margem_pct": 30.36
         },
         "etanol": {
           "revenda": 4.12,
-          "distribuicao": 3.331,
-          "margem_rs": 0.789,
-          "margem_pct": 23.69
+          "distribuicao": 3.335,
+          "margem_rs": 0.785,
+          "margem_pct": 23.54
         },
         "s10": {
           "revenda": 7.535,
-          "distribuicao": 6.001,
-          "margem_rs": 1.534,
-          "margem_pct": 25.56
+          "distribuicao": 6.011,
+          "margem_rs": 1.524,
+          "margem_pct": 25.35
         },
         "s500": {
           "revenda": 7.251,
-          "distribuicao": 6.336,
-          "margem_rs": 0.915,
-          "margem_pct": 14.44
+          "distribuicao": 6.333,
+          "margem_rs": 0.918,
+          "margem_pct": 14.5
         }
       }
     },
@@ -1039,7 +1039,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MG",
@@ -1087,7 +1087,7 @@
       "s500": 6.35,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1099,7 +1099,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1111,7 +1111,7 @@
       "s500": 6.65,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1123,7 +1123,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1135,7 +1135,7 @@
       "s500": 6.46,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1147,7 +1147,7 @@
       "s500": 6.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1159,7 +1159,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-10"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1171,7 +1171,7 @@
       "s500": 6.39,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1183,7 +1183,7 @@
       "s500": 6.4,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1195,7 +1195,7 @@
       "s500": 6.15,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1207,16 +1207,16 @@
       "s500": 6.19,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
       "distribuidora": "Viva",
       "cidade": "Varzea Grande",
-      "gasolina": null,
-      "etanol": 3.33,
-      "s10": null,
-      "s500": null,
+      "gasolina": 5.14,
+      "etanol": 3.38,
+      "s10": 6.15,
+      "s500": 6.3,
       "modalidade": "Retira",
       "observacoes": null,
       "data_coleta": "2026-11-10"
@@ -1231,7 +1231,7 @@
       "s500": 6.34,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "MT",
@@ -1243,7 +1243,7 @@
       "s500": 6.2,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-18"
+      "data_coleta": "2026-11-23"
     },
     {
       "estado": "PA",
