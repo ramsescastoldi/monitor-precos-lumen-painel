@@ -451,6 +451,7 @@ async function loadContribuicoes() {
     const r = await api('agregado', { session: localStorage.getItem(SESSION_KEY) });
     if (r.precisa_dias) { el.innerHTML = '<p class="pending">🔒 Seção liberada após contribuir com seu custo em <b>' + r.precisa_dias + ' dias diferentes</b> — você já tem ' + (r.tem || 0) + '. Continue contribuindo!</p>'; return; }
     const ufs = r.ok ? Object.keys(r.ufs).sort() : [];
+    if (r.ok) { CONTRIB = r.ufs; if (CUSTO && DATA.agregados_estado) renderCusto(CUSTO); }
     if (!ufs.length) { el.innerHTML = '<p class="pending">Seja o primeiro a contribuir — o custo real da sua região aparece aqui.</p>'; return; }
     const cell = (c) => c ? '<span class="fuel-value">R$ ' + c.mediana.toFixed(2).replace('.', ',') + '</span><span class="fuel-range">n=' + c.n + '</span>' : '—';
     let html = '<div class="table-wrap"><table><thead><tr><th>UF</th><th class="num">S10</th><th class="num">S500</th><th class="num">Gasolina</th><th class="num">Etanol</th></tr></thead><tbody>';
@@ -785,7 +786,7 @@ function renderVolumes(v) {
 }
 
 // === Custo de distribuição (composição oficial por estado) ===
-let CUSTO = null;
+let CUSTO = null, CUSTO_UF = null, CONTRIB = null;
 const CUSTO_CORES = { parcela_petrobras: '#4f8aff', mistura: '#2dd4bf', imposto_estadual: '#fbbf24', impostos_federais: '#a78bfa', dist_revenda: '#f87171' };
 
 function custoCardHtml(uf, prodKey, c) {
@@ -807,13 +808,28 @@ function custoCardHtml(uf, prodKey, c) {
   const rows = parcelas.slice(0, 4).map(p => `
     <div class="custo-row"><span class="custo-dot" style="background:${p.cor}"></span><span class="custo-label">${p.label}</span><span class="custo-rs">${brl(p.v.rs)}</span><span class="custo-pct">${p.v.pct.toFixed(1).replace(".", ",")}%</span></div>`).join('');
 
-  // Cruzamento com a cotação real da planilha (preço que o posto paga na distribuidora)
-  const planKey = prodKey === 'gasolina' ? 'gasolina' : 's10';
-  const plan = (DATA.distribuicao_estado || {})[uf]?.[planKey];
+  // Quem fica com o quê: custo da distribuidora → preço que o posto paga → bomba.
+  // Preço pago pelo posto: contribuições do grupo (mediana, n≥5) ganham da cotação da planilha.
+  const fuelKey = prodKey === 'gasolina' ? 'gasolina' : 's10';
+  const contribKey = prodKey === 'gasolina' ? 'gc' : 's10';
+  const contrib = CONTRIB?.[uf]?.[contribKey];
+  const plan = (DATA.distribuicao_estado || {})[uf]?.[fuelKey];
+  const pago = contrib?.n >= 5 ? contrib.mediana : plan;
+  const fontePago = contrib?.n >= 5 ? `mediana de ${contrib.n} postos do grupo` : 'cotação de distribuidoras';
+  const bomba = DATA.agregados_estado?.[uf]?.[fuelKey]?.media ?? c.preco_medio;
   let planHtml = '';
-  if (plan != null) {
-    const margemDist = plan - c.custo_antes_dist;
-    planHtml = `<div class="custo-planilha">Cotação real de distribuidora (planilha${prodKey === 'diesel' ? ', S10' : ''}): <strong>${brl(plan)}</strong> → margem estimada da distribuidora: <strong>${(margemDist >= 0 ? '+' : '') + margemDist.toFixed(2).replace('.', ',')} /L</strong> sobre o custo composto</div>`;
+  if (pago != null) {
+    const mDist = pago - c.custo_antes_dist, mPosto = bomba - pago;
+    const sinal = (v) => (v >= 0 ? '+' : '') + v.toFixed(2).replace('.', ',');
+    const tot = Math.max(mDist, 0) + Math.max(mPosto, 0) || 1;
+    planHtml = `
+    <div class="margem-title" style="margin-top:14px">Quem fica com o quê${prodKey === 'diesel' ? ' (S10)' : ''}</div>
+    <div class="custo-row"><span></span><span class="custo-label">Custo da distribuidora</span><span class="custo-rs">${brl(c.custo_antes_dist)}</span><span class="custo-pct"></span></div>
+    <div class="custo-row"><span></span><span class="custo-label">Posto paga <small>(${fontePago})</small></span><span class="custo-rs">${brl(pago)}</span><span class="custo-pct"></span></div>
+    <div class="custo-row"><span></span><span class="custo-label">Bomba <small>(média ANP ${uf})</small></span><span class="custo-rs">${brl(bomba)}</span><span class="custo-pct"></span></div>
+    <div class="custo-bar"><span style="width:${Math.max(mDist, 0) / tot * 100}%;background:#f87171"></span><span style="width:${Math.max(mPosto, 0) / tot * 100}%;background:#34d399"></span></div>
+    <div class="custo-row"><span class="custo-dot" style="background:#f87171"></span><span class="custo-label">Margem da distribuidora <small>(inclui frete)</small></span><span class="custo-rs">${sinal(mDist)}</span><span class="custo-pct">/L</span></div>
+    <div class="custo-row"><span class="custo-dot" style="background:#34d399"></span><span class="custo-label">Margem do posto</span><span class="custo-rs">${sinal(mPosto)}</span><span class="custo-pct">/L</span></div>`;
   }
 
   return `
@@ -846,10 +862,11 @@ function renderCusto(custo) {
     const f = (d) => d.split('-').reverse().slice(0, 2).join('/');
     document.getElementById('custo-periodo').textContent = `— composição oficial do preço · semana ${f(custo.periodo.de)} a ${f(custo.periodo.ate)}`;
   }
-  const inicial = ufs.includes('ES') ? 'ES' : ufs[0];
+  const inicial = CUSTO_UF || (ufs.includes('ES') ? 'ES' : ufs[0]);
   tabsEl.innerHTML = ufs.map(uf => `<button class="tab ${uf === inicial ? 'active' : ''}" data-uf="${uf}">${uf}</button>`).join('');
   const render = (uf) => {
     const e = custo.estados[uf];
+    CUSTO_UF = uf;
     contentEl.innerHTML = `<div class="custo-grid">${custoCardHtml(uf, 'gasolina', e.gasolina)}${custoCardHtml(uf, 'diesel', e.diesel)}</div>`;
   };
   tabsEl.querySelectorAll('.tab').forEach(btn => {
