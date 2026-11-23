@@ -392,7 +392,11 @@ btnEntrar.addEventListener('click', async () => {
   setBtnLoading(btnEntrar, true);
   try {
     const r = await api('entrar', { login });
-    if (r.ok && r.tmp) {
+    if (r.ok && r.session) { // livre acesso: pula o pedágio de preço
+      localStorage.setItem(SESSION_KEY, r.session);
+      $('auth-overlay').classList.add('hidden');
+      loadContribuicoes();
+    } else if (r.ok && r.tmp) {
       TMP = r.tmp;
       $('preco-ola').textContent = 'Olá, ' + (r.nome || 'revendedor') + '! (' + (r.uf || '—') + ')';
       showStep('preco');
