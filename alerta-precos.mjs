@@ -22,7 +22,7 @@ const get = async (f) => {
 };
 
 // snapshot: { produto: { nível: R$ } } — same numbers the site shows
-function snapshot(data, custo) {
+function snapshot(data, custo, nfce) {
   const comp = custo.estados?.[UF] || {};
   const dist = data.distribuicao_estado?.[UF] || {};
   const bomba = data.agregados_estado?.[UF] || {};
@@ -32,6 +32,9 @@ function snapshot(data, custo) {
     'Diesel S500': { posto_paga: dist.s500, bomba: bomba.s500?.media },
     'Etanol':    { posto_paga: dist.etanol, bomba: bomba.etanol?.media },
   };
+  // pump average from state NFC-e tools (scrape-nfce.mjs), one block per state
+  for (const [uf, e] of Object.entries(nfce?.estados || {}))
+    s[`${uf} — bomba média (notas fiscais)`] = { gasolina: e.gasolina?.media, etanol: e.etanol?.media, s10: e.s10?.media, s500: e.s500?.media };
   for (const p of Object.values(s)) {
     for (const k of Object.keys(p)) if (p[k] == null) delete p[k]; else p[k] = +(+p[k]).toFixed(3);
     if (p.posto_paga != null && p.bomba != null) p.margem_posto = +(p.bomba - p.posto_paga).toFixed(3);
@@ -40,7 +43,8 @@ function snapshot(data, custo) {
   return s;
 }
 
-const NOME = { petrobras: 'Petrobras (refinaria)', distribuidora: 'Custo distribuidora', posto_paga: 'Posto paga', bomba: 'Bomba (ANP)', margem_distribuidora: 'Margem distribuidora', margem_posto: 'Margem posto' };
+const NOME = { petrobras: 'Petrobras (refinaria)', distribuidora: 'Custo distribuidora', posto_paga: 'Posto paga', bomba: 'Bomba (ANP)', margem_distribuidora: 'Margem distribuidora', margem_posto: 'Margem posto',
+  gasolina: 'Gasolina', etanol: 'Etanol', s10: 'Diesel S10', s500: 'Diesel S500' };
 const brl = (v) => v.toFixed(2).replace('.', ',');
 const pct = (a, b) => { const p = (b - a) / Math.abs(a) * 100; return (p > 0 ? '+' : '') + p.toFixed(1).replace('.', ',') + '%'; };
 
@@ -70,8 +74,8 @@ async function telegram(texto) {
   if (!r.ok) throw new Error('Telegram HTTP ' + r.status + ' ' + (await r.text()).slice(0, 200));
 }
 
-const [data, custo] = await Promise.all([get('data.json'), get('custo-distribuicao.json')]);
-const agora = snapshot(data, custo);
+const [data, custo, nfce] = await Promise.all([get('data.json'), get('custo-distribuicao.json'), get('municipios-nfce.json').catch(() => null)]);
+const agora = snapshot(data, custo, nfce);
 const antes = fs.existsSync(ESTADO) ? JSON.parse(fs.readFileSync(ESTADO, 'utf8')).valores : null;
 const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Cuiaba' });
 
@@ -82,7 +86,7 @@ if (!antes) {
   msg = `⛽ <b>Monitor ${UF} — alerta diário ligado</b> (${hoje})\nValores de partida. Daqui pra frente só aviso quando mudar.\n\n` + linhas.join('\n\n');
 } else {
   const blocos = diff(antes, agora);
-  if (blocos.length) msg = `⛽ <b>Monitor ${UF} — mudança de preço</b> (${hoje})\n\n` + blocos.join('\n\n') +
+  if (blocos.length) msg = `⛽ <b>Monitor de preços — mudança</b> (${hoje})\n\n` + blocos.join('\n\n') +
     `\n\nmonitor.lumenclubpainel.com.br`;
 }
 

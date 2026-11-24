@@ -242,7 +242,7 @@
     <select id="cid-mun" class="cid-select" style="min-width:220px" disabled><option value="">Cidade…</option></select>
   </div>
   <div id="cid-result"><p class="pending">Escolha o estado e a cidade.</p></div>
-  <p class="anp-note" style="margin-top:10px;font-size:11px">Pesquisa semanal da ANP (LPC). Se o seu posto nunca foi amostrado, o preço da sua cidade pode não refletir o seu — compare com a bomba.</p>
+  <p class="anp-note" style="margin-top:10px;font-size:11px">Pesquisa semanal da ANP (LPC); no PR e na BA, preços das notas fiscais da Sefaz (diário). Se o seu posto nunca foi amostrado, o preço da sua cidade pode não refletir o seu — compare com a bomba.</p>
 </section>
 
 <h2>Top postos mais baratos por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina)</span></h2>
@@ -530,15 +530,17 @@ function renderRank(tbodyId, items) {
 }
 
 // Preços na sua cidade (municipios.json, fetch sob demanda)
-let MUN = null;
+let MUN = null, NFCE = null;
 async function initCidade() {
   const selUf = document.getElementById('cid-uf');
   const selMun = document.getElementById('cid-mun');
   const out = document.getElementById('cid-result');
   try {
-    const res = await fetch('municipios.json?t=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw 0;
+    const [res, resN] = await Promise.all(['municipios.json', 'municipios-nfce.json'].map(f => fetch(f + '?t=' + Date.now(), { cache: 'no-store' }).catch(() => null)));
+    if (!res?.ok) throw 0;
     MUN = (await res.json()).municipios;
+    // NFC-e (Sefaz estaduais) por cima da ANP: cidades novas entram, e o preço da nota ganha onde existe
+    try { if (resN?.ok) { NFCE = await resN.json(); for (const [uf, cs] of Object.entries(NFCE.municipios || {})) for (const m of Object.keys(cs)) ((MUN[uf] ??= {})[m] ??= {}); } } catch {}
   } catch {
     document.getElementById('cidade-box').innerHTML = '<p class="pending">Consulta por cidade ainda sem dados — disponível na próxima atualização ANP.</p>';
     return;
@@ -552,13 +554,16 @@ async function initCidade() {
   });
   selMun.addEventListener('change', () => {
     const d = MUN[selUf.value]?.[selMun.value];
+    const n = NFCE?.municipios?.[selUf.value]?.[selMun.value] || {};
+    const fonteN = NFCE?.fontes?.[selUf.value];
     if (!d) { out.innerHTML = '<p class="pending">Sem dados.</p>'; return; }
     const fuels = [['gasolina','Gasolina'],['etanol','Etanol'],['s10','Diesel S10'],['s500','Diesel S500']];
     out.innerHTML = fuels.map(([k, label]) => {
-      const v = d[k];
+      const v = n[k] || d[k];
       if (!v) return `<div class="fuel-row"><span class="fuel-name">${label}</span><span class="pending">não amostrado</span></div>`;
-      return `<div class="fuel-row"><span class="fuel-name">${label}</span><span><span class="fuel-value">${fmtBRL(v.media)}</span><span class="fuel-range">n=${v.n} · min ${v.min.toFixed(2).replace('.',',')} / max ${v.max.toFixed(2).replace('.',',')}</span></span></div>`;
-    }).join('');
+      const fonte = n[k] ? `${v.n} posto${v.n > 1 ? 's' : ''} · notas fiscais ${NFCE.horas}h` : `n=${v.n} · ANP semanal`;
+      return `<div class="fuel-row"><span class="fuel-name">${label}</span><span><span class="fuel-value">${fmtBRL(v.media)}</span><span class="fuel-range">${fonte} · min ${v.min.toFixed(2).replace('.',',')} / max ${v.max.toFixed(2).replace('.',',')}</span></span></div>`;
+    }).join('') + (fonteN && Object.keys(n).length ? `<p class="anp-note" style="margin-top:8px;font-size:11px">Fonte: ${fonteN.nome}, notas fiscais (NFC-e) das últimas ${NFCE.horas} h, coletado em ${new Date(fonteN.coletado_em).toLocaleDateString('pt-BR')}. Preço da bomba no momento da venda, último por posto.</p>` : '');
   });
 }
 
