@@ -160,6 +160,7 @@ for (const [k, fn] of Object.entries({ abicom, ppi_anp: ppiAnp, produtor, etanol
 fs.rmSync(TMP, { recursive: true, force: true });
 if (erros.length) console.error('AVISO (mantido o anterior):\n  ' + erros.join('\n  '));
 if (TESTE) console.log(JSON.stringify(out, null, 1));
+else if (JSON.stringify({ ...out, atualizado_em: 0 }) === JSON.stringify({ ...anterior, atualizado_em: 0 })) console.log('mercado.json: sem mudança');
 else if (Object.keys(out).length > 1) {
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1));
   console.log('mercado.json:', ['abicom', 'ppi_anp', 'produtor', 'etanol'].map((k) => `${k} ${out[k] ? '✓' : '✗'}`).join(' · '), out.abicom ? `· ABICOM ${out.abicom.data}` : '');
