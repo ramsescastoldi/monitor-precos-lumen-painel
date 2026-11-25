@@ -25,16 +25,22 @@ jobs:
       - name: Scrape composição por estado -> custo-distribuicao.json
         run: node scrape-petrobras.mjs
 
+      - name: Tabela Petrobras às distribuidoras -> petrobras-distribuidoras.json
+        continue-on-error: true
+        run: |
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          node scrape-petrobras-tabela.mjs
+
       - name: Commit custo-distribuicao.json (o deployer da VPS faz o deploy Cloudflare)
         if: success()
         run: |
           git config user.name "Scraper Bot"
           git config user.email "bot@lumenposto.com"
-          if git diff --quiet -- custo-distribuicao.json; then
+          if git diff --quiet -- custo-distribuicao.json petrobras-distribuidoras.json; then
             echo "custo-distribuicao.json sem mudancas."
           else
             NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-            git add custo-distribuicao.json
+            git add custo-distribuicao.json petrobras-distribuidoras.json
             git commit -m "data: composicao de preco por estado — $NOW"
             git push origin main
             echo "custo-distribuicao.json pushado. O monitor-deployer na VPS detecta e faz wrangler deploy."

@@ -1,0 +1,2415 @@
+{
+ "atualizado_em": "2026-11-25T01:36:30.324Z",
+ "fonte": "https://precos.petrobras.com.br/web/precos-dos-combustiveis",
+ "produtos": {
+  "gasolina_a": {
+   "vigencia": "2026-11-01",
+   "pontos": [
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "EXA",
+     "rs_l": 3.0209,
+     "tabela": 3.0209,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5809
+     }
+    },
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "LPA",
+     "rs_l": 3.0236,
+     "tabela": 3.0236,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5836
+     }
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0498,
+     "tabela": 3.0498,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6098
+     }
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.0518,
+     "tabela": 3.0518,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6118
+     }
+    },
+    {
+     "local": "Belém",
+     "uf": "PA",
+     "modalidade": "ETM",
+     "rs_l": 2.9697,
+     "tabela": 2.9697,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5297
+     }
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.1006,
+     "tabela": 3.1006,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6606
+     }
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "LPA",
+     "rs_l": 3.1033,
+     "tabela": 3.1033,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6633
+     }
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.0675,
+     "tabela": 3.0675,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6275
+     }
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.0931,
+     "tabela": 3.0931,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6531
+     }
+    },
+    {
+     "local": "Brasília",
+     "uf": "DF",
+     "modalidade": "EXA",
+     "rs_l": 3.1641,
+     "tabela": 3.1641,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.7241
+     }
+    },
+    {
+     "local": "Brasília",
+     "uf": "DF",
+     "modalidade": "LPA",
+     "rs_l": 3.167,
+     "tabela": 3.167,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.727
+     }
+    },
+    {
+     "local": "Cabedelo",
+     "uf": "PB",
+     "modalidade": "LTM",
+     "rs_l": 2.9391,
+     "tabela": 2.9391,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.4991
+     }
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "EXA",
+     "rs_l": 3.0452,
+     "tabela": 3.0452,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6052
+     }
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "LPA",
+     "rs_l": 3.0479,
+     "tabela": 3.0479,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6079
+     }
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 2.9823,
+     "tabela": 2.9823,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5423
+     }
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 2.985,
+     "tabela": 2.985,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.545
+     }
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "EXA",
+     "rs_l": 3.0889,
+     "tabela": 3.0889,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6489
+     }
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "LPA",
+     "rs_l": 3.0916,
+     "tabela": 3.0916,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6516
+     }
+    },
+    {
+     "local": "Fortaleza",
+     "uf": "CE",
+     "modalidade": "ETM",
+     "rs_l": 2.968,
+     "tabela": 2.968,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.528
+     }
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.0506,
+     "tabela": 3.0506,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6106
+     }
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.0762,
+     "tabela": 3.0762,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6362
+     }
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0437,
+     "tabela": 3.0437,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6037
+     }
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "LCT",
+     "rs_l": 3.0663,
+     "tabela": 3.0663,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6263
+     }
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.0453,
+     "tabela": 3.0453,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6053
+     }
+    },
+    {
+     "local": "Ipojuca",
+     "uf": "PE",
+     "modalidade": "ETM",
+     "rs_l": 2.9476,
+     "tabela": 2.9476,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5076
+     }
+    },
+    {
+     "local": "Ipojuca",
+     "uf": "PE",
+     "modalidade": "ETD",
+     "rs_l": 2.9573,
+     "tabela": 2.9573,
+     "subvencao": 0,
+     "desde": "2026-11-01",
+     "anterior": {
+      "vigencia": "2026-10-01",
+      "rs_l": 2.9571
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "EXA",
+     "rs_l": 3.0808,
+     "tabela": 3.0808,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6408
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LCT",
+     "rs_l": 3.0808,
+     "tabela": 3.0808,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6408
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LTM",
+     "rs_l": 2.9408,
+     "tabela": 2.9408,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5008
+     }
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.0675,
+     "tabela": 3.0675,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6275
+     }
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.0931,
+     "tabela": 3.0931,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6531
+     }
+    },
+    {
+     "local": "Maceió",
+     "uf": "AL",
+     "modalidade": "LTM",
+     "rs_l": 2.9575,
+     "tabela": 2.9575,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5175
+     }
+    },
+    {
+     "local": "Paranaguá",
+     "uf": "PR",
+     "modalidade": "LTM",
+     "rs_l": 2.9549,
+     "tabela": 2.9549,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5149
+     }
+    },
+    {
+     "local": "Paranaguá",
+     "uf": "PR",
+     "modalidade": "LCT",
+     "rs_l": 3.1549,
+     "tabela": 3.1549,
+     "subvencao": 0,
+     "desde": "2026-10-01",
+     "anterior": null
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0608,
+     "tabela": 3.0608,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6208
+     }
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.0635,
+     "tabela": 3.0635,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6235
+     }
+    },
+    {
+     "local": "Ribeirão Preto",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0984,
+     "tabela": 3.0984,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6584
+     }
+    },
+    {
+     "local": "Ribeirão Preto",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.1056,
+     "tabela": 3.1056,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6656
+     }
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LPD",
+     "rs_l": 3.257,
+     "tabela": 3.257,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.817
+     }
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "ETD",
+     "rs_l": 3.2645,
+     "tabela": 3.2645,
+     "subvencao": 0,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-10",
+      "rs_l": 3.262
+     }
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.2929,
+     "tabela": 3.2929,
+     "subvencao": 0,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-10",
+      "rs_l": 3.2887
+     }
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.2978,
+     "tabela": 3.2978,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.8578
+     }
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.3418,
+     "tabela": 3.3418,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.9018
+     }
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.2978,
+     "tabela": 3.2978,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.8578
+     }
+    },
+    {
+     "local": "Santos",
+     "uf": "SP",
+     "modalidade": "LTM",
+     "rs_l": 2.9419,
+     "tabela": 2.9419,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5019
+     }
+    },
+    {
+     "local": "Santarém",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 3.015,
+     "tabela": 3.015,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.575
+     }
+    },
+    {
+     "local": "São Caetano do Sul",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0227,
+     "tabela": 3.0227,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5827
+     }
+    },
+    {
+     "local": "São Caetano do Sul",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.0294,
+     "tabela": 3.0294,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5894
+     }
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.0181,
+     "tabela": 3.0181,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5781
+     }
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.0208,
+     "tabela": 3.0208,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5808
+     }
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETM",
+     "rs_l": 2.9303,
+     "tabela": 2.9303,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.4903
+     }
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETD",
+     "rs_l": 2.9455,
+     "tabela": 2.9455,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5055
+     }
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "EXA",
+     "rs_l": 3.1599,
+     "tabela": 3.1599,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.7199
+     }
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.1756,
+     "tabela": 3.1756,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.7356
+     }
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "LPA",
+     "rs_l": 3.1703,
+     "tabela": 3.1703,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.7303
+     }
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.381,
+     "tabela": 3.381,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.941
+     }
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.381,
+     "tabela": 3.381,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.941
+     }
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.411,
+     "tabela": 3.411,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.971
+     }
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.1325,
+     "tabela": 3.1325,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6925
+     }
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.1534,
+     "tabela": 3.1534,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.7134
+     }
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.1159,
+     "tabela": 3.1159,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6759
+     }
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.1368,
+     "tabela": 3.1368,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6968
+     }
+    },
+    {
+     "local": "Vila do Conde",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 2.9587,
+     "tabela": 2.9587,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5187
+     }
+    },
+    {
+     "local": "Vila Velha",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.0244,
+     "tabela": 3.0244,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5844
+     }
+    },
+    {
+     "local": "Vitória",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.0244,
+     "tabela": 3.0244,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.5844
+     }
+    },
+    {
+     "local": "Volta Redonda",
+     "uf": "RJ",
+     "modalidade": "EXA",
+     "rs_l": 3.1115,
+     "tabela": 3.1115,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6715
+     }
+    },
+    {
+     "local": "Volta Redonda",
+     "uf": "RJ",
+     "modalidade": "LPC",
+     "rs_l": 3.1239,
+     "tabela": 3.1239,
+     "subvencao": 0,
+     "desde": "2026-09-10",
+     "anterior": {
+      "vigencia": "2026-09-01",
+      "rs_l": 2.6839
+     }
+    }
+   ],
+   "fonte": "Tabelas de Precos - Gasolina - 01.11.2026"
+  },
+  "diesel_s500": {
+   "vigencia": "2026-10-01",
+   "pontos": [
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "EXA",
+     "rs_l": 3.2384,
+     "tabela": 5.3584,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "LPA",
+     "rs_l": 3.2411,
+     "tabela": 5.3611,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2383,
+     "tabela": 5.3583,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.2403,
+     "tabela": 5.3603,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Belém",
+     "uf": "PA",
+     "modalidade": "ETM",
+     "rs_l": 3.1359,
+     "tabela": 5.2559,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.3325,
+     "tabela": 5.4525,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "LPA",
+     "rs_l": 3.3352,
+     "tabela": 5.4552,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.2989,
+     "tabela": 5.4189,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3245,
+     "tabela": 5.4445,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Cabedelo",
+     "uf": "PB",
+     "modalidade": "LTM",
+     "rs_l": 3.1048,
+     "tabela": 5.2248,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "EXA",
+     "rs_l": 3.2109,
+     "tabela": 5.3309,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "LPA",
+     "rs_l": 3.2136,
+     "tabela": 5.3336,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2171,
+     "tabela": 5.3371,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.2198,
+     "tabela": 5.3398,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "EXA",
+     "rs_l": 3.282,
+     "tabela": 5.402,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "LPA",
+     "rs_l": 3.2847,
+     "tabela": 5.4047,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.2833,
+     "tabela": 5.4033,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3089,
+     "tabela": 5.4289,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.247,
+     "tabela": 5.367,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "LCT",
+     "rs_l": 3.2696,
+     "tabela": 5.3896,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "EXA",
+     "rs_l": 3.2904,
+     "tabela": 5.4104,
+     "subvencao": 2.12,
+     "desde": "2026-08-01",
+     "anterior": {
+      "vigencia": "2026-07-01",
+      "rs_l": 3.2854
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LCT",
+     "rs_l": 3.2904,
+     "tabela": 5.4104,
+     "subvencao": 2.12,
+     "desde": "2026-08-01",
+     "anterior": {
+      "vigencia": "2026-07-01",
+      "rs_l": 3.2854
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LTM",
+     "rs_l": 3.1504,
+     "tabela": 5.2704,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.2989,
+     "tabela": 5.4189,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3245,
+     "tabela": 5.4445,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Paranaguá",
+     "uf": "PR",
+     "modalidade": "LTM",
+     "rs_l": 3.1763,
+     "tabela": 5.2963,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2629,
+     "tabela": 5.3829,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.2656,
+     "tabela": 5.3856,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Ribeirão Preto",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2932,
+     "tabela": 5.4132,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LPD",
+     "rs_l": 3.4408,
+     "tabela": 5.5608,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "ETD",
+     "rs_l": 3.4483,
+     "tabela": 5.5683,
+     "subvencao": 2.12,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-17",
+      "rs_l": 3.4458
+     }
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.4767,
+     "tabela": 5.5967,
+     "subvencao": 2.12,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-17",
+      "rs_l": 3.4725
+     }
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.4999,
+     "tabela": 5.6199,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.5439,
+     "tabela": 5.6639,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.4999,
+     "tabela": 5.6199,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Santos",
+     "uf": "SP",
+     "modalidade": "LTM",
+     "rs_l": 3.152,
+     "tabela": 5.272,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Santarém",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 3.2505,
+     "tabela": 5.3705,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2494,
+     "tabela": 5.3694,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.2521,
+     "tabela": 5.3721,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETM",
+     "rs_l": 3.093,
+     "tabela": 5.213,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "EXA",
+     "rs_l": 3.1362,
+     "tabela": 5.2562,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "LPC",
+     "rs_l": 3.138,
+     "tabela": 5.258,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETD",
+     "rs_l": 3.108,
+     "tabela": 5.228,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "EXA",
+     "rs_l": 3.3437,
+     "tabela": 5.4637,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.3594,
+     "tabela": 5.4794,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.5715,
+     "tabela": 5.6915,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.5715,
+     "tabela": 5.6915,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.6015,
+     "tabela": 5.7215,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.3273,
+     "tabela": 5.4473,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.3482,
+     "tabela": 5.4682,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.3354,
+     "tabela": 5.4554,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.3563,
+     "tabela": 5.4763,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Vila do Conde",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 3.1249,
+     "tabela": 5.2449,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Vila Velha",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.2663,
+     "tabela": 5.3863,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Vitória",
+     "uf": "ES",
+     "modalidade": "EXA",
+     "rs_l": 3.4192,
+     "tabela": 5.5392,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Vitória",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.2663,
+     "tabela": 5.3863,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    },
+    {
+     "local": "Volta Redonda",
+     "uf": "RJ",
+     "modalidade": "EXA",
+     "rs_l": 3.3006,
+     "tabela": 5.4206,
+     "subvencao": 2.12,
+     "desde": "2026-06-02",
+     "anterior": null
+    }
+   ],
+   "fonte": "Tabela de Preços - Diesel S500 e S10 - 01.10.2026"
+  },
+  "diesel_s10": {
+   "vigencia": "2026-10-01",
+   "pontos": [
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "EXA",
+     "rs_l": 3.3023,
+     "tabela": 5.4223,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Araucária",
+     "uf": "PR",
+     "modalidade": "LPA",
+     "rs_l": 3.305,
+     "tabela": 5.425,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3108,
+     "tabela": 5.4308,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Barueri",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.3128,
+     "tabela": 5.4328,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Belém",
+     "uf": "PA",
+     "modalidade": "ETM",
+     "rs_l": 3.2084,
+     "tabela": 5.3284,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Belém",
+     "uf": "PA",
+     "modalidade": "EXA",
+     "rs_l": 3.2614,
+     "tabela": 5.3814,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.41,
+     "tabela": 5.53,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Betim",
+     "uf": "MG",
+     "modalidade": "LPA",
+     "rs_l": 3.4127,
+     "tabela": 5.5327,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.3671,
+     "tabela": 5.4871,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Biguaçu",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3927,
+     "tabela": 5.5127,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Brasília",
+     "uf": "DF",
+     "modalidade": "EXA",
+     "rs_l": 3.4203,
+     "tabela": 5.5403,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Brasília",
+     "uf": "DF",
+     "modalidade": "LPA",
+     "rs_l": 3.4232,
+     "tabela": 5.5432,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "EXA",
+     "rs_l": 3.2834,
+     "tabela": 5.4034,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Canoas",
+     "uf": "RS",
+     "modalidade": "LPA",
+     "rs_l": 3.2861,
+     "tabela": 5.4061,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.2752,
+     "tabela": 5.3952,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Cubatão",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.2779,
+     "tabela": 5.3979,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "EXA",
+     "rs_l": 3.3545,
+     "tabela": 5.4745,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Duque de Caxias",
+     "uf": "RJ",
+     "modalidade": "LPA",
+     "rs_l": 3.3572,
+     "tabela": 5.4772,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Fortaleza",
+     "uf": "CE",
+     "modalidade": "ETM",
+     "rs_l": 3.2031,
+     "tabela": 5.3231,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.3515,
+     "tabela": 5.4715,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Guaramirim",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3771,
+     "tabela": 5.4971,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3195,
+     "tabela": 5.4395,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "LCT",
+     "rs_l": 3.3421,
+     "tabela": 5.4621,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Guarulhos",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.3211,
+     "tabela": 5.4411,
+     "subvencao": 2.12,
+     "desde": "2026-08-01",
+     "anterior": null
+    },
+    {
+     "local": "Ipojuca",
+     "uf": "PE",
+     "modalidade": "EXA",
+     "rs_l": 3.1674,
+     "tabela": 5.2874,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Ipojuca",
+     "uf": "PE",
+     "modalidade": "LPA",
+     "rs_l": 3.1693,
+     "tabela": 5.2893,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "EXA",
+     "rs_l": 3.3582,
+     "tabela": 5.4782,
+     "subvencao": 2.12,
+     "desde": "2026-08-01",
+     "anterior": {
+      "vigencia": "2026-07-01",
+      "rs_l": 3.3532
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LCT",
+     "rs_l": 3.3582,
+     "tabela": 5.4782,
+     "subvencao": 2.12,
+     "desde": "2026-08-01",
+     "anterior": {
+      "vigencia": "2026-07-01",
+      "rs_l": 3.3532
+     }
+    },
+    {
+     "local": "Itacoatiara",
+     "uf": "AM",
+     "modalidade": "LTM",
+     "rs_l": 3.2182,
+     "tabela": 5.3382,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "EXA",
+     "rs_l": 3.3671,
+     "tabela": 5.4871,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Itajaí",
+     "uf": "SC",
+     "modalidade": "LCT",
+     "rs_l": 3.3927,
+     "tabela": 5.5127,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Maceió",
+     "uf": "AL",
+     "modalidade": "LTM",
+     "rs_l": 3.2115,
+     "tabela": 5.3315,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Paranaguá",
+     "uf": "PR",
+     "modalidade": "LTM",
+     "rs_l": 3.2363,
+     "tabela": 5.3563,
+     "subvencao": 2.12,
+     "desde": "2026-09-01",
+     "anterior": {
+      "vigencia": "2026-08-01",
+      "rs_l": 3.1863
+     }
+    },
+    {
+     "local": "Paranaguá",
+     "uf": "PR",
+     "modalidade": "LCT",
+     "rs_l": 3.4363,
+     "tabela": 5.5563,
+     "subvencao": 2.12,
+     "desde": "2026-10-01",
+     "anterior": null
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3311,
+     "tabela": 5.4511,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Paulínia",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.3338,
+     "tabela": 5.4538,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Ribeirão Preto",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3617,
+     "tabela": 5.4817,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Rio Grande",
+     "uf": "RS",
+     "modalidade": "LCT",
+     "rs_l": 3.2736,
+     "tabela": 5.3936,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LPD",
+     "rs_l": 3.5088,
+     "tabela": 5.6288,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "ETD",
+     "rs_l": 3.5163,
+     "tabela": 5.6363,
+     "subvencao": 2.12,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-17",
+      "rs_l": 3.5138
+     }
+    },
+    {
+     "local": "Rio Verde",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.5447,
+     "tabela": 5.6647,
+     "subvencao": 2.12,
+     "desde": "2026-10-01",
+     "anterior": {
+      "vigencia": "2026-09-17",
+      "rs_l": 3.5405
+     }
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.5681,
+     "tabela": 5.6881,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.6121,
+     "tabela": 5.7321,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Rondonópolis",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.5681,
+     "tabela": 5.6881,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Santos",
+     "uf": "SP",
+     "modalidade": "LTM",
+     "rs_l": 3.2198,
+     "tabela": 5.3398,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Santarém",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 3.3665,
+     "tabela": 5.4865,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Caetano do Sul",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3002,
+     "tabela": 5.4202,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Caetano do Sul",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.3069,
+     "tabela": 5.4269,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "EXA",
+     "rs_l": 3.3219,
+     "tabela": 5.4419,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São José dos Campos",
+     "uf": "SP",
+     "modalidade": "LPA",
+     "rs_l": 3.3246,
+     "tabela": 5.4446,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETM",
+     "rs_l": 3.153,
+     "tabela": 5.273,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "EXA",
+     "rs_l": 3.1963,
+     "tabela": 5.3163,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "LPC",
+     "rs_l": 3.1981,
+     "tabela": 5.3181,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "São Luís",
+     "uf": "MA",
+     "modalidade": "ETD",
+     "rs_l": 3.1681,
+     "tabela": 5.2881,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "EXA",
+     "rs_l": 3.4117,
+     "tabela": 5.5317,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Senador Canedo",
+     "uf": "GO",
+     "modalidade": "LCT",
+     "rs_l": 3.4274,
+     "tabela": 5.5474,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LPD",
+     "rs_l": 3.6425,
+     "tabela": 5.7625,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "ETD",
+     "rs_l": 3.6425,
+     "tabela": 5.7625,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Sinop",
+     "uf": "MT",
+     "modalidade": "LCT",
+     "rs_l": 3.6725,
+     "tabela": 5.7925,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.3958,
+     "tabela": 5.5158,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Uberaba",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.4167,
+     "tabela": 5.5367,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "EXA",
+     "rs_l": 3.4041,
+     "tabela": 5.5241,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Uberlândia",
+     "uf": "MG",
+     "modalidade": "LCT",
+     "rs_l": 3.425,
+     "tabela": 5.545,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Vila do Conde",
+     "uf": "PA",
+     "modalidade": "LTM",
+     "rs_l": 3.1974,
+     "tabela": 5.3174,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Vila Velha",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.3346,
+     "tabela": 5.4546,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    },
+    {
+     "local": "Vitória",
+     "uf": "ES",
+     "modalidade": "LTM",
+     "rs_l": 3.3346,
+     "tabela": 5.4546,
+     "subvencao": 2.12,
+     "desde": "2026-06-01",
+     "anterior": null
+    }
+   ],
+   "fonte": "Tabela de Preços - Diesel S500 e S10 - 01.10.2026"
+  }
+ },
+ "por_uf": {
+  "PR": {
+   "gasolina_a": {
+    "min": 2.9549,
+    "local": "Paranaguá",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.1763,
+    "local": "Paranaguá",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.2363,
+    "local": "Paranaguá",
+    "modalidade": "LTM"
+   }
+  },
+  "SP": {
+   "gasolina_a": {
+    "min": 2.9419,
+    "local": "Santos",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.152,
+    "local": "Santos",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.2198,
+    "local": "Santos",
+    "modalidade": "LTM"
+   }
+  },
+  "PA": {
+   "gasolina_a": {
+    "min": 2.9587,
+    "local": "Vila do Conde",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.1249,
+    "local": "Vila do Conde",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.1974,
+    "local": "Vila do Conde",
+    "modalidade": "LTM"
+   }
+  },
+  "MG": {
+   "gasolina_a": {
+    "min": 3.1006,
+    "local": "Betim",
+    "modalidade": "EXA"
+   },
+   "diesel_s500": {
+    "min": 3.3273,
+    "local": "Uberaba",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.3958,
+    "local": "Uberaba",
+    "modalidade": "EXA"
+   }
+  },
+  "SC": {
+   "gasolina_a": {
+    "min": 3.0506,
+    "local": "Guaramirim",
+    "modalidade": "EXA"
+   },
+   "diesel_s500": {
+    "min": 3.2833,
+    "local": "Guaramirim",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.3515,
+    "local": "Guaramirim",
+    "modalidade": "EXA"
+   }
+  },
+  "DF": {
+   "gasolina_a": {
+    "min": 3.1641,
+    "local": "Brasília",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.4203,
+    "local": "Brasília",
+    "modalidade": "EXA"
+   }
+  },
+  "PB": {
+   "gasolina_a": {
+    "min": 2.9391,
+    "local": "Cabedelo",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.1048,
+    "local": "Cabedelo",
+    "modalidade": "LTM"
+   }
+  },
+  "RS": {
+   "gasolina_a": {
+    "min": 3.0452,
+    "local": "Canoas",
+    "modalidade": "EXA"
+   },
+   "diesel_s500": {
+    "min": 3.2109,
+    "local": "Canoas",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.2736,
+    "local": "Rio Grande",
+    "modalidade": "LCT"
+   }
+  },
+  "RJ": {
+   "gasolina_a": {
+    "min": 3.0889,
+    "local": "Duque de Caxias",
+    "modalidade": "EXA"
+   },
+   "diesel_s500": {
+    "min": 3.282,
+    "local": "Duque de Caxias",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.3545,
+    "local": "Duque de Caxias",
+    "modalidade": "EXA"
+   }
+  },
+  "CE": {
+   "gasolina_a": {
+    "min": 2.968,
+    "local": "Fortaleza",
+    "modalidade": "ETM"
+   },
+   "diesel_s10": {
+    "min": 3.2031,
+    "local": "Fortaleza",
+    "modalidade": "ETM"
+   }
+  },
+  "PE": {
+   "gasolina_a": {
+    "min": 2.9476,
+    "local": "Ipojuca",
+    "modalidade": "ETM"
+   },
+   "diesel_s10": {
+    "min": 3.1674,
+    "local": "Ipojuca",
+    "modalidade": "EXA"
+   }
+  },
+  "AM": {
+   "gasolina_a": {
+    "min": 2.9408,
+    "local": "Itacoatiara",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.1504,
+    "local": "Itacoatiara",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.2182,
+    "local": "Itacoatiara",
+    "modalidade": "LTM"
+   }
+  },
+  "AL": {
+   "gasolina_a": {
+    "min": 2.9575,
+    "local": "Maceió",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.2115,
+    "local": "Maceió",
+    "modalidade": "LTM"
+   }
+  },
+  "GO": {
+   "gasolina_a": {
+    "min": 3.1599,
+    "local": "Senador Canedo",
+    "modalidade": "EXA"
+   },
+   "diesel_s500": {
+    "min": 3.3437,
+    "local": "Senador Canedo",
+    "modalidade": "EXA"
+   },
+   "diesel_s10": {
+    "min": 3.4117,
+    "local": "Senador Canedo",
+    "modalidade": "EXA"
+   }
+  },
+  "MT": {
+   "gasolina_a": {
+    "min": 3.2978,
+    "local": "Rondonópolis",
+    "modalidade": "ETD"
+   },
+   "diesel_s500": {
+    "min": 3.4999,
+    "local": "Rondonópolis",
+    "modalidade": "ETD"
+   },
+   "diesel_s10": {
+    "min": 3.5681,
+    "local": "Rondonópolis",
+    "modalidade": "ETD"
+   }
+  },
+  "MA": {
+   "gasolina_a": {
+    "min": 2.9303,
+    "local": "São Luís",
+    "modalidade": "ETM"
+   },
+   "diesel_s500": {
+    "min": 3.093,
+    "local": "São Luís",
+    "modalidade": "ETM"
+   },
+   "diesel_s10": {
+    "min": 3.153,
+    "local": "São Luís",
+    "modalidade": "ETM"
+   }
+  },
+  "ES": {
+   "gasolina_a": {
+    "min": 3.0244,
+    "local": "Vila Velha",
+    "modalidade": "LTM"
+   },
+   "diesel_s500": {
+    "min": 3.2663,
+    "local": "Vila Velha",
+    "modalidade": "LTM"
+   },
+   "diesel_s10": {
+    "min": 3.3346,
+    "local": "Vila Velha",
+    "modalidade": "LTM"
+   }
+  }
+ }
+}

@@ -22,7 +22,7 @@ const get = async (f) => {
 };
 
 // snapshot: { produto: { nível: R$ } } — same numbers the site shows
-function snapshot(data, custo, nfce) {
+function snapshot(data, custo, nfce, petro) {
   const comp = custo.estados?.[UF] || {};
   const dist = data.distribuicao_estado?.[UF] || {};
   const bomba = data.agregados_estado?.[UF] || {};
@@ -35,6 +35,16 @@ function snapshot(data, custo, nfce) {
   // pump average from state NFC-e tools (scrape-nfce.mjs), one block per state
   for (const [uf, e] of Object.entries(nfce?.estados || {}))
     s[`${uf} — bomba média (notas fiscais)`] = { gasolina: e.gasolina?.media, etanol: e.etanol?.media, s10: e.s10?.media, s500: e.s500?.media };
+  // Petrobras price to distributors (scrape-petrobras-tabela.mjs): Brazil average + each MT point (cheapest modality)
+  const P = petro?.produtos || {};
+  const media = (k) => { const v = (P[k]?.pontos || []).map((x) => x.rs_l); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+  if (P.gasolina_a) {
+    s['Petrobras → distribuidoras (média Brasil)'] = { gasolina_a: media('gasolina_a'), diesel_s10: media('diesel_s10'), diesel_s500: media('diesel_s500') };
+    const mt = {};
+    for (const k of ['gasolina_a', 'diesel_s10', 'diesel_s500'])
+      for (const x of P[k]?.pontos || []) if (x.uf === UF) { const c = `${NOME[k]} ${x.local}`; if (mt[c] == null || x.rs_l < mt[c]) mt[c] = x.rs_l; }
+    s[`Petrobras → distribuidoras (${UF})`] = mt;
+  }
   for (const p of Object.values(s)) {
     for (const k of Object.keys(p)) if (p[k] == null) delete p[k]; else p[k] = +(+p[k]).toFixed(3);
     if (p.posto_paga != null && p.bomba != null) p.margem_posto = +(p.bomba - p.posto_paga).toFixed(3);
@@ -44,7 +54,8 @@ function snapshot(data, custo, nfce) {
 }
 
 const NOME = { petrobras: 'Petrobras (refinaria)', distribuidora: 'Custo distribuidora', posto_paga: 'Posto paga', bomba: 'Bomba (ANP)', margem_distribuidora: 'Margem distribuidora', margem_posto: 'Margem posto',
-  gasolina: 'Gasolina', etanol: 'Etanol', s10: 'Diesel S10', s500: 'Diesel S500' };
+  gasolina: 'Gasolina', etanol: 'Etanol', s10: 'Diesel S10', s500: 'Diesel S500',
+  gasolina_a: 'Gasolina A', diesel_s10: 'Diesel S10', diesel_s500: 'Diesel S500' };
 const brl = (v) => v.toFixed(2).replace('.', ',');
 const pct = (a, b) => { const p = (b - a) / Math.abs(a) * 100; return (p > 0 ? '+' : '') + p.toFixed(1).replace('.', ',') + '%'; };
 
@@ -56,7 +67,7 @@ export function diff(antes, agora) {
     for (const [k, v] of Object.entries(niveis)) {
       const a = antes?.[prod]?.[k];
       if (a == null || Math.abs(v - a) < 0.01) continue;
-      linhas.push(`• ${NOME[k]}: R$ ${brl(a)} → R$ ${brl(v)} (${pct(a, v)})`);
+      linhas.push(`• ${NOME[k] || k}: R$ ${brl(a)} → R$ ${brl(v)} (${pct(a, v)})`);
     }
     if (linhas.length) out.push(`<b>${prod}</b>\n` + linhas.join('\n'));
   }
@@ -74,15 +85,15 @@ async function telegram(texto) {
   if (!r.ok) throw new Error('Telegram HTTP ' + r.status + ' ' + (await r.text()).slice(0, 200));
 }
 
-const [data, custo, nfce] = await Promise.all([get('data.json'), get('custo-distribuicao.json'), get('municipios-nfce.json').catch(() => null)]);
-const agora = snapshot(data, custo, nfce);
+const [data, custo, nfce, petro] = await Promise.all([get('data.json'), get('custo-distribuicao.json'), get('municipios-nfce.json').catch(() => null), get('petrobras-distribuidoras.json').catch(() => null)]);
+const agora = snapshot(data, custo, nfce, petro);
 const antes = fs.existsSync(ESTADO) ? JSON.parse(fs.readFileSync(ESTADO, 'utf8')).valores : null;
 const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Cuiaba' });
 
 let msg = null;
 if (!antes) {
   // first run: baseline so he sees it is alive
-  const linhas = Object.entries(agora).map(([p, n]) => `<b>${p}</b>\n` + Object.entries(n).map(([k, v]) => `• ${NOME[k]}: R$ ${brl(v)}`).join('\n'));
+  const linhas = Object.entries(agora).map(([p, n]) => `<b>${p}</b>\n` + Object.entries(n).map(([k, v]) => `• ${NOME[k] || k}: R$ ${brl(v)}`).join('\n'));
   msg = `⛽ <b>Monitor ${UF} — alerta diário ligado</b> (${hoje})\nValores de partida. Daqui pra frente só aviso quando mudar.\n\n` + linhas.join('\n\n');
 } else {
   const blocos = diff(antes, agora);

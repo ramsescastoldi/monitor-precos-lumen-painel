@@ -271,6 +271,13 @@
   </div>
 </div>
 
+<h2 id="petro-h2" style="display:none">Preço Petrobras às distribuidoras <span id="petro-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="table-wrap" id="petro-wrap" style="display:none"><table>
+  <thead><tr><th>UF</th><th>Ponto de entrega</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th></tr></thead>
+  <tbody id="tbody-petro"></tbody>
+</table></div>
+<p id="petro-nota" style="display:none;font-size:12px;color:var(--text-muted);margin-top:6px"></p>
+
 <h2>Distribuidoras <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— preço B2B coletado por cotação direta (planilha interna) · últimos 14 dias</span></h2>
 <div class="table-wrap"><table>
   <thead>
@@ -896,6 +903,34 @@ function shortName(nome) {
     .split(' ').slice(0, 2).join(' ') || nome.slice(0, 16);
 }
 
+// === Preço Petrobras às distribuidoras (tabela oficial por ponto de entrega) ===
+// Por ponto: modalidade mais barata de cada produto. Diesel já com a subvenção (MP) descontada.
+function renderPetro(P) {
+  if (!P?.produtos) return;
+  const K = ['gasolina_a', 'diesel_s10', 'diesel_s500'];
+  const locais = {};
+  for (const k of K) for (const x of P.produtos[k]?.pontos || []) {
+    const l = (locais[x.uf + '|' + x.local] ??= { uf: x.uf, local: x.local });
+    if (!l[k] || x.rs_l < l[k].rs_l) l[k] = x;
+  }
+  const br = (v) => 'R$ ' + v.toFixed(4).replace('.', ',');
+  const dt = (d) => d.split('-').reverse().slice(0, 2).join('/');
+  const cel = (x) => {
+    if (!x) return '<td class="num">—</td>';
+    const seta = x.anterior ? (x.rs_l > x.anterior.rs_l ? ' <span style="color:#e5484d">▲</span>' : ' <span style="color:#30a46c">▼</span>') : '';
+    const tit = `${x.modalidade} · desde ${dt(x.desde)}` + (x.anterior ? ` · antes ${br(x.anterior.rs_l)}` : '') + (x.subvencao ? ` · tabela ${br(x.tabela)} − subvenção ${br(x.subvencao)}` : '');
+    return `<td class="num" title="${tit}">${br(x.rs_l)}${seta}<br><span style="font-size:11px;color:var(--text-muted)">${x.modalidade} · ${dt(x.desde)}</span></td>`;
+  };
+  const rows = Object.values(locais).sort((a, b) => (b.uf === 'MT') - (a.uf === 'MT') || a.uf.localeCompare(b.uf) || a.local.localeCompare(b.local));
+  document.getElementById('tbody-petro').innerHTML = rows.map((l) => `<tr><td class="uf">${l.uf}</td><td>${l.local}</td>${K.map((k) => cel(l[k])).join('')}</tr>`).join('');
+  const g = P.produtos.gasolina_a, d = P.produtos.diesel_s10;
+  document.getElementById('petro-sub').textContent = `— R$/litro sem tributos, à vista · tabela Petrobras de ${dt(g.vigencia)} (gasolina) e ${dt(d.vigencia)} (diesel)`;
+  const sub = d.pontos.find((x) => x.subvencao)?.subvencao;
+  document.getElementById('petro-nota').textContent = 'Preço que a distribuidora paga à Petrobras no ponto de entrega, antes de ICMS, PIS/Cofins, Cide, etanol anidro e biodiesel. Embaixo do preço: modalidade de entrega mais barata no ponto e a data desde quando vale.' +
+    (sub ? ` Diesel já com a subvenção federal de R$ ${sub.toFixed(2).replace('.', ',')}/L descontada (MPs 1.363 e 1.391); passe o mouse para ver o preço de tabela.` : '');
+  for (const id of ['petro-h2', 'petro-wrap', 'petro-nota']) document.getElementById(id).style.display = '';
+}
+
 (async function loadAndRender() {
   // custo-distribuicao.json é opcional — painel funciona sem
   const [resD, resC] = await Promise.all([
@@ -913,6 +948,7 @@ function shortName(nome) {
   renderPainel();
   renderCusto(CUSTO);
   initCidade();
+  fetch('petrobras-distribuidoras.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.ok && r.json()).then(renderPetro).catch(() => {});
 })();
 </script>
 </body>
