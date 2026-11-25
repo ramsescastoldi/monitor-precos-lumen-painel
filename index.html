@@ -85,6 +85,18 @@
     h1 { font-size: 22px; }
     .kpi-value { font-size: 22px; }
   }
+  /* phone: each table row becomes a card, the column name rides on the cell (data-label, set by JS) */
+  @media (max-width: 640px) {
+    .table-wrap { overflow: visible; background: none; border: none; }
+    .table-wrap table { min-width: 0; }
+    .table-wrap thead { display: none; }
+    .table-wrap tr { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; padding: 6px 0; }
+    .table-wrap td { display: flow-root; padding: 4px 12px; border: none; text-align: right; }
+    .table-wrap td::before { content: attr(data-label); float: left; margin-right: 12px; color: var(--text-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; line-height: 18px; }
+    .table-wrap td:first-child { text-align: left; font-weight: 600; font-size: 13px; padding-bottom: 6px; }
+    .table-wrap td:first-child::before, .table-wrap td[colspan]::before { content: none; }
+    .table-wrap td[colspan] { text-align: center; }
+  }
   footer { margin-top: 48px; color: var(--text-muted); font-size: 12px; text-align: center; }
 
   /* === Auth overlay === */
@@ -300,14 +312,14 @@
 <h2>Importação × refinarias <span id="merc-abi-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
 <div class="kpis" id="merc-medias"></div>
 <div class="table-wrap" style="margin-top:12px"><table>
-  <thead><tr><th>Polo</th><th class="num">Diesel A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th><th class="num">Gasolina A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th></tr></thead>
+  <thead><tr><th>Polo</th><th class="num">Diesel A: preço</th><th class="num" data-l="Diesel A: PPI">PPI</th><th class="num" data-l="Diesel A: arbitragem">Arbitragem</th><th class="num">Gasolina A: preço</th><th class="num" data-l="Gasolina A: PPI">PPI</th><th class="num" data-l="Gasolina A: arbitragem">Arbitragem</th></tr></thead>
   <tbody id="tbody-abicom"></tbody>
 </table></div>
 <p class="merc-nota">Arbitragem = preço doméstico − paridade de importação (PPI), em R$/L. <b>Aberta</b> (positiva) = importar compensa; <b>Fechada</b> (negativa) = a refinaria vende abaixo do custo de importar. Diesel com a subvenção federal já descontada. Fonte: ABICOM/StoneX, atualizado todo dia útil.</p>
 
 <h3 id="merc-ppi-h">Arbitragem por porto e refinaria</h3>
 <div class="table-wrap"><table>
-  <thead><tr><th>Ponto</th><th class="num">Gasolina: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th><th class="num">Diesel S10: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th></tr></thead>
+  <thead><tr><th>Ponto</th><th class="num">Gasolina: PPI</th><th class="num" data-l="Gasolina: Petrobras hoje">Petrobras hoje</th><th class="num" data-l="Gasolina: arbitragem">Arbitragem</th><th class="num">Diesel S10: PPI</th><th class="num" data-l="Diesel S10: Petrobras hoje">Petrobras hoje</th><th class="num" data-l="Diesel S10: arbitragem">Arbitragem</th></tr></thead>
   <tbody id="tbody-ppi"></tbody>
 </table></div>
 <p class="merc-nota">PPI semanal estimado pela S&amp;P Global e publicado pela ANP (média da semana), comparado com o preço atual da tabela Petrobras no mesmo ponto. Pontos sem venda Petrobras mostram só o PPI.</p>
@@ -427,6 +439,12 @@
 </div>
 
 <script>
+// phone cards: every table cell carries its column name (th data-l overrides the header text)
+new MutationObserver(() => document.querySelectorAll('.table-wrap tbody td:not([data-label])').forEach((td) => {
+  const th = td.closest('table').querySelectorAll('thead th')[td.cellIndex];
+  td.dataset.label = th ? th.dataset.l || th.textContent.trim() : '';
+})).observe(document.body, { childList: true, subtree: true });
+
 // === Gate: cadastro Revenda Lumen Club (planilha leadspostos) + pedágio de preço anônimo ===
 const API = 'https://grupo.lumenclubpainel.com.br/api/monitor';
 const SESSION_KEY = 'monitor_sessao';
