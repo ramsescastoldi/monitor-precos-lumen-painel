@@ -6,6 +6,7 @@
 import pg from 'pg';
 import { parse } from 'csv-parse/sync';
 import https from 'node:https';
+import fs from 'node:fs';
 
 const { Client } = pg;
 
@@ -67,7 +68,9 @@ const client = new Client({
   for (const url of URLS) {
     const fileName = url.split('/').pop();
     console.log(`\n[${fileName}] Baixando...`);
-    const csvText = await fetch(url);
+    // ANP resets GitHub runner IPs (since 19/11/2026): the Mac uploads the CSVs as release
+    // assets (anp-csv.sh) and the workflow passes ANP_CSV_DIR to read them instead.
+    const csvText = process.env.ANP_CSV_DIR ? fs.readFileSync(`${process.env.ANP_CSV_DIR}/${fileName}`, 'utf-8') : await fetch(url);
     console.log(`[${fileName}] ${(csvText.length / 1024).toFixed(0)} KB. Parseando...`);
 
     const records = parse(csvText, {

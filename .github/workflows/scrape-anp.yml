@@ -27,12 +27,13 @@ jobs:
       - name: Run scraper + gerar data.json
         env:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -z "$SUPABASE_DB_URL" ]; then
             echo "ERRO: secret SUPABASE_DB_URL nao configurado no repo."
             exit 1
           fi
-          node scrape-anp.mjs || echo "AVISO: scrape ANP falhou (rede) — gerando data.json com o que já está no banco"
+          node scrape-anp.mjs || { gh release download anp-csv -D csv --clobber && ANP_CSV_DIR=csv node scrape-anp.mjs; } || echo "AVISO: scrape ANP falhou (rede) — gerando data.json com o que já está no banco"
           node update.mjs
 
       - name: Commit data.json (o deployer da VPS faz o deploy Cloudflare)
