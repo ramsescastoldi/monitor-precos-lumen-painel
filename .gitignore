@@ -6,3 +6,5 @@ package-lock.json
 graphify-out/
 .alerta-estado.json
 anp-csv.log
+tools/ocr
+mercado.log

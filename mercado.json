@@ -1,0 +1,516 @@
+{
+ "atualizado_em": "2026-11-25T11:07:39.407Z",
+ "abicom": {
+  "data": "2026-11-24",
+  "fonte": "https://abicom.com.br/ppi/ppi-24-11-2026/",
+  "polos": [
+   {
+    "polo": "Itaqui",
+    "uf": "MA",
+    "empresa": "Petrobras",
+    "diesel": {
+     "preco": 3.1963,
+     "ppi": 5.7679,
+     "defasagem": -2.5716,
+     "pct": -80
+    },
+    "gasolina": {
+     "preco": 2.9303,
+     "ppi": 2.9417,
+     "defasagem": -0.0114,
+     "pct": 0
+    }
+   },
+   {
+    "polo": "Suape",
+    "uf": "PE",
+    "empresa": "Petrobras",
+    "diesel": {
+     "preco": 3.1674,
+     "ppi": 5.7679,
+     "defasagem": -2.6005,
+     "pct": -82
+    },
+    "gasolina": {
+     "preco": 2.9476,
+     "ppi": 2.9417,
+     "defasagem": 0.0059,
+     "pct": 0
+    }
+   },
+   {
+    "polo": "Paulínia",
+    "uf": "SP",
+    "empresa": "Petrobras",
+    "diesel": {
+     "preco": 3.3311,
+     "ppi": 6.0316,
+     "defasagem": -2.7005,
+     "pct": -81
+    },
+    "gasolina": {
+     "preco": 3.0608,
+     "ppi": 3.188,
+     "defasagem": -0.1272,
+     "pct": -4
+    }
+   },
+   {
+    "polo": "Araucária",
+    "uf": "PR",
+    "empresa": "Petrobras",
+    "diesel": {
+     "preco": 3.3023,
+     "ppi": 5.9902,
+     "defasagem": -2.6879,
+     "pct": -81
+    },
+    "gasolina": {
+     "preco": 3.0209,
+     "ppi": 3.1466,
+     "defasagem": -0.1257,
+     "pct": -4
+    }
+   },
+   {
+    "polo": "Itacoatiara",
+    "uf": "AM",
+    "empresa": "Petrobras",
+    "diesel": {
+     "preco": 3.3532,
+     "ppi": 5.7846,
+     "defasagem": -2.4314,
+     "pct": -73
+    },
+    "gasolina": {
+     "preco": 3.0808,
+     "ppi": 2.9584,
+     "defasagem": 0.1224,
+     "pct": 4
+    }
+   },
+   {
+    "polo": "Aratu",
+    "uf": "BA",
+    "empresa": "Acelen",
+    "diesel": {
+     "preco": 4.342,
+     "ppi": 5.8526,
+     "defasagem": -1.5106,
+     "pct": -35
+    },
+    "gasolina": {
+     "preco": 3.5669,
+     "ppi": 3.0263,
+     "defasagem": 0.5406,
+     "pct": 15
+    }
+   }
+  ],
+  "media_petrobras": {
+   "diesel": {
+    "defasagem": -2.5984
+   },
+   "gasolina": {
+    "defasagem": -0.0272
+   }
+  },
+  "media_principais": {
+   "diesel": {
+    "defasagem": -2.4171
+   },
+   "gasolina": {
+    "defasagem": 0.0674
+   }
+  }
+ },
+ "ppi_anp": {
+  "semana": "16/11/2026 a 20/11/2026",
+  "fonte": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-de-paridade-de-importacao",
+  "pontos": [
+   {
+    "ponto": "Manaus",
+    "uf": "AM",
+    "local_petrobras": "Itacoatiara",
+    "gasolina": {
+     "ppi": 3.6237,
+     "ppi_ant": 3.6228,
+     "petrobras": 2.9408,
+     "arbitragem": -0.6829
+    },
+    "diesel_s10": {
+     "ppi": 6.4052,
+     "ppi_ant": 6.6069,
+     "petrobras": 3.2182,
+     "arbitragem": -3.187
+    }
+   },
+   {
+    "ponto": "Itaqui",
+    "uf": "MA",
+    "local_petrobras": "São Luís",
+    "gasolina": {
+     "ppi": 3.6235,
+     "ppi_ant": 3.6139,
+     "petrobras": 2.9303,
+     "arbitragem": -0.6932
+    },
+    "diesel_s10": {
+     "ppi": 6.3429,
+     "ppi_ant": 6.5371,
+     "petrobras": 3.153,
+     "arbitragem": -3.1899
+    }
+   },
+   {
+    "ponto": "Suape",
+    "uf": "PE",
+    "local_petrobras": "Ipojuca",
+    "gasolina": {
+     "ppi": 3.6009,
+     "ppi_ant": 3.5903,
+     "petrobras": 2.9476,
+     "arbitragem": -0.6533
+    },
+    "diesel_s10": {
+     "ppi": 6.2823,
+     "ppi_ant": 6.461,
+     "petrobras": 3.1674,
+     "arbitragem": -3.1149
+    }
+   },
+   {
+    "ponto": "Aratu",
+    "uf": "BA",
+    "local_petrobras": null,
+    "gasolina": {
+     "ppi": 3.6135,
+     "ppi_ant": 3.6039,
+     "petrobras": null,
+     "arbitragem": null
+    },
+    "diesel_s10": {
+     "ppi": 6.3329,
+     "ppi_ant": 6.5271,
+     "petrobras": null,
+     "arbitragem": null
+    }
+   },
+   {
+    "ponto": "Santos",
+    "uf": "SP",
+    "local_petrobras": "Santos",
+    "gasolina": {
+     "ppi": 3.6187,
+     "ppi_ant": 3.6092,
+     "petrobras": 2.9419,
+     "arbitragem": -0.6768
+    },
+    "diesel_s10": {
+     "ppi": 6.341,
+     "ppi_ant": 6.5363,
+     "petrobras": 3.2198,
+     "arbitragem": -3.1212
+    }
+   },
+   {
+    "ponto": "Paranaguá",
+    "uf": "PR",
+    "local_petrobras": "Paranaguá",
+    "gasolina": {
+     "ppi": 3.6099,
+     "ppi_ant": 3.6008,
+     "petrobras": 2.9549,
+     "arbitragem": -0.655
+    },
+    "diesel_s10": {
+     "ppi": 6.35,
+     "ppi_ant": 6.5527,
+     "petrobras": 3.2363,
+     "arbitragem": -3.1137
+    }
+   },
+   {
+    "ponto": "Tramandaí",
+    "uf": "RS",
+    "local_petrobras": null,
+    "gasolina": {
+     "ppi": 3.6198,
+     "ppi_ant": 3.6178,
+     "petrobras": null,
+     "arbitragem": null
+    },
+    "diesel_s10": {
+     "ppi": 6.3308,
+     "ppi_ant": 6.5297,
+     "petrobras": null,
+     "arbitragem": null
+    }
+   },
+   {
+    "ponto": "Guamaré",
+    "uf": "RN",
+    "local_petrobras": null,
+    "gasolina": {
+     "ppi": 3.7766,
+     "ppi_ant": 3.758,
+     "petrobras": null,
+     "arbitragem": null
+    },
+    "diesel_s10": {
+     "ppi": 6.4579,
+     "ppi_ant": 6.6286,
+     "petrobras": null,
+     "arbitragem": null
+    }
+   },
+   {
+    "ponto": "Duque de Caxias",
+    "uf": "RJ",
+    "local_petrobras": "Duque de Caxias",
+    "gasolina": {
+     "ppi": 3.8225,
+     "ppi_ant": 3.8038,
+     "petrobras": 3.0889,
+     "arbitragem": -0.7336
+    },
+    "diesel_s10": {
+     "ppi": 6.5448,
+     "ppi_ant": 6.731,
+     "petrobras": 3.3545,
+     "arbitragem": -3.1903
+    }
+   },
+   {
+    "ponto": "Betim",
+    "uf": "MG",
+    "local_petrobras": "Betim",
+    "gasolina": {
+     "ppi": 3.8472,
+     "ppi_ant": 3.8273,
+     "petrobras": 3.1006,
+     "arbitragem": -0.7466
+    },
+    "diesel_s10": {
+     "ppi": 6.5695,
+     "ppi_ant": 6.7545,
+     "petrobras": 3.41,
+     "arbitragem": -3.1595
+    }
+   },
+   {
+    "ponto": "Cubatão",
+    "uf": "SP",
+    "local_petrobras": "Cubatão",
+    "gasolina": {
+     "ppi": 3.6577,
+     "ppi_ant": 3.6464,
+     "petrobras": 2.9823,
+     "arbitragem": -0.6754
+    },
+    "diesel_s10": {
+     "ppi": 6.38,
+     "ppi_ant": 6.5736,
+     "petrobras": 3.2752,
+     "arbitragem": -3.1048
+    }
+   },
+   {
+    "ponto": "Mauá",
+    "uf": "SP",
+    "local_petrobras": null,
+    "gasolina": {
+     "ppi": 3.6778,
+     "ppi_ant": 3.6656,
+     "petrobras": null,
+     "arbitragem": null
+    },
+    "diesel_s10": {
+     "ppi": 6.4,
+     "ppi_ant": 6.5927,
+     "petrobras": null,
+     "arbitragem": null
+    }
+   },
+   {
+    "ponto": "Paulínia",
+    "uf": "SP",
+    "local_petrobras": "Paulínia",
+    "gasolina": {
+     "ppi": 3.7298,
+     "ppi_ant": 3.7153,
+     "petrobras": 3.0608,
+     "arbitragem": -0.669
+    },
+    "diesel_s10": {
+     "ppi": 6.4521,
+     "ppi_ant": 6.6425,
+     "petrobras": 3.3311,
+     "arbitragem": -3.121
+    }
+   },
+   {
+    "ponto": "São José dos Campos",
+    "uf": "SP",
+    "local_petrobras": "São José dos Campos",
+    "gasolina": {
+     "ppi": 3.7112,
+     "ppi_ant": 3.6975,
+     "petrobras": 3.0181,
+     "arbitragem": -0.6931
+    },
+    "diesel_s10": {
+     "ppi": 6.4334,
+     "ppi_ant": 6.6246,
+     "petrobras": 3.3219,
+     "arbitragem": -3.1115
+    }
+   },
+   {
+    "ponto": "Araucária",
+    "uf": "PR",
+    "local_petrobras": "Araucária",
+    "gasolina": {
+     "ppi": 3.6781,
+     "ppi_ant": 3.6659,
+     "petrobras": 3.0209,
+     "arbitragem": -0.6572
+    },
+    "diesel_s10": {
+     "ppi": 6.4182,
+     "ppi_ant": 6.6178,
+     "petrobras": 3.3023,
+     "arbitragem": -3.1159
+    }
+   },
+   {
+    "ponto": "Canoas",
+    "uf": "RS",
+    "local_petrobras": "Canoas",
+    "gasolina": {
+     "ppi": 3.6891,
+     "ppi_ant": 3.684,
+     "petrobras": 3.0452,
+     "arbitragem": -0.6439
+    },
+    "diesel_s10": {
+     "ppi": 6.4002,
+     "ppi_ant": 6.5959,
+     "petrobras": 3.2834,
+     "arbitragem": -3.1168
+    }
+   }
+  ]
+ },
+ "produtor": {
+  "gasolina_a": {
+   "de": "2026-11-09",
+   "ate": "2026-11-15",
+   "regioes": {
+    "Norte": 2.8012,
+    "Nordeste": 4.2634,
+    "Centro-Oeste": 3.1779,
+    "Sul": 3.0465,
+    "Sudeste": 3.0722,
+    "Brasil": 3.3081
+   },
+   "anterior": {
+    "Norte": 2.9846,
+    "Nordeste": 3.515,
+    "Centro-Oeste": 3.1767,
+    "Sul": 3.0422,
+    "Sudeste": 3.082,
+    "Brasil": 3.1877
+   }
+  },
+  "diesel_s10": {
+   "de": "2026-11-09",
+   "ate": "2026-11-15",
+   "regioes": {
+    "Norte": 3.4942,
+    "Nordeste": 4.0923,
+    "Centro-Oeste": 3.7869,
+    "Sul": 3.644,
+    "Sudeste": 3.7009,
+    "Brasil": 3.7707
+   },
+   "anterior": {
+    "Norte": 4.3791,
+    "Nordeste": 4.2301,
+    "Centro-Oeste": 3.7829,
+    "Sul": 3.7996,
+    "Sudeste": 3.8587,
+    "Brasil": 3.9621
+   }
+  },
+  "diesel_s500": {
+   "de": "2026-11-09",
+   "ate": "2026-11-15",
+   "regioes": {
+    "Norte": 4.0283,
+    "Nordeste": 4.0595,
+    "Centro-Oeste": 3.7172,
+    "Sul": 3.5835,
+    "Sudeste": 3.6353,
+    "Brasil": 3.7146
+   },
+   "anterior": {
+    "Norte": 5.2962,
+    "Nordeste": 4.3826,
+    "Centro-Oeste": 3.7182,
+    "Sul": 3.7947,
+    "Sudeste": 3.6623,
+    "Brasil": 3.8818
+   }
+  },
+  "biodiesel": {
+   "de": "2026-11-09",
+   "ate": "2026-11-15",
+   "regioes": {
+    "Norte": 5.6246,
+    "Nordeste": 5.8493,
+    "Centro-Oeste": 5.6628,
+    "Sul": 5.5421,
+    "Sudeste": 5.6608,
+    "Brasil": 5.6612
+   },
+   "anterior": {
+    "Norte": 5.5943,
+    "Nordeste": 6.2296,
+    "Centro-Oeste": 5.4724,
+    "Sul": 5.5629,
+    "Sudeste": 5.5883,
+    "Brasil": 5.6847
+   }
+  },
+  "fonte": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-de-produtores-e-importadores-de-derivados-de-petroleo-e-biodiesel"
+ },
+ "etanol": {
+  "hidratado_paulinia_diario": {
+   "periodo": "24/11/2026",
+   "rs_l": 3.0845,
+   "anterior": 3.0875
+  },
+  "hidratado_sp": {
+   "periodo": "16 - 19/11/2026",
+   "rs_l": 2.9806,
+   "anterior": 2.9269
+  },
+  "anidro_sp": {
+   "periodo": "16 - 19/11/2026",
+   "rs_l": 3.5412,
+   "anterior": 3.4624
+  },
+  "hidratado_mt": {
+   "periodo": "16 - 19/11/2026",
+   "rs_l": 3.257,
+   "anterior": 3.1898
+  },
+  "anidro_mt": {
+   "periodo": "26 - 30/10/2026",
+   "rs_l": 3.2251,
+   "anterior": 3.0589
+  },
+  "fonte": "https://www.cepea.org.br/br/indicador/etanol.aspx"
+ }
+}

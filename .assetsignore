@@ -38,3 +38,12 @@ README.md
 # Ignore o próprio ignore
 .assetsignore
 graphify-out/
+
+# Mac-only tooling
+tools/
+*.log
+*.sh
+*.mjs
+.claude/
+.alerta-estado.json
+fixtures/

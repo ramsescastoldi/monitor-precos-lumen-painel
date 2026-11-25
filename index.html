@@ -40,6 +40,10 @@
   .kpi { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
   .kpi-label { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
   .kpi-value { font-size: 26px; font-weight: 600; margin-top: 4px; }
+  .janela { font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 6px; }
+  .janela.aberta { background: rgba(45,212,191,.15); color: var(--green); }
+  .janela.fechada { background: rgba(248,113,113,.15); color: var(--red); }
+  .merc-nota { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
   .estados { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
   .uf-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; transition: background 0.15s; }
   .uf-card:hover { background: var(--bg-card-hover); }
@@ -277,6 +281,37 @@
   <tbody id="tbody-petro"></tbody>
 </table></div>
 <p id="petro-nota" style="display:none;font-size:12px;color:var(--text-muted);margin-top:6px"></p>
+
+<div id="mercado" style="display:none">
+<h2>Importação × refinarias <span id="merc-abi-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="kpis" id="merc-medias"></div>
+<div class="table-wrap" style="margin-top:12px"><table>
+  <thead><tr><th>Polo</th><th class="num">Diesel A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th><th class="num">Gasolina A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th></tr></thead>
+  <tbody id="tbody-abicom"></tbody>
+</table></div>
+<p class="merc-nota">Arbitragem = preço doméstico − paridade de importação (PPI), em R$/L. <b>Aberta</b> (positiva) = importar compensa; <b>Fechada</b> (negativa) = a refinaria vende abaixo do custo de importar. Diesel com a subvenção federal já descontada. Fonte: ABICOM/StoneX, atualizado todo dia útil.</p>
+
+<h3 id="merc-ppi-h">Arbitragem por porto e refinaria</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ponto</th><th class="num">Gasolina: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th><th class="num">Diesel S10: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th></tr></thead>
+  <tbody id="tbody-ppi"></tbody>
+</table></div>
+<p class="merc-nota">PPI semanal estimado pela S&amp;P Global e publicado pela ANP (média da semana), comparado com o preço atual da tabela Petrobras no mesmo ponto. Pontos sem venda Petrobras mostram só o PPI.</p>
+
+<h3 id="merc-prod-h">Preço médio de produtores e importadores por região</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Região</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th><th class="num">Biodiesel B100</th></tr></thead>
+  <tbody id="tbody-produtor"></tbody>
+</table></div>
+<p class="merc-nota">Média ponderada pelo volume de tudo que refinarias e importadores venderam às distribuidoras na semana (Petrobras, Acelen, Ream, importadores…). Sem ICMS; inclui PIS/Cofins e Cide quando houver. Fonte: ANP, semanal, sai ~12 dias depois da semana.</p>
+
+<h3 id="merc-etanol-h">Etanol na usina</h3>
+<div class="kpis" id="merc-etanol"></div>
+<p class="merc-nota">Indicadores CEPEA/ESALQ, preço do produtor à vista, sem impostos. Paulínia é diário; SP e MT são semanais.</p>
+
+<h3>Dólar e Ibovespa</h3>
+<div class="kpis" id="merc-tv"></div>
+</div>
 
 <h2>Distribuidoras <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— preço B2B coletado por cotação direta (planilha interna) · últimos 14 dias</span></h2>
 <div class="table-wrap"><table>
@@ -931,6 +966,53 @@ function renderPetro(P) {
   for (const id of ['petro-h2', 'petro-wrap', 'petro-nota']) document.getElementById(id).style.display = '';
 }
 
+// === Importação × refinarias, produtor/importador, etanol (mercado.json, gerado no Mac) ===
+function renderMercado(M) {
+  if (!M) return;
+  const n4 = (v) => v == null ? '—' : v.toFixed(4).replace('.', ',');
+  const dt = (d) => d.split('-').reverse().join('/');
+  const seta = (v, a) => a == null || v === a ? '' : v > a ? ' <span style="color:#e5484d">▲</span>' : ' <span style="color:#30a46c">▼</span>';
+  const janela = (v) => v == null ? '<td class="num">—</td>' : `<td class="num"><span class="janela ${v > 0 ? 'aberta' : 'fechada'}">${v > 0 ? 'Aberta' : 'Fechada'}</span> ${n4(v)}</td>`;
+  const kpi = (label, valor, sub) => `<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-value" style="font-size:22px">${valor}</div><div style="font-size:12px;color:var(--text-muted)">${sub}</div></div>`;
+  const A = M.abicom;
+  if (A) {
+    document.getElementById('merc-abi-sub').textContent = `— ABICOM/StoneX de ${dt(A.data)}`;
+    const ac = A.polos.find((p) => p.empresa === 'Acelen');
+    const card = (nome, k, v) => kpi(`${nome} · ${k}`, `<span class="janela ${v > 0 ? 'aberta' : 'fechada'}">${v > 0 ? 'Aberta' : 'Fechada'}</span> ${n4(v)}`, 'R$/L vs importação');
+    document.getElementById('merc-medias').innerHTML = card('Petrobras (média)', 'Diesel', A.media_petrobras.diesel.defasagem) + card('Petrobras (média)', 'Gasolina', A.media_petrobras.gasolina.defasagem) +
+      (ac ? card('Acelen Mataripe (BA)', 'Diesel', ac.diesel.defasagem) + card('Acelen Mataripe (BA)', 'Gasolina', ac.gasolina.defasagem) : '');
+    document.getElementById('tbody-abicom').innerHTML = A.polos.map((p) => `<tr><td>${p.polo} (${p.uf})<br><span style="font-size:11px;color:var(--text-muted)">${p.empresa}</span></td>` +
+      ['diesel', 'gasolina'].map((k) => `<td class="num">${n4(p[k].preco)}</td><td class="num">${n4(p[k].ppi)}</td>${janela(p[k].defasagem)}`).join('') + '</tr>').join('');
+  }
+  const P = M.ppi_anp;
+  if (P) {
+    document.getElementById('merc-ppi-h').textContent = `Arbitragem por porto e refinaria · PPI da semana ${P.semana}`;
+    document.getElementById('tbody-ppi').innerHTML = P.pontos.map((p) => `<tr><td>${p.ponto} (${p.uf})</td>` +
+      ['gasolina', 'diesel_s10'].map((k) => `<td class="num">${n4(p[k].ppi)}${seta(p[k].ppi, p[k].ppi_ant)}</td><td class="num">${n4(p[k].petrobras)}</td>${janela(p[k].arbitragem)}`).join('') + '</tr>').join('');
+  }
+  const R = M.produtor;
+  if (R) {
+    document.getElementById('merc-prod-h').textContent = `Preço médio de produtores e importadores por região · semana ${dt(R.gasolina_a.de)} a ${dt(R.gasolina_a.ate)}`;
+    const K = ['gasolina_a', 'diesel_s10', 'diesel_s500', 'biodiesel'];
+    document.getElementById('tbody-produtor').innerHTML = ['Centro-Oeste', 'Norte', 'Nordeste', 'Sudeste', 'Sul', 'Brasil'].map((g) => `<tr><td${g === 'Brasil' ? ' style="font-weight:600"' : ''}>${g}</td>` +
+      K.map((k) => `<td class="num">${n4(R[k].regioes[g])}${seta(R[k].regioes[g], R[k].anterior[g])}</td>`).join('') + '</tr>').join('');
+  }
+  const E = M.etanol;
+  if (E) {
+    const e = (label, x) => kpi(label, `R$ ${n4(x.rs_l)}${seta(x.rs_l, x.anterior)}`, x.periodo);
+    document.getElementById('merc-etanol').innerHTML = e('Hidratado · Paulínia (diário)', E.hidratado_paulinia_diario) + e('Hidratado · SP', E.hidratado_sp) + e('Anidro · SP', E.anidro_sp) + e('Hidratado · MT', E.hidratado_mt) + e('Anidro · MT', E.anidro_mt);
+  }
+  // TradingView mini widgets (dólar e Ibovespa ao vivo)
+  document.getElementById('merc-tv').innerHTML = '';
+  for (const symbol of ['FX_IDC:USDBRL', 'BMFBOVESPA:IBOV']) {
+    const box = document.createElement('div'); box.className = 'kpi'; box.style.height = '200px';
+    const s = document.createElement('script'); s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js'; s.async = true;
+    s.textContent = JSON.stringify({ symbol, width: '100%', height: '100%', locale: 'br', dateRange: '1D', colorTheme: 'dark', isTransparent: true, autosize: true });
+    box.appendChild(s); document.getElementById('merc-tv').appendChild(box);
+  }
+  document.getElementById('mercado').style.display = '';
+}
+
 (async function loadAndRender() {
   // custo-distribuicao.json é opcional — painel funciona sem
   const [resD, resC] = await Promise.all([
@@ -949,6 +1031,7 @@ function renderPetro(P) {
   renderCusto(CUSTO);
   initCidade();
   fetch('petrobras-distribuidoras.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.ok && r.json()).then(renderPetro).catch(() => {});
+  fetch('mercado.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.ok && r.json()).then(renderMercado).catch(() => {});
 })();
 </script>
 </body>
