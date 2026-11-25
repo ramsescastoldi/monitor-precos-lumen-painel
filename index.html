@@ -309,8 +309,9 @@
 <div class="kpis" id="merc-etanol"></div>
 <p class="merc-nota">Indicadores CEPEA/ESALQ, preço do produtor à vista, sem impostos. Paulínia é diário; SP e MT são semanais.</p>
 
-<h3>Dólar e Ibovespa</h3>
-<div class="kpis" id="merc-tv"></div>
+<h3>Ao vivo: o que move o preço de importação <span id="merc-vivo-hora" style="text-transform:none;font-weight:400"></span></h3>
+<div class="kpis" id="merc-vivo"></div>
+<p class="merc-nota">Contrato de 1º mês na bolsa (ICE/NYMEX) e dólar comercial, atualizados a cada minuto. Diesel e gasolina de NY convertidos para R$/L (÷ 3,785 × dólar), sem frete nem impostos. Subindo = pressão de alta no PPI e no preço de importadores e distribuidoras; caindo = alívio.</p>
 </div>
 
 <h2>Distribuidoras <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— preço B2B coletado por cotação direta (planilha interna) · últimos 14 dias</span></h2>
@@ -966,6 +967,28 @@ function renderPetro(P) {
   for (const id of ['petro-h2', 'petro-wrap', 'petro-nota']) document.getElementById(id).style.display = '';
 }
 
+// === Ao vivo: Brent, diesel/gasolina NY e dólar (CNBC via /api/monitor/cotacoes, cache 60 s) ===
+async function vivo() {
+  try {
+    const Q = (await (await fetch(API + '/cotacoes')).json()).q;
+    const f = (v, d) => v.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+    const usd = Q['BRL='];
+    if (!usd) throw new Error('sem dólar');
+    const var_ = (p) => `<span style="color:${p > 0 ? '#e5484d' : p < 0 ? '#30a46c' : 'var(--text-muted)'}">${p > 0 ? '▲' : p < 0 ? '▼' : '•'} ${f(Math.abs(p), 2)}%</span>`;
+    const card = (label, valor, p, sub) => `<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-value" style="font-size:22px">${valor} <span style="font-size:13px">${var_(p)}</span></div><div style="font-size:12px;color:var(--text-muted)">${sub}</div></div>`;
+    // R$/L and its day change combine the product move with the dollar move
+    const rsl = (x) => ({ v: x.v / 3.78541 * usd.v, pct: ((1 + x.pct / 100) * (1 + usd.pct / 100) - 1) * 100 });
+    let h = '';
+    if (Q['@HO.1']) { const r = rsl(Q['@HO.1']); h += card('Diesel NY (ULSD) em R$', `R$ ${f(r.v, 4)}/L`, r.pct, `US$ ${f(Q['@HO.1'].v, 4)}/gal`); }
+    if (Q['@RB.1']) { const r = rsl(Q['@RB.1']); h += card('Gasolina NY (RBOB) em R$', `R$ ${f(r.v, 4)}/L`, r.pct, `US$ ${f(Q['@RB.1'].v, 4)}/gal`); }
+    if (Q['@LCO.1']) h += card('Petróleo Brent', `US$ ${f(Q['@LCO.1'].v, 2)}`, Q['@LCO.1'].pct, 'barril, ICE');
+    h += card('Dólar comercial', `R$ ${f(usd.v, 4)}`, usd.pct, 'USD/BRL');
+    document.getElementById('merc-vivo').innerHTML = h;
+    document.getElementById('merc-vivo-hora').textContent = '· ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  } catch (e) { /* mantém o último valor na tela */ }
+  clearTimeout(vivo.t); vivo.t = setTimeout(vivo, 60000);
+}
+
 // === Importação × refinarias, produtor/importador, etanol (mercado.json, gerado no Mac) ===
 function renderMercado(M) {
   if (!M) return;
@@ -1002,14 +1025,7 @@ function renderMercado(M) {
     const e = (label, x) => kpi(label, `R$ ${n4(x.rs_l)}${seta(x.rs_l, x.anterior)}`, x.periodo);
     document.getElementById('merc-etanol').innerHTML = e('Hidratado · Paulínia (diário)', E.hidratado_paulinia_diario) + e('Hidratado · SP', E.hidratado_sp) + e('Anidro · SP', E.anidro_sp) + e('Hidratado · MT', E.hidratado_mt) + e('Anidro · MT', E.anidro_mt);
   }
-  // TradingView mini widgets (dólar e Ibovespa ao vivo)
-  document.getElementById('merc-tv').innerHTML = '';
-  for (const symbol of ['FX_IDC:USDBRL', 'BMFBOVESPA:IBOV']) {
-    const box = document.createElement('div'); box.className = 'kpi'; box.style.height = '200px';
-    const s = document.createElement('script'); s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js'; s.async = true;
-    s.textContent = JSON.stringify({ symbol, width: '100%', height: '100%', locale: 'br', dateRange: '1D', colorTheme: 'dark', isTransparent: true, autosize: true });
-    box.appendChild(s); document.getElementById('merc-tv').appendChild(box);
-  }
+  vivo();
   document.getElementById('mercado').style.display = '';
 }
 
