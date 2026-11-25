@@ -1,4 +1,4 @@
-// Scraper ANP — baixa CSVs semanais oficiais, parseia, filtra estados de interesse,
+// Scraper ANP — baixa CSVs semanais oficiais, parseia, todas as 27 UFs,
 // UPSERT no Supabase em precos_externos_anp.
 // Roda via GitHub Actions a cada 3 dias (seg/qui) e também sob demanda local.
 // Requer env var SUPABASE_DB_URL.
@@ -9,7 +9,6 @@ import https from 'node:https';
 
 const { Client } = pg;
 
-const ESTADOS = new Set(['MT', 'RS', 'GO', 'DF', 'PR', 'MG', 'SP', 'RO', 'RJ', 'CE', 'SC', 'PA', 'MS', 'BA', 'ES']);
 const PRODUTOS_VALIDOS = new Set(['GASOLINA', 'ETANOL', 'DIESEL', 'DIESEL S10']);
 
 const URLS = [
@@ -86,7 +85,7 @@ const client = new Client({
     const batch = [];
     for (const r of records) {
       const estado = r['Estado - Sigla'];
-      if (!ESTADOS.has(estado)) { filtered++; continue; }
+      if (!estado) { filtered++; continue; } // 24/11/2026: all 27 UFs (was 15)
       const produto = r['Produto'];
       if (!PRODUTOS_VALIDOS.has(produto)) continue;
       const valor = parsePrecoBR(r['Valor de Venda']);
@@ -106,7 +105,7 @@ const client = new Client({
         data
       ]);
     }
-    console.log(`[${fileName}] ${batch.length} relevantes (${filtered} fora dos estados de interesse).`);
+    console.log(`[${fileName}] ${batch.length} relevantes (${filtered} sem UF).`);
 
     // Bulk INSERT em chunks de 500
     const CHUNK = 500;
