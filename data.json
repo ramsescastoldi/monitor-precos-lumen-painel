@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "24/11/2026, 22:26:59",
+  "atualizado_em": "25/11/2026, 12:11:49",
   "semana_referencia": "2026-11-21",
-  "distribuicao_ultima_data": "2026-11-24",
+  "distribuicao_ultima_data": "2026-11-25",
   "volumes": {
     "mes_referencia": "set/2026",
     "periodo_iso": "2026-09",
@@ -1096,35 +1096,35 @@
     "MT": {
       "n_cotacoes": 16,
       "n_distribuidoras": 16,
-      "data_ref": "2026-11-23T00:00:00.000Z",
-      "gasolina": 5.164,
-      "etanol": 3.381,
-      "s10": 6.162,
-      "s500": 6.199,
+      "data_ref": "2026-11-25T00:00:00.000Z",
+      "gasolina": 5.161,
+      "etanol": 3.385,
+      "s10": 6.156,
+      "s500": 6.194,
       "margem": {
         "gasolina": {
           "revenda": 6.714,
-          "distribuicao": 5.164,
-          "margem_rs": 1.55,
-          "margem_pct": 30.02
+          "distribuicao": 5.161,
+          "margem_rs": 1.553,
+          "margem_pct": 30.09
         },
         "etanol": {
           "revenda": 4.12,
-          "distribuicao": 3.381,
-          "margem_rs": 0.739,
-          "margem_pct": 21.86
+          "distribuicao": 3.385,
+          "margem_rs": 0.735,
+          "margem_pct": 21.71
         },
         "s10": {
           "revenda": 7.468,
-          "distribuicao": 6.162,
-          "margem_rs": 1.306,
-          "margem_pct": 21.19
+          "distribuicao": 6.156,
+          "margem_rs": 1.312,
+          "margem_pct": 21.31
         },
         "s500": {
           "revenda": 7.228,
-          "distribuicao": 6.199,
-          "margem_rs": 1.029,
-          "margem_pct": 16.6
+          "distribuicao": 6.194,
+          "margem_rs": 1.034,
+          "margem_pct": 16.69
         }
       }
     },
@@ -1410,7 +1410,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1422,7 +1422,7 @@
       "s500": 6.25,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1434,7 +1434,7 @@
       "s500": 6.46,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1446,7 +1446,7 @@
       "s500": 6.1,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1458,7 +1458,7 @@
       "s500": null,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1494,31 +1494,31 @@
       "s500": 6.39,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
       "distribuidora": "Petroluz",
       "cidade": "Varzea Grande",
-      "gasolina": 5.2,
-      "etanol": 3.39,
+      "gasolina": 5.15,
+      "etanol": 3.4,
       "s10": 6.1,
       "s500": 6.2,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
       "distribuidora": "Royal Fic",
       "cidade": "Cuiaba",
       "gasolina": 5.15,
-      "etanol": 3.34,
-      "s10": 6.1,
-      "s500": 6.09,
+      "etanol": 3.38,
+      "s10": 6,
+      "s500": 6.03,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1530,7 +1530,7 @@
       "s500": 6.08,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -1566,7 +1566,7 @@
       "s500": 6.18,
       "modalidade": "Retira",
       "observacoes": null,
-      "data_coleta": "2026-11-23"
+      "data_coleta": "2026-11-25"
     },
     {
       "estado": "MT",
@@ -4703,15 +4703,15 @@
     ],
     "RR": [
       {
-        "bandeira": "BRANCA",
-        "n": 5,
+        "bandeira": "VIBRA",
+        "n": 7,
         "media": 7.57,
         "min": 7.57,
         "max": 7.57
       },
       {
-        "bandeira": "VIBRA",
-        "n": 7,
+        "bandeira": "BRANCA",
+        "n": 5,
         "media": 7.57,
         "min": 7.57,
         "max": 7.57
