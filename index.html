@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monitor de Preços ANP — Lumen Posto Club</title>
+<title>Monitor de Preços — Lumen Business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -175,6 +175,26 @@
   .cmp-badge.up { color: var(--green); }
   .cmp-badge.down { color: var(--red); }
   @media (max-width: 800px) { .vol-grid, .cmp-grid { grid-template-columns: 1fr; } .vol-canvas-wrap { height: 240px; } }
+
+  /* === Proposta A: topo, decisão do dia, abas === */
+  .h2-sub { font-weight: 400; font-size: 13px; color: var(--text-muted); }
+  .grid-2 > * { min-width: 0; }
+  .topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+  .uf-escolha { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; }
+  .decisao { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .dec { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .dec.aberta { border-left-color: var(--green); }
+  .dec.fechada { border-left-color: var(--red); }
+  .dec-valor { font-size: 20px; font-weight: 600; margin: 4px 0 6px; font-variant-numeric: tabular-nums; line-height: 1.3; }
+  .dec-valor small { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+  .dec-sub { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+  .up { color: #e5484d; } .down { color: #30a46c; }
+  .abas { position: sticky; top: 0; z-index: 5; background: var(--bg); display: flex; gap: 2px; overflow-x: auto; border-bottom: 1px solid var(--border); margin: 28px -16px 0; padding: 0 16px; scrollbar-width: none; }
+  .abas button { flex: none; padding: 12px 14px; cursor: pointer; color: var(--text-muted); border: none; background: transparent; font: inherit; font-size: 14px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .abas button:hover { color: var(--text); }
+  .abas button.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+  .aba { display: none; } .aba.active { display: block; }
+  .aba > h2:first-child { margin-top: 20px; }
 </style>
 </head>
 <body>
@@ -226,28 +246,78 @@
 <div class="container">
 <header>
   <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 372 96"><rect width="64" height="64" fill="#E9B44C"/><g fill="#0D1B2A"><rect width="24" height="16"/><rect x="40" width="24" height="16"/><rect y="32" width="24" height="32"/><rect x="40" y="32" width="24" height="32"/></g><g fill="#E6EDF7"><rect x="88" width="8" height="64"/><path d="M108,16 H116 V44 A12,12 0 0 0 140,44 V16 H148 V64 H140 V60 A20,20 0 0 1 108,44 Z"/><rect x="160" y="16" width="8" height="48"/><path d="M160,36 A20,20 0 0 1 200,36 V64 H192 V36 A12,12 0 0 0 168,36 Z"/><path d="M192,36 A20,20 0 0 1 232,36 V64 H224 V36 A12,12 0 0 0 200,36 Z"/><path fill-rule="evenodd" d="M284.73,55 A24,24 0 1 1 289.81,43 L250.28,43 A16,16 0 0 0 271.57,55 Z M250.28,37 A16,16 0 0 1 281.72,37 Z"/><rect x="300" y="16" width="8" height="48"/><path d="M300,36 A20,20 0 0 1 340,36 V64 H332 V36 A12,12 0 0 0 308,36 Z"/></g></svg>
-  <h1>Monitor de Preços — Lumen Business</h1>
-  <p class="subtitle">Preços por revendedor (ANP, semanal) + margem aparente revenda × distribuição (planilha)</p>
-  <p class="updated" id="updated">Carregando…</p>
+  <div class="topo">
+    <div>
+      <h1>Monitor de Preços</h1>
+      <p class="subtitle">Custo, importação e bomba em todo o Brasil, atualizado todo dia</p>
+      <p class="updated" id="updated">Carregando…</p>
+    </div>
+    <label class="uf-escolha">Ver <select id="uf-sel" class="cid-select"><option value="">Brasil inteiro</option></select></label>
+  </div>
 </header>
 
-<section class="kpis" id="kpis"></section>
+<h2>Decisão do dia <span class="h2-sub" id="dec-sub"></span></h2>
+<section class="decisao" id="decisao"><p class="pending">Carregando…</p></section>
 
-<h2>Resumo por estado</h2>
-<section class="estados" id="estados"></section>
+<nav class="abas" id="abas">
+  <button data-aba="custo">Custo</button><button data-aba="importacao">Importação</button><button data-aba="bomba">Bomba</button><button data-aba="cidade">Cidade</button><button data-aba="distribuidoras">Distribuidoras</button><button data-aba="mercado">Mercado</button>
+</nav>
+
+<div class="aba" data-aba="custo">
+<h2 id="petro-h2" style="display:none">Preço Petrobras às distribuidoras <span id="petro-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="table-wrap" id="petro-wrap" style="display:none"><table>
+  <thead><tr><th>UF</th><th>Ponto de entrega</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th></tr></thead>
+  <tbody id="tbody-petro"></tbody>
+</table></div>
+<p id="petro-nota" style="display:none;font-size:12px;color:var(--text-muted);margin-top:6px"></p>
+
+<div id="merc-prod-box" style="display:none">
+<h2 id="merc-prod-h">Preço médio de produtores e importadores por região</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Região</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th><th class="num">Biodiesel B100</th></tr></thead>
+  <tbody id="tbody-produtor"></tbody>
+</table></div>
+<p class="merc-nota">Média ponderada pelo volume de tudo que refinarias e importadores venderam às distribuidoras na semana (Petrobras, Acelen, Ream, importadores…). Sem ICMS; inclui PIS/Cofins e Cide quando houver. Fonte: ANP, semanal, sai ~12 dias depois da semana.</p>
+
+</div>
+<div id="merc-et-box" style="display:none">
+<h2 id="merc-etanol-h">Etanol na usina</h2>
+<div class="kpis" id="merc-etanol"></div>
+<p class="merc-nota">Indicadores CEPEA/ESALQ, preço do produtor à vista, sem impostos. Paulínia é diário; SP e MT são semanais.</p>
+
+</div>
+
+<h2 id="custo-h2" style="display:none">Custo de distribuição por estado <span id="custo-periodo" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="tabs" id="custo-tabs" style="display:none"></div>
+<div id="custo-content"></div>
 
 <h2>💰 Custo informado pelos revendedores <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(anônimo · mediana · últimos 21 dias)</span></h2>
 <section id="contribuicoes"><p class="pending">Carregando…</p></section>
+</div>
 
-<h2>🔎 Preços na sua cidade <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(ANP semanal · mín / médio / máx por município)</span></h2>
-<section class="uf-card" id="cidade-box">
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
-    <select id="cid-uf" class="cid-select"><option value="">UF…</option></select>
-    <select id="cid-mun" class="cid-select" style="min-width:220px" disabled><option value="">Cidade…</option></select>
-  </div>
-  <div id="cid-result"><p class="pending">Escolha o estado e a cidade.</p></div>
-  <p class="anp-note" style="margin-top:10px;font-size:11px">Pesquisa semanal da ANP (LPC); no PR e na BA, preços das notas fiscais da Sefaz (diário). Se o seu posto nunca foi amostrado, o preço da sua cidade pode não refletir o seu — compare com a bomba.</p>
-</section>
+<div class="aba" data-aba="importacao">
+<div id="merc-imp-box" style="display:none">
+<h2>Importação × refinarias <span id="merc-abi-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
+<div class="kpis" id="merc-medias"></div>
+<div class="table-wrap" style="margin-top:12px"><table>
+  <thead><tr><th>Polo</th><th class="num">Diesel A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th><th class="num">Gasolina A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th></tr></thead>
+  <tbody id="tbody-abicom"></tbody>
+</table></div>
+<p class="merc-nota">Arbitragem = preço doméstico − paridade de importação (PPI), em R$/L. <b>Aberta</b> (positiva) = importar compensa; <b>Fechada</b> (negativa) = a refinaria vende abaixo do custo de importar. Diesel com a subvenção federal já descontada. Fonte: ABICOM/StoneX, atualizado todo dia útil.</p>
+
+<h3 id="merc-ppi-h">Arbitragem por porto e refinaria</h3>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ponto</th><th class="num">Gasolina: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th><th class="num">Diesel S10: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th></tr></thead>
+  <tbody id="tbody-ppi"></tbody>
+</table></div>
+<p class="merc-nota">PPI semanal estimado pela S&amp;P Global e publicado pela ANP (média da semana), comparado com o preço atual da tabela Petrobras no mesmo ponto. Pontos sem venda Petrobras mostram só o PPI.</p>
+
+</div>
+</div>
+
+<div class="aba" data-aba="bomba">
+<h2>Resumo por estado</h2>
+<section class="estados" id="estados"></section>
 
 <h2>Top postos mais baratos por estado <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(gasolina)</span></h2>
 <div class="tabs" id="top-tabs"></div>
@@ -274,46 +344,21 @@
     </table></div>
   </div>
 </div>
-
-<h2 id="petro-h2" style="display:none">Preço Petrobras às distribuidoras <span id="petro-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
-<div class="table-wrap" id="petro-wrap" style="display:none"><table>
-  <thead><tr><th>UF</th><th>Ponto de entrega</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th></tr></thead>
-  <tbody id="tbody-petro"></tbody>
-</table></div>
-<p id="petro-nota" style="display:none;font-size:12px;color:var(--text-muted);margin-top:6px"></p>
-
-<div id="mercado" style="display:none">
-<h2>Importação × refinarias <span id="merc-abi-sub" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
-<div class="kpis" id="merc-medias"></div>
-<div class="table-wrap" style="margin-top:12px"><table>
-  <thead><tr><th>Polo</th><th class="num">Diesel A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th><th class="num">Gasolina A: preço</th><th class="num">PPI</th><th class="num">Arbitragem</th></tr></thead>
-  <tbody id="tbody-abicom"></tbody>
-</table></div>
-<p class="merc-nota">Arbitragem = preço doméstico − paridade de importação (PPI), em R$/L. <b>Aberta</b> (positiva) = importar compensa; <b>Fechada</b> (negativa) = a refinaria vende abaixo do custo de importar. Diesel com a subvenção federal já descontada. Fonte: ABICOM/StoneX, atualizado todo dia útil.</p>
-
-<h3 id="merc-ppi-h">Arbitragem por porto e refinaria</h3>
-<div class="table-wrap"><table>
-  <thead><tr><th>Ponto</th><th class="num">Gasolina: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th><th class="num">Diesel S10: PPI</th><th class="num">Petrobras hoje</th><th class="num">Arbitragem</th></tr></thead>
-  <tbody id="tbody-ppi"></tbody>
-</table></div>
-<p class="merc-nota">PPI semanal estimado pela S&amp;P Global e publicado pela ANP (média da semana), comparado com o preço atual da tabela Petrobras no mesmo ponto. Pontos sem venda Petrobras mostram só o PPI.</p>
-
-<h3 id="merc-prod-h">Preço médio de produtores e importadores por região</h3>
-<div class="table-wrap"><table>
-  <thead><tr><th>Região</th><th class="num">Gasolina A</th><th class="num">Diesel S10</th><th class="num">Diesel S500</th><th class="num">Biodiesel B100</th></tr></thead>
-  <tbody id="tbody-produtor"></tbody>
-</table></div>
-<p class="merc-nota">Média ponderada pelo volume de tudo que refinarias e importadores venderam às distribuidoras na semana (Petrobras, Acelen, Ream, importadores…). Sem ICMS; inclui PIS/Cofins e Cide quando houver. Fonte: ANP, semanal, sai ~12 dias depois da semana.</p>
-
-<h3 id="merc-etanol-h">Etanol na usina</h3>
-<div class="kpis" id="merc-etanol"></div>
-<p class="merc-nota">Indicadores CEPEA/ESALQ, preço do produtor à vista, sem impostos. Paulínia é diário; SP e MT são semanais.</p>
-
-<h3>Ao vivo: o que move o preço de importação <span id="merc-vivo-hora" style="text-transform:none;font-weight:400"></span></h3>
-<div class="kpis" id="merc-vivo"></div>
-<p class="merc-nota">Contrato de 1º mês na bolsa (ICE/NYMEX) e dólar comercial, atualizados a cada minuto. Diesel e gasolina de NY convertidos para R$/L (÷ 3,785 × dólar), sem frete nem impostos. Subindo = pressão de alta no PPI e no preço de importadores e distribuidoras; caindo = alívio.</p>
 </div>
 
+<div class="aba" data-aba="cidade">
+<h2>🔎 Preços na sua cidade <span style="font-weight:400;font-size:13px;color:var(--text-muted)">(ANP semanal · mín / médio / máx por município)</span></h2>
+<section class="uf-card" id="cidade-box">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <select id="cid-uf" class="cid-select"><option value="">UF…</option></select>
+    <select id="cid-mun" class="cid-select" style="min-width:220px" disabled><option value="">Cidade…</option></select>
+  </div>
+  <div id="cid-result"><p class="pending">Escolha o estado e a cidade.</p></div>
+  <p class="anp-note" style="margin-top:10px;font-size:11px">Pesquisa semanal da ANP (LPC); no PR e na BA, preços das notas fiscais da Sefaz (diário). Se o seu posto nunca foi amostrado, o preço da sua cidade pode não refletir o seu — compare com a bomba.</p>
+</section>
+</div>
+
+<div class="aba" data-aba="distribuidoras">
 <h2>Distribuidoras <span style="font-weight:400;font-size:13px;color:var(--text-muted)">— preço B2B coletado por cotação direta (planilha interna) · últimos 14 dias</span></h2>
 <div class="table-wrap"><table>
   <thead>
@@ -331,10 +376,14 @@
   </thead>
   <tbody id="tbody-distri"></tbody>
 </table></div>
+</div>
 
-<h2 id="custo-h2" style="display:none">Custo de distribuição por estado <span id="custo-periodo" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
-<div class="tabs" id="custo-tabs" style="display:none"></div>
-<div id="custo-content"></div>
+<div class="aba" data-aba="mercado">
+<div id="merc-vivo-box" style="display:none">
+<h2>Ao vivo: o que move o preço de importação <span id="merc-vivo-hora" style="text-transform:none;font-weight:400"></span></h2>
+<div class="kpis" id="merc-vivo"></div>
+<p class="merc-nota">Contrato de 1º mês na bolsa (ICE/NYMEX) e dólar comercial, atualizados a cada minuto. Diesel e gasolina de NY convertidos para R$/L (÷ 3,785 × dólar), sem frete nem impostos. Subindo = pressão de alta no PPI e no preço de importadores e distribuidoras; caindo = alívio.</p>
+</div>
 
 <h2>Mercado de combustíveis líquidos <span id="vol-mes" style="font-weight:400;font-size:13px;color:var(--text-muted)"></span></h2>
 <div class="vol-grid">
@@ -369,14 +418,14 @@
     <div class="vol-canvas-wrap"><canvas id="chart-evol"></canvas></div>
   </div>
 </div>
+</div>
 
 <footer>
-  Preços: ANP — Levantamento Semanal de Preços de Combustíveis. Volumes: ANP — Painel do Mercado de Combustíveis Líquidos (entregas de distribuidores). Composição de preço: Petrobras (dados públicos semanais por estado). Distribuição B2B: cotação direta (planilha interna). Dados públicos.<br>
-  <code>monitor.lumenclubpainel.com.br</code>
+  Fontes: Petrobras (tabela às distribuidoras) · ABICOM/StoneX (paridade de importação, diária) · ANP (PPI semanal S&amp;P Global, preços de produtores e importadores, levantamento de preços na bomba, volumes) · CEPEA/ESALQ (etanol) · Sefaz PR e BA (notas fiscais) · ICE/NYMEX via CNBC (bolsa, ao vivo) · cotação direta com distribuidoras (planilha interna).<br>
+  Lumen Business · <code>monitor.lumenclubpainel.com.br</code>
 </footer>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 // === Gate: cadastro Revenda Lumen Club (planilha leadspostos) + pedágio de preço anônimo ===
 const API = 'https://grupo.lumenclubpainel.com.br/api/monitor';
@@ -514,6 +563,14 @@ $('auth-login').addEventListener('keydown', (e) => { if (e.key === 'Enter') btnE
 checkExistingSession();
 
 let DATA = {};
+let PETRO = null, MERC = null, VIVO = null;
+let UF = (() => { try { return localStorage.getItem('monitor_uf') || ''; } catch { return ''; } })();
+const n4 = (v) => v == null ? '—' : v.toFixed(4).replace('.', ',');
+const n2 = (v) => v.toFixed(2).replace('.', ',');
+const dtc = (d) => d.split('-').reverse().slice(0, 2).join('/');
+const seta = (v, a) => a == null || v === a ? '' : v > a ? ' <span class="up">▲</span>' : ' <span class="down">▼</span>';
+// R$/L of a NY contract and its day change (product move × dollar move)
+const rslNY = (x, usd) => ({ v: x.v / 3.78541 * usd.v, pct: ((1 + x.pct / 100) * (1 + usd.pct / 100) - 1) * 100 });
 
 function fmtBRL(v) {
   if (v === null || v === undefined) return '<span class="pending">—</span>';
@@ -545,13 +602,14 @@ function fmtMargem(m) {
 
 function renderTabs(containerTabs, containerContent, dataMap, rowsFn, emptyMsg) {
   const ufs = Object.keys(dataMap || {}).sort();
+  const ini = ufs.includes(UF) ? UF : ufs[0];
   if (ufs.length === 0) {
     containerTabs.innerHTML = '';
     containerContent.innerHTML = '<p class="pending">' + emptyMsg + '</p>';
     return;
   }
-  containerTabs.innerHTML = ufs.map((uf, i) => `<button class="tab ${i===0?'active':''}" data-uf="${uf}">${uf}</button>`).join('');
-  containerContent.innerHTML = ufs.map((uf, i) => `<div class="tab-content ${i===0?'active':''}" data-uf="${uf}">${rowsFn(uf, dataMap[uf])}</div>`).join('');
+  containerTabs.innerHTML = ufs.map((uf, i) => `<button class="tab ${uf===ini?'active':''}" data-uf="${uf}">${uf}</button>`).join('');
+  containerContent.innerHTML = ufs.map((uf, i) => `<div class="tab-content ${uf===ini?'active':''}" data-uf="${uf}">${rowsFn(uf, dataMap[uf])}</div>`).join('');
   containerTabs.querySelectorAll('.tab').forEach(btn => {
     btn.addEventListener('click', () => {
       containerTabs.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
@@ -614,7 +672,7 @@ async function initCidade() {
 function renderDistri(items) {
   const tbody = document.getElementById('tbody-distri');
   if (!tbody) return;
-  const rows = (items || []).map(d => `
+  const rows = (items || []).filter(d => !UF || d.estado === UF).map(d => `
     <tr>
       <td class="uf">${d.estado}</td>
       <td><strong>${d.distribuidora || '—'}</strong></td>
@@ -627,20 +685,13 @@ function renderDistri(items) {
       <td><span class="anp-note" style="font-size:11px">${d.data_coleta || '—'}</span></td>
     </tr>
   `).join('');
-  tbody.innerHTML = rows || '<tr><td colspan="9" class="pending" style="text-align:center;padding:24px">Aguardando preenchimento da planilha de distribuidoras…</td></tr>';
+  tbody.innerHTML = rows || '<tr><td colspan="9" class="pending" style="text-align:center;padding:24px">' + (UF ? 'Sem cotação de distribuidora em ' + UF + ' nos últimos 14 dias.' : 'Aguardando preenchimento da planilha de distribuidoras…') + '</td></tr>';
 }
 function renderPainel() {
-  document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '') + (DATA.distribuicao_ultima_data ? ' · distribuidoras: ' + DATA.distribuicao_ultima_data : '');
+  document.getElementById('updated').textContent = 'Atualizado em ' + (DATA.atualizado_em || '—') + ' · ' + (DATA.kpis?.n_postos || 0).toLocaleString('pt-BR') + ' postos em ' + (DATA.kpis?.n_estados || 0) + ' estados' + (DATA.semana_referencia ? ' · semana ANP: ' + DATA.semana_referencia : '') + (DATA.distribuicao_ultima_data ? ' · distribuidoras: ' + DATA.distribuicao_ultima_data : '');
 
-  const k = DATA.kpis || {};
-  document.getElementById('kpis').innerHTML = `
-    <div class="kpi"><div class="kpi-label">Postos pesquisados</div><div class="kpi-value">${k.n_postos || 0}</div></div>
-    <div class="kpi"><div class="kpi-label">Municípios</div><div class="kpi-value">${k.n_cidades || 0}</div></div>
-    <div class="kpi"><div class="kpi-label">Estados</div><div class="kpi-value">${k.n_estados || 0}</div></div>
-    <div class="kpi"><div class="kpi-label">Coletas (7d)</div><div class="kpi-value">${k.n_coletas || 0}</div></div>
-  `;
 
-  const ufs = Object.entries(DATA.agregados_estado || {}).sort();
+  const ufs = Object.entries(DATA.agregados_estado || {}).filter(([u]) => !UF || u === UF).sort();
   document.getElementById('estados').innerHTML = ufs.map(([uf, ag]) => {
     const dist = (DATA.distribuicao_estado || {})[uf];
     const margemHtml = dist?.margem
@@ -705,7 +756,6 @@ function renderPainel() {
   renderRank('tbody-baratas', DATA.ranking_municipal?.baratas);
   renderRank('tbody-caras', DATA.ranking_municipal?.caras);
   renderDistri(DATA.distribuidoras_detalhe);
-  renderVolumes(DATA.volumes);
 }
 
 let _charts = [];
@@ -914,7 +964,7 @@ function renderCusto(custo) {
     const f = (d) => d.split('-').reverse().slice(0, 2).join('/');
     document.getElementById('custo-periodo').textContent = `— composição oficial do preço · semana ${f(custo.periodo.de)} a ${f(custo.periodo.ate)}`;
   }
-  const inicial = CUSTO_UF || (ufs.includes('ES') ? 'ES' : ufs[0]);
+  const inicial = (ufs.includes(UF) && UF) || CUSTO_UF || (ufs.includes('SP') ? 'SP' : ufs[0]);
   tabsEl.innerHTML = ufs.map(uf => `<button class="tab ${uf === inicial ? 'active' : ''}" data-uf="${uf}">${uf}</button>`).join('');
   const render = (uf) => {
     const e = custo.estados[uf];
@@ -943,6 +993,7 @@ function shortName(nome) {
 // Por ponto: modalidade mais barata de cada produto. Diesel já com a subvenção (MP) descontada.
 function renderPetro(P) {
   if (!P?.produtos) return;
+  PETRO = P;
   const K = ['gasolina_a', 'diesel_s10', 'diesel_s500'];
   const locais = {};
   for (const k of K) for (const x of P.produtos[k]?.pontos || []) {
@@ -957,10 +1008,12 @@ function renderPetro(P) {
     const tit = `${x.modalidade} · desde ${dt(x.desde)}` + (x.anterior ? ` · antes ${br(x.anterior.rs_l)}` : '') + (x.subvencao ? ` · tabela ${br(x.tabela)} − subvenção ${br(x.subvencao)}` : '');
     return `<td class="num" title="${tit}">${br(x.rs_l)}${seta}<br><span style="font-size:11px;color:var(--text-muted)">${x.modalidade} · ${dt(x.desde)}</span></td>`;
   };
-  const rows = Object.values(locais).sort((a, b) => (b.uf === 'MT') - (a.uf === 'MT') || a.uf.localeCompare(b.uf) || a.local.localeCompare(b.local));
+  const todos = Object.values(locais).sort((a, b) => a.uf.localeCompare(b.uf) || a.local.localeCompare(b.local));
+  const daUF = todos.filter((l) => l.uf === UF);
+  const rows = daUF.length ? daUF : todos;
   document.getElementById('tbody-petro').innerHTML = rows.map((l) => `<tr><td class="uf">${l.uf}</td><td>${l.local}</td>${K.map((k) => cel(l[k])).join('')}</tr>`).join('');
   const g = P.produtos.gasolina_a, d = P.produtos.diesel_s10;
-  document.getElementById('petro-sub').textContent = `— R$/litro sem tributos, à vista · tabela Petrobras de ${dt(g.vigencia)} (gasolina) e ${dt(d.vigencia)} (diesel)`;
+  document.getElementById('petro-sub').textContent = `— R$/litro sem tributos, à vista · tabela Petrobras de ${dt(g.vigencia)} (gasolina) e ${dt(d.vigencia)} (diesel)` + (UF && !daUF.length ? ` · ${UF} não tem ponto de entrega, mostrando todos` : '');
   const sub = d.pontos.find((x) => x.subvencao)?.subvencao;
   document.getElementById('petro-nota').textContent = 'Preço que a distribuidora paga à Petrobras no ponto de entrega, antes de ICMS, PIS/Cofins, Cide, etanol anidro e biodiesel. Embaixo do preço: modalidade de entrega mais barata no ponto e a data desde quando vale.' +
     (sub ? ` Diesel já com a subvenção federal de R$ ${sub.toFixed(2).replace('.', ',')}/L descontada (MPs 1.363 e 1.391); passe o mouse para ver o preço de tabela.` : '');
@@ -971,13 +1024,14 @@ function renderPetro(P) {
 async function vivo() {
   try {
     const Q = (await (await fetch(API + '/cotacoes')).json()).q;
+    VIVO = Q;
     const f = (v, d) => v.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
     const usd = Q['BRL='];
     if (!usd) throw new Error('sem dólar');
     const var_ = (p) => `<span style="color:${p > 0 ? '#e5484d' : p < 0 ? '#30a46c' : 'var(--text-muted)'}">${p > 0 ? '▲' : p < 0 ? '▼' : '•'} ${f(Math.abs(p), 2)}%</span>`;
     const card = (label, valor, p, sub) => `<div class="kpi"><div class="kpi-label">${label}</div><div class="kpi-value" style="font-size:22px">${valor} <span style="font-size:13px">${var_(p)}</span></div><div style="font-size:12px;color:var(--text-muted)">${sub}</div></div>`;
     // R$/L and its day change combine the product move with the dollar move
-    const rsl = (x) => ({ v: x.v / 3.78541 * usd.v, pct: ((1 + x.pct / 100) * (1 + usd.pct / 100) - 1) * 100 });
+    const rsl = (x) => rslNY(x, usd);
     let h = '';
     if (Q['@HO.1']) { const r = rsl(Q['@HO.1']); h += card('Diesel NY (ULSD) em R$', `R$ ${f(r.v, 4)}/L`, r.pct, `US$ ${f(Q['@HO.1'].v, 4)}/gal`); }
     if (Q['@RB.1']) { const r = rsl(Q['@RB.1']); h += card('Gasolina NY (RBOB) em R$', `R$ ${f(r.v, 4)}/L`, r.pct, `US$ ${f(Q['@RB.1'].v, 4)}/gal`); }
@@ -985,6 +1039,7 @@ async function vivo() {
     h += card('Dólar comercial', `R$ ${f(usd.v, 4)}`, usd.pct, 'USD/BRL');
     document.getElementById('merc-vivo').innerHTML = h;
     document.getElementById('merc-vivo-hora').textContent = '· ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    renderDecisao();
   } catch (e) { /* mantém o último valor na tela */ }
   clearTimeout(vivo.t); vivo.t = setTimeout(vivo, 60000);
 }
@@ -992,6 +1047,7 @@ async function vivo() {
 // === Importação × refinarias, produtor/importador, etanol (mercado.json, gerado no Mac) ===
 function renderMercado(M) {
   if (!M) return;
+  MERC = M;
   const n4 = (v) => v == null ? '—' : v.toFixed(4).replace('.', ',');
   const dt = (d) => d.split('-').reverse().join('/');
   const seta = (v, a) => a == null || v === a ? '' : v > a ? ' <span style="color:#e5484d">▲</span>' : ' <span style="color:#30a46c">▼</span>';
@@ -1017,7 +1073,7 @@ function renderMercado(M) {
   if (R) {
     document.getElementById('merc-prod-h').textContent = `Preço médio de produtores e importadores por região · semana ${dt(R.gasolina_a.de)} a ${dt(R.gasolina_a.ate)}`;
     const K = ['gasolina_a', 'diesel_s10', 'diesel_s500', 'biodiesel'];
-    document.getElementById('tbody-produtor').innerHTML = ['Centro-Oeste', 'Norte', 'Nordeste', 'Sudeste', 'Sul', 'Brasil'].map((g) => `<tr><td${g === 'Brasil' ? ' style="font-weight:600"' : ''}>${g}</td>` +
+    document.getElementById('tbody-produtor').innerHTML = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul', 'Brasil'].map((g) => `<tr><td${g === 'Brasil' ? ' style="font-weight:600"' : ''}>${g}</td>` +
       K.map((k) => `<td class="num">${n4(R[k].regioes[g])}${seta(R[k].regioes[g], R[k].anterior[g])}</td>`).join('') + '</tr>').join('');
   }
   const E = M.etanol;
@@ -1026,7 +1082,112 @@ function renderMercado(M) {
     document.getElementById('merc-etanol').innerHTML = e('Hidratado · Paulínia (diário)', E.hidratado_paulinia_diario) + e('Hidratado · SP', E.hidratado_sp) + e('Anidro · SP', E.anidro_sp) + e('Hidratado · MT', E.hidratado_mt) + e('Anidro · MT', E.anidro_mt);
   }
   vivo();
-  document.getElementById('mercado').style.display = '';
+  for (const id of ['merc-imp-box', 'merc-prod-box', 'merc-et-box', 'merc-vivo-box']) document.getElementById(id).style.display = '';
+  renderDecisao();
+}
+
+// === Decisão do dia: o que muda a compra hoje, Brasil inteiro ou a UF escolhida ===
+function renderDecisao() {
+  const el = document.getElementById('decisao');
+  if (!DATA.agregados_estado) return;
+  document.getElementById('dec-sub').textContent = UF ? '— ' + UF : '— Brasil inteiro';
+  const card = (tom, label, valor, sub) => `<div class="dec ${tom}"><div class="kpi-label">${label}</div><div class="dec-valor">${valor}</div><div class="dec-sub">${sub}</div></div>`;
+  let h = '';
+  const A = MERC?.abicom;
+  if (A) {
+    const polo = UF && A.polos.find((p) => p.uf === UF);
+    for (const [k, nome] of [['diesel', 'Diesel'], ['gasolina', 'Gasolina']]) {
+      const v = polo ? polo[k].defasagem : A.media_petrobras[k].defasagem;
+      const ab = v > 0;
+      const txt = Math.abs(v) < 0.05 ? 'Refinaria e importado praticamente no mesmo preço'
+        : ab ? `Importado R$ ${n2(v)}/L mais barato que a refinaria: importador tem espaço para vender abaixo`
+        : `Refinaria R$ ${n2(-v)}/L abaixo do importado: importar não compensa e a pressão por reajuste cresce`;
+      h += card(ab ? 'aberta' : 'fechada', `${nome} · janela de importação`, `<span class="janela ${ab ? 'aberta' : 'fechada'}">${ab ? 'Aberta' : 'Fechada'}</span> ${n4(v)} <small>R$/L</small>`,
+        `${txt}. ${polo ? `${polo.polo} (${polo.uf}), ${polo.empresa}` : 'Média dos polos Petrobras'} · ABICOM ${dtc(A.data)}`);
+    }
+  }
+  const usd = VIVO?.['BRL='];
+  for (const [s, nome] of [['@HO.1', 'Diesel'], ['@RB.1', 'Gasolina']]) {
+    if (!usd || !VIVO[s]) { h += card('', `${nome} em NY agora`, '…', 'carregando bolsa'); continue; }
+    const r = rslNY(VIVO[s], usd);
+    const varp = `<small class="${r.pct > 0 ? 'up' : 'down'}">${r.pct > 0 ? '▲' : '▼'} ${n2(Math.abs(r.pct))}%</small>`;
+    h += card('', `${nome} em NY agora`, `R$ ${n4(r.v)}/L ${varp}`,
+      `${r.pct > 0 ? 'Subindo hoje: pressão de alta no importado' : 'Caindo hoje: alívio no importado'}. Já em reais, dólar R$ ${n4(usd.v)}`);
+  }
+  if (PETRO) {
+    const lin = (k, nome) => {
+      let m = UF ? PETRO.por_uf[UF]?.[k] : null;
+      if (!UF) for (const u of Object.values(PETRO.por_uf)) if (u[k] && (!m || u[k].min < m.min)) m = u[k];
+      if (!m) return null;
+      const p = PETRO.produtos[k].pontos.find((x) => x.local === m.local && x.rs_l === m.min);
+      return { txt: `${nome} R$ ${n4(m.min)}${seta(m.min, p?.anterior?.rs_l)}`, onde: `${m.local}${p ? ' (' + p.uf + ')' : ''}`, desde: p?.desde };
+    };
+    const d = lin('diesel_s10', 'Diesel S10'), g = lin('gasolina_a', 'Gasolina A');
+    const onde = (x, nome) => x && `${nome}: ${x.onde}${x.desde ? ', desde ' + dtc(x.desde) : ''}`;
+    h += d || g
+      ? card('', 'Petrobras às distribuidoras', [d, g].filter(Boolean).map((x) => x.txt).join('<br>'),
+        `Ponto mais barato${UF ? ' em ' + UF : ''}, sem tributos. ${[onde(d, 'Diesel'), onde(g, 'Gasolina')].filter(Boolean).join(' · ')}`)
+      : card('', 'Petrobras às distribuidoras', `<small>sem ponto de entrega em ${UF}</small>`, 'Veja o ponto mais próximo na aba Custo');
+  }
+  const AG = DATA.agregados_estado;
+  const media = (k) => {
+    if (UF) return AG[UF]?.[k] ? { m: AG[UF][k].media, n: AG[UF][k].n } : null;
+    let s = 0, n = 0;
+    for (const a of Object.values(AG)) if (a[k]) { s += a[k].media * a[k].n; n += a[k].n; }
+    return n ? { m: s / n, n } : null;
+  };
+  const bg = media('gasolina'), bd = media('s10');
+  if (bg || bd) h += card('', 'Bomba (média ANP)', [bg && `Gasolina R$ ${n2(bg.m)}`, bd && `Diesel S10 R$ ${n2(bd.m)}`].filter(Boolean).join('<br>'),
+    `${UF ? UF : 'Brasil, média ponderada pelos postos'} · semana ${DATA.semana_referencia || '—'} · ${(bg?.n || 0).toLocaleString('pt-BR')} postos`);
+  const E = MERC?.etanol;
+  const et = E && (UF === 'MT' ? E.hidratado_mt : E.hidratado_paulinia_diario);
+  if (et) h += card('', 'Etanol hidratado na usina', `R$ ${n4(et.rs_l)}/L${seta(et.rs_l, et.anterior)}`,
+    `${UF === 'MT' ? 'Mato Grosso, semanal' : 'Paulínia (SP), diário'} · CEPEA ${et.periodo} · sem impostos`);
+  el.innerHTML = h;
+}
+
+// === Seletor de UF (lembrado no navegador) ===
+function initUF() {
+  const sel = document.getElementById('uf-sel');
+  sel.innerHTML = '<option value="">Brasil inteiro</option>' + Object.keys(DATA.agregados_estado || {}).sort().map((u) => `<option${u === UF ? ' selected' : ''}>${u}</option>`).join('');
+  sel.addEventListener('change', () => {
+    UF = sel.value;
+    try { localStorage.setItem('monitor_uf', UF); } catch {}
+    CUSTO_UF = null;
+    renderPainel();
+    renderCusto(CUSTO);
+    if (PETRO) renderPetro(PETRO);
+    renderDecisao();
+    const cu = document.getElementById('cid-uf');
+    if (MUN && UF && cu.value !== UF) { cu.value = UF; cu.dispatchEvent(new Event('change')); }
+  });
+}
+
+// === Abas: cada uma carrega o que é pesado só quando é aberta ===
+function initAbas() {
+  const nav = document.getElementById('abas');
+  const feito = {};
+  const abrir = (nome, rolar) => {
+    nav.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b.dataset.aba === nome));
+    document.querySelectorAll('.aba').forEach((s) => s.classList.toggle('active', s.dataset.aba === nome));
+    try { localStorage.setItem('monitor_aba', nome); } catch {}
+    history.replaceState(null, '', '#' + nome);
+    if (rolar && window.scrollY > nav.offsetTop) window.scrollTo(0, nav.offsetTop);
+    if (feito[nome]) return;
+    feito[nome] = 1;
+    if (nome === 'cidade') initCidade().then(() => { const cu = document.getElementById('cid-uf'); if (UF && MUN?.[UF]) { cu.value = UF; cu.dispatchEvent(new Event('change')); } });
+    if (nome === 'mercado') {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
+      s.onload = s.onerror = () => renderVolumes(DATA.volumes);
+      document.head.appendChild(s);
+    }
+  };
+  nav.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) abrir(b.dataset.aba, true); });
+  const nomes = [...nav.querySelectorAll('button')].map((b) => b.dataset.aba);
+  let ini = location.hash.slice(1);
+  if (!nomes.includes(ini)) { try { ini = localStorage.getItem('monitor_aba'); } catch {} }
+  abrir(nomes.includes(ini) ? ini : 'custo', false);
 }
 
 (async function loadAndRender() {
@@ -1045,7 +1206,9 @@ function renderMercado(M) {
   try { if (resC?.ok) CUSTO = await resC.json(); } catch (e) { /* segue sem custo */ }
   renderPainel();
   renderCusto(CUSTO);
-  initCidade();
+  initUF();
+  initAbas();
+  renderDecisao();
   fetch('petrobras-distribuidoras.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.ok && r.json()).then(renderPetro).catch(() => {});
   fetch('mercado.json?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.ok && r.json()).then(renderMercado).catch(() => {});
 })();
