@@ -12,6 +12,8 @@
 //   node --env-file=... alerta-precos.mjs --dry  → print message only, touch nothing
 
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 const REGIAO = { Norte: 'AC AM AP PA RO RR TO', Nordeste: 'AL BA CE MA PB PE PI RN SE', 'Centro-Oeste': 'DF GO MS MT', Sudeste: 'ES MG RJ SP', Sul: 'PR RS SC' };
 const RAW = 'https://raw.githubusercontent.com/ramsescastoldi/monitor-precos-lumen-painel/main/';
@@ -114,7 +116,38 @@ const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Cuiaba'
 const blocos = antes ? diff(antes, agora) : [];
 const msg = blocos.length ? [`⛽ *Monitor de Preços — mudanças por região* (${hoje})\nProcure o seu estado 👇`, ...blocos, 'monitor.lumenclubpainel.com.br'] : null;
 
+// Group post (Ramsés 25/11/2026: "depois de 30/11 o robô posta sozinho no grupo").
+// Same concierge number/instance, one message per run, no link (concierge rule: link never goes to a group),
+// silent on Sunday like the concierge, and it respects the concierge's 3-min gap between sends.
+const GRUPO_DESDE = '2026-12-01';
+const CONC = path.join(os.homedir(), 'lumen-concierge');
+async function postarGrupo(texto) {
+  const hojeISO = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Cuiaba' });
+  if (hojeISO < GRUPO_DESDE) return 'grupo: antes de ' + GRUPO_DESDE;
+  if (new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Cuiaba' })).getDay() === 0) return 'grupo: domingo';
+  const cfg = JSON.parse(fs.readFileSync(path.join(CONC, 'config.json'), 'utf8'));
+  const env = Object.fromEntries(fs.readFileSync(path.join(os.homedir(), '.evolution_env'), 'utf8').split('\n')
+    .map((l) => l.match(/^(?:export\s+)?([A-Z_]+)=["']?([^"'\n]+)["']?\s*$/)).filter(Boolean).map((m) => [m[1], m[2]]));
+  const ritmo = path.join(CONC, 'state', 'ultimo-envio.json');
+  let ultimo = 0; try { ultimo = JSON.parse(fs.readFileSync(ritmo, 'utf8')).ts || 0; } catch {}
+  const falta = (cfg.intervaloMinimoMinutos ?? 3) * 60000 - (Date.now() - ultimo);
+  if (falta > 0) await new Promise((r) => setTimeout(r, falta));
+  const r = await fetch(`${(env.EVOLUTION_URL || 'https://evolution.srv1662375.hstgr.cloud').replace(/\/$/, '')}/message/sendText/${cfg.instance}`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json', apikey: env.EVOLUTION_API_KEY },
+    body: JSON.stringify({ number: cfg.grupoJid, text: texto, delay: 15000 }),
+  });
+  if (!r.ok) throw new Error('Evolution HTTP ' + r.status + ' ' + (await r.text()).slice(0, 200));
+  fs.writeFileSync(ritmo, JSON.stringify({ ts: Date.now(), para: cfg.grupoJid }));
+  return 'grupo: postado';
+}
+
 if (DRY) { console.log(msg ? msg.join('\n\n') : 'sem mudança'); process.exit(0); }
 if (msg) await telegram(msg);
+if (msg) {
+  // Telegram already got the text: a group failure must not lose the snapshot, it only gets reported.
+  const st = await postarGrupo(msg.slice(0, -1).join('\n\n')).catch((e) => 'grupo: ERRO ' + e.message);
+  console.log(st);
+  if (st.startsWith('grupo: ERRO')) await enviar('⚠️ Alerta de preços não saiu no grupo: ' + st.slice(13)).catch(() => {});
+}
 fs.writeFileSync(ESTADO, JSON.stringify({ em: new Date().toISOString(), valores: agora }, null, 1));
 console.log(new Date().toISOString(), msg ? 'enviado' : 'sem mudança');
