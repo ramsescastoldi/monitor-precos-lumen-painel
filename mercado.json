@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-25T22:30:00.680Z",
+ "atualizado_em": "2026-11-26T22:30:04.211Z",
  "abicom": {
   "data": "2026-11-24",
   "fonte": "https://abicom.com.br/ppi/ppi-24-11-2026/",
@@ -487,9 +487,9 @@
  },
  "etanol": {
   "hidratado_paulinia_diario": {
-   "periodo": "25/11/2026",
-   "rs_l": 3.0835,
-   "anterior": 3.0845
+   "periodo": "26/11/2026",
+   "rs_l": 3.091,
+   "anterior": 3.0835
   },
   "hidratado_sp": {
    "periodo": "16 - 19/11/2026",
