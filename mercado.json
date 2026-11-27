@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-11-27T11:45:02.111Z",
+ "atualizado_em": "2026-11-27T22:30:05.233Z",
  "abicom": {
   "data": "2026-11-27",
   "fonte": "https://abicom.com.br/ppi/ppi-27-11-2026/",
@@ -404,107 +404,107 @@
  },
  "produtor": {
   "gasolina_a": {
-   "de": "2026-11-09",
-   "ate": "2026-11-15",
+   "de": "2026-11-16",
+   "ate": "2026-11-22",
    "regioes": {
+    "Norte": 3.3523,
+    "Nordeste": 3.4205,
+    "Centro-Oeste": 3.1748,
+    "Sul": 3.0391,
+    "Sudeste": 3.0741,
+    "Brasil": 3.1414
+   },
+   "anterior": {
     "Norte": 2.8012,
     "Nordeste": 4.2634,
     "Centro-Oeste": 3.1779,
     "Sul": 3.0465,
     "Sudeste": 3.0722,
     "Brasil": 3.3081
-   },
-   "anterior": {
-    "Norte": 2.9846,
-    "Nordeste": 3.515,
-    "Centro-Oeste": 3.1767,
-    "Sul": 3.0422,
-    "Sudeste": 3.082,
-    "Brasil": 3.1877
    }
   },
   "diesel_s10": {
-   "de": "2026-11-09",
-   "ate": "2026-11-15",
+   "de": "2026-11-16",
+   "ate": "2026-11-22",
    "regioes": {
+    "Norte": 3.6851,
+    "Nordeste": 4.1117,
+    "Centro-Oeste": 3.7866,
+    "Sul": 3.6459,
+    "Sudeste": 3.7051,
+    "Brasil": 3.7657
+   },
+   "anterior": {
     "Norte": 3.4942,
     "Nordeste": 4.0923,
     "Centro-Oeste": 3.7869,
     "Sul": 3.644,
     "Sudeste": 3.7009,
     "Brasil": 3.7707
-   },
-   "anterior": {
-    "Norte": 4.3791,
-    "Nordeste": 4.2301,
-    "Centro-Oeste": 3.7829,
-    "Sul": 3.7996,
-    "Sudeste": 3.8587,
-    "Brasil": 3.9621
    }
   },
   "diesel_s500": {
-   "de": "2026-11-09",
-   "ate": "2026-11-15",
+   "de": "2026-11-16",
+   "ate": "2026-11-22",
    "regioes": {
+    "Norte": 6.945,
+    "Nordeste": 4.4337,
+    "Centro-Oeste": 3.7182,
+    "Sul": 3.5835,
+    "Sudeste": 3.6394,
+    "Brasil": 3.7987
+   },
+   "anterior": {
     "Norte": 4.0283,
     "Nordeste": 4.0595,
     "Centro-Oeste": 3.7172,
     "Sul": 3.5835,
     "Sudeste": 3.6353,
     "Brasil": 3.7146
-   },
-   "anterior": {
-    "Norte": 5.2962,
-    "Nordeste": 4.3826,
-    "Centro-Oeste": 3.7182,
-    "Sul": 3.7947,
-    "Sudeste": 3.6623,
-    "Brasil": 3.8818
    }
   },
   "biodiesel": {
-   "de": "2026-11-09",
-   "ate": "2026-11-15",
+   "de": "2026-11-16",
+   "ate": "2026-11-22",
    "regioes": {
+    "Norte": 5.6626,
+    "Nordeste": 5.8912,
+    "Centro-Oeste": 5.7705,
+    "Sul": 5.5967,
+    "Sudeste": 5.7279,
+    "Brasil": 5.727
+   },
+   "anterior": {
     "Norte": 5.6246,
     "Nordeste": 5.8493,
     "Centro-Oeste": 5.6628,
     "Sul": 5.5421,
     "Sudeste": 5.6608,
     "Brasil": 5.6612
-   },
-   "anterior": {
-    "Norte": 5.5943,
-    "Nordeste": 6.2296,
-    "Centro-Oeste": 5.4724,
-    "Sul": 5.5629,
-    "Sudeste": 5.5883,
-    "Brasil": 5.6847
    }
   },
   "fonte": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-de-produtores-e-importadores-de-derivados-de-petroleo-e-biodiesel"
  },
  "etanol": {
   "hidratado_paulinia_diario": {
-   "periodo": "26/11/2026",
-   "rs_l": 3.091,
-   "anterior": 3.0835
+   "periodo": "27/11/2026",
+   "rs_l": 3.0825,
+   "anterior": 3.091
   },
   "hidratado_sp": {
-   "periodo": "16 - 19/11/2026",
-   "rs_l": 2.9806,
-   "anterior": 2.9269
+   "periodo": "23 - 27/11/2026",
+   "rs_l": 2.9742,
+   "anterior": 2.9806
   },
   "anidro_sp": {
-   "periodo": "16 - 19/11/2026",
-   "rs_l": 3.5412,
-   "anterior": 3.4624
+   "periodo": "23 - 27/11/2026",
+   "rs_l": 3.5757,
+   "anterior": 3.5412
   },
   "hidratado_mt": {
-   "periodo": "16 - 19/11/2026",
-   "rs_l": 3.257,
-   "anterior": 3.1898
+   "periodo": "23 - 27/11/2026",
+   "rs_l": 3.2945,
+   "anterior": 3.257
   },
   "anidro_mt": {
    "periodo": "26 - 30/10/2026",
