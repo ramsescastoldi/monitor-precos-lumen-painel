@@ -1,8 +1,8 @@
 {
- "atualizado_em": "2026-11-26T22:30:04.211Z",
+ "atualizado_em": "2026-11-27T11:45:02.111Z",
  "abicom": {
-  "data": "2026-11-24",
-  "fonte": "https://abicom.com.br/ppi/ppi-24-11-2026/",
+  "data": "2026-11-27",
+  "fonte": "https://abicom.com.br/ppi/ppi-27-11-2026/",
   "polos": [
    {
     "polo": "Itaqui",
@@ -10,15 +10,15 @@
     "empresa": "Petrobras",
     "diesel": {
      "preco": 3.1963,
-     "ppi": 5.7679,
-     "defasagem": -2.5716,
-     "pct": -80
+     "ppi": 5.7353,
+     "defasagem": -2.539,
+     "pct": -79
     },
     "gasolina": {
      "preco": 2.9303,
-     "ppi": 2.9417,
-     "defasagem": -0.0114,
-     "pct": 0
+     "ppi": 2.8907,
+     "defasagem": 0.0396,
+     "pct": 1
     }
    },
    {
@@ -27,15 +27,15 @@
     "empresa": "Petrobras",
     "diesel": {
      "preco": 3.1674,
-     "ppi": 5.7679,
-     "defasagem": -2.6005,
-     "pct": -82
+     "ppi": 5.7353,
+     "defasagem": -2.5679,
+     "pct": -81
     },
     "gasolina": {
      "preco": 2.9476,
-     "ppi": 2.9417,
-     "defasagem": 0.0059,
-     "pct": 0
+     "ppi": 2.8907,
+     "defasagem": 0.0569,
+     "pct": 2
     }
    },
    {
@@ -44,14 +44,14 @@
     "empresa": "Petrobras",
     "diesel": {
      "preco": 3.3311,
-     "ppi": 6.0316,
-     "defasagem": -2.7005,
+     "ppi": 6.0373,
+     "defasagem": -2.7062,
      "pct": -81
     },
     "gasolina": {
      "preco": 3.0608,
-     "ppi": 3.188,
-     "defasagem": -0.1272,
+     "ppi": 3.1709,
+     "defasagem": -0.1101,
      "pct": -4
     }
    },
@@ -61,14 +61,14 @@
     "empresa": "Petrobras",
     "diesel": {
      "preco": 3.3023,
-     "ppi": 5.9902,
-     "defasagem": -2.6879,
-     "pct": -81
+     "ppi": 5.9959,
+     "defasagem": -2.6936,
+     "pct": -82
     },
     "gasolina": {
      "preco": 3.0209,
-     "ppi": 3.1466,
-     "defasagem": -0.1257,
+     "ppi": 3.1295,
+     "defasagem": -0.1086,
      "pct": -4
     }
    },
@@ -78,15 +78,15 @@
     "empresa": "Petrobras",
     "diesel": {
      "preco": 3.3532,
-     "ppi": 5.7846,
-     "defasagem": -2.4314,
-     "pct": -73
+     "ppi": 5.7519,
+     "defasagem": -2.3987,
+     "pct": -72
     },
     "gasolina": {
      "preco": 3.0808,
-     "ppi": 2.9584,
-     "defasagem": 0.1224,
-     "pct": 4
+     "ppi": 2.9074,
+     "defasagem": 0.1734,
+     "pct": 6
     }
    },
    {
@@ -94,33 +94,33 @@
     "uf": "BA",
     "empresa": "Acelen",
     "diesel": {
-     "preco": 4.342,
-     "ppi": 5.8526,
-     "defasagem": -1.5106,
-     "pct": -35
+     "preco": 4.052,
+     "ppi": 5.8199,
+     "defasagem": -1.7679,
+     "pct": -44
     },
     "gasolina": {
-     "preco": 3.5669,
-     "ppi": 3.0263,
-     "defasagem": 0.5406,
-     "pct": 15
+     "preco": 3.544,
+     "ppi": 2.9753,
+     "defasagem": 0.5687,
+     "pct": 16
     }
    }
   ],
   "media_petrobras": {
    "diesel": {
-    "defasagem": -2.5984
+    "defasagem": -2.5811
    },
    "gasolina": {
-    "defasagem": -0.0272
+    "defasagem": 0.0102
    }
   },
   "media_principais": {
    "diesel": {
-    "defasagem": -2.4171
+    "defasagem": -2.4455
    },
    "gasolina": {
-    "defasagem": 0.0674
+    "defasagem": 0.1033
    }
   }
  },
